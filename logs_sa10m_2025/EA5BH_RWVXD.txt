@@ -1,0 +1,19 @@
+START-OF-LOG: 3.0
+CALLSIGN: EA5BH
+NAME: Francisco Javier Martin 
+EMAIL: perez.mansito@gmail.com
+LOCATION: Alicante
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-POWER: LOW
+CREATED-BY: ADIF2Cabrillo (adif2cabrillo.kq4mhe.com) version 3.0.13
+QSO: 28463 PH 2025-03-09 1145 EA5BH         59  14     PT2AP         59  11     1                                                                                
+QSO: 28586 PH 2025-03-09 1143 EA5BH         59  14     LU1HLH        59  13     1                                                                                
+QSO: 28453 PH 2025-03-09 1142 EA5BH         59  14     PY4JW         59  11     1                                                                                
+QSO: 28446 PH 2025-03-09 1139 EA5BH         59  14     PY2EX         59  11     1                                                                                
+QSO: 28450 PH 2025-03-09 1016 EA5BH         59  14     CW5A          59  14     1                                                                                
+QSO: 28505 PH 2025-03-08 1819 EA5BH         59  14     CB3A          59  12     1                                                                                
+QSO: 28525 PH 2025-03-08 1743 EA5BH         59  14     PP1WW         59  11     1                                                                                
+QSO: 28475 PH 2025-03-08 1743 EA5BH         59  14     LU2PWY        59  13     1                                                                                
+QSO: 28020 CW 2025-03-08 1254 EA5BH         599 14      AA2A         599 5      1                                                                                
+QSO: 28026 CW 2025-03-08 1222 EA5BH         599 14     LU1HLH        599 13     1                                                                                
+END-OF-LOG:

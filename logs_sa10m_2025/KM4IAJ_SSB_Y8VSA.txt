@@ -1,0 +1,42 @@
+START-OF-LOG: 3.0
+LOCATION: VA
+CALLSIGN: KM4IAJ
+CLUB:  Potomac Valley Radio Club
+CONTEST: DX
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: ALL
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 18
+OPERATORS: KM4IAJ
+NAME: Robert Fitch
+ADDRESS: 6272 Culverhouse Ct
+ADDRESS-CITY: Gainesville
+ADDRESS-STATE-PROVINCE: VA
+ADDRESS-POSTALCODE: 20155-6608
+ADDRESS-COUNTRY: UNITED STATES
+GRID-LOCATOR: FM18ET
+EMAIL: rman@ix.netcom.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28515 PH 2025-03-08 1619 KM4IAJ        59  5 CS7BPO        59   14                                                  
+QSO:   28540 PH 2025-03-08 1624 KM4IAJ        59  5 CS7AXM        59   14                                                  
+QSO:   28458 PH 2025-03-08 1628 KM4IAJ        59  5 XE3R          59   6                                                   
+QSO:   28434 PH 2025-03-08 1636 KM4IAJ        59  5 IW0HLZ        59   15                                                  
+QSO:   28446 PH 2025-03-08 1643 KM4IAJ        59  5 DP7D          59   14                                                  
+QSO:   28368 PH 2025-03-08 1718 KM4IAJ        59  5 IK5RLP        59   15                                                  
+QSO:   28438 PH 2025-03-08 1724 KM4IAJ        59  5 YY5ALI        59   9                                                   
+QSO:   28488 PH 2025-03-08 1727 KM4IAJ        59  5 LT3E          59   13                                                  
+QSO:   28595 PH 2025-03-08 1934 KM4IAJ        59  5 AY7J          59   13                                                  
+QSO:   28433 PH 2025-03-08 2344 KM4IAJ        59  5 PX9D          59   11                                                  
+QSO:   28445 PH 2025-03-08 2346 KM4IAJ        59  5 CA3YWW        59   12                                                  
+QSO:   28400 PH 2025-03-08 2351 KM4IAJ        59  5 CE2LK         59   12                                                  
+QSO:   28473 PH 2025-03-08 2355 KM4IAJ        59  5 CB4W          59   12                                                  
+QSO:   28461 PH 2025-03-09 0021 KM4IAJ        59  5 PT2AP         59   11                                                  
+QSO:   28430 PH 2025-03-09 0024 KM4IAJ        59  5 PU5WMA        59   11                                                  
+QSO:   28411 PH 2025-03-09 0027 KM4IAJ        59  5 PU2UD         59   11                                                  
+QSO:   28490 PH 2025-03-09 0037 KM4IAJ        59  5 PY2COI        59   11                                                  
+QSO:   28464 PH 2025-03-09 0247 KM4IAJ        59  5 PW2A          59   11                                                  
+END-OF-LOG:

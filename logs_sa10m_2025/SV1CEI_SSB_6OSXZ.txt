@@ -1,0 +1,30 @@
+START-OF-LOG: 3.0                                                                
+CREATED-BY: Win-EQF* version 3.10                                                
+LOCATION: SV                                                                     
+CONTEST: SA                                                                      
+CALLSIGN: SV1CEI                                                                 
+CATEGORY-OPERATOR: SINGLE-OP                                                       
+CATEGORY-BAND: 10                                                                
+CATEGORY-MODE: SSB
+CATEGORY-POWER: QRP                                                            
+CATEGORY-ASSISTED: NON-ASSISTED                                                  
+CATEGORY-TRANSMITTER: ONE                                                        
+CLAIMED-SCORE: 0                                                                 
+OPERATORS: SV1CEI                                                                
+CLUB: GREEK TELEGRAPHY CLUB                                                      
+NAME: NIKOLAOS PORIHIS                                                           
+ADDRESS: DIGENI EOKA 10                                                          
+ADDRESS: GR-15239                                                                
+ADDRESS: NEA PENTELI                                                             
+ADDRESS: GREECE                                                                  
+SOAPBOX: GUSHCRAFT R7                                                            
+SOAPBOX: 5 WATTS                                                                
+SOAPBOX:                                                                         
+SOAPBOX:                                                                         
+QSO: 28000 PH 2025-03-08 1625 SV1CEI        59  20     LT3E          59  13      
+QSO: 28000 PH 2025-03-08 1627 SV1CEI        59  20     CX1AR         59  13      
+QSO: 28000 PH 2025-03-08 1629 SV1CEI        59  20     CE7VP         59  12      
+QSO: 28000 PH 2025-03-08 1630 SV1CEI        59  20     N8OO          59  04      
+QSO: 28000 PH 2025-03-08 1633 SV1CEI        59  20     PR7RBA        59  11      
+QSO: 28000 PH 2025-03-08 1652 SV1CEI        59  20     TO3Z          59  08      
+END-OF-LOG:

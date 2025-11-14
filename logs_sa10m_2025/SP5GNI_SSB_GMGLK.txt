@@ -1,0 +1,125 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: SP5GNI
+CONTEST: SA 10m contest
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: ALL
+CATEGORY-MODE: SSB
+CATEGORY-POWER: HIGH
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+OPERATORS: SP5GNI
+NAME: Miroslaw Sadowski
+ADDRESS: ul. Szafirkow 13
+ADDRESS-CITY: Warszawa
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 03-159
+ADDRESS-COUNTRY: POLAND
+GRID-LOCATOR: KO02LI
+EMAIL:  sp5gni@gmail.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28355 PH 2025-03-08 1734 SP5GNI        59  15     CS7AXM        59  14       
+QSO:   28364 PH 2025-03-08 1735 SP5GNI        59  15     PT1M          59  11       
+QSO:   28372 PH 2025-03-08 1736 SP5GNI        59  15     PW2A          59  11       
+QSO:   28397 PH 2025-03-08 1739 SP5GNI        59  15     LU9EB         59  13       
+QSO:   28417 PH 2025-03-08 1740 SP5GNI        59  15     LU1WCL        59  13       
+QSO:   28423 PH 2025-03-08 1741 SP5GNI        59  15     PU3POE        59  11       
+QSO:   28426 PH 2025-03-08 1742 SP5GNI        59  15     LU1VM         59  13       
+QSO:   28437 PH 2025-03-08 1745 SP5GNI        59  15     YY5ALI        59  09       
+QSO:   28447 PH 2025-03-08 1747 SP5GNI        59  15     CE4JZO        59  12       
+QSO:   28456 PH 2025-03-08 1751 SP5GNI        59  15     PR1T          59  11       
+QSO:   28459 PH 2025-03-08 1753 SP5GNI        59  15     CE2LK         59  12       
+QSO:   28462 PH 2025-03-08 1753 SP5GNI        59  15     PY4JW         59  11       
+QSO:   28475 PH 2025-03-08 1754 SP5GNI        59  15     LU2PWY        59  13       
+QSO:   28479 PH 2025-03-08 1755 SP5GNI        59  15     K1LZ          59  05       
+QSO:   28498 PH 2025-03-08 1756 SP5GNI        59  15     PU5DUD        59  11       
+QSO:   28506 PH 2025-03-08 1757 SP5GNI        59  15     CB3A          59  12       
+QSO:   28513 PH 2025-03-08 1758 SP5GNI        59  15     PY2UD         59  11       
+QSO:   28517 PH 2025-03-08 1759 SP5GNI        59  15     LQ4D          59  13       
+QSO:   28520 PH 2025-03-08 1800 SP5GNI        59  15     LU4FM         59  13       
+QSO:   28526 PH 2025-03-08 1800 SP5GNI        59  15     PP1WW         59  11       
+QSO:   28535 PH 2025-03-08 1801 SP5GNI        59  15     LU9HVR        59  13       
+QSO:   28537 PH 2025-03-08 1803 SP5GNI        59  15     CB4W          59  12       
+QSO:   28547 PH 2025-03-08 1803 SP5GNI        59  15     CW5A          59  13       
+QSO:   28557 PH 2025-03-08 1804 SP5GNI        59  15     CX6TU         59  13       
+QSO:   28452 PH 2025-03-08 1808 SP5GNI        59  15     CT7AIX        59  14       
+QSO:   28411 PH 2025-03-08 1811 SP5GNI        59  15     PY5ZHP        59  11       
+QSO:   28455 PH 2025-03-08 1813 SP5GNI        59  15     LT1K          59  13       
+QSO:   28455 PH 2025-03-08 1815 SP5GNI        59  15     PY1KG         59  11       
+QSO:   28455 PH 2025-03-08 1820 SP5GNI        59  15     PU2MGE        59  11       
+QSO:   28455 PH 2025-03-08 1820 SP5GNI        59  15     PY2HZ         59  11       
+QSO:   28455 PH 2025-03-08 1821 SP5GNI        59  15     PP2RON        59  11       
+QSO:   28455 PH 2025-03-08 1823 SP5GNI        59  15     PU4GOL        59  11       
+QSO:   28455 PH 2025-03-08 1823 SP5GNI        59  15     CS7BPO        59  14       
+QSO:   28455 PH 2025-03-08 1826 SP5GNI        59  15     PU7PSJ        59  11       
+QSO:   28455 PH 2025-03-08 1826 SP5GNI        59  15     PU1PRD        59  11       
+QSO:   28455 PH 2025-03-08 1827 SP5GNI        59  15     PY4HE         59  11       
+QSO:   28455 PH 2025-03-08 1827 SP5GNI        59  15     PP7GB         59  11       
+QSO:   28455 PH 2025-03-08 1829 SP5GNI        59  15     PU2ULN        59  11       
+QSO:   28362 PH 2025-03-08 1837 SP5GNI        59  15     PY2DN         59  11       
+QSO:   28379 PH 2025-03-08 1838 SP5GNI        59  15     LU4JEA        59  13       
+QSO:   28388 PH 2025-03-08 1839 SP5GNI        59  15     PW8RB         59  11       
+QSO:   28392 PH 2025-03-08 1854 SP5GNI        59  15     TO3Z          59  08       
+QSO:   28398 PH 2025-03-08 1856 SP5GNI        59  15     LO5U          59  13       
+QSO:   28417 PH 2025-03-08 1858 SP5GNI        59  15     PY2ZR         59  11       
+QSO:   28430 PH 2025-03-08 1859 SP5GNI        59  15     LU7YE         59  13       
+QSO:   28485 PH 2025-03-08 1905 SP5GNI        59  15     PY5FO         59  11       
+QSO:   28491 PH 2025-03-08 1906 SP5GNI        59  15     PY2CP         59  11       
+QSO:   28400 PH 2025-03-09 1025 SP5GNI        59  15     PU2VLW        59  11       
+QSO:   28404 PH 2025-03-09 1026 SP5GNI        59  15     S51JQ         59  15       
+QSO:   28413 PH 2025-03-09 1028 SP5GNI        59  15     LQ5A          59  13       
+QSO:   28435 PH 2025-03-09 1032 SP5GNI        59  15     PY2PPZ        59  11       
+QSO:   28452 PH 2025-03-09 1033 SP5GNI        59  15     PV2K          59  11       
+QSO:   28458 PH 2025-03-09 1034 SP5GNI        59  15     LT3E          59  13       
+QSO:   28495 PH 2025-03-09 1038 SP5GNI        59  15     UZ7C          59  16       
+QSO:   28532 PH 2025-03-09 1039 SP5GNI        59  15     LO7H          59  13       
+QSO:   28538 PH 2025-03-09 1041 SP5GNI        59  15     PU2SXE        59  11       
+QSO:   28455 PH 2025-03-09 1056 SP5GNI        59  15     PR7RBA        59  11       
+QSO:   28426 PH 2025-03-09 1058 SP5GNI        59  15     PU2TES        59  11       
+QSO:   28426 PH 2025-03-09 1100 SP5GNI        59  15     YD1SHY        59  28       
+QSO:   28426 PH 2025-03-09 1103 SP5GNI        59  15     EA8DNX        59  33       
+QSO:   28426 PH 2025-03-09 1104 SP5GNI        59  15     PP5LTI        59  11       
+QSO:   28426 PH 2025-03-09 1106 SP5GNI        59  15     PU1KPS        59  11       
+QSO:   28426 PH 2025-03-09 1107 SP5GNI        59  15     CT7AQF        59  14       
+QSO:   28426 PH 2025-03-09 1109 SP5GNI        59  15     9A9O          59  15       
+QSO:   28426 PH 2025-03-09 1111 SP5GNI        59  15     CX8DS         59  13       
+QSO:   28426 PH 2025-03-09 1112 SP5GNI        59  15     EA4ESM        59  14       
+QSO:   28426 PH 2025-03-09 1114 SP5GNI        59  15     PY1MU         59  11       
+QSO:   28426 PH 2025-03-09 1115 SP5GNI        59  15     PU2OXB        59  11       
+QSO:   28426 PH 2025-03-09 1115 SP5GNI        59  15     LT7L          59  13       
+QSO:   28426 PH 2025-03-09 1117 SP5GNI        59  15     PU5SKW        59  11       
+QSO:   28426 PH 2025-03-09 1118 SP5GNI        59  15     PT9AA         59  11       
+QSO:   28426 PH 2025-03-09 1118 SP5GNI        59  15     5B4AQX        59  28       
+QSO:   28405 PH 2025-03-09 1127 SP5GNI        59  15     EI3JZ         59  14       
+QSO:   28420 PH 2025-03-09 1128 SP5GNI        59  15     PY6GOE        59  11       
+QSO:   28428 PH 2025-03-09 1129 SP5GNI        59  15     PY7GB         59  11       
+QSO:   28430 PH 2025-03-09 1132 SP5GNI        59  15     PU5WMA        59  11       
+QSO:   28450 PH 2025-03-09 1133 SP5GNI        59  15     PY2VZ         59  11       
+QSO:   28460 PH 2025-03-09 1135 SP5GNI        59  15     PY2COI        59  11       
+QSO:   28487 PH 2025-03-09 1138 SP5GNI        59  15     CS7BFW        59  14       
+QSO:   28498 PH 2025-03-09 1139 SP5GNI        59  15     PY4BAL        59  11       
+QSO:   28506 PH 2025-03-09 1141 SP5GNI        59  15     EA8DMS        59  33       
+QSO:   28523 PH 2025-03-09 1142 SP5GNI        59  15     CX1AR         59  13       
+QSO:   28586 PH 2025-03-09 1144 SP5GNI        59  15     LU1HLH        59  13       
+QSO:   28492 PH 2025-03-09 1145 SP5GNI        59  15     PY5MM         59  11       
+QSO:   28492 PH 2025-03-09 1146 SP5GNI        59  15     CX1DF         59  13       
+QSO:   28492 PH 2025-03-09 1147 SP5GNI        59  15     TA5O          59  20       
+QSO:   28492 PH 2025-03-09 1147 SP5GNI        59  15     HF7A          59  15       
+QSO:   28492 PH 2025-03-09 1147 SP5GNI        59  15     PU2MIW        59  11       
+QSO:   28492 PH 2025-03-09 1148 SP5GNI        59  15     SM7L          59  14       
+QSO:   28492 PH 2025-03-09 1148 SP5GNI        59  15     EA8AM         59  33       
+QSO:   28492 PH 2025-03-09 1149 SP5GNI        59  15     L71D          59  13       
+QSO:   28492 PH 2025-03-09 1150 SP5GNI        59  15     PY1WE         59  11       
+QSO:   28492 PH 2025-03-09 1150 SP5GNI        59  15     PU1JSV        59  11       
+QSO:   28492 PH 2025-03-09 1150 SP5GNI        59  15     PY2DTA        59  11       
+QSO:   28492 PH 2025-03-09 1153 SP5GNI        59  15     CT1FOQ        59  14       
+QSO:   28492 PH 2025-03-09 1153 SP5GNI        59  15     PY1KB         59  11       
+QSO:   28492 PH 2025-03-09 1154 SP5GNI        59  15     PU3OET        59  11       
+QSO:   28492 PH 2025-03-09 1156 SP5GNI        59  15     UZ7C          59  16       
+QSO:   28492 PH 2025-03-09 1157 SP5GNI        59  15     PY4WJ         59  11       
+QSO:   28492 PH 2025-03-09 1158 SP5GNI        59  15     LP7D          59  13       
+QSO:   28492 PH 2025-03-09 1158 SP5GNI        59  15     EA4GGE        59  14       
+QSO:   28492 PH 2025-03-09 1159 SP5GNI        59  15     OZ1AXG        59  14       
+QSO:   28492 PH 2025-03-09 1159 SP5GNI        59  15     SQ7OVT        59  15       
+END-OF-LOG:

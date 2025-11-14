@@ -1,0 +1,97 @@
+START-OF-LOG: 3.0
+CREATED-BY: DXLog.net v2.6.14
+CONTEST: SA10M
+CALLSIGN: M0MCV
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-TRANSMITTER: ONE
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-STATION: FIXED
+CATEGORY-POWER: HIGH
+GRID-LOCATOR: JO01AL
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CLAIMED-SCORE: 17952
+NAME: Bob Treacher
+ADDRESS: 93 Elibank Road
+ADDRESS: Eltham
+ADDRESS-COUNTRY: London SE9 1QJ
+CERTIFICATE: YES
+EMAIL: bobrcv@ntlworld.com
+OPERATORS: M0MCV
+SOAPBOX: Good to take part in the contest and work many South American stations. 
+QSO: 28000 PH 2025-03-08 1233 M0MCV         59  14     CS7BPO        59  14     
+QSO: 28000 PH 2025-03-08 1239 M0MCV         59  14     PU2VLW        59  11     
+QSO: 28000 PH 2025-03-08 1242 M0MCV         59  14     TA3T          59  20     
+QSO: 28000 PH 2025-03-08 1250 M0MCV         59  14     PU2SXE        59  11     
+QSO: 28000 PH 2025-03-08 1251 M0MCV         59  14     PT2AP         59  11     
+QSO: 28000 PH 2025-03-08 1252 M0MCV         59  14     CE7VP         59  12     
+QSO: 28000 PH 2025-03-08 1256 M0MCV         59  14     LU4JEA        59  13     
+QSO: 28000 PH 2025-03-08 1258 M0MCV         59  14     PY2TB         59  11     
+QSO: 28000 PH 2025-03-08 1259 M0MCV         59  14     PY2GTA        59  11     
+QSO: 28000 PH 2025-03-08 1300 M0MCV         59  14     PY2DN         59  11     
+QSO: 28000 PH 2025-03-08 1306 M0MCV         59  14     LT3E          59  13     
+QSO: 28000 PH 2025-03-08 1307 M0MCV         59  14     PU5DUD        59  11     
+QSO: 28000 PH 2025-03-08 1312 M0MCV         59  14     LZ2FDI        59  20     
+QSO: 28000 PH 2025-03-08 1315 M0MCV         59  14     UZ7C          59  16     
+QSO: 28000 PH 2025-03-08 1315 M0MCV         59  14     PR1T          59  11     
+QSO: 28000 PH 2025-03-08 1322 M0MCV         59  14     PV2K          59  11     
+QSO: 28000 PH 2025-03-08 1335 M0MCV         59  14     PT2AZ         59  11     
+QSO: 28000 PH 2025-03-08 1444 M0MCV         59  14     PT1M          59  11     
+QSO: 28000 PH 2025-03-08 1606 M0MCV         59  14     CT3IQ         59  33     
+QSO: 28000 PH 2025-03-08 1616 M0MCV         59  14     AY7J          59  13     
+QSO: 28000 PH 2025-03-08 1617 M0MCV         59  14     SV1BJW        59  20     
+QSO: 28000 PH 2025-03-08 1618 M0MCV         59  14     K3IE          59  04     
+QSO: 28000 PH 2025-03-08 1622 M0MCV         59  14     PP1WW         59  11     
+QSO: 28000 PH 2025-03-08 1625 M0MCV         59  14     AA2A          59  05     
+QSO: 28000 PH 2025-03-08 1627 M0MCV         59  14     PY4JW         59  11     
+QSO: 28000 PH 2025-03-08 1630 M0MCV         59  14     PT2AW         59  11     
+QSO: 28000 PH 2025-03-08 1632 M0MCV         59  14     N8OO          59  04     
+QSO: 28000 PH 2025-03-08 1634 M0MCV         59  14     PW2A          59  11     
+QSO: 28000 PH 2025-03-08 1638 M0MCV         59  14     CX1AR         59  13     
+QSO: 28000 PH 2025-03-08 1654 M0MCV         59  14     PY5MM         59  11     
+QSO: 28000 PH 2025-03-08 1712 M0MCV         59  14     K1LZ          59  05     
+QSO: 28000 PH 2025-03-08 1745 M0MCV         59  14     CX6TU         59  13     
+QSO: 28000 PH 2025-03-08 1759 M0MCV         59  14     PQ5D          59  11     
+QSO: 28000 PH 2025-03-08 1809 M0MCV         59  14     PR7RBA        59  11     
+QSO: 28000 PH 2025-03-08 1815 M0MCV         59  14     LQ4D          59  13     
+QSO: 28000 PH 2025-03-08 1823 M0MCV         59  14     CX8DS         59  13     
+QSO: 28000 PH 2025-03-08 1829 M0MCV         59  14     TO3Z          59  08     
+QSO: 28000 PH 2025-03-08 1849 M0MCV         59  14     LW7DQW        59  13     
+QSO: 28000 PH 2025-03-08 1852 M0MCV         59  14     PU1JSV        59  11     
+QSO: 28000 PH 2025-03-08 1903 M0MCV         59  14     PY2EX         59  11     
+QSO: 28000 PH 2025-03-08 1905 M0MCV         59  14     CW5A          59  13     
+QSO: 28000 PH 2025-03-08 1907 M0MCV         59  14     LU7DW         59  13     
+QSO: 28000 PH 2025-03-08 1908 M0MCV         59  14     PT7PT         59  11     
+QSO: 28000 PH 2025-03-08 1912 M0MCV         59  14     CB3A          59  12     
+QSO: 28000 PH 2025-03-08 1916 M0MCV         59  14     PY5FO         59  11     
+QSO: 28000 PH 2025-03-08 1918 M0MCV         59  14     DP7D          59  14     
+QSO: 28000 PH 2025-03-08 1954 M0MCV         59  14     LU1VM         59  13     
+QSO: 28000 PH 2025-03-08 1959 M0MCV         59  14     LU4FM         59  13     
+QSO: 28000 PH 2025-03-08 2000 M0MCV         59  14     LW2DHD        59  13     
+QSO: 28000 PH 2025-03-08 2005 M0MCV         59  14     LU7YZ         59  13     
+QSO: 28000 PH 2025-03-08 2007 M0MCV         59  14     PY2UD         59  11     
+QSO: 28000 PH 2025-03-08 2012 M0MCV         59  14     PX9D          59  11     
+QSO: 28000 PH 2025-03-08 2016 M0MCV         59  14     PY2PPZ        59  11     
+QSO: 28000 PH 2025-03-08 2023 M0MCV         59  14     LU2PWY        59  13     
+QSO: 28000 PH 2025-03-08 2026 M0MCV         59  14     PT9AA         59  11     
+QSO: 28000 PH 2025-03-08 2039 M0MCV         59  14     LU7YE         59  13     
+QSO: 28000 PH 2025-03-08 2043 M0MCV         59  14     LU3WJV        59  13     
+QSO: 28000 PH 2025-03-08 2052 M0MCV         59  14     PY4LI         59  11     
+QSO: 28000 PH 2025-03-08 2055 M0MCV         59  14     LU5HCB        59  13     
+QSO: 28000 PH 2025-03-08 2055 M0MCV         59  14     LU9HVR        59  13     
+QSO: 28000 PH 2025-03-08 2059 M0MCV         59  14     LU1HLH        59  13     
+QSO: 28000 PH 2025-03-09 1025 M0MCV         59  14     PY1KB         59  11     
+QSO: 28000 PH 2025-03-09 1026 M0MCV         59  14     EA9ACD        59  33     
+QSO: 28000 PH 2025-03-09 1036 M0MCV         59  14     IT9FZT        59  15     
+QSO: 28000 PH 2025-03-09 1040 M0MCV         59  14     RX9WN         59  16     
+QSO: 28000 PH 2025-03-09 1046 M0MCV         59  14     LO7H          59  13     
+QSO: 28000 PH 2025-03-09 1049 M0MCV         59  14     TA3NE         59  20     
+QSO: 28000 PH 2025-03-09 1107 M0MCV         59  14     LT7L          59  13     
+QSO: 28000 PH 2025-03-09 1110 M0MCV         59  14     PY2CEC        59  11     
+QSO: 28000 PH 2025-03-09 1121 M0MCV         59  14     PY6GOE        59  11     
+QSO: 28000 PH 2025-03-09 1123 M0MCV         59  14     EA8DMS        59  33     
+QSO: 28000 PH 2025-03-09 1125 M0MCV         59  14     R6AF          59  16     
+QSO: 28000 PH 2025-03-09 1132 M0MCV         59  14     PY2VZ         59  11     
+QSO: 28000 PH 2025-03-09 1133 M0MCV         59  14     LQ5A          59  13     
+QSO: 28000 PH 2025-03-09 1148 M0MCV         59  14     PU5WMA        59  11     
+END-OF-LOG:

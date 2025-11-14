@@ -1,0 +1,51 @@
+START-OF-LOG: 3.0
+CONTEST: SA 10m
+CALLSIGN: SQ5BA
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-TRANSMITTER: ONE
+CATEGORY-POWER: LOW
+CATEGORY-BAND: 10M 
+CATEGORY-MODE: SSB
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-STATION: FIXED 
+LOCATION: DX
+CATEGORY-OVERLAY: 
+CLUB: 
+CLAIMED-SCORE: 
+OPERATORS: SQ5BA
+EMAIL: SQ5BA@O2.PL
+NAME: Adam Lis
+ADDRESS: Poland
+ADDRESS: Gorzno
+ADDRESS: 08-404
+CREATED-BY: DQR_Log v. 3.2.5 - (c) SP7DQR
+SOAPBOX: 20W
+QSO: 28000 PH 2025-03-08 1501 SQ5BA         59          015 CS7AXM          59           14
+QSO: 28000 PH 2025-03-08 1503 SQ5BA         59          015 PT1M            59           11
+QSO: 28000 PH 2025-03-08 1505 SQ5BA         59          015 N8OO            59            4
+QSO: 28000 PH 2025-03-08 1514 SQ5BA         59          015 PT2AP           59           11
+QSO: 28000 PH 2025-03-08 1515 SQ5BA         59          015 PW2A            59           11
+QSO: 28000 PH 2025-03-08 1519 SQ5BA         59          015 4Z5ML           59           20
+QSO: 28000 PH 2025-03-08 1522 SQ5BA         59          015 AA2A            59            5
+QSO: 28000 PH 2025-03-08 1524 SQ5BA         59          015 CS7BPO          59           14
+QSO: 28000 PH 2025-03-08 1526 SQ5BA         59          015 PU2VLW          59           11
+QSO: 28000 PH 2025-03-08 1527 SQ5BA         59          015 VE9CZ           59            5
+QSO: 28000 PH 2025-03-08 1533 SQ5BA         59          015 EA4AOC          59           14
+QSO: 28000 PH 2025-03-08 1538 SQ5BA         59          015 PR1T            59           11
+QSO: 28000 PH 2025-03-08 1543 SQ5BA         59          015 EC5SP           59           14
+QSO: 28000 PH 2025-03-08 1546 SQ5BA         59          015 PY2DR           59           11
+QSO: 28000 PH 2025-03-08 1637 SQ5BA         59          015 PU1JSV          59           11
+QSO: 28000 PH 2025-03-08 1922 SQ5BA         59          015 CW5A            59           13
+QSO: 28000 PH 2025-03-08 1927 SQ5BA         59          015 PP5IP           59           11
+QSO: 28000 PH 2025-03-08 1931 SQ5BA         59          015 LU1VM           59           13
+QSO: 28000 PH 2025-03-08 1938 SQ5BA         59          015 LT3E            59           13
+QSO: 28000 PH 2025-03-09 0821 SQ5BA         59          015 YD1SHY          59           28
+QSO: 28000 PH 2025-03-09 1021 SQ5BA         59          015 PV2K            59           11
+QSO: 28000 PH 2025-03-09 1023 SQ5BA         59          015 PY4JW           59           11
+QSO: 28000 PH 2025-03-09 1026 SQ5BA         59          015 LQ4D            59           13
+QSO: 28000 PH 2025-03-09 1047 SQ5BA         59          015 PY2UD           59           11
+QSO: 28000 PH 2025-03-09 1117 SQ5BA         59          015 EA3BRL          59           14
+QSO: 28000 PH 2025-03-09 1138 SQ5BA         59          015 LU4FM           59           13
+QSO: 28000 PH 2025-03-09 1144 SQ5BA         59          015 PU5D            59           11
+QSO: 28000 PH 2025-03-09 1155 SQ5BA         59          015 PY2EX           59           11
+END-OF-LOG:

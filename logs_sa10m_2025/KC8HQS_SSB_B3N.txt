@@ -1,0 +1,60 @@
+START-OF-LOG: 3.0
+CREATED-BY: KC8HQS
+CONTEST: SA10M
+CALLSIGN: KC8HQS
+LOCATION: EM79WC
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CATEGORY-POWER: LOW
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CLAIMED-SCORE: 
+OPERATORS: KC8HQS
+NAME: Dallas Vanselow
+ADDRESS: 5034 State Route 132
+ADDRESS-CITY: Batavia
+ADDRESS-STATE-PROVINCE: OH
+ADDRESS-POSTALCODE: 45103
+ADDRESS-COUNTRY: USA
+EMAIL: kc8hqs@kc8hqs.net
+QSO: 28367 PH 2025-03-08 1529 KC8HQS        59  08     PT1M          59  11     1                                                                                
+QSO: 28376 PH 2025-03-08 1530 KC8HQS        59  08     PY2EX         59  11     1                                                                                
+QSO: 28395 PH 2025-03-08 1538 KC8HQS        59  04     OA4EFA        59  10     1                                                                                
+QSO: 28405 PH 2025-03-08 1541 KC8HQS        59  04     CE7VP         59  12     1                                                                                
+QSO: 28413 PH 2025-03-08 1542 KC8HQS        59  04     DK1K          59  14     1                                                                                
+QSO: 28416 PH 2025-03-08 1544 KC8HQS        59  04     LU2DDH        59  13     1                                                                                
+QSO: 28423 PH 2025-03-08 1549 KC8HQS        59  04     LU1VM         59  13     1                                                                                
+QSO: 28434 PH 2025-03-08 1557 KC8HQS        59  04     IW0CLZ        59  14     1                                                                                
+QSO: 28437 PH 2025-03-08 1614 KC8HQS        59  04     YY5ALI        59  09     1                                                                                
+QSO: 28440 PH 2025-03-08 1615 KC8HQS        59  04     XE1BLA        59  06     1                                                                                
+QSO: 28444 PH 2025-03-08 1619 KC8HQS        59  04     DP7D          59  14     1                                                                                
+QSO: 28455 PH 2025-03-08 1623 KC8HQS        59  04     XE2Q          59  06     1                                                                                
+QSO: 28462 PH 2025-03-08 1624 KC8HQS        59  04     PY4JW         59  11     1                                                                                
+QSO: 28470 PH 2025-03-08 1627 KC8HQS        59  04     PY5MM         59  11     1                                                                                
+QSO: 28482 PH 2025-03-08 1631 KC8HQS        59  04     LU9JDZ        59  13     1                                                                                
+QSO: 28489 PH 2025-03-08 1633 KC8HQS        59  04     LT3E          59  13     1                                                                                
+QSO: 28526 PH 2025-03-08 1640 KC8HQS        59  04     PP1WW         59  11     1                                                                                
+QSO: 28530 PH 2025-03-08 1640 KC8HQS        59  04     AY7J          59  13     1                                                                                
+QSO: 28543 PH 2025-03-08 1642 KC8HQS        59  04     LU4ASR        59  13     1                                                                                
+QSO: 28547 PH 2025-03-08 1644 KC8HQS        59  04     LU1VJC        59  13     1                                                                                
+QSO: 28396 PH 2025-03-08 2144 KC8HQS        59  04     PU2SXE        59  11     1                                                                                
+QSO: 28402 PH 2025-03-08 2148 KC8HQS        59  04     PU2POE        59  11     1                                                                                
+QSO: 28405 PH 2025-03-08 2150 KC8HQS        59  04     LO5U          59  13     1                                                                                
+QSO: 28410 PH 2025-03-08 2152 KC8HQS        59  04     PX9D          59  11     1                                                                                
+QSO: 28412 PH 2025-03-08 2155 KC8HQS        59  04     CW5A          59  13     1                                                                                
+QSO: 28417 PH 2025-03-08 2158 KC8HQS        59  04     PW2A          59  11     1                                                                                
+QSO: 28420 PH 2025-03-08 2159 KC8HQS        59  04     LU5EA         59  13     1                                                                                
+QSO: 28435 PH 2025-03-08 2203 KC8HQS        59  04     LU7YZ         59  13     1                                                                                
+QSO: 28450 PH 2025-03-08 2205 KC8HQS        59  04     LU3VED        59  13     1                                                                                
+QSO: 28454 PH 2025-03-08 2207 KC8HQS        59  04     LW7DQW        59  13     1                                                                                
+QSO: 28463 PH 2025-03-08 2212 KC8HQS        59  04     LU4JEA        59  13     1                                                                                
+QSO: 28473 PH 2025-03-08 2224 KC8HQS        59  04     CX1DF         59  13     1                                                                                
+QSO: 28483 PH 2025-03-08 2228 KC8HQS        59  04     LU2PWY        59  13     1                                                                                
+QSO: 28495 PH 2025-03-08 2233 KC8HQS        59  04     LU2WJV        59  13     1                                                                                
+QSO: 28498 PH 2025-03-08 2234 KC8HQS        59  04     LW6DIV        59  13     1                                                                                
+QSO: 28514 PH 2025-03-08 2239 KC8HQS        59  04     CB3A          59  12     1                                                                                
+QSO: 28530 PH 2025-03-08 2242 KC8HQS        59  04     PY3ML         59  11     1                                                                                
+QSO: 28540 PH 2025-03-08 2245 KC8HQS        59  04     CX1AR         59  13     1                                                                                
+END-OF-LOG:

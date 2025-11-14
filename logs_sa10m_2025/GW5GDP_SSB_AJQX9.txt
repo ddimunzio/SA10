@@ -1,0 +1,55 @@
+START-OF-LOG: 3.0
+CALLSIGN: GW5GDP
+CONTEST: SA10M
+OPERATORS: GW5GDP
+NAME: Graham D Powell
+EMAIL: GW5GDP@Outlook.com
+GRID-LOCATOR: IO81io
+LOCATION: IO81io
+CATEGORY: SINGLE-OP
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-POWER: LOW
+CREATED-BY: ADIF2Cabrillo (adif2cabrillo.kq4mhe.com) version 3.0.13
+QSO: 28467 PH 2025-03-08 1203 GW5GDP        59  14     LT3E          59  13     1                                                                                
+QSO: 28487 PH 2025-03-08 1204 GW5GDP        59  14     PY2UD         59  11     1                                                                                
+QSO: 28495 PH 2025-03-08 1204 GW5GDP        59  14     PV2K          59  11     1                                                                                
+QSO: 28505 PH 2025-03-08 1205 GW5GDP        59  14     PY2GTA        59  11     1                                                                                
+QSO: 28407 PH 2025-03-08 1207 GW5GDP        59  14     PZ5TW         59  09     1                                                                                
+QSO: 28447 PH 2025-03-08 1212 GW5GDP        59  14     CE4JZO        59  12     1                                                                                
+QSO: 28460 PH 2025-03-08 1214 GW5GDP        59  14     PU5DUD        59  11     1                                                                                
+QSO: 28465 PH 2025-03-08 1215 GW5GDP        59  14     CX1DF         59  13     1                                                                                
+QSO: 28412 PH 2025-03-08 1221 GW5GDP        59  14     CW5A          59  13     1                                                                                
+QSO: 28417 PH 2025-03-08 1222 GW5GDP        59  14     CE7VP         59  12     1                                                                                
+QSO: 28437 PH 2025-03-08 1226 GW5GDP        59  14     YY5ALI        59  09     1                                                                                
+QSO: 28463 PH 2025-03-08 1230 GW5GDP        59  14     PW2A          59  11     1                                                                                
+QSO: 28464 PH 2025-03-08 1231 GW5GDP        59  14     LU9HVR        59  09     1                                                                                
+QSO: 28472 PH 2025-03-08 1232 GW5GDP        59  14     LU4JEA        59  13     1                                                                                
+QSO: 28480 PH 2025-03-08 1234 GW5GDP        59  14     PY2DR         59  11     1                                                                                
+QSO: 28490 PH 2025-03-08 1235 GW5GDP        59  14     PY2TB         59  11     1                                                                                
+QSO: 28405 PH 2025-03-08 1255 GW5GDP        59  14     PT2AP         59  11     1                                                                                
+QSO: 28457 PH 2025-03-08 1302 GW5GDP        59  14     CE1KR         59  12     1                                                                                
+QSO: 28508 PH 2025-03-08 1308 GW5GDP        59  14     PT7PT         59  11     1                                                                                
+QSO: 28513 PH 2025-03-08 1310 GW5GDP        59  14     PY2CEC        59  11     1                                                                                
+QSO: 28517 PH 2025-03-08 1312 GW5GDP        59  14     CB4W          59  12     1                                                                                
+QSO: 28537 PH 2025-03-08 1315 GW5GDP        59  14     CX6DS         59  13     1                                                                                
+QSO: 28500 PH 2025-03-08 1321 GW5GDP        59  14     PY2BRP        59  11     1                                                                                
+QSO: 28533 PH 2025-03-08 1325 GW5GDP        59  14     PU1JSV        59  11     1                                                                                
+QSO: 28367 PH 2025-03-08 1327 GW5GDP        59  14     PY2EX         59  11     1                                                                                
+QSO: 28392 PH 2025-03-08 1329 GW5GDP        59  14     PR1T          59  11     1                                                                                
+QSO: 28417 PH 2025-03-08 1332 GW5GDP        59  14     LU1WCL        59  13     1                                                                                
+QSO: 28421 PH 2025-03-08 1344 GW5GDP        59  14     LU4FM         59  13     1                                                                                
+QSO: 28529 PH 2025-03-08 1351 GW5GDP        59  14     9Z4CT         59  09     1                                                                                
+QSO: 28550 PH 2025-03-08 1356 GW5GDP        59  14     CT3IQ         59  33     1                                                                                
+QSO: 28365 PH 2025-03-08 1359 GW5GDP        59  14     CX7ACH        59  13     1                                                                                
+QSO: 28389 PH 2025-03-08 1401 GW5GDP        59  14     LU2WJV        59  13     1                                                                                
+QSO: 28418 PH 2025-03-08 1406 GW5GDP        59  14     LU3DDH        59  13     1                                                                                
+QSO: 28479 PH 2025-03-08 1412 GW5GDP        59  14     K1LZ          59  05     1                                                                                
+QSO: 28484 PH 2025-03-08 1415 GW5GDP        59  14     AY7J          59  13     1                                                                                
+QSO: 28395 PH 2025-03-08 1456 GW5GDP        59  14     OA4EFA        59  10     1                                                                                
+QSO: 28458 PH 2025-03-08 1546 GW5GDP        59  14     XE3R          59  06     1                                                                                
+QSO: 28392 PH 2025-03-08 1658 GW5GDP        59  14     TO3Z          59  08     1                                                                                
+QSO: 28400 PH 2025-03-08 1627 GW5GDP        59  14     OA4DXW        59  10     1                                                                                
+END-OF-LOG:

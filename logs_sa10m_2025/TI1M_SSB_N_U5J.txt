@@ -1,0 +1,81 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: TI1M
+CLUB:  
+CONTEST: SA10-DX
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 10032
+OPERATORS: TI3ATS
+NAME: Alfonso Octavio Araya Flores
+ADDRESS: 
+ADDRESS-CITY: 
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 
+ADDRESS-COUNTRY: 
+GRID-LOCATOR: EJ89AT
+EMAIL:  
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28392 PH 2025-03-08 1732 TI1M          59   07   TO3Z          59   08   
+QSO:   28386 PH 2025-03-08 1733 TI1M          59   07   OA4EFA        59   10   
+QSO:   28403 PH 2025-03-08 1734 TI1M          59   07   CE7VP         59   12   
+QSO:   28414 PH 2025-03-08 1740 TI1M          59   07   CS7BFV        59   14   
+QSO:   28440 PH 2025-03-08 1743 TI1M          59   07   XE1BLA        59   6    
+QSO:   28445 PH 2025-03-08 1746 TI1M          59   07   DP7D          59   14   
+QSO:   28453 PH 2025-03-08 1749 TI1M          59   07   XM9A          59   5    
+QSO:   28430 PH 2025-03-08 1752 TI1M          59   07   PA40F         59   14   
+QSO:   28447 PH 2025-03-08 1756 TI1M          59   07   EA8AM         59   33   
+QSO:   28469 PH 2025-03-08 1800 TI1M          59   07   EC5SP         59   14   
+QSO:   28506 PH 2025-03-08 1801 TI1M          59   07   CB3A          59   12   
+QSO:   28418 PH 2025-03-08 1803 TI1M          59   07   IW0HLZ        59   15   
+QSO:   28382 PH 2025-03-08 1805 TI1M          59   07   N4ILE         59   5    
+QSO:   28382 PH 2025-03-08 1806 TI1M          59   07   CT7AIX        59   14   
+QSO:   28382 PH 2025-03-08 1809 TI1M          59   07   W4YTB         59   05   
+QSO:   28382 PH 2025-03-08 1813 TI1M          59   07   VE2GT         59   05   
+QSO:   28382 PH 2025-03-08 1813 TI1M          59   07   W4NEM         59   5    
+QSO:   28382 PH 2025-03-08 1816 TI1M          59   07   CS7BPO        59   14   
+QSO:   28382 PH 2025-03-08 1816 TI1M          59   07   F6IRA         59   14   
+QSO:   28382 PH 2025-03-08 1816 TI1M          59   07   MM0TFU        59   14   
+QSO:   28382 PH 2025-03-08 1817 TI1M          59   07   EA4AOC        59   14   
+QSO:   28382 PH 2025-03-08 1817 TI1M          59   07   PP1WW         59   11   
+QSO:   28382 PH 2025-03-08 1818 TI1M          59   07   KC3VRW        59   5    
+QSO:   28382 PH 2025-03-08 1818 TI1M          59   07   SP7M          59   15   
+QSO:   28382 PH 2025-03-08 1818 TI1M          59   07   DL2BDA        59   14   
+QSO:   28382 PH 2025-03-08 1819 TI1M          59   07   K1LZ          59   5    
+QSO:   28382 PH 2025-03-08 1819 TI1M          59   07   GM4JR         59   14   
+QSO:   28382 PH 2025-03-08 1820 TI1M          59   07   KJ4PHE        59   04   
+QSO:   28382 PH 2025-03-08 1821 TI1M          59   07   EA3AGQ        59   14   
+QSO:   28445 PH 2025-03-09 0058 TI1M          59   07   LU9HVR        59   13   
+QSO:   28448 PH 2025-03-09 0058 TI1M          59   07   LU4JEA        59   13   
+QSO:   28450 PH 2025-03-09 0059 TI1M          59   07   PY5VE         59   11   
+QSO:   28405 PH 2025-03-09 0101 TI1M          59   07   CE2PM         59   12   
+QSO:   28390 PH 2025-03-09 0105 TI1M          59   07   PU2KNM        59   11   
+QSO:   28420 PH 2025-03-09 0106 TI1M          59   07   PX9D          59   11   
+QSO:   28431 PH 2025-03-09 0107 TI1M          59   07   PY2PPZ        59   11   
+QSO:   28431 PH 2025-03-09 0107 TI1M          59   07   LU7YE         59   13   
+QSO:   28431 PH 2025-03-09 0108 TI1M          59   07   LT3E          59   13   
+QSO:   28438 PH 2025-03-09 0108 TI1M          59   07   CA2YWW        59   12   
+QSO:   28450 PH 2025-03-09 0126 TI1M          59   07   CE4JZO        59   12   
+QSO:   28467 PH 2025-03-09 0127 TI1M          59   07   PY2UD         59   11   
+QSO:   28473 PH 2025-03-09 0128 TI1M          59   07   CB4W          59   12   
+QSO:   28480 PH 2025-03-09 0130 TI1M          59   07   CE5AUC        59   12   
+QSO:   28444 PH 2025-03-09 0131 TI1M          59   07   LW7DQW        59   13   
+QSO:   28426 PH 2025-03-09 0132 TI1M          59   07   PU1JSV        59   11   
+QSO:   28417 PH 2025-03-09 0133 TI1M          59   07   LO7H          59   13   
+QSO:   28410 PH 2025-03-09 0134 TI1M          59   07   PU2MGE        59   11   
+QSO:   28404 PH 2025-03-09 0135 TI1M          59   07   PY2ZR         59   11   
+QSO:   28375 PH 2025-03-09 0136 TI1M          59   07   PT1M          59   11   
+QSO:   28420 PH 2025-03-09 0137 TI1M          59   07   PY2EZL        59   11   
+QSO:   28433 PH 2025-03-09 0139 TI1M          59   07   CE2SCP        59   12   
+QSO:   28438 PH 2025-03-09 0143 TI1M          59   07   W1PR          59   3    
+QSO:   28477 PH 2025-03-09 0151 TI1M          59   07   PY2CP         59   11   
+QSO:   28400 PH 2025-03-09 0209 TI1M          59   07   PU2SXE        59   11   
+QSO:   28435 PH 2025-03-09 0246 TI1M          59   07   PP2CS         59   11   
+QSO:   28464 PH 2025-03-09 0251 TI1M          59   07   PW2A          59   11   
+QSO:   28520 PH 2025-03-09 0257 TI1M          59   07   LU9JDZ        59   13   
+END-OF-LOG:

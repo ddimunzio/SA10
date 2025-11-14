@@ -1,0 +1,154 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: CX5FK
+CLUB:  
+CONTEST: GACW
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: CW
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 18468
+OPERATORS: CX5FK
+NAME: Edgar Beux
+ADDRESS: Roger Balet 162
+ADDRESS-CITY: Colonia del Sacramento
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 70025-00111
+ADDRESS-COUNTRY: Uruguay
+GRID-LOCATOR: GF15BN
+EMAIL: cx5fk@vera.com.uy
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28024 CW 2025-03-08 1314 CX5FK         599 13     FY5KE         599 09       
+QSO:   28033 CW 2025-03-08 1317 CX5FK         599 13     DK9IP         599 14       
+QSO:   28021 CW 2025-03-08 1318 CX5FK         599 13     AA2A          599 05       
+QSO:   28004 CW 2025-03-08 1321 CX5FK         599 13     GB5CC         599 14       
+QSO:   28008 CW 2025-03-08 1323 CX5FK         599 13     EA9ACD        599 33       
+QSO:   28043 CW 2025-03-08 1323 CX5FK         599 13     PT2AW         599 11       
+QSO:   28031 CW 2025-03-08 1326 CX5FK         599 13     F6IRA         599 14       
+QSO:   28011 CW 2025-03-08 1345 CX5FK         599 13     HA5OV         599 15       
+QSO:   28019 CW 2025-03-08 1348 CX5FK         599 13     IT9IVU        599 15       
+QSO:   28021 CW 2025-03-08 1350 CX5FK         599 13     SN3F          599 15       
+QSO:   28024 CW 2025-03-08 1351 CX5FK         599 13     EI2KA         599 14       
+QSO:   28035 CW 2025-03-08 1358 CX5FK         599 13     PJ2/W2APF     599 09       
+QSO:   28034 CW 2025-03-08 1359 CX5FK         599 13     R6AF          599 16       
+QSO:   28034 CW 2025-03-08 1400 CX5FK         599 13     RG5A          599 16       
+QSO:   28034 CW 2025-03-08 1400 CX5FK         599 13     DL2OM         599 14       
+QSO:   28034 CW 2025-03-08 1403 CX5FK         599 13     SM6F          599 14       
+QSO:   28034 CW 2025-03-08 1404 CX5FK         599 13     UR2Y          599 16       
+QSO:   28034 CW 2025-03-08 1405 CX5FK         599 13     OH5ZA         599 15       
+QSO:   28029 CW 2025-03-08 1408 CX5FK         599 13     WA1Z          599 05       
+QSO:   28029 CW 2025-03-08 1409 CX5FK         599 13     N8OO          599 04       
+QSO:   28029 CW 2025-03-08 1411 CX5FK         599 13     YU1YV         599 15       
+QSO:   28029 CW 2025-03-08 1415 CX5FK         599 13     KA8P          599 04       
+QSO:   28029 CW 2025-03-08 1416 CX5FK         599 13     PY4WJ         599 11       
+QSO:   28029 CW 2025-03-08 1416 CX5FK         599 13     K3TN          599 05       
+QSO:   28029 CW 2025-03-08 1417 CX5FK         599 13     F5OHM         599 14       
+QSO:   28029 CW 2025-03-08 1418 CX5FK         599 13     ON4APU        599 14       
+QSO:   28029 CW 2025-03-08 1419 CX5FK         599 13     W5GCX         599 04       
+QSO:   28029 CW 2025-03-08 1420 CX5FK         599 13     SP1RKT        599 15       
+QSO:   28029 CW 2025-03-08 1420 CX5FK         599 13     KR2AA         599 05       
+QSO:   28029 CW 2025-03-08 1420 CX5FK         599 13     EA4AOC        599 14       
+QSO:   28029 CW 2025-03-08 1421 CX5FK         599 13     DK6QW         599 14       
+QSO:   28029 CW 2025-03-08 1422 CX5FK         599 13     GW4GCM        599 14       
+QSO:   28029 CW 2025-03-08 1422 CX5FK         599 13     KQ4R          599 05       
+QSO:   28029 CW 2025-03-08 1423 CX5FK         599 13     TA3D          599 20       
+QSO:   28029 CW 2025-03-08 1425 CX5FK         599 13     DK7NL         599 14       
+QSO:   28029 CW 2025-03-08 1426 CX5FK         599 13     I2JSB         599 15       
+QSO:   28029 CW 2025-03-08 1427 CX5FK         599 13     R2Y           599 16       
+QSO:   28029 CW 2025-03-08 1430 CX5FK         599 13     K4BAI         599 05       
+QSO:   28043 CW 2025-03-08 1444 CX5FK         599 13     PY1KO         599 11       
+QSO:   28044 CW 2025-03-08 1446 CX5FK         599 13     EA3GNU        599 14       
+QSO:   28025 CW 2025-03-08 1447 CX5FK         599 13     AI6O          599 03       
+QSO:   28021 CW 2025-03-08 1448 CX5FK         599 13     K0EJ          599 04       
+QSO:   28015 CW 2025-03-08 1449 CX5FK         599 13     OM3CW         599 15       
+QSO:   28040 CW 2025-03-08 1456 CX5FK         599 13     N4OX          599 05       
+QSO:   28041 CW 2025-03-08 1458 CX5FK         599 13     SV1BJW        599 20       
+QSO:   28037 CW 2025-03-08 1502 CX5FK         599 13     PY1NSC        599 11       
+QSO:   28029 CW 2025-03-08 1506 CX5FK         599 13     OK2PVF        599 15       
+QSO:   28027 CW 2025-03-08 1510 CX5FK         599 13     LY2AX         599 15       
+QSO:   28019 CW 2025-03-08 1542 CX5FK         599 13     AA3B          599 05       
+QSO:   28007 CW 2025-03-08 1543 CX5FK         599 13     PY1XW         599 11       
+QSO:   28008 CW 2025-03-08 1546 CX5FK         599 13     OZ1HDF        599 14       
+QSO:   28022 CW 2025-03-08 1553 CX5FK         599 13     EA5/UW1WA     599 14       
+QSO:   28034 CW 2025-03-08 1556 CX5FK         599 13     PY1CMT        599 11       
+QSO:   28006 CW 2025-03-08 1559 CX5FK         599 13     PR1T          599 11       
+QSO:   28008 CW 2025-03-08 1646 CX5FK         599 13     EA3AR         599 14       
+QSO:   28020 CW 2025-03-08 1650 CX5FK         599 13     IK1PMR        599 15       
+QSO:   28024 CW 2025-03-08 1651 CX5FK         599 13     NM4AA         599 05       
+QSO:   28043 CW 2025-03-08 1654 CX5FK         599 13     PY1MK         599 11       
+QSO:   28026 CW 2025-03-08 2105 CX5FK         599 13     K3TW          599 05       
+QSO:   28022 CW 2025-03-08 2106 CX5FK         599 13     XE1CT         599 06       
+QSO:   28022 CW 2025-03-08 2107 CX5FK         599 13     DP7D          599 14       
+QSO:   28014 CW 2025-03-08 2110 CX5FK         599 13     K9OM          599 05       
+QSO:   28033 CW 2025-03-08 2116 CX5FK         599 13     PY2TIM        599 11       
+QSO:   28033 CW 2025-03-08 2117 CX5FK         599 13     N6TQ          599 03       
+QSO:   28033 CW 2025-03-08 2117 CX5FK         599 13     PY2ZEA        599 11       
+QSO:   28033 CW 2025-03-08 2117 CX5FK         599 13     WA2CP         599 05       
+QSO:   28033 CW 2025-03-08 2119 CX5FK         599 13     K1LZ          599 05       
+QSO:   28033 CW 2025-03-08 2119 CX5FK         599 13     PY2XL         599 11       
+QSO:   28033 CW 2025-03-08 2119 CX5FK         599 13     W7VJ          599 03       
+QSO:   28033 CW 2025-03-08 2120 CX5FK         599 13     PW2W          599 11       
+QSO:   28033 CW 2025-03-08 2122 CX5FK         599 13     W0ADX         599 04       
+QSO:   28033 CW 2025-03-08 2123 CX5FK         599 13     K1JB          599 05       
+QSO:   28033 CW 2025-03-08 2124 CX5FK         599 13     KD9MS         599 04       
+QSO:   28033 CW 2025-03-08 2127 CX5FK         599 13     K1QVX         599 05       
+QSO:   28033 CW 2025-03-08 2128 CX5FK         599 13     K7ROG         599 03       
+QSO:   28033 CW 2025-03-08 2130 CX5FK         599 13     PY2EU         599 11       
+QSO:   28033 CW 2025-03-08 2131 CX5FK         599 13     W0EWD         599 04       
+QSO:   28033 CW 2025-03-08 2132 CX5FK         599 13     PY2KA         599 11       
+QSO:   28033 CW 2025-03-08 2132 CX5FK         599 13     WA2EDJ        599 05       
+QSO:   28033 CW 2025-03-08 2135 CX5FK         599 13     PS7MA         599 11       
+QSO:   28033 CW 2025-03-08 2136 CX5FK         599 13     PY2DEB        599 11       
+QSO:   28033 CW 2025-03-08 2137 CX5FK         599 13     XE2S          599 06       
+QSO:   28032 CW 2025-03-08 2145 CX5FK         599 13     W6LFB         599 04       
+QSO:   28032 CW 2025-03-08 2149 CX5FK         599 13     K1IB          599 05       
+QSO:   28032 CW 2025-03-08 2150 CX5FK         599 13     WA5LFD        599 04       
+QSO:   28032 CW 2025-03-08 2152 CX5FK         599 13     W1ARY         599 05       
+QSO:   28008 CW 2025-03-08 2157 CX5FK         599 13     CB3A          599 12       
+QSO:   28010 CW 2025-03-08 2200 CX5FK         599 13     W1PR          599 03       
+QSO:   28014 CW 2025-03-08 2208 CX5FK         599 13     WQ6X          599 03       
+QSO:   28029 CW 2025-03-08 2226 CX5FK         599 13     N8HHG         599 04       
+QSO:   28029 CW 2025-03-08 2228 CX5FK         599 13     K3IE          599 04       
+QSO:   28029 CW 2025-03-08 2232 CX5FK         599 13     N1RW          599 05       
+QSO:   28029 CW 2025-03-08 2232 CX5FK         599 13     VE2/UR7QC     599 05       
+QSO:   28029 CW 2025-03-08 2233 CX5FK         599 13     PT2AP         599 11       
+QSO:   28029 CW 2025-03-08 2234 CX5FK         599 13     K0RAE         599 04       
+QSO:   28029 CW 2025-03-08 2236 CX5FK         599 13     N3CKI         599 05       
+QSO:   28029 CW 2025-03-08 2237 CX5FK         599 13     CT1DRB        599 14       
+QSO:   28034 CW 2025-03-08 2246 CX5FK         599 13     PY6TS         599 11       
+QSO:   28041 CW 2025-03-08 2303 CX5FK         599 13     AY7J          599 13       
+QSO:   28029 CW 2025-03-08 2309 CX5FK         599 13     KS1KCC        599 03       
+QSO:   28029 CW 2025-03-08 2309 CX5FK         599 13     KU8E          599 05       
+QSO:   28029 CW 2025-03-08 2309 CX5FK         599 13     KA2MGE        599 05       
+QSO:   28029 CW 2025-03-08 2310 CX5FK         599 13     N4RV          599 05       
+QSO:   28029 CW 2025-03-08 2311 CX5FK         599 13     JG1LFR        599 25       
+QSO:   28029 CW 2025-03-08 2312 CX5FK         599 13     KU7T          599 03       
+QSO:   28029 CW 2025-03-08 2312 CX5FK         599 13     JK8PBO        599 25       
+QSO:   28029 CW 2025-03-08 2313 CX5FK         599 13     W2OIB         599 05       
+QSO:   28029 CW 2025-03-08 2318 CX5FK         599 13     N7YK          599 03       
+QSO:   28029 CW 2025-03-08 2319 CX5FK         599 13     PP2RON        599 11       
+QSO:   28029 CW 2025-03-08 2321 CX5FK         599 13     LU5EA         599 13       
+QSO:   28029 CW 2025-03-08 2321 CX5FK         599 13     W4BR          599 05       
+QSO:   28029 CW 2025-03-08 2322 CX5FK         599 13     N5AW          599 04       
+QSO:   28029 CW 2025-03-08 2322 CX5FK         599 13     N0STP         599 04       
+QSO:   28025 CW 2025-03-09 1031 CX5FK         599 13     YQ8E          599 20       
+QSO:   28017 CW 2025-03-09 1036 CX5FK         599 13     OP5T          599 14       
+QSO:   28017 CW 2025-03-09 1038 CX5FK         599 13     IT9WDC        599 15       
+QSO:   28017 CW 2025-03-09 1041 CX5FK         599 13     HB9GFT        599 14       
+QSO:   28017 CW 2025-03-09 1042 CX5FK         599 13     YO4FZX        599 20       
+QSO:   28037 CW 2025-03-09 1057 CX5FK         599 13     ZD7BG         599 36       
+QSO:   28009 CW 2025-03-09 1059 CX5FK         599 13     IK4ZHH        599 15       
+QSO:   28033 CW 2025-03-09 1107 CX5FK         599 13     RU0A          599 18       
+QSO:   28045 CW 2025-03-09 1117 CX5FK         599 13     SP8UFT        599 15       
+QSO:   28048 CW 2025-03-09 1118 CX5FK         599 13     EA1WH         599 14       
+QSO:   28040 CW 2025-03-09 1120 CX5FK         599 13     SV1DAY        599 20       
+QSO:   28024 CW 2025-03-09 1129 CX5FK         599 13     IZ8GUQ        599 15       
+QSO:   28023 CW 2025-03-09 1132 CX5FK         599 13     EI6JK         599 14       
+QSO:   28020 CW 2025-03-09 1133 CX5FK         599 13     HB9EBC        599 14       
+QSO:   28017 CW 2025-03-09 1146 CX5FK         599 13     IK0FUX        599 15       
+QSO:   28045 CW 2025-03-09 1148 CX5FK         599 13     SN4K          599 15       
+QSO:   28008 CW 2025-03-09 1152 CX5FK         599 13     9A3YT         599 15       
+END-OF-LOG:

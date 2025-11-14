@@ -1,0 +1,52 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: YO6KGS
+CLUB: YO6KGS
+CONTEST: SA DX CONTEST
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-POWER: LOW
+CATEGORY-MODE: SSB
+NAME: Radioclubul Gheorghe Sincai Raciu
+ADDRESS: Str.Gheorghe Sincai
+ADDRESS: 100
+ADDRESS-CITY: Raciu
+ADDRESS-STATE-PROVINCE: MS
+ADDRESS-POSTALCODE: 547485
+ADDRESS-COUNTRY: ROMANIA
+GRID-LOCATOR: KN26EQ
+EMAIL: adrian.baciu@yahoo.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28000 PH 2025-03-08 1228 YO6KGS        59 20   EC5EA         59 14                                                      
+QSO:   28000 PH 2025-03-08 1231 YO6KGS        59 20   CS7BPO        59 14                                                      
+QSO:   28000 PH 2025-03-08 1233 YO6KGS        59 20   LT3E          59 13                                                      
+QSO:   28000 PH 2025-03-08 1236 YO6KGS        59 20   MW7FON        59 14                                                      
+QSO:   28000 PH 2025-03-08 1251 YO6KGS        59 20   F4IQU         59 14                                                      
+QSO:   28000 PH 2025-03-08 1256 YO6KGS        59 20   EA2QC         59 14                                                      
+QSO:   28000 PH 2025-03-08 1258 YO6KGS        59 20   4Z5ML         59 20                                                      
+QSO:   28000 PH 2025-03-08 1259 YO6KGS        59 20   KD2VSD        59 05                                                      
+QSO:   28000 PH 2025-03-08 1300 YO6KGS        59 20   KC1OXM        59 05                                                      
+QSO:   28000 PH 2025-03-08 1308 YO6KGS        59 20   PR1T          59 11                                                      
+QSO:   28000 PH 2025-03-08 1310 YO6KGS        59 20   XM9A          59 05                                                      
+QSO:   28000 PH 2025-03-08 1313 YO6KGS        59 20   K1LZ          59 05                                                      
+QSO:   28000 PH 2025-03-08 1321 YO6KGS        59 20   EA4GGE        59 14                                                      
+QSO:   28000 PH 2025-03-08 1324 YO6KGS        59 20   KB1DK         59 05                                                      
+QSO:   28000 PH 2025-03-08 1326 YO6KGS        59 20   EA2QC         59 15                                                      
+QSO:   28000 PH 2025-03-08 1327 YO6KGS        59 20   EA8JF         59 33                                                      
+QSO:   28000 PH 2025-03-08 1336 YO6KGS        59 20   EA3BRL        59 14                                                      
+QSO:   28000 PH 2025-03-08 1339 YO6KGS        59 20   VE9CZ         59 05                                                      
+QSO:   28000 PH 2025-03-08 1341 YO6KGS        59 20   CT7AQF        59 14                                                      
+QSO:   28000 PH 2025-03-08 1345 YO6KGS        59 20   CT5JYD        59 14                                                      
+QSO:   28000 PH 2025-03-08 1400 YO6KGS        59 20   KC1QEM        59 05                                                      
+QSO:   28000 PH 2025-03-08 1415 YO6KGS        59 20   KZ4PW         59 05                                                      
+QSO:   28000 PH 2025-03-08 1457 YO6KGS        59 20   XE3R          59 06                                                      
+QSO:   28000 PH 2025-03-08 1510 YO6KGS        59 20   N8OO          59 04                                                      
+QSO:   28000 PH 2025-03-08 1513 YO6KGS        59 20   PT2AP         59 11                                                      
+QSO:   28000 PH 2025-03-08 1521 YO6KGS        59 20   K0EJ          59 04                                                      
+QSO:   28000 PH 2025-03-08 1539 YO6KGS        59 20   PP1WW         59 11                                                      
+QSO:   28000 PH 2025-03-08 1545 YO6KGS        59 20   AA2A          59 05                                                      
+QSO:   28000 PH 2025-03-08 1551 YO6KGS        59 20   UZ7C          59 16                                                      
+QSO:   28000 PH 2025-03-08 1602 YO6KGS        59 20   CT2IFE        59 14                                                      
+QSO:   28000 PH 2025-03-08 1605 YO6KGS        59 20   IK5RLP        59 15                                                      
+QSO:   28000 PH 2025-03-08 1612 YO6KGS        59 20   CS7AXM        59 14                                                      
+QSO:   28000 PH 2025-03-08 1616 YO6KGS        59 20   K3IE          59 04                                                      
+END-OF-LOG:

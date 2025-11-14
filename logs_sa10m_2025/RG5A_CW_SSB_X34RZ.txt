@@ -1,0 +1,148 @@
+START-OF-LOG: 3.0
+CREATED-BY: Win-Test 4.34.1
+CONTEST: SA-WW-10M
+LOCATION: DX
+CALLSIGN: RG5A
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-TRANSMITTER: ONE
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-POWER: LOW
+CATEGORY-MODE: MIXED
+CATEGORY-STATION: FIXED
+CLAIMED-SCORE: 9024
+OPERATORS: RG5A
+NAME: Alexander Urzhumtsev
+ADDRESS: ul. Timashevskaya, 34, selo Moldovka, Adlerskiy rayon
+ADDRESS: Sochi, Krasnodarskiy kray, 354393
+ADDRESS: Russia
+GRID-LOCATOR: KN93XL
+EMAIL: rz3by@hotmail.com
+SOAPBOX: TNX 73
+QSO: 28404 PH 2025-03-08 1249 RG5A          59  16     PT2AP         59  11     0
+QSO: 28370 PH 2025-03-08 1253 RG5A          59  16     CS7BPO        59  14     0
+QSO: 28377 PH 2025-03-08 1255 RG5A          59  16     IU2UDF        59  15     0
+QSO: 28377 PH 2025-03-08 1255 RG5A          59  16     DD0ML         59  14     0
+QSO: 28377 PH 2025-03-08 1255 RG5A          59  16     PR7RBA        59  11     0
+QSO: 28377 PH 2025-03-08 1257 RG5A          59  16     CX3DDO        59  13     0
+QSO: 28377 PH 2025-03-08 1257 RG5A          59  16     DL6SDO/M      59  14     0
+QSO: 28377 PH 2025-03-08 1258 RG5A          59  16     PY1WE         59  11     0
+QSO: 28377 PH 2025-03-08 1259 RG5A          59  16     CB3VS         59  12     0
+QSO: 28377 PH 2025-03-08 1259 RG5A          59  16     DB5ZF         59  14     0
+QSO: 28377 PH 2025-03-08 1300 RG5A          59  16     PY2EX         59  11     0
+QSO: 28020 CW 2025-03-08 1310 RG5A          599 16     AA2A          599 05     0
+QSO: 28024 CW 2025-03-08 1311 RG5A          599 16     FY5KE         599 09     0
+QSO: 28022 CW 2025-03-08 1312 RG5A          599 16     9Z4Y          599 09     0
+QSO: 28017 CW 2025-03-08 1314 RG5A          599 16     CB3A          599 12     0
+QSO: 28008 CW 2025-03-08 1316 RG5A          599 16     PY1VOY        599 11     0
+QSO: 28019 CW 2025-03-08 1317 RG5A          599 16     PY3TD         599 11     0
+QSO: 28030 CW 2025-03-08 1320 RG5A          599 16     PY5AMF        599 11     0
+QSO: 28015 CW 2025-03-08 1325 RG5A          599 16     PZ5TW         599 09     0
+QSO: 28027 CW 2025-03-08 1327 RG5A          599 16     YB9ELS        599 28     0
+QSO: 28028 CW 2025-03-08 1329 RG5A          599 16     PD5BS         599 14     0
+QSO: 28028 CW 2025-03-08 1330 RG5A          599 16     PA5FN         599 14     0
+QSO: 28028 CW 2025-03-08 1331 RG5A          599 16     DK4HH         599 14     0
+QSO: 28028 CW 2025-03-08 1331 RG5A          599 16     I2QEN         599 15     0
+QSO: 28028 CW 2025-03-08 1332 RG5A          599 16     DM4KM         599 14     0
+QSO: 28028 CW 2025-03-08 1332 RG5A          599 16     9A3YT         599 15     0
+QSO: 28028 CW 2025-03-08 1334 RG5A          599 16     PP5IP         599 11     0
+QSO: 28028 CW 2025-03-08 1335 RG5A          599 16     PY2UDB        599 11     0
+QSO: 28054 CW 2025-03-08 1339 RG5A          599 16     CX7ACH        599 13     0
+QSO: 28044 CW 2025-03-08 1342 RG5A          599 16     PU3POE        599 11     0
+QSO: 28034 CW 2025-03-08 1343 RG5A          599 16     PY1CMT        599 11     0
+QSO: 28010 CW 2025-03-08 1346 RG5A          599 16     ZW8T          599 11     0
+QSO: 28054 CW 2025-03-08 1347 RG5A          599 16     PT2AW         599 11     0
+QSO: 28042 CW 2025-03-08 1347 RG5A          599 16     PY2KJ         599 11     0
+QSO: 28039 CW 2025-03-08 1347 RG5A          599 16     PY1KO         599 11     0
+QSO: 28035 CW 2025-03-08 1351 RG5A          599 16     LU9GBR        599 13     0
+QSO: 28037 CW 2025-03-08 1355 RG5A          599 16     PU8PSF        599 11     0
+QSO: 28031 CW 2025-03-08 1357 RG5A          599 16     LT4A          599 13     0
+QSO: 28031 CW 2025-03-08 1358 RG5A          599 16     KR2AA         599 05     0
+QSO: 28011 CW 2025-03-08 1358 RG5A          599 16     WA1Z          599 05     0
+QSO: 28034 CW 2025-03-08 1400 RG5A          599 16     CX5FK         599 13     0
+QSO: 28035 CW 2025-03-08 1402 RG5A          599 16     WA2CP         599 05     0
+QSO: 28041 CW 2025-03-08 1403 RG5A          599 16     K4BAI         599 05     0
+QSO: 28386 PH 2025-03-08 1405 RG5A          59  16     F4BHW         59  14     0
+QSO: 28392 PH 2025-03-08 1406 RG5A          59  16     PR1T          59  11     0
+QSO: 28400 PH 2025-03-08 1409 RG5A          59  16     PU2SXE        59  11     0
+QSO: 28473 PH 2025-03-08 1410 RG5A          59  16     LU4JEA        59  13     0
+QSO: 28405 PH 2025-03-08 1411 RG5A          59  16     CE7VP         59  12     0
+QSO: 28435 PH 2025-03-08 1412 RG5A          59  16     PU5WMA        59  11     0
+QSO: 28463 PH 2025-03-08 1413 RG5A          59  16     PW2A          59  11     0
+QSO: 28468 PH 2025-03-08 1414 RG5A          59  16     LT3E          59  13     0
+QSO: 28497 PH 2025-03-08 1415 RG5A          59  16     PU5DUD        59  11     0
+QSO: 28528 PH 2025-03-08 1415 RG5A          59  16     CE5AUC        59  12     0
+QSO: 28395 PH 2025-03-08 1418 RG5A          59  16     PD3ED/P       59  14     0
+QSO: 28395 PH 2025-03-08 1418 RG5A          59  16     IW3SOX        59  15     0
+QSO: 28395 PH 2025-03-08 1418 RG5A          59  16     PU2VLW        59  11     0
+QSO: 28395 PH 2025-03-08 1419 RG5A          59  16     DA6KK         59  14     0
+QSO: 28395 PH 2025-03-08 1419 RG5A          59  16     YD1SHY        59  28     0
+QSO: 28395 PH 2025-03-08 1420 RG5A          59  16     CX4DPG        59  13     0
+QSO: 28395 PH 2025-03-08 1420 RG5A          59  16     YE1BMZ        59  28     0
+QSO: 28395 PH 2025-03-08 1421 RG5A          59  16     PU1PRD        59  11     0
+QSO: 28395 PH 2025-03-08 1422 RG5A          59  16     IU5AVF        59  15     0
+QSO: 28395 PH 2025-03-08 1423 RG5A          59  16     YF1BUB        59  28     0
+QSO: 28395 PH 2025-03-08 1424 RG5A          59  16     A71AH         59  21     0
+QSO: 28395 PH 2025-03-08 1424 RG5A          59  16     PV2K          59  11     0
+QSO: 28395 PH 2025-03-08 1425 RG5A          59  16     DL6HRA        59  14     0
+QSO: 28395 PH 2025-03-08 1425 RG5A          59  16     DN9KAY        59  14     0
+QSO: 28395 PH 2025-03-08 1426 RG5A          59  16     LU9HVR        59  13     0
+QSO: 28395 PH 2025-03-08 1427 RG5A          59  16     CX7ACH        59  13     0
+QSO: 28395 PH 2025-03-08 1427 RG5A          59  16     DK2KPS        59  14     0
+QSO: 28395 PH 2025-03-08 1428 RG5A          59  16     PY2EZL        59  11     0
+QSO: 28395 PH 2025-03-08 1429 RG5A          59  16     PU2NZO        59  11     0
+QSO: 28395 PH 2025-03-08 1430 RG5A          59  16     PU7RML        59  11     0
+QSO: 28395 PH 2025-03-08 1431 RG5A          59  16     YC2USS        59  28     0
+QSO: 28395 PH 2025-03-08 1432 RG5A          59  16     LU3DDH        59  13     0
+QSO: 28395 PH 2025-03-08 1433 RG5A          59  16     LU3VED        59  13     0
+QSO: 28395 PH 2025-03-08 1434 RG5A          59  16     PA3CGJ        59  14     0
+QSO: 28395 PH 2025-03-08 1435 RG5A          59  16     IU2TTU        59  15     0
+QSO: 28395 PH 2025-03-08 1435 RG5A          59  16     DF6QP         59  14     0
+QSO: 28395 PH 2025-03-08 1436 RG5A          59  16     AY7J          59  13     0
+QSO: 28395 PH 2025-03-08 1436 RG5A          59  16     F8DVD         59  14     0
+QSO: 28395 PH 2025-03-08 1437 RG5A          59  16     PY2MZ         59  11     0
+QSO: 28395 PH 2025-03-08 1437 RG5A          59  16     PU1SKO        59  11     0
+QSO: 28395 PH 2025-03-08 1437 RG5A          59  16     LU2WJV        59  13     0
+QSO: 28395 PH 2025-03-08 1438 RG5A          59  16     CT1FOQ        59  14     0
+QSO: 28395 PH 2025-03-08 1440 RG5A          59  16     PY2GTA        59  11     0
+QSO: 28395 PH 2025-03-08 1442 RG5A          59  16     LO5U          59  13     0
+QSO: 28395 PH 2025-03-08 1445 RG5A          59  16     PY4WJ         59  11     0
+QSO: 28395 PH 2025-03-08 1446 RG5A          59  16     DL6MRM        59  14     0
+QSO: 28395 PH 2025-03-08 1447 RG5A          59  16     HB3YCS        59  14     0
+QSO: 28395 PH 2025-03-08 1448 RG5A          59  16     DL2UW         59  14     0
+QSO: 28395 PH 2025-03-08 1449 RG5A          59  16     DO1VB         59  14     0
+QSO: 28395 PH 2025-03-08 1449 RG5A          59  16     M0UDD         59  14     0
+QSO: 28395 PH 2025-03-08 1450 RG5A          59  16     PY2XJ         59  11     0
+QSO: 28507 PH 2025-03-08 1451 RG5A          59  16     CW5A          59  13     0
+QSO: 28395 PH 2025-03-08 1451 RG5A          59  16     DA6TO         59  14     0
+QSO: 28395 PH 2025-03-08 1452 RG5A          59  16     LU4ASR        59  13     0
+QSO: 28395 PH 2025-03-08 1452 RG5A          59  16     L71D          59  13     0
+QSO: 28395 PH 2025-03-08 1452 RG5A          59  16     OK1LV         59  15     0
+QSO: 28395 PH 2025-03-08 1453 RG5A          59  16     SM7L          59  14     0
+QSO: 28395 PH 2025-03-08 1454 RG5A          59  16     IT9SAZ        59  15     0
+QSO: 28395 PH 2025-03-08 1454 RG5A          59  16     DL4VAI        59  14     0
+QSO: 28395 PH 2025-03-08 1455 RG5A          59  16     IU8QTW        59  15     0
+QSO: 28395 PH 2025-03-08 1456 RG5A          59  16     IU5CJP        59  15     0
+QSO: 28395 PH 2025-03-08 1457 RG5A          59  16     F6CUW         59  14     0
+QSO: 28395 PH 2025-03-08 1458 RG5A          59  16     PE1AVG        59  14     0
+QSO: 28395 PH 2025-03-08 1458 RG5A          59  16     PQ5D          59  11     0
+QSO: 28395 PH 2025-03-08 1459 RG5A          59  16     LV9D          59  13     0
+QSO: 28395 PH 2025-03-08 1459 RG5A          59  16     PU7PSJ        59  11     0
+QSO: 28395 PH 2025-03-08 1502 RG5A          59  16     YC1SEO        59  28     0
+QSO: 28395 PH 2025-03-08 1503 RG5A          59  16     IT9JDR        59  15     0
+QSO: 28395 PH 2025-03-08 1503 RG5A          59  16     IZ4AIH        59  15     0
+QSO: 28395 PH 2025-03-08 1506 RG5A          59  16     IU1PRW        59  15     0
+QSO: 28526 PH 2025-03-08 1507 RG5A          59  16     PP1WW         59  11     0
+QSO: 28500 PH 2025-03-08 1509 RG5A          59  16     PY5MM         59  11     0
+QSO: 28461 PH 2025-03-08 1510 RG5A          59  16     PU3POE        59  11     0
+QSO: 28395 PH 2025-03-08 1511 RG5A          59  16     IU4FKE        59  15     0
+QSO: 28395 PH 2025-03-08 1512 RG5A          59  16     DJ1MM         59  14     0
+QSO: 28395 PH 2025-03-08 1512 RG5A          59  16     DO4FOX        59  14     0
+QSO: 28395 PH 2025-03-08 1513 RG5A          59  16     PU2ULN        59  11     0
+QSO: 28395 PH 2025-03-08 1513 RG5A          59  16     DC1TK         59  14     0
+QSO: 28509 PH 2025-03-08 1516 RG5A          59  16     LU9SOJ        59  13     0
+QSO: 28367 PH 2025-03-08 1519 RG5A          59  16     PT1M          59  11     0
+QSO: 28005 CW 2025-03-08 1521 RG5A          599 16     EA9ACD        599 33     0
+QSO: 28008 CW 2025-03-08 1524 RG5A          599 16     K1LZ          599 05     0
+QSO: 28031 CW 2025-03-08 1525 RG5A          599 16     LU6OA         599 13     0
+END-OF-LOG:

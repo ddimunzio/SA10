@@ -1,0 +1,191 @@
+START-OF-LOG: 3.0
+LOCATION: NB
+CALLSIGN: VE9CZ
+CLUB: Atlantic Coast DX & Contest Group
+CONTEST: SA10-SA
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: ALL
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 86944
+OPERATORS: VE9CZ
+NAME: Peter Siemsen
+ADDRESS: 
+ADDRESS-CITY: Grand Barachois
+ADDRESS-STATE-PROVINCE: NB
+ADDRESS-POSTALCODE: E4P 8Z7
+ADDRESS-COUNTRY: Canada
+GRID-LOCATOR: FN76TF
+EMAIL: ve9cz.dx@gmail.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28470 PH 2025-03-08 1203 VE9CZ         59   05   PW2A          59   11   
+QSO:   28450 PH 2025-03-08 1205 VE9CZ         59   05   XM9A          59   05   
+QSO:   28370 PH 2025-03-08 1225 VE9CZ         59   05   CS7BPO        59   14   
+QSO:   28432 PH 2025-03-08 1308 VE9CZ         59   05   LU7YE         59   13   
+QSO:   28469 PH 2025-03-08 1310 VE9CZ         59   05   LT3E          59   13   
+QSO:   28495 PH 2025-03-08 1318 VE9CZ         59   05   CT2IFE        59   14   
+QSO:   28518 PH 2025-03-08 1319 VE9CZ         59   05   CB4W          59   12   
+QSO:   28485 PH 2025-03-08 1330 VE9CZ         59   05   F4BHW         59   14   
+QSO:   28533 PH 2025-03-08 1332 VE9CZ         59   05   PU1JSV        59   11   
+QSO:   28545 PH 2025-03-08 1333 VE9CZ         59   05   HB2Y          59   14   
+QSO:   28522 PH 2025-03-08 1338 VE9CZ         59   05   F5LIW         59   14   
+QSO:   28505 PH 2025-03-08 1339 VE9CZ         59   05   YO6KGS        59   20   
+QSO:   28479 PH 2025-03-08 1340 VE9CZ         59   05   K1LZ          59   5    
+QSO:   28517 PH 2025-03-08 1348 VE9CZ         59   05   F5OHM         59   14   
+QSO:   28462 PH 2025-03-08 1350 VE9CZ         59   05   LU9WE         59   13   
+QSO:   28445 PH 2025-03-08 1352 VE9CZ         59   05   DP7D          59   14   
+QSO:   28393 PH 2025-03-08 1359 VE9CZ         59   05   PR1T          59   11   
+QSO:   28476 PH 2025-03-08 1420 VE9CZ         59   05   YU7RCI        59   15   
+QSO:   28484 PH 2025-03-08 1422 VE9CZ         59   05   SP3FLY        59   15   
+QSO:   28484 PH 2025-03-08 1423 VE9CZ         59   05   ON5DN         59   14   
+QSO:   28484 PH 2025-03-08 1424 VE9CZ         59   05   CT3IQ         59   33   
+QSO:   28484 PH 2025-03-08 1424 VE9CZ         59   05   KC0CVS        59   4    
+QSO:   28484 PH 2025-03-08 1427 VE9CZ         59   05   DH5PR         59   14   
+QSO:   28484 PH 2025-03-08 1429 VE9CZ         59   05   DL1SER        59   14   
+QSO:   28484 PH 2025-03-08 1431 VE9CZ         59   05   PD2XX         59   14   
+QSO:   28484 PH 2025-03-08 1431 VE9CZ         59   05   F6CAX         59   14   
+QSO:   28484 PH 2025-03-08 1431 VE9CZ         59   05   W4FXZ         59   5    
+QSO:   28484 PH 2025-03-08 1433 VE9CZ         59   05   PU2VLW        59   11   
+QSO:   28484 PH 2025-03-08 1433 VE9CZ         59   05   KF0LJM        59   4    
+QSO:   28484 PH 2025-03-08 1434 VE9CZ         59   05   OK2IEN        59   15   
+QSO:   28484 PH 2025-03-08 1434 VE9CZ         59   05   ON2PH         59   14   
+QSO:   28484 PH 2025-03-08 1434 VE9CZ         59   05   F6IRA         59   14   
+QSO:   28484 PH 2025-03-08 1435 VE9CZ         59   05   F4MAK         59   14   
+QSO:   28484 PH 2025-03-08 1436 VE9CZ         59   05   IK1WGV/1      59   15   
+QSO:   28484 PH 2025-03-08 1436 VE9CZ         59   05   UZ7C          59   16   
+QSO:   28484 PH 2025-03-08 1436 VE9CZ         59   05   DL2UW         59   14   
+QSO:   28484 PH 2025-03-08 1436 VE9CZ         59   05   WN8Y          59   4    
+QSO:   28484 PH 2025-03-08 1439 VE9CZ         59   05   CO2QU         59   08   
+QSO:   28484 PH 2025-03-08 1439 VE9CZ         59   05   CS7AXM        59   14   
+QSO:   28484 PH 2025-03-08 1439 VE9CZ         59   05   W4YTB         59   5    
+QSO:   28484 PH 2025-03-08 1440 VE9CZ         59   05   DL1EST        59   14   
+QSO:   28484 PH 2025-03-08 1440 VE9CZ         59   05   SV8FEB        59   20   
+QSO:   28484 PH 2025-03-08 1441 VE9CZ         59   05   F1PNJ         59   14   
+QSO:   28484 PH 2025-03-08 1441 VE9CZ         59   05   DB5ZF         59   14   
+QSO:   28484 PH 2025-03-08 1442 VE9CZ         59   05   PT2AZ         59   11   
+QSO:   28484 PH 2025-03-08 1442 VE9CZ         59   05   CT1FOQ        59   14   
+QSO:   28484 PH 2025-03-08 1443 VE9CZ         59   05   OK1OA         59   15   
+QSO:   28484 PH 2025-03-08 1444 VE9CZ         59   05   DO6NIK        59   14   
+QSO:   28484 PH 2025-03-08 1444 VE9CZ         59   05   KW4HN         59   4    
+QSO:   28545 PH 2025-03-08 1452 VE9CZ         59   05   LU4JEA        59   13   
+QSO:   28560 PH 2025-03-08 1452 VE9CZ         59   05   DL4MA         59   14   
+QSO:   28560 PH 2025-03-08 1453 VE9CZ         59   05   DL4VAI        59   14   
+QSO:   28560 PH 2025-03-08 1453 VE9CZ         59   05   K3IE          59   4    
+QSO:   28560 PH 2025-03-08 1455 VE9CZ         59   05   KC5WRL        59   4    
+QSO:   28560 PH 2025-03-08 1456 VE9CZ         59   05   WB2RRF        59   5    
+QSO:   28560 PH 2025-03-08 1500 VE9CZ         59   05   DK2KPS        59   14   
+QSO:   28560 PH 2025-03-08 1500 VE9CZ         59   05   K4ZWW         59   5    
+QSO:   28560 PH 2025-03-08 1502 VE9CZ         59   05   K4ZYZ         59   5    
+QSO:   28560 PH 2025-03-08 1510 VE9CZ         59   05   F8GBR         59   14   
+QSO:   28560 PH 2025-03-08 1512 VE9CZ         59   05   DL6NDN        59   14   
+QSO:   28560 PH 2025-03-08 1512 VE9CZ         59   05   HF7A          59   15   
+QSO:   28560 PH 2025-03-08 1513 VE9CZ         59   05   IZ1FRU        59   15   
+QSO:   28560 PH 2025-03-08 1516 VE9CZ         59   05   SP3DFB        59   15   
+QSO:   28560 PH 2025-03-08 1517 VE9CZ         59   05   OM5M          59   15   
+QSO:   28560 PH 2025-03-08 1517 VE9CZ         59   05   DA6KK         59   14   
+QSO:   28560 PH 2025-03-08 1518 VE9CZ         59   05   KG4BTA        57   5    
+QSO:   28560 PH 2025-03-08 1519 VE9CZ         59   05   DC1TK         59   14   
+QSO:   28560 PH 2025-03-08 1520 VE9CZ         59   05   N8OO          59   4    
+QSO:   28560 PH 2025-03-08 1521 VE9CZ         59   05   NT4K          59   5    
+QSO:   28560 PH 2025-03-08 1522 VE9CZ         59   05   DO9RWG        59   14   
+QSO:   28560 PH 2025-03-08 1524 VE9CZ         59   05   OE8KKK        59   15   
+QSO:   28560 PH 2025-03-08 1527 VE9CZ         59   05   SQ5BA         59   15   
+QSO:   28560 PH 2025-03-08 1544 VE9CZ         59   05   EA9ACD        59   33   
+QSO:   28487 PH 2025-03-08 1546 VE9CZ         59   05   SO0O          59   15   
+QSO:   28485 PH 2025-03-08 1548 VE9CZ         59   05   KQ4MZH        59   5    
+QSO:   28485 PH 2025-03-08 1551 VE9CZ         59   05   S55AW         59   15   
+QSO:   28475 PH 2025-03-08 1554 VE9CZ         59   05   DB7YI         59   14   
+QSO:   28475 PH 2025-03-08 1555 VE9CZ         59   05   IX1CKN        59   15   
+QSO:   28475 PH 2025-03-08 1557 VE9CZ         59   05   DO4FOX        59   14   
+QSO:   28475 PH 2025-03-08 1557 VE9CZ         59   05   DH8PF         59   14   
+QSO:   28475 PH 2025-03-08 1559 VE9CZ         59   05   DL5IC         59   14   
+QSO:   28475 PH 2025-03-08 1559 VE9CZ         59   05   DO1SP         59   14   
+QSO:   28475 PH 2025-03-08 1604 VE9CZ         59   05   DL1CBS        59   14   
+QSO:   28475 PH 2025-03-08 1605 VE9CZ         59   05   9A9O          59   15   
+QSO:   28475 PH 2025-03-08 1605 VE9CZ         59   05   EA7BHO        59   14   
+QSO:   28475 PH 2025-03-08 1607 VE9CZ         59   05   DM2PB         59   14   
+QSO:   28433 PH 2025-03-08 1612 VE9CZ         59   05   HB9HLM        59   14   
+QSO:   28462 PH 2025-03-08 1618 VE9CZ         59   05   PA0TKH        59   14   
+QSO:   28462 PH 2025-03-08 1619 VE9CZ         59   05   SP8UFT        59   15   
+QSO:   28462 PH 2025-03-08 1620 VE9CZ         59   05   DJ8VC         59   14   
+QSO:   28462 PH 2025-03-08 1620 VE9CZ         59   05   KK4PEZ        59   5    
+QSO:   28462 PH 2025-03-08 1621 VE9CZ         59   05   N5NYT         59   04   
+QSO:   28462 PH 2025-03-08 1624 VE9CZ         59   05   HB9DKB        59   15   
+QSO:   28434 PH 2025-03-08 1649 VE9CZ         59   05   DO3ME         59   14   
+QSO:   28434 PH 2025-03-08 1651 VE9CZ         59   05   OE5JSL        59   15   
+QSO:   28434 PH 2025-03-08 1651 VE9CZ         59   05   DL6BZ         59   14   
+QSO:   28434 PH 2025-03-08 1652 VE9CZ         59   05   DK6AO         59   14   
+QSO:   28434 PH 2025-03-08 1653 VE9CZ         59   05   F4VWK         59   14   
+QSO:   28434 PH 2025-03-08 1655 VE9CZ         59   05   HK4DMD        59   9    
+QSO:   28434 PH 2025-03-08 1656 VE9CZ         59   05   PT2AP         59   11   
+QSO:   28434 PH 2025-03-08 1656 VE9CZ         59   05   S59B          59   15   
+QSO:   28434 PH 2025-03-08 1657 VE9CZ         59   05   PY2UD         59   11   
+QSO:   28434 PH 2025-03-08 1658 VE9CZ         59   05   DL5PSP        59   14   
+QSO:   28434 PH 2025-03-08 1658 VE9CZ         59   05   EA3RCA        59   14   
+QSO:   28434 PH 2025-03-08 1703 VE9CZ         59   05   HB3YHP        59   14   
+QSO:   28358 PH 2025-03-08 1722 VE9CZ         59   05   PD7V          59   14   
+QSO:   28364 PH 2025-03-08 1723 VE9CZ         59   05   PT1M          59   11   
+QSO:   28368 PH 2025-03-08 1723 VE9CZ         59   05   IK5RLP        59   15   
+QSO:   28372 PH 2025-03-08 1724 VE9CZ         59   05   PW1A          59   11   
+QSO:   28408 PH 2025-03-08 1725 VE9CZ         59   05   EA8AM         59   33   
+QSO:   28414 PH 2025-03-08 1726 VE9CZ         59   05   CS7BFV        59   14   
+QSO:   28440 PH 2025-03-08 1728 VE9CZ         59   05   XE1BLA        59   6    
+QSO:   28542 PH 2025-03-08 1730 VE9CZ         59   05   PD3W          59   14   
+QSO:   28318 PH 2025-03-08 1740 VE9CZ         59   05   EA3AR         59   14   
+QSO:   28406 PH 2025-03-08 1745 VE9CZ         59   05   DN9AST        59   14   
+QSO:   28406 PH 2025-03-08 1747 VE9CZ         59   05   F5SGP         59   14   
+QSO:   28406 PH 2025-03-08 1748 VE9CZ         59   05   KQ4TDQ        59   5    
+QSO:   28408 PH 2025-03-08 1827 VE9CZ         59   05   HC5VF         59   10   
+QSO:   28426 PH 2025-03-08 1828 VE9CZ         59   05   LU1VM         59   13   
+QSO:   28431 PH 2025-03-08 1829 VE9CZ         59   05   KG4Y          59   5    
+QSO:   28431 PH 2025-03-08 1830 VE9CZ         59   05   OK1HEV        59   15   
+QSO:   28431 PH 2025-03-08 1834 VE9CZ         59   05   IU2UDF        59   15   
+QSO:   28431 PH 2025-03-08 1836 VE9CZ         59   05   DJ1MM         59   14   
+QSO:   28431 PH 2025-03-08 1837 VE9CZ         59   05   EC5EA         59   14   
+QSO:   28474 PH 2025-03-08 1853 VE9CZ         59   05   EA7BLZ        59   14   
+QSO:   28474 PH 2025-03-08 1854 VE9CZ         59   05   K5ZEB         59   4    
+QSO:   28474 PH 2025-03-08 1855 VE9CZ         59   05   PA4DO         59   14   
+QSO:   28474 PH 2025-03-08 1856 VE9CZ         59   05   HB3YCS        59   14   
+QSO:   28474 PH 2025-03-08 1857 VE9CZ         59   05   EA5QA         59   14   
+QSO:   28474 PH 2025-03-08 1859 VE9CZ         59   05   DO9HC         59   14   
+QSO:   28474 PH 2025-03-08 1859 VE9CZ         59   05   DF2IAX        59   14   
+QSO:   28474 PH 2025-03-08 1901 VE9CZ         59   05   PD3AL         59   14   
+QSO:   28474 PH 2025-03-08 1901 VE9CZ         59   05   W8JMJ         59   4    
+QSO:   28474 PH 2025-03-08 1902 VE9CZ         59   05   KJ4CGU        59   5    
+QSO:   28474 PH 2025-03-08 1904 VE9CZ         59   05   DO9VT         59   14   
+QSO:   28392 PH 2025-03-08 1913 VE9CZ         59   05   TO3Z          59   08   
+QSO:   28395 PH 2025-03-08 2041 VE9CZ         59   05   HJ3ESF        59   9    
+QSO:   28516 PH 2025-03-08 2048 VE9CZ         59   05   LU2PWY        59   13   
+QSO:   28628 PH 2025-03-08 2052 VE9CZ         59   05   LT7L          59   13   
+QSO:   28580 PH 2025-03-08 2053 VE9CZ         59   05   PY2BRP        59   11   
+QSO:   28530 PH 2025-03-08 2106 VE9CZ         59   05   LQ4D          59   13   
+QSO:   28523 PH 2025-03-08 2107 VE9CZ         59   05   AY7J          59   13   
+QSO:   28512 PH 2025-03-08 2112 VE9CZ         59   05   CX1AR         59   13   
+QSO:   28438 PH 2025-03-08 2119 VE9CZ         59   05   CE7VP         59   12   
+QSO:   28428 PH 2025-03-08 2122 VE9CZ         59   05   CB3A          59   12   
+QSO:   28407 PH 2025-03-08 2124 VE9CZ         59   05   PY2EX         59   11   
+QSO:   28510 PH 2025-03-08 2137 VE9CZ         59   05   LU9SOJ        59   13   
+QSO:   28494 PH 2025-03-08 2138 VE9CZ         59   05   LW2DHD        59   13   
+QSO:   28486 PH 2025-03-08 2140 VE9CZ         59   05   LU9JDZ        59   13   
+QSO:   28484 PH 2025-03-08 2145 VE9CZ         59   05   LQ5A          59   13   
+QSO:   28454 PH 2025-03-08 2149 VE9CZ         59   05   LW7DQW        59   13   
+QSO:   28448 PH 2025-03-08 2150 VE9CZ         59   05   W0EWD         59   4    
+QSO:   28424 PH 2025-03-08 2153 VE9CZ         59   05   PY2PPZ        59   11   
+QSO:   28520 PH 2025-03-08 2158 VE9CZ         59   05   LU8DIJ        59   13   
+QSO:   28508 PH 2025-03-08 2159 VE9CZ         59   05   LU4FM         59   13   
+QSO:   28490 PH 2025-03-08 2211 VE9CZ         59   05   PY5MM         59   11   
+QSO:   28486 PH 2025-03-08 2214 VE9CZ         59   05   PY2XV         59   11   
+QSO:   28471 PH 2025-03-08 2303 VE9CZ         59   05   LU9HVR        59   13   
+QSO:   28396 PH 2025-03-08 2308 VE9CZ         59   05   PU2SXE        59   11   
+QSO:   28490 PH 2025-03-08 2312 VE9CZ         59   05   PY5FO         59   11   
+QSO:   28374 PH 2025-03-08 2352 VE9CZ         59   05   N4OX          59   05   
+QSO:   28537 PH 2025-03-09 0016 VE9CZ         59   05   PP1WW         59   11   
+QSO:   28467 PH 2025-03-09 0017 VE9CZ         59   05   CA2YWW        59   12   
+QSO:   28400 PH 2025-03-09 0020 VE9CZ         59   05   CE2LK         59   12   
+QSO:   28515 PH 2025-03-09 0022 VE9CZ         59   05   PY2DN         59   11   
+QSO:   28479 PH 2025-03-09 0028 VE9CZ         59   05   CE2RK         59   12   
+QSO:   28455 PH 2025-03-09 0053 VE9CZ         59   05   HI8R          59   08   
+END-OF-LOG:

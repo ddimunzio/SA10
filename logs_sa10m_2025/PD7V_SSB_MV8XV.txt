@@ -1,0 +1,76 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: PD7V
+CLUB:  
+CONTEST: ARRL-10
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-BAND: ALL
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 1560
+OPERATORS: PD7V
+NAME: Henny
+ADDRESS: Anjelierenweg 27
+ADDRESS-CITY: Nijmegen
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 
+ADDRESS-COUNTRY: Netherlands
+GRID-LOCATOR: JO21WU
+EMAIL: hennyjansen024@gmail.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28000 PH 2025-03-08 1330 PD7V          59  14     PU1JSV        59  11       
+QSO:   28000 PH 2025-03-08 1334 PD7V          59  14     CW5A          59  13       
+QSO:   28000 PH 2025-03-08 1336 PD7V          59  14     LQ4D          59  13       
+QSO:   28000 PH 2025-03-08 1338 PD7V          59  14     PT1M          59  11       
+QSO:   28000 PH 2025-03-08 1340 PD7V          59  14     PU2SXE        59  11       
+QSO:   28000 PH 2025-03-08 1342 PD7V          59  14     LT3E          59  13       
+QSO:   28000 PH 2025-03-08 1343 PD7V          59  14     CX1AR         59  13       
+QSO:   28000 PH 2025-03-08 1344 PD7V          59  14     PY2TB         59  11       
+QSO:   28000 PH 2025-03-08 1345 PD7V          59  14     PV2K          59  11       
+QSO:   28000 PH 2025-03-08 1346 PD7V          59  14     PR1T          59  11       
+QSO:   28000 PH 2025-03-08 1358 PD7V          59  14     LU1VM         59  13       
+QSO:   28000 PH 2025-03-08 1359 PD7V          59  14     PT2AP         59  11       
+QSO:   28000 PH 2025-03-08 1400 PD7V          59  14     CX7ACH        59  13       
+QSO:   28000 PH 2025-03-08 1402 PD7V          59  14     PY1KB         59  11       
+QSO:   28000 PH 2025-03-08 1407 PD7V          59  14     PW2A          59  11       
+QSO:   28000 PH 2025-03-08 1408 PD7V          59  14     CT3IQ         59  33       
+QSO:   28000 PH 2025-03-08 1411 PD7V          59  14     PT7PT         59  11       
+QSO:   28000 PH 2025-03-08 1413 PD7V          59  14     LU3DDH        59  13       
+QSO:   28000 PH 2025-03-08 1427 PD7V          59  14     WA1Z          59  05        
+QSO:   28000 PH 2025-03-08 1428 PD7V          59  14     TA3T          59  20       
+QSO:   28000 PH 2025-03-08 1430 PD7V          59  14     K1LZ          59  05        
+QSO:   28000 PH 2025-03-08 1456 PD7V          59  14     PU5WMA        59  11       
+QSO:   28000 PH 2025-03-08 1457 PD7V          59  14     N8OO          59  04        
+QSO:   28000 PH 2025-03-08 1459 PD7V          59  14     PT2AZ         59  11       
+QSO:   28000 PH 2025-03-08 1500 PD7V          59  14     PY4JW         59  11      
+QSO:   28000 PH 2025-03-08 1708 PD7V          59  14     PY5MM         59  11       
+QSO:   28000 PH 2025-03-08 1709 PD7V          59  14     PY8ML         59  11       
+QSO:   28000 PH 2025-03-08 1712 PD7V          59  14     CE4JZO        59  12       
+QSO:   28000 PH 2025-03-08 1713 PD7V          59  14     PY3POE        59  11       
+QSO:   28000 PH 2025-03-08 1716 PD7V          59  14     TO3Z          59  08       
+QSO:   28000 PH 2025-03-08 1718 PD7V          59  14     OA4DOS        59  10       
+QSO:   28000 PH 2025-03-08 1721 PD7V          59  14     PY1WE         59  11       
+QSO:   28000 PH 2025-03-08 1722 PD7V          59  14     VE9CZ         59  05       
+QSO:   28000 PH 2025-03-08 1722 PD7V          59  14     HK3BIA        59  09        
+QSO:   28000 PH 2025-03-08 1723 PD7V          59  14     PY4WJ         59  11       
+QSO:   28000 PH 2025-03-08 1723 PD7V          59  14     PU2LOD        59  11       
+QSO:   28000 PH 2025-03-08 1724 PD7V          59  14     PQ5D          59  11       
+QSO:   28000 PH 2025-03-08 1724 PD7V          59  14     PY5FO         59  11       
+QSO:   28000 PH 2025-03-08 1727 PD7V          59  14     PY4LH         59  11       
+QSO:   28000 PH 2025-03-08 1727 PD7V          59  14     PP1WW         59  11       
+QSO:   28000 PH 2025-03-08 1728 PD7V          59  14     PU1KPS        59  11       
+QSO:   28000 PH 2025-03-08 1728 PD7V          59  14     PU4JOE        59  11       
+QSO:   28000 PH 2025-03-08 1728 PD7V          59  14     S51JQ         59  15       
+QSO:   28000 PH 2025-03-08 1742 PD7V          59  14     LU9EB         59  13       
+QSO:   28000 PH 2025-03-08 1744 PD7V          59  14     EA8AM         59  33       
+QSO:   28000 PH 2025-03-08 1746 PD7V          59  14     PY2ZR         59  11       
+QSO:   28000 PH 2025-03-08 1748 PD7V          59  14     XM9A          59  14       
+QSO:   28000 PH 2025-03-08 1749 PD7V          59  14     PU1SKO        59  11       
+QSO:   28000 PH 2025-03-08 1751 PD7V          59  14     PU5SKW        59  11       
+QSO:   28000 PH 2025-03-08 1752 PD7V          59  14     PU5DUD        59  11       
+QSO:   28000 PH 2025-03-08 1756 PD7V          59  14     LU4FM         59  13       
+QSO:   28000 PH 2025-03-08 1812 PD7V          59  14     HC5VF         59  10       
+END-OF-LOG:

@@ -1,0 +1,67 @@
+START-OF-LOG: 3.0
+CONTEST: SA10M
+CALLSIGN: PA4R
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-POWER: HIGH
+CATEGORY-MODE: SSB
+CATEGORY-BAND: 10M
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+LOCATION: jo21ns
+NAME: Ronald
+ADDRESS-CITY: Altena
+ADDRESS-COUNTRY: Netherlands
+EMAIL:pa4r.hamradio@gmail.com
+SOAPBOX: Was fun to participate with my 10m deltaloop / 250watt. 
+QSO: 28550 PH 2025-03-09 1134 PA4R          59  14     LT7L          59  13    
+QSO: 28428 PH 2025-03-09 1131 PA4R          59  14     PY7GB         59  11    
+QSO: 28450 PH 2025-03-09 1128 PA4R          59  14     PY2VZ         59  11    
+QSO: 28408 PH 2025-03-09 1121 PA4R          59  14     LQ5A          59  13    
+QSO: 28586 PH 2025-03-09 1115 PA4R          59  14     LU1HLH        59  13    
+QSO: 28420 PH 2025-03-09 1113 PA4R          59  14     PY6GOE        59  11    
+QSO: 28505 PH 2025-03-09 1111 PA4R          59  14     PY5MM         59  11    
+QSO: 28505 PH 2025-03-09 1108 PA4R          59  14     PY1KB         59  11    
+QSO: 28450 PH 2025-03-09 1105 PA4R          59  14     PY2COI        59  11    
+QSO: 28423 PH 2025-03-09 1104 PA4R          59  14     PY2UD         59  11    
+QSO: 28550 PH 2025-03-09 1101 PA4R          59  14     TE3NE         59  20    
+QSO: 28450 PH 2025-03-08 2019 PA4R          59  14     LU7YZ         59  13    
+QSO: 28494 PH 2025-03-08 2016 PA4R          59  14     LW2DHD        59  13    
+QSO: 28385 PH 2025-03-08 1854 PA4R          59  14     CX7ACH        59  13    
+QSO: 28417 PH 2025-03-08 1850 PA4R          59  14     PY2ZR         59  11    
+QSO: 28467 PH 2025-03-08 1836 PA4R          59  14     LW7DQW        59  13    
+QSO: 28517 PH 2025-03-08 1824 PA4R          59  14     LQ4D          59  13    
+QSO: 28580 PH 2025-03-08 1823 PA4R          59  14     LU2DX         59  13    
+QSO: 28505 PH 2025-03-08 1821 PA4R          59  14     CB3A          59  12    
+QSO: 28462 PH 2025-03-08 1816 PA4R          59  14     PY4JW         59  11    
+QSO: 28513 PH 2025-03-08 1812 PA4R          59  14     CX1AR         59  13    
+QSO: 28392 PH 2025-03-08 1810 PA4R          59  14     TO3Z          59  08    
+QSO: 28442 PH 2025-03-08 1501 PA4R          59  14     LU3VED        59  13    
+QSO: 28526 PH 2025-03-08 1500 PA4R          59  14     PP1WW         59  11    
+QSO: 28430 PH 2025-03-08 1454 PA4R          59  14     PY8ML         59  11    
+QSO: 28470 PH 2025-03-08 1452 PA4R          59  14     PY2EX         59  11    
+QSO: 28461 PH 2025-03-08 1433 PA4R          59  14     PU3PO         59  11    
+QSO: 28474 PH 2025-03-08 1431 PA4R          59  14     PY2TB         59  11    
+QSO: 28529 PH 2025-03-08 1430 PA4R          59  14     CE5AUC        59  12    
+QSO: 28469 PH 2025-03-08 1413 PA4R          59  14     LT3E          59  13    
+QSO: 28405 PH 2025-03-08 1410 PA4R          59  14     CE7VP         59  13    
+QSO: 28404 PH 2025-03-08 1409 PA4R          59  14     LU4FM         59  13    
+QSO: 28413 PH 2025-03-08 1408 PA4R          59  14     PT2AW         59  11    
+QSO: 28423 PH 2025-03-08 1403 PA4R          59  14     LU1VM         59  13    
+QSO: 28555 PH 2025-03-08 1403 PA4R          59  14     PT2AZ         59  11    
+QSO: 28370 PH 2025-03-08 1359 PA4R          59  14     PT1M          59  11    
+QSO: 28508 PH 2025-03-08 1319 PA4R          59  14     PT7PT         59  11    
+QSO: 28420 PH 2025-03-08 1315 PA4R          59  14     CW5A          59  13      
+QSO: 28518 PH 2025-03-08 1310 PA4R          59  14     CB4W          59  12    
+QSO: 28471 PH 2025-03-08 1300 PA4R          59  14     PV2K          59  11    
+QSO: 28457 PH 2025-03-08 1258 PA4R          59  14     CE1KR         59  12    
+QSO: 28400 PH 2025-03-08 1256 PA4R          59  14     PU2SXE        59  11    
+QSO: 28392 PH 2025-03-08 1255 PA4R          59  14     PR1T          59  11    
+QSO: 28470 PH 2025-03-08 1249 PA4R          59  14     PU2VLW        59  11    
+QSO: 28463 PH 2025-03-08 1248 PA4R          59  14     PW2A          59  11    
+QSO: 28405 PH 2025-03-08 1243 PA4R          59  14     PT2AP         59  11    
+QSO: 28460 PH 2025-03-08 1240 PA4R          59  14     PU5DUD        59  11    
+QSO: 28484 PH 2025-03-08 1239 PA4R          59  14     AY7J          59  13    
+QSO: 28464 PH 2025-03-08 1239 PA4R          59  14     LU9HVR        59  12    
+QSO: 28480 PH 2025-03-08 1237 PA4R          59  14     PY2DR         59  11    
+END-OF-LOG:

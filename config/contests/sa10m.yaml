@@ -1,0 +1,215 @@
+contest:
+  name: "SA10M Contest"
+  slug: "sa10m"
+  description: "10 meter SA contest"
+  website: "https://sa10m.com.ar/wp/rules/"
+  bands:
+    - "10m"
+  modes:
+    - "SSB"
+    - "CW"
+  duration_hours: 24
+
+categories:
+  - name: "Single Operator CW"
+    code: "SO-CW"
+  - name: "Single Operator SSB"
+    code: "SO-SSB"
+  - name: "Single Operator Mixed"
+    code: "SO-Mixed"
+  - name: "Multi Operator"
+    code: "MO"
+
+exchange:
+  sent:
+    - field: "rs_rst"
+      type: "signal_report"
+      required: true
+      description: "RS for SSB (2 digits), RST for CW (3 digits)"
+    - field: "cq_zone"
+      type: "zone"
+      validation: "cq_zone_number"
+      required: true
+      description: "CQ Zone number (1-40)"
+  received:
+    - field: "rs_rst"
+      type: "signal_report"
+      required: true
+      description: "RS for SSB (2 digits), RST for CW (3 digits)"
+    - field: "cq_zone"
+      type: "zone"
+      required: true
+      description: "CQ Zone number"
+
+scoring:
+  points:
+    # Mobile stations (callsigns ending with /MM or /AM)
+    - description: "Mobile station in zones 9-13, contact with SA station"
+      conditions:
+        - type: "callsign_suffix"
+          values: ["/MM", "/AM"]
+        - type: "operator_zone"
+          values: ["9", "10", "11", "12", "13"]
+        - type: "contact_continent"
+          value: "SA"
+      value: 2
+
+    - description: "Mobile station in zones 9-13, contact with non-SA station"
+      conditions:
+        - type: "callsign_suffix"
+          values: ["/MM", "/AM"]
+        - type: "operator_zone"
+          values: ["9", "10", "11", "12", "13"]
+        - type: "contact_continent"
+          value: "!SA"
+      value: 4
+
+    - description: "Mobile station outside zones 9-13, contact with SA station"
+      conditions:
+        - type: "callsign_suffix"
+          values: ["/MM", "/AM"]
+        - type: "operator_zone"
+          values: "!9,10,11,12,13"
+        - type: "contact_continent"
+          value: "SA"
+      value: 4
+
+    - description: "Mobile station outside zones 9-13, contact with non-SA station"
+      conditions:
+        - type: "callsign_suffix"
+          values: ["/MM", "/AM"]
+        - type: "operator_zone"
+          values: "!9,10,11,12,13"
+        - type: "contact_continent"
+          value: "!SA"
+      value: 2
+
+    # Non-mobile stations
+    - description: "Contact with mobile station"
+      conditions:
+        - type: "contact_callsign_suffix"
+          values: ["/MM", "/AM"]
+      value: 2
+
+    - description: "Same DXCC entity (0 points)"
+      conditions:
+        - type: "same_dxcc"
+      value: 0
+
+    - description: "Non-SA station contacts SA station"
+      conditions:
+        - type: "operator_continent"
+          value: "!SA"
+        - type: "contact_continent"
+          value: "SA"
+      value: 4
+
+    - description: "Non-SA station contacts non-SA station"
+      conditions:
+        - type: "operator_continent"
+          value: "!SA"
+        - type: "contact_continent"
+          value: "!SA"
+      value: 2
+
+    - description: "SA station contacts non-SA station"
+      conditions:
+        - type: "operator_continent"
+          value: "SA"
+        - type: "contact_continent"
+          value: "!SA"
+      value: 4
+
+    - description: "SA station contacts SA station (different DXCC)"
+      conditions:
+        - type: "operator_continent"
+          value: "SA"
+        - type: "contact_continent"
+          value: "SA"
+        - type: "different_dxcc"
+      value: 2
+
+  multipliers:
+    - type: "wpx_prefix"
+      scope: "contest"
+      description: "WPX prefix multiplier (counted once across all bands/modes)"
+
+    - type: "cq_zone"
+      scope: "per_band"  # CQ zones count per band
+      description: "Each CQ zone worked per band counts as 1 multiplier"
+
+  final_score:
+    formula: "sum(band_points * (wpx_multipliers + zone_multipliers_per_band))"
+    description: "Score calculated per band: QSO points × (prefix mults + zone mults), then summed"
+
+validation:
+  duplicate_window:
+    type: "band_mode"  # Same callsign on same band and mode is duplicate
+
+  exchange_format:
+    rs_rst:
+      ssb_pattern: "^[1-5][1-9]$"
+      cw_pattern: "^[1-5][1-9][1-9]$"
+      description: "RS for SSB (2 digits, e.g., 59), RST for CW (3 digits, e.g., 599)"
+    cq_zone:
+      pattern: "^([1-9]|[1-3][0-9]|40)$"
+      min: 1
+      max: 40
+      description: "CQ Zone must be a number between 1 and 40"
+
+  time_format: "YYYY-MM-DD HH:MM"
+
+reference_data:
+  cq_zones:
+    # CQ Zones relevant to South America
+    1: "North America"
+    2: "North America"
+    3: "North America"
+    4: "North America"
+    5: "North America"
+    6: "South America"
+    7: "South America"
+    8: "South America"
+    9: "South America"
+    10: "South America"
+    11: "South America"
+    12: "South America"
+    13: "South America - Argentina (primary)"
+    14: "Europe"
+    15: "Europe"
+    # Add more zones as needed (1-40 valid)
+
+  # Argentina is primarily in CQ Zone 13
+  # Brazil spans zones 11, 12, 13, 15
+  # Chile is in zone 12
+  # Other SA countries in zones 9, 10, 11, 12
+
+  continents:
+    SA: "South America"
+    NA: "North America"
+    EU: "Europe"
+    AS: "Asia"
+    AF: "Africa"
+    OC: "Oceania"
+    AN: "Antarctica"
+
+  mobile_suffixes:
+    - "/MM"  # Maritime Mobile
+    - "/AM"  # Aeronautical Mobile
+
+  scoring_notes: |
+    SA10M Contest Scoring Rules:
+    - Mobile stations (/MM, /AM) have special point rules based on their zone
+    - Mobiles in zones 9-13: 2 pts for SA, 4 pts for non-SA
+    - Mobiles outside zones 9-13: 4 pts for SA, 2 pts for non-SA
+    - All stations get 2 points for contacts with mobile stations
+    - Same DXCC contacts are worth 0 points
+    - Non-SA stations: 4 pts for SA, 2 pts for non-SA
+    - SA stations: 4 pts for non-SA, 2 pts for SA (different DXCC)
+    
+    Multipliers:
+    - WPX Prefix: counted once across entire contest
+    - CQ Zone: counted per band (same zone on different bands counts twice)
+    
+    Score = Sum of (Band QSO Points × (Prefix Mults + Zone Mults for that band))
+

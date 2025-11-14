@@ -1,0 +1,209 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: LU7YZ
+CLUB:  
+CONTEST: SA10_SA
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CATEGORY-POWER: HIGH
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 36224
+OPERATORS: LU7YZ
+NAME: Alejandro Fabian Nazra
+ADDRESS: 
+ADDRESS-CITY: CENTENARIO
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 8309
+ADDRESS-COUNTRY: ARGENTINA
+GRID-LOCATOR: FF51WC
+EMAIL:  
+CREATED-BY: N1MM Logger+ 1.0.10642.0
+QSO:   28404 PH 2025-03-08 1943 LU7YZ         59   13   PA1X          59   14   
+QSO:   28404 PH 2025-03-08 1944 LU7YZ         59   13   EA5QA         59   14   
+QSO:   28404 PH 2025-03-08 1944 LU7YZ         59   13   DG1NPM        59   14   
+QSO:   28404 PH 2025-03-08 1944 LU7YZ         59   13   DL2BDA        59   14   
+QSO:   28404 PH 2025-03-08 1944 LU7YZ         59   13   PP5ZP         59   11   
+QSO:   28404 PH 2025-03-08 1945 LU7YZ         59   13   SV0JZ         59   20   
+QSO:   28404 PH 2025-03-08 1946 LU7YZ         59   13   PP6BVM        59   11   
+QSO:   28404 PH 2025-03-08 1946 LU7YZ         59   13   PU5ASC        59   11   
+QSO:   28404 PH 2025-03-08 1946 LU7YZ         59   13   LU7YE         59   13   
+QSO:   28404 PH 2025-03-08 1947 LU7YZ         59   13   PU2L          59   11   
+QSO:   28404 PH 2025-03-08 1947 LU7YZ         59   13   IZ4UFB        59   15   
+QSO:   28404 PH 2025-03-08 1947 LU7YZ         59   13   PY4LH         59   11   
+QSO:   28404 PH 2025-03-08 1947 LU7YZ         59   13   PU2MGE        59   11   
+QSO:   28404 PH 2025-03-08 1948 LU7YZ         59   13   PU7MLI        59   11   
+QSO:   28404 PH 2025-03-08 1948 LU7YZ         59   13   PD3W          59   14   
+QSO:   28404 PH 2025-03-08 1949 LU7YZ         59   13   PU8PSF        59   11   
+QSO:   28404 PH 2025-03-08 1949 LU7YZ         59   13   PU5MCW        59   11   
+QSO:   28404 PH 2025-03-08 1949 LU7YZ         59   13   PY2TSM        59   11   
+QSO:   28404 PH 2025-03-08 1950 LU7YZ         59   13   CS7BPO        59   14   
+QSO:   28404 PH 2025-03-08 1950 LU7YZ         59   13   DF6GZ         59   14   
+QSO:   28404 PH 2025-03-08 1950 LU7YZ         59   13   CS7BFV        59   14   
+QSO:   28404 PH 2025-03-08 1950 LU7YZ         59   13   DO1FFW        59   14   
+QSO:   28404 PH 2025-03-08 1951 LU7YZ         59   13   SQ3M          59   15   
+QSO:   28404 PH 2025-03-08 1951 LU7YZ         59   13   PS7MA         59   11   
+QSO:   28404 PH 2025-03-08 1951 LU7YZ         59   13   YU7RCI        59   15   
+QSO:   28404 PH 2025-03-08 1952 LU7YZ         59   13   K1LZ          59   5    
+QSO:   28404 PH 2025-03-08 1952 LU7YZ         59   13   CT7AQF        59   14   
+QSO:   28404 PH 2025-03-08 1952 LU7YZ         59   13   PT1AP         59   11   
+QSO:   28404 PH 2025-03-08 1952 LU7YZ         59   13   PU2RDB        59   11   
+QSO:   28404 PH 2025-03-08 1952 LU7YZ         59   13   DO1DNI        59   14   
+QSO:   28404 PH 2025-03-08 1953 LU7YZ         59   13   PT9AA         59   11   
+QSO:   28404 PH 2025-03-08 1953 LU7YZ         59   13   PD2MS         59   14   
+QSO:   28404 PH 2025-03-08 1953 LU7YZ         59   13   IZ1GCW        59   15   
+QSO:   28404 PH 2025-03-08 1954 LU7YZ         59   13   SQ3TGN        59   15   
+QSO:   28404 PH 2025-03-08 1954 LU7YZ         59   13   HB3YCS        59   14   
+QSO:   28404 PH 2025-03-08 1955 LU7YZ         59   13   PX9D          59   11   
+QSO:   28404 PH 2025-03-08 1955 LU7YZ         59   13   OZ1AXG        59   14   
+QSO:   28404 PH 2025-03-08 1956 LU7YZ         59   13   PY5YM         59   11   
+QSO:   28404 PH 2025-03-08 1956 LU7YZ         59   13   OK7XA         59   15   
+QSO:   28404 PH 2025-03-08 1956 LU7YZ         59   13   S52BT         59   15   
+QSO:   28404 PH 2025-03-08 1956 LU7YZ         59   13   PP5MZ         59   11   
+QSO:   28404 PH 2025-03-08 1956 LU7YZ         59   13   PU7OMT        59   11   
+QSO:   28404 PH 2025-03-08 1958 LU7YZ         59   13   CT1FOQ        59   14   
+QSO:   28404 PH 2025-03-08 1959 LU7YZ         59   13   DN9MAR        59   14   
+QSO:   28404 PH 2025-03-08 2000 LU7YZ         59   13   PY4LI         59   11   
+QSO:   28404 PH 2025-03-08 2000 LU7YZ         59   13   PY4BAL        59   11   
+QSO:   28404 PH 2025-03-08 2000 LU7YZ         59   13   PU2KOB        59   11   
+QSO:   28404 PH 2025-03-08 2001 LU7YZ         59   13   PY2ZEA        59   11   
+QSO:   28404 PH 2025-03-08 2002 LU7YZ         59   13   PY1TTN        59   11   
+QSO:   28404 PH 2025-03-08 2002 LU7YZ         59   13   PU2KNM        59   11   
+QSO:   28404 PH 2025-03-08 2003 LU7YZ         59   13   F6IRS         59   14   
+QSO:   28404 PH 2025-03-08 2003 LU7YZ         59   13   PY1JDX        59   11   
+QSO:   28404 PH 2025-03-08 2003 LU7YZ         59   13   CE1SWH        59   12   
+QSO:   28451 PH 2025-03-08 2005 LU7YZ         59   13   M0MCV         59   14   
+QSO:   28451 PH 2025-03-08 2005 LU7YZ         59   13   PU2WYP        59   11   
+QSO:   28451 PH 2025-03-08 2006 LU7YZ         59   13   GW0RMB        59   14   
+QSO:   28451 PH 2025-03-08 2006 LU7YZ         59   13   PR7KSA        59   11   
+QSO:   28451 PH 2025-03-08 2006 LU7YZ         59   13   PU2NZO        59   11   
+QSO:   28451 PH 2025-03-08 2007 LU7YZ         59   13   DF7RA         59   14   
+QSO:   28451 PH 2025-03-08 2007 LU7YZ         59   13   PU2LJY        59   11   
+QSO:   28451 PH 2025-03-08 2008 LU7YZ         59   13   DL9VCA        59   14   
+QSO:   28451 PH 2025-03-08 2009 LU7YZ         59   13   IT9SAZ        59   15   
+QSO:   28451 PH 2025-03-08 2010 LU7YZ         59   13   PU5ACV        59   11   
+QSO:   28451 PH 2025-03-08 2010 LU7YZ         59   13   VA3JCL        59   4    
+QSO:   28451 PH 2025-03-08 2010 LU7YZ         59   13   GI0UVD        59   14   
+QSO:   28451 PH 2025-03-08 2010 LU7YZ         59   13   DK4PB         59   14   
+QSO:   28451 PH 2025-03-08 2011 LU7YZ         59   13   DC8WAN        59   14   
+QSO:   28451 PH 2025-03-08 2011 LU7YZ         59   13   DK6TT         59   14   
+QSO:   28451 PH 2025-03-08 2011 LU7YZ         59   13   M6KCI         59   14   
+QSO:   28451 PH 2025-03-08 2012 LU7YZ         59   13   SP3FLY        59   15   
+QSO:   28450 PH 2025-03-08 2012 LU7YZ         59   13   PU2XYW        59   11   
+QSO:   28450 PH 2025-03-08 2013 LU7YZ         59   13   PU7RML        59   11   
+QSO:   28450 PH 2025-03-08 2013 LU7YZ         59   13   PY2MIA        59   11   
+QSO:   28450 PH 2025-03-08 2014 LU7YZ         59   13   G0H           59   14   
+QSO:   28450 PH 2025-03-08 2014 LU7YZ         59   13   PU2NEZ        59   11   
+QSO:   28450 PH 2025-03-08 2014 LU7YZ         59   13   PP7GB         59   11   
+QSO:   28450 PH 2025-03-08 2015 LU7YZ         59   13   PY2GMI        59   11   
+QSO:   28450 PH 2025-03-08 2015 LU7YZ         59   13   PY2KO         59   11   
+QSO:   28450 PH 2025-03-08 2015 LU7YZ         59   13   PU1SSH        59   11   
+QSO:   28450 PH 2025-03-08 2015 LU7YZ         59   13   PY2TEY        59   11   
+QSO:   28450 PH 2025-03-08 2016 LU7YZ         59   13   G4UNB         59   14   
+QSO:   28450 PH 2025-03-08 2016 LU7YZ         59   13   PA3CGJ        59   14   
+QSO:   28450 PH 2025-03-08 2016 LU7YZ         59   13   F4WCE         59   14   
+QSO:   28450 PH 2025-03-08 2017 LU7YZ         59   13   PU7EFV        59   11   
+QSO:   28451 PH 2025-03-08 2018 LU7YZ         59   13   SV8IIR        59   20   
+QSO:   28451 PH 2025-03-08 2018 LU7YZ         59   13   PU2ORS        59   11   
+QSO:   28451 PH 2025-03-08 2018 LU7YZ         59   13   G0AZE         59   14   
+QSO:   28451 PH 2025-03-08 2019 LU7YZ         59   13   M7HLE         59   14   
+QSO:   28451 PH 2025-03-08 2019 LU7YZ         59   13   ON7AH         59   14   
+QSO:   28451 PH 2025-03-08 2019 LU7YZ         59   13   PA4R          59   14   
+QSO:   28451 PH 2025-03-08 2019 LU7YZ         59   13   PY2CP         59   11   
+QSO:   28451 PH 2025-03-08 2020 LU7YZ         59   13   PP1WW         59   11   
+QSO:   28451 PH 2025-03-08 2020 LU7YZ         59   13   PY2BRP        59   11   
+QSO:   28451 PH 2025-03-08 2020 LU7YZ         59   13   CE1LTJ        59   12   
+QSO:   28451 PH 2025-03-08 2021 LU7YZ         59   13   PY2HZ         59   11   
+QSO:   28451 PH 2025-03-08 2021 LU7YZ         59   13   PU2OXB        59   11   
+QSO:   28451 PH 2025-03-08 2021 LU7YZ         59   13   PD3VAL        59   14   
+QSO:   28451 PH 2025-03-08 2022 LU7YZ         59   13   F1EIT         59   14   
+QSO:   28451 PH 2025-03-08 2023 LU7YZ         59   13   PU5MOW        59   11   
+QSO:   28451 PH 2025-03-08 2024 LU7YZ         59   13   PU2LFU        59   11   
+QSO:   28462 PH 2025-03-08 2143 LU7YZ         59   13   PY8RG         59   11   
+QSO:   28462 PH 2025-03-08 2144 LU7YZ         59   13   PY1WE         59   11   
+QSO:   28375 PH 2025-03-08 2147 LU7YZ         59   13   PY2DN         59   11   
+QSO:   28396 PH 2025-03-08 2147 LU7YZ         59   13   PU2SEX        59   11   
+QSO:   28436 PH 2025-03-08 2158 LU7YZ         59   13   N8OO          59   4    
+QSO:   28436 PH 2025-03-08 2158 LU7YZ         59   13   PU2VLW        59   11   
+QSO:   28436 PH 2025-03-08 2158 LU7YZ         59   13   PY1EZ         59   11   
+QSO:   28436 PH 2025-03-08 2159 LU7YZ         59   13   XE2CS         59   6    
+QSO:   28436 PH 2025-03-08 2159 LU7YZ         59   13   KC2PC         59   5    
+QSO:   28436 PH 2025-03-08 2200 LU7YZ         59   13   YS1JFE        59   7    
+QSO:   28436 PH 2025-03-08 2200 LU7YZ         59   13   KF2GQ         59   5    
+QSO:   28436 PH 2025-03-08 2200 LU7YZ         59   13   PT2AZ         59   11   
+QSO:   28436 PH 2025-03-08 2200 LU7YZ         59   13   K2LEK         59   5    
+QSO:   28436 PH 2025-03-08 2201 LU7YZ         59   13   N0VUN         59   4    
+QSO:   28436 PH 2025-03-08 2201 LU7YZ         59   13   KC1RKZ        59   5    
+QSO:   28436 PH 2025-03-08 2201 LU7YZ         59   13   PY7YB         59   11   
+QSO:   28436 PH 2025-03-08 2202 LU7YZ         59   13   PP5LTI        59   11   
+QSO:   28436 PH 2025-03-08 2202 LU7YZ         59   13   CX1DF         59   13   
+QSO:   28436 PH 2025-03-08 2202 LU7YZ         59   13   PY1EI         59   11   
+QSO:   28436 PH 2025-03-08 2203 LU7YZ         59   13   KC8HQS        59   4    
+QSO:   28436 PH 2025-03-08 2203 LU7YZ         59   13   PY1PPZ        59   11   
+QSO:   28436 PH 2025-03-08 2203 LU7YZ         59   13   K6TQ          59   3    
+QSO:   28436 PH 2025-03-08 2204 LU7YZ         59   13   KB9UDK        59   4    
+QSO:   28436 PH 2025-03-08 2204 LU7YZ         59   13   N2YNF         59   5    
+QSO:   28436 PH 2025-03-08 2204 LU7YZ         59   13   OA4DAG        59   10   
+QSO:   28436 PH 2025-03-08 2205 LU7YZ         59   13   CA3LVK        59   12   
+QSO:   28436 PH 2025-03-08 2206 LU7YZ         59   13   PY2LHA        59   11   
+QSO:   28436 PH 2025-03-08 2207 LU7YZ         59   13   PU5BBR        59   11   
+QSO:   28436 PH 2025-03-08 2207 LU7YZ         59   13   N1GNF         59   5    
+QSO:   28436 PH 2025-03-08 2207 LU7YZ         59   13   VE2IAA        59   5    
+QSO:   28436 PH 2025-03-08 2208 LU7YZ         59   13   KE8YBK        59   4    
+QSO:   28436 PH 2025-03-08 2208 LU7YZ         59   13   W5GCX         59   07   
+QSO:   28436 PH 2025-03-08 2208 LU7YZ         59   13   N3TKG         59   5    
+QSO:   28436 PH 2025-03-08 2208 LU7YZ         59   13   PU2TES        59   11   
+QSO:   28436 PH 2025-03-08 2209 LU7YZ         59   13   PU5MFI        59   11   
+QSO:   28436 PH 2025-03-08 2209 LU7YZ         59   13   AF4LL         59   5    
+QSO:   28436 PH 2025-03-08 2209 LU7YZ         59   13   W9ZMKL        59   4    
+QSO:   28436 PH 2025-03-08 2209 LU7YZ         59   13   CE1KR         59   12   
+QSO:   28436 PH 2025-03-08 2210 LU7YZ         59   13   PU5BSW        59   11   
+QSO:   28436 PH 2025-03-08 2210 LU7YZ         59   13   WD4AGF        59   5    
+QSO:   28436 PH 2025-03-08 2211 LU7YZ         59   13   LU1VJC        59   13   
+QSO:   28436 PH 2025-03-08 2211 LU7YZ         59   13   VE3KMQ        59   4    
+QSO:   28436 PH 2025-03-08 2211 LU7YZ         59   13   WS5ADV        59   4    
+QSO:   28436 PH 2025-03-08 2211 LU7YZ         59   13   WP4JD         59   8    
+QSO:   28436 PH 2025-03-08 2212 LU7YZ         59   13   KG9JF         59   4    
+QSO:   28436 PH 2025-03-08 2213 LU7YZ         59   13   YV1GIY        59   9    
+QSO:   28436 PH 2025-03-08 2215 LU7YZ         59   13   AI6ZC         59   3    
+QSO:   28436 PH 2025-03-08 2215 LU7YZ         59   13   W1NTI         59   5    
+QSO:   28436 PH 2025-03-08 2216 LU7YZ         59   13   AD6DB         59   3    
+QSO:   28436 PH 2025-03-08 2216 LU7YZ         59   13   PY2MOR        59   11   
+QSO:   28436 PH 2025-03-08 2216 LU7YZ         59   13   PY2MZ         59   11   
+QSO:   28436 PH 2025-03-08 2217 LU7YZ         59   13   PY2RVM        59   11   
+QSO:   28436 PH 2025-03-08 2217 LU7YZ         59   13   PU5TDX        59   11   
+QSO:   28436 PH 2025-03-08 2217 LU7YZ         59   13   PY4DK         59   11   
+QSO:   28436 PH 2025-03-08 2219 LU7YZ         59   13   W1PR          59   3    
+QSO:   28436 PH 2025-03-08 2220 LU7YZ         59   13   PU1KPS        59   11   
+QSO:   28455 PH 2025-03-08 2232 LU7YZ         59   13   WR0TE         59   4    
+QSO:   28455 PH 2025-03-08 2233 LU7YZ         59   13   KD6AF         59   4    
+QSO:   28455 PH 2025-03-08 2234 LU7YZ         59   13   PW2A          59   11   
+QSO:   28455 PH 2025-03-08 2235 LU7YZ         59   13   PY2NYA        59   11   
+QSO:   28455 PH 2025-03-08 2236 LU7YZ         59   13   WB9YJE        59   4    
+QSO:   28455 PH 2025-03-08 2236 LU7YZ         59   13   AB1F          59   5    
+QSO:   28455 PH 2025-03-08 2237 LU7YZ         59   13   W1JIM         59   5    
+QSO:   28455 PH 2025-03-08 2237 LU7YZ         59   13   KO6DRM        59   3    
+QSO:   28455 PH 2025-03-08 2238 LU7YZ         59   13   N7XAX         59   3    
+QSO:   28455 PH 2025-03-08 2239 LU7YZ         59   13   PY5IN         59   11   
+QSO:   28455 PH 2025-03-08 2239 LU7YZ         59   13   N4RV          59   5    
+QSO:   28455 PH 2025-03-08 2239 LU7YZ         59   13   CE2RK         59   12   
+QSO:   28455 PH 2025-03-08 2240 LU7YZ         59   13   KE9TOM        59   4    
+QSO:   28455 PH 2025-03-08 2240 LU7YZ         59   13   KE5CVM        59   4    
+QSO:   28455 PH 2025-03-08 2241 LU7YZ         59   13   WA9LJK        59   4    
+QSO:   28455 PH 2025-03-08 2241 LU7YZ         59   13   CT3IQ         59   33   
+QSO:   28455 PH 2025-03-08 2241 LU7YZ         59   13   KQ4UPA        59   5    
+QSO:   28455 PH 2025-03-08 2242 LU7YZ         59   13   KB2SET        59   5    
+QSO:   28455 PH 2025-03-08 2243 LU7YZ         59   13   XE1FEG        59   6    
+QSO:   28455 PH 2025-03-08 2243 LU7YZ         59   13   PY1MU         59   11   
+QSO:   28455 PH 2025-03-08 2244 LU7YZ         59   13   XM9A          59   5    
+QSO:   28455 PH 2025-03-08 2246 LU7YZ         59   13   KI5BPV        59   4    
+QSO:   28455 PH 2025-03-08 2247 LU7YZ         59   13   KD9VGL        59   4    
+QSO:   28455 PH 2025-03-08 2248 LU7YZ         59   13   VE7CUP        59   3    
+QSO:   28455 PH 2025-03-08 2248 LU7YZ         59   13   KE0KOT        59   4    
+QSO:   28455 PH 2025-03-08 2248 LU7YZ         59   13   N6DPG         59   3    
+QSO:   28455 PH 2025-03-08 2249 LU7YZ         59   13   PU2LOD        59   11   
+QSO:   28455 PH 2025-03-08 2249 LU7YZ         59   13   KD8WCJ        59   4    
+QSO:   28455 PH 2025-03-08 2250 LU7YZ         59   13   W7EDC         59   3    
+END-OF-LOG:

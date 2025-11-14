@@ -1,0 +1,40 @@
+START-OF-LOG: 3.0
+CREATED-BY: TR4W v.4.141.0
+CALLSIGN: DH0GDS
+CONTEST: SA-10M
+CLAIMED-SCORE: 540
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: CW
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+OPERATORS: DH0GDS
+LOCATION: DX
+NAME: Siegmund Hoffmann
+ADDRESS: Finkenstrasse 44
+ADDRESS-CITY: D-72461 Albstadt-2
+EMAIL: DH0GDS@DARC.DE
+QSO: 28042 CW 2025-03-08 1326 DH0GDS  599 14             PT1AW          599 11                   
+QSO: 28040 CW 2025-03-08 1330 DH0GDS  599 14             4X6FR          599 20                   
+QSO: 28030 CW 2025-03-08 1338 DH0GDS  599 14             DL2OM          599 14                   
+QSO: 28030 CW 2025-03-08 1341 DH0GDS  599 14             N8OO           599 4                   
+QSO: 28024 CW 2025-03-08 1343 DH0GDS  599 14             FY5KE          599 9                   
+QSO: 28022 CW 2025-03-08 1347 DH0GDS  599 14             CB3U           599 12                   
+QSO: 28020 CW 2025-03-08 1350 DH0GDS  599 14             AA2A           599 5                   
+QSO: 28014 CW 2025-03-08 1352 DH0GDS  599 14             EA7BEZ         599 14                   
+QSO: 28013 CW 2025-03-08 1353 DH0GDS  599 14             CT1DRB         599 14                   
+QSO: 28056 CW 2025-03-08 1357 DH0GDS  599 14             PY2KJ          599 11                   
+QSO: 28008 CW 2025-03-09 0935 DH0GDS  599 14             ZW8T           599 11                   
+QSO: 28042 CW 2025-03-09 1014 DH0GDS  599 14             PT2AW          599 11                   
+QSO: 28025 CW 2025-03-09 1026 DH0GDS  599 14             PY2EX          599 11                   
+QSO: 28020 CW 2025-03-09 1029 DH0GDS  599 14             4Z5ML          599 20                   
+QSO: 28013 CW 2025-03-09 1034 DH0GDS  599 14             DP7D           599 14                   
+QSO: 28012 CW 2025-03-09 1037 DH0GDS  599 14             9N7AA          599 22                   
+QSO: 28008 CW 2025-03-09 1041 DH0GDS  599 14             IK4ZHH         599 15                   
+QSO: 28014 CW 2025-03-09 1050 DH0GDS  599 14             CT7BJG         599 14                   
+QSO: 28025 CW 2025-03-09 1059 DH0GDS  599 14             R6AF           599 16                   
+QSO: 28003 CW 2025-03-09 1148 DH0GDS  599 14             PU2UAF         599 11                   
+QSO: 28037 CW 2025-03-09 1155 DH0GDS  599 14             LY2AX          599 15                   
+END-OF-LOG: 

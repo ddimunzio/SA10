@@ -1,0 +1,117 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: OM5M
+CLUB:  
+CONTEST: SA10-DX
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: ALL
+CATEGORY-MODE: SSB
+CATEGORY-POWER: HIGH
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 25718
+OPERATORS: OM5M
+NAME: Radioclub Omega
+ADDRESS: Stare Grunty 53
+ADDRESS-CITY: Bratislava
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 84247
+ADDRESS-COUNTRY: SLOVAK REPUBLIC
+GRID-LOCATOR: JN88MD
+EMAIL: erik@brocko.eu
+CREATED-BY: N1MM Logger+ 1.0.10628.0
+QSO:   28473 PH 2025-03-08 1206 OM5M          59   15   LU4JEA        59   13   
+QSO:   28464 PH 2025-03-08 1206 OM5M          59   15   LU9HVR        59   13   
+QSO:   28457 PH 2025-03-08 1207 OM5M          59   15   PU2VLW        59   11   
+QSO:   28467 PH 2025-03-08 1208 OM5M          59   15   LT3E          59   13   
+QSO:   28487 PH 2025-03-08 1209 OM5M          59   15   PY2UD         59   11   
+QSO:   28495 PH 2025-03-08 1209 OM5M          59   15   PV2K          59   11   
+QSO:   28528 PH 2025-03-08 1211 OM5M          59   15   LT7L          59   13   
+QSO:   28480 PH 2025-03-08 1213 OM5M          59   15   LQ4D          59   13   
+QSO:   28447 PH 2025-03-08 1214 OM5M          59   15   CE4JZO        59   12   
+QSO:   28434 PH 2025-03-08 1216 OM5M          59   15   LU1WCL        59   13   
+QSO:   28430 PH 2025-03-08 1221 OM5M          59   15   PY8ML         59   11   
+QSO:   28412 PH 2025-03-08 1222 OM5M          59   15   CW5A          59   13   
+QSO:   28405 PH 2025-03-08 1222 OM5M          59   15   PT2AP         59   11   
+QSO:   28397 PH 2025-03-08 1225 OM5M          59   15   EC5EA         59   14   
+QSO:   28417 PH 2025-03-08 1229 OM5M          59   15   CE7VP         59   12   
+QSO:   28462 PH 2025-03-08 1234 OM5M          59   15   LU9WE         59   13   
+QSO:   28480 PH 2025-03-08 1236 OM5M          59   15   PY2DR         59   11   
+QSO:   28490 PH 2025-03-08 1241 OM5M          59   15   PY2TB         59   12   
+QSO:   28495 PH 2025-03-08 1242 OM5M          59   15   EA9ACD        59   33   
+QSO:   28484 PH 2025-03-08 1244 OM5M          59   15   AY7J          59   13   
+QSO:   28435 PH 2025-03-08 1247 OM5M          59   15   PU5WMA        59   11   
+QSO:   28450 PH 2025-03-08 1249 OM5M          59   15   FK8IK         59   32   
+QSO:   28460 PH 2025-03-08 1251 OM5M          59   15   PU5DUD        59   11   
+QSO:   28463 PH 2025-03-08 1252 OM5M          59   15   PW2A          59   11   
+QSO:   28457 PH 2025-03-08 1254 OM5M          59   15   CE1KR         59   12   
+QSO:   28392 PH 2025-03-08 1257 OM5M          59   15   PR1T          59   11   
+QSO:   28415 PH 2025-03-08 1303 OM5M          59   15   PY6GOE        59   11   
+QSO:   28518 PH 2025-03-08 1306 OM5M          59   15   CB4W          59   12   
+QSO:   28423 PH 2025-03-08 1308 OM5M          59   15   LU4FM         59   13   
+QSO:   28407 PH 2025-03-08 1309 OM5M          59   15   PY1KG         59   11   
+QSO:   28400 PH 2025-03-08 1310 OM5M          59   15   PU2SXE        59   11   
+QSO:   28479 PH 2025-03-08 1312 OM5M          59   15   K1LZ          59   5    
+QSO:   28537 PH 2025-03-08 1313 OM5M          59   15   CX8DS         59   13   
+QSO:   28450 PH 2025-03-08 1314 OM5M          59   15   XM9A          59   5    
+QSO:   28508 PH 2025-03-08 1315 OM5M          59   15   PT7PT         59   11   
+QSO:   28533 PH 2025-03-08 1335 OM5M          59   15   PU1JSV        59   11   
+QSO:   28550 PH 2025-03-08 1335 OM5M          59   15   CT3IQ         59   33   
+QSO:   28500 PH 2025-03-08 1339 OM5M          59   15   PY2BRP        59   11   
+QSO:   28425 PH 2025-03-08 1341 OM5M          59   15   PW8RB         59   11   
+QSO:   28526 PH 2025-03-08 1516 OM5M          59   15   PP1WW         59   11   
+QSO:   28560 PH 2025-03-08 1517 OM5M          59   15   VE9CZ         59   5    
+QSO:   28515 PH 2025-03-08 1517 OM5M          59   15   CS7BPO        59   14   
+QSO:   28438 PH 2025-03-08 1522 OM5M          59   15   VE2IAA        59   5    
+QSO:   28504 PH 2025-03-08 1522 OM5M          59   15   LU2WJV        59   13   
+QSO:   28330 PH 2025-03-08 1527 OM5M          59   15   E77DX         59   15   
+QSO:   28568 PH 2025-03-08 1531 OM5M          59   15   K1RX          59   5    
+QSO:   28570 PH 2025-03-08 1536 OM5M          59   15   KQ4IXT        59   5    
+QSO:   28570 PH 2025-03-08 1541 OM5M          59   15   KD4WWI        59   4    
+QSO:   28570 PH 2025-03-08 1541 OM5M          59   15   KA4YTX        59   5    
+QSO:   28570 PH 2025-03-08 1542 OM5M          59   15   W4BAD/M       59   5    
+QSO:   28570 PH 2025-03-08 1546 OM5M          59   15   PT2AW         59   11   
+QSO:   28570 PH 2025-03-08 1547 OM5M          59   15   PQ5D          59   11   
+QSO:   28570 PH 2025-03-08 1548 OM5M          59   15   PU2ULN        59   11   
+QSO:   28570 PH 2025-03-08 1548 OM5M          59   15   PY1EI         59   11   
+QSO:   28570 PH 2025-03-08 1549 OM5M          59   15   9A0DIG        59   15   
+QSO:   28570 PH 2025-03-08 1550 OM5M          59   15   CT2IFE        59   14   
+QSO:   28570 PH 2025-03-08 1550 OM5M          59   15   PY1KB         59   11   
+QSO:   28570 PH 2025-03-08 1550 OM5M          59   15   LU1IDC        59   13   
+QSO:   28570 PH 2025-03-08 1553 OM5M          59   15   PU2NEZ        59   11   
+QSO:   28494 PH 2025-03-08 1606 OM5M          59   15   PY5MM         59   11   
+QSO:   28459 PH 2025-03-08 1705 OM5M          59   15   CE2LK         59   12   
+QSO:   28462 PH 2025-03-08 1712 OM5M          59   15   PY4JW         59   11   
+QSO:   28530 PH 2025-03-08 1712 OM5M          59   15   PY2EX         59   11   
+QSO:   28544 PH 2025-03-08 1713 OM5M          59   15   LU4ASR        59   13   
+QSO:   28536 PH 2025-03-08 1721 OM5M          59   15   PU2KNM        59   11   
+QSO:   28500 PH 2025-03-08 1725 OM5M          59   15   PT2AZ         59   11   
+QSO:   28551 PH 2025-03-08 1728 OM5M          59   15   YV1GIY        59   9    
+QSO:   28546 PH 2025-03-08 1729 OM5M          59   15   PY1JDX        59   11   
+QSO:   28510 PH 2025-03-08 1732 OM5M          59   15   LU9SOJ        59   13   
+QSO:   28502 PH 2025-03-08 1733 OM5M          59   15   PY1WK         59   11   
+QSO:   28438 PH 2025-03-08 1736 OM5M          59   15   PY2ZR         59   11   
+QSO:   28437 PH 2025-03-08 1737 OM5M          59   15   YY5ALI        59   9    
+QSO:   28432 PH 2025-03-08 1737 OM5M          59   15   PP5IP         59   11   
+QSO:   28423 PH 2025-03-08 1746 OM5M          59   15   PU3POE        59   11   
+QSO:   28364 PH 2025-03-08 1753 OM5M          59   15   PT1M          59   11   
+QSO:   28400 PH 2025-03-08 1800 OM5M          59   15   PP7GB         59   11   
+QSO:   28408 PH 2025-03-08 1800 OM5M          59   15   HC5VF         59   10   
+QSO:   28411 PH 2025-03-08 1804 OM5M          59   15   PY5ZHP        59   11   
+QSO:   28444 PH 2025-03-08 1808 OM5M          59   15   PY2GZ         59   11   
+QSO:   28505 PH 2025-03-08 1817 OM5M          59   15   CB3A          59   12   
+QSO:   28404 PH 2025-03-08 1827 OM5M          59   15   PY2CP         59   11   
+QSO:   28422 PH 2025-03-08 1829 OM5M          59   15   PU2RDB        59   11   
+QSO:   28426 PH 2025-03-08 1830 OM5M          59   15   LU1VM         59   13   
+QSO:   28467 PH 2025-03-08 1835 OM5M          59   15   LW7DQW        59   13   
+QSO:   28513 PH 2025-03-08 1838 OM5M          59   15   CX1AR         59   13   
+QSO:   28430 PH 2025-03-08 1840 OM5M          59   15   LU7YE         59   13   
+QSO:   28395 PH 2025-03-08 1840 OM5M          59   15   LU2PWY        59   13   
+QSO:   28401 PH 2025-03-08 1841 OM5M          59   15   N8OO          59   4    
+QSO:   28450 PH 2025-03-08 1843 OM5M          59   15   LW6DIV        59   13   
+QSO:   28489 PH 2025-03-08 1844 OM5M          59   15   LO7H          59   13   
+QSO:   28398 PH 2025-03-08 1850 OM5M          59   15   LO5U          59   13   
+QSO:   28385 PH 2025-03-08 1852 OM5M          59   15   CX7ACH        59   13   
+QSO:   28480 PH 2025-03-09 1023 OM5M          59   15   YB5DDE        59   28   
+END-OF-LOG:

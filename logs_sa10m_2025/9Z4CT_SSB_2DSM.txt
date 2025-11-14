@@ -1,0 +1,198 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: 9Z4CT
+CLUB:  
+CONTEST: SA10-DX
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 67830
+OPERATORS: 9Z4CT
+NAME: Nigel
+ADDRESS: 50 Calcutta Settlement Road #3
+ADDRESS: Upper Carapichaima
+ADDRESS-CITY: Freeport
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 
+ADDRESS-COUNTRY: Trinidad and Tobago
+GRID-LOCATOR: FK90HK
+EMAIL: ndarwent116@gmail.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28467 PH 2025-03-08 1204 9Z4CT         59   09   LT3E          59   13   
+QSO:   28470 PH 2025-03-08 1205 9Z4CT         59   09   PW2A          59   11   
+QSO:   28464 PH 2025-03-08 1207 9Z4CT         59   09   LU9HVR        59   13   
+QSO:   28473 PH 2025-03-08 1210 9Z4CT         59   09   LU4JEA        59   13   
+QSO:   28412 PH 2025-03-08 1215 9Z4CT         59   09   CW5A          59   13   
+QSO:   28370 PH 2025-03-08 1221 9Z4CT         59   09   CS7BPW        59   14   
+QSO:   28409 PH 2025-03-08 1227 9Z4CT         59   09   F5OHM         59   14   
+QSO:   28423 PH 2025-03-08 1228 9Z4CT         59   09   TA3T          59   20   
+QSO:   28484 PH 2025-03-08 1234 9Z4CT         59   09   AY7J          59   13   
+QSO:   28452 PH 2025-03-08 1236 9Z4CT         59   09   F4BHW         59   14   
+QSO:   28445 PH 2025-03-08 1236 9Z4CT         59   09   DP7P          59   14   
+QSO:   28509 PH 2025-03-08 1250 9Z4CT         59   09   CA1NPK        59   12   
+QSO:   28509 PH 2025-03-08 1251 9Z4CT         59   09   DL8VX         59   14   
+QSO:   28509 PH 2025-03-08 1252 9Z4CT         59   09   HB9AFI        59   14   
+QSO:   28509 PH 2025-03-08 1255 9Z4CT         59   09   DK0AT         59   14   
+QSO:   28509 PH 2025-03-08 1256 9Z4CT         59   09   HB9HDK        59   14   
+QSO:   28509 PH 2025-03-08 1256 9Z4CT         59   09   DK0VX         59   14   
+QSO:   28509 PH 2025-03-08 1257 9Z4CT         59   09   OK2EQ         59   15   
+QSO:   28509 PH 2025-03-08 1258 9Z4CT         59   09   DO1UTE        59   14   
+QSO:   28509 PH 2025-03-08 1259 9Z4CT         59   09   DG1GHY        59   14   
+QSO:   28441 PH 2025-03-08 1316 9Z4CT         59   09   OK2PVF        59   15   
+QSO:   28409 PH 2025-03-08 1317 9Z4CT         59   09   OZ1AXG        59   14   
+QSO:   28424 PH 2025-03-08 1321 9Z4CT         59   09   PD3W          59   14   
+QSO:   28445 PH 2025-03-08 1322 9Z4CT         59   09   DP7D          59   14   
+QSO:   28545 PH 2025-03-08 1326 9Z4CT         59   09   HB2Y          59   14   
+QSO:   28550 PH 2025-03-08 1328 9Z4CT         59   09   CT3IQ         59   33   
+QSO:   28542 PH 2025-03-08 1333 9Z4CT         59   09   F5LIW         59   14   
+QSO:   28529 PH 2025-03-08 1350 9Z4CT         59   09   W4NEM/M       59   5    
+QSO:   28529 PH 2025-03-08 1351 9Z4CT         59   09   GW5GDP        59   14   
+QSO:   28425 PH 2025-03-08 1408 9Z4CT         59   09   PW8RB         59   11   
+QSO:   28418 PH 2025-03-08 1411 9Z4CT         59   09   LU3DD         59   13   
+QSO:   28447 PH 2025-03-08 1413 9Z4CT         59   09   CE4JZO        59   12   
+QSO:   28454 PH 2025-03-08 1414 9Z4CT         59   09   PT2AP         59   11   
+QSO:   28460 PH 2025-03-08 1416 9Z4CT         59   09   CX1DF         59   13   
+QSO:   28468 PH 2025-03-08 1418 9Z4CT         59   09   CE1KR         59   12   
+QSO:   28480 PH 2025-03-08 1419 9Z4CT         59   09   PY8RG         59   11   
+QSO:   28500 PH 2025-03-08 1421 9Z4CT         59   09   PY5MM         59   11   
+QSO:   28513 PH 2025-03-08 1422 9Z4CT         59   09   CX1AR         59   13   
+QSO:   28535 PH 2025-03-08 1425 9Z4CT         59   09   LQ4D          59   13   
+QSO:   28540 PH 2025-03-08 1711 9Z4CT         59   09   EA9ACD        59   33   
+QSO:   28559 PH 2025-03-08 1712 9Z4CT         59   09   F6HRP         59   14   
+QSO:   28485 PH 2025-03-08 1716 9Z4CT         59   09   IK4UPB        59   15   
+QSO:   28443 PH 2025-03-08 1720 9Z4CT         59   09   F6IRA         59   14   
+QSO:   28408 PH 2025-03-08 1722 9Z4CT         59   09   EA8AM         59   33   
+QSO:   28377 PH 2025-03-08 1724 9Z4CT         59   09   EI3JZ         59   14   
+QSO:   28368 PH 2025-03-08 1730 9Z4CT         59   09   IK5RLP        59   15   
+QSO:   28390 PH 2025-03-08 1731 9Z4CT         59   09   IW0HLZ        59   15   
+QSO:   28450 PH 2025-03-08 1733 9Z4CT         59   09   F5IG          59   14   
+QSO:   28456 PH 2025-03-08 1735 9Z4CT         59   09   PR1T          59   11   
+QSO:   28530 PH 2025-03-08 1745 9Z4CT         59   09   PY2EX         59   11   
+QSO:   28506 PH 2025-03-08 1746 9Z4CT         59   09   CB3A          59   12   
+QSO:   28483 PH 2025-03-08 1747 9Z4CT         59   09   F5NBX         59   14   
+QSO:   28475 PH 2025-03-08 1748 9Z4CT         59   09   LU2PWY        59   13   
+QSO:   28458 PH 2025-03-08 1750 9Z4CT         59   09   XE3R          59   6    
+QSO:   28479 PH 2025-03-08 1752 9Z4CT         59   09   K1LZ          59   5    
+QSO:   28401 PH 2025-03-08 1836 9Z4CT         59   09   N8OO          59   4    
+QSO:   28462 PH 2025-03-08 1840 9Z4CT         59   09   PY4JW         59   11   
+QSO:   28538 PH 2025-03-08 1847 9Z4CT         59   09   NZ8V          59   4    
+QSO:   28538 PH 2025-03-08 1848 9Z4CT         59   09   XE2Q          59   6    
+QSO:   28539 PH 2025-03-08 1851 9Z4CT         59   09   K6RIN         59   3    
+QSO:   28539 PH 2025-03-08 1853 9Z4CT         59   09   PY4BAL        59   11   
+QSO:   28539 PH 2025-03-08 1855 9Z4CT         59   09   K7ALW         59   3    
+QSO:   28539 PH 2025-03-08 1856 9Z4CT         59   09   K3MPG         59   5    
+QSO:   28539 PH 2025-03-08 1857 9Z4CT         59   09   K3EWZ         59   5    
+QSO:   28539 PH 2025-03-08 1900 9Z4CT         59   09   KI5RVA        59   4    
+QSO:   28539 PH 2025-03-08 1900 9Z4CT         59   09   W9EMM         59   4    
+QSO:   28539 PH 2025-03-08 1903 9Z4CT         59   09   W3YF          59   5    
+QSO:   28539 PH 2025-03-08 1904 9Z4CT         59   09   PY6GOE        59   11   
+QSO:   28539 PH 2025-03-08 1907 9Z4CT         59   09   KJ6PNF        59   3    
+QSO:   28539 PH 2025-03-08 1909 9Z4CT         59   09   KJ4GDX        59   5    
+QSO:   28539 PH 2025-03-08 1909 9Z4CT         59   09   W3LZ          59   5    
+QSO:   28539 PH 2025-03-08 1909 9Z4CT         59   09   WY0B          59   4    
+QSO:   28539 PH 2025-03-08 1910 9Z4CT         59   09   NT4K          59   5    
+QSO:   28539 PH 2025-03-08 1912 9Z4CT         59   09   GW4NOO        59   14   
+QSO:   28539 PH 2025-03-08 1913 9Z4CT         59   09   K6TQ          59   3    
+QSO:   28539 PH 2025-03-08 1913 9Z4CT         59   09   XE2OK         59   6    
+QSO:   28539 PH 2025-03-08 1914 9Z4CT         59   09   N6XQX         59   3    
+QSO:   28539 PH 2025-03-08 1915 9Z4CT         59   09   PU2VLW        59   11   
+QSO:   28539 PH 2025-03-08 1915 9Z4CT         59   09   PU4JOE        59   11   
+QSO:   28539 PH 2025-03-08 1915 9Z4CT         59   09   W5ACB         59   4    
+QSO:   28539 PH 2025-03-08 1916 9Z4CT         59   09   VO1PRP        59   5    
+QSO:   28539 PH 2025-03-08 1918 9Z4CT         59   09   LU8DIJ        59   13   
+QSO:   28490 PH 2025-03-08 2130 9Z4CT         59   09   KF0LZH        59   4    
+QSO:   28490 PH 2025-03-08 2131 9Z4CT         59   09   LO5U          59   13   
+QSO:   28490 PH 2025-03-08 2131 9Z4CT         59   09   ND0C          59   4    
+QSO:   28490 PH 2025-03-08 2133 9Z4CT         59   09   W1DBJ         59   5    
+QSO:   28490 PH 2025-03-08 2133 9Z4CT         59   09   N4MTS         59   5    
+QSO:   28526 PH 2025-03-08 2138 9Z4CT         59   09   HK4DMD        59   9    
+QSO:   28526 PH 2025-03-08 2139 9Z4CT         59   09   WN4WN         59   5    
+QSO:   28526 PH 2025-03-08 2140 9Z4CT         59   09   KJ5IUZ        59   4    
+QSO:   28526 PH 2025-03-08 2141 9Z4CT         59   09   W9TCV         59   5    
+QSO:   28526 PH 2025-03-08 2145 9Z4CT         59   09   N8UKG         59   4    
+QSO:   28526 PH 2025-03-08 2146 9Z4CT         59   09   N4CRE         59   5    
+QSO:   28526 PH 2025-03-08 2146 9Z4CT         59   09   PY2UD         59   11   
+QSO:   28526 PH 2025-03-08 2147 9Z4CT         59   09   KI5ITM        59   4    
+QSO:   28526 PH 2025-03-08 2147 9Z4CT         59   09   K8VH          59   4    
+QSO:   28526 PH 2025-03-08 2149 9Z4CT         59   09   KG5MD         59   4    
+QSO:   28526 PH 2025-03-08 2150 9Z4CT         59   09   W8EO          59   4    
+QSO:   28526 PH 2025-03-08 2150 9Z4CT         59   09   KO6GSH        59   3    
+QSO:   28526 PH 2025-03-08 2151 9Z4CT         59   09   W6LFB         59   4    
+QSO:   28526 PH 2025-03-08 2152 9Z4CT         59   09   LT1K          59   13   
+QSO:   28526 PH 2025-03-08 2153 9Z4CT         59   09   KE9BYZ        59   4    
+QSO:   28410 PH 2025-03-08 2311 9Z4CT         59   09   KE2AY         59   5    
+QSO:   28507 PH 2025-03-08 2328 9Z4CT         59   09   CA6SNT        59   12   
+QSO:   28466 PH 2025-03-08 2330 9Z4CT         59   09   CE7VP         59   12   
+QSO:   28422 PH 2025-03-08 2331 9Z4CT         59   09   LU1WCL        59   13   
+QSO:   28374 PH 2025-03-08 2343 9Z4CT         59   09   N4OX          59   5    
+QSO:   28512 PH 2025-03-08 2350 9Z4CT         59   09   KE0UI         59   4    
+QSO:   28512 PH 2025-03-08 2351 9Z4CT         59   09   LU1VJC        59   13   
+QSO:   28512 PH 2025-03-08 2353 9Z4CT         59   09   K6SSB         59   3    
+QSO:   28512 PH 2025-03-08 2353 9Z4CT         59   09   W6AUN         59   4    
+QSO:   28512 PH 2025-03-08 2354 9Z4CT         59   09   N9ARX         59   4    
+QSO:   28512 PH 2025-03-08 2354 9Z4CT         59   09   CD6OHG        59   12   
+QSO:   28512 PH 2025-03-08 2356 9Z4CT         59   09   WA6NGU        59   3    
+QSO:   28512 PH 2025-03-09 0001 9Z4CT         59   09   PU5DUD        59   11   
+QSO:   28512 PH 2025-03-09 0003 9Z4CT         59   09   LU7YE         59   13   
+QSO:   28512 PH 2025-03-09 0003 9Z4CT         59   09   LU4DBP        59   13   
+QSO:   28512 PH 2025-03-09 0004 9Z4CT         59   09   PU1VKG        59   11   
+QSO:   28512 PH 2025-03-09 0005 9Z4CT         59   09   LT7L          59   13   
+QSO:   28512 PH 2025-03-09 0005 9Z4CT         59   09   AZ5D          59   13   
+QSO:   28512 PH 2025-03-09 0007 9Z4CT         59   09   CE2SCP        59   12   
+QSO:   28512 PH 2025-03-09 0008 9Z4CT         59   09   PU3MON        59   11   
+QSO:   28512 PH 2025-03-09 0008 9Z4CT         59   09   LU1IDC        59   13   
+QSO:   28512 PH 2025-03-09 0009 9Z4CT         59   09   PU5BSW        59   11   
+QSO:   28512 PH 2025-03-09 0009 9Z4CT         59   09   PY2SAA        59   11   
+QSO:   28512 PH 2025-03-09 0010 9Z4CT         59   09   CE2RK         59   12   
+QSO:   28512 PH 2025-03-09 0010 9Z4CT         59   09   PU2NEZ        59   11   
+QSO:   28512 PH 2025-03-09 0011 9Z4CT         59   09   PY5AMF        59   11   
+QSO:   28512 PH 2025-03-09 0012 9Z4CT         59   09   PU2RDB        59   11   
+QSO:   28512 PH 2025-03-09 0013 9Z4CT         59   09   PU5TSP        59   11   
+QSO:   28512 PH 2025-03-09 0013 9Z4CT         59   09   PY4LH         59   11   
+QSO:   28512 PH 2025-03-09 0014 9Z4CT         59   09   PY2KO         59   11   
+QSO:   28512 PH 2025-03-09 0015 9Z4CT         59   09   PY7GB         59   11   
+QSO:   28512 PH 2025-03-09 0015 9Z4CT         59   09   PY2RVM        59   11   
+QSO:   28512 PH 2025-03-09 0016 9Z4CT         59   09   LU2WJV        59   13   
+QSO:   28454 PH 2025-03-09 0019 9Z4CT         59   09   CO2QU         59   8    
+QSO:   28434 PH 2025-03-09 0032 9Z4CT         59   09   W1PR          59   3    
+QSO:   28485 PH 2025-03-09 0039 9Z4CT         59   09   KU7T          59   3    
+QSO:   28512 PH 2025-03-09 0101 9Z4CT         59   09   LW8EDC        59   13   
+QSO:   28512 PH 2025-03-09 0105 9Z4CT         59   09   CE2EH         59   12   
+QSO:   28512 PH 2025-03-09 0105 9Z4CT         59   09   PY2COI        59   11   
+QSO:   28512 PH 2025-03-09 0106 9Z4CT         59   09   PY1KB         59   11   
+QSO:   28512 PH 2025-03-09 0109 9Z4CT         59   09   LU1MAV        59   13   
+QSO:   28512 PH 2025-03-09 0109 9Z4CT         59   09   PU1JSV        59   11   
+QSO:   28512 PH 2025-03-09 0110 9Z4CT         59   09   PY4DK         59   11   
+QSO:   28512 PH 2025-03-09 0111 9Z4CT         59   09   HC5VF         59   10   
+QSO:   28512 PH 2025-03-09 0111 9Z4CT         59   09   PT1M          59   11   
+QSO:   28512 PH 2025-03-09 0112 9Z4CT         59   09   PZ5TW         59   9    
+QSO:   28512 PH 2025-03-09 0112 9Z4CT         59   09   PY1LU         59   11   
+QSO:   28512 PH 2025-03-09 0113 9Z4CT         59   09   PU5SKW        59   11   
+QSO:   28512 PH 2025-03-09 0114 9Z4CT         59   09   PU2ORS        59   11   
+QSO:   28512 PH 2025-03-09 0114 9Z4CT         59   09   PP5IP         59   11   
+QSO:   28512 PH 2025-03-09 0115 9Z4CT         59   09   PY1JDX        59   11   
+QSO:   28512 PH 2025-03-09 0115 9Z4CT         59   09   PY5IN         59   11   
+QSO:   28512 PH 2025-03-09 0116 9Z4CT         59   09   PU2MGE        59   11   
+QSO:   28512 PH 2025-03-09 0117 9Z4CT         59   09   PU1PRD        59   11   
+QSO:   28512 PH 2025-03-09 0117 9Z4CT         59   09   PY5IQ         59   11   
+QSO:   28512 PH 2025-03-09 0118 9Z4CT         59   09   PP1WW         59   11   
+QSO:   28512 PH 2025-03-09 0119 9Z4CT         59   09   PU1WTW        59   11   
+QSO:   28512 PH 2025-03-09 0120 9Z4CT         59   09   PT9AA         59   11   
+QSO:   28512 PH 2025-03-09 0120 9Z4CT         59   09   PU7NLD        59   11   
+QSO:   28466 PH 2025-03-09 1116 9Z4CT         59   09   EA3RCA        59   14   
+QSO:   28439 PH 2025-03-09 1120 9Z4CT         59   09   F4HRG         59   14   
+QSO:   28495 PH 2025-03-09 1126 9Z4CT         59   09   UZ7C          59   16   
+QSO:   28506 PH 2025-03-09 1128 9Z4CT         59   09   EA8DMS        59   33   
+QSO:   28481 PH 2025-03-09 1131 9Z4CT         59   09   S57AZJ        59   16   
+QSO:   28380 PH 2025-03-09 1136 9Z4CT         59   09   IT9FZT        59   15   
+QSO:   28375 PH 2025-03-09 1138 9Z4CT         59   09   TA3NE         59   20   
+QSO:   28408 PH 2025-03-09 1143 9Z4CT         59   09   LQ5A          59   13   
+QSO:   28475 PH 2025-03-09 1147 9Z4CT         59   09   S56V          59   18   
+QSO:   28478 PH 2025-03-09 1149 9Z4CT         59   09   S51JQ         59   15   
+QSO:   28530 PH 2025-03-09 1153 9Z4CT         59   09   CS7AXM        59   14   
+QSO:   28488 PH 2025-03-09 1157 9Z4CT         59   09   PU8WCB        59   11   
+END-OF-LOG:

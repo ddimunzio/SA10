@@ -1,0 +1,99 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: LY7T
+CLUB: Baltic contest club
+CONTEST: SA10-DX
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: MIXED
+CATEGORY-POWER: HIGH
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 4284
+OPERATORS: LY7T
+NAME: Raimundas Rumsas
+ADDRESS: 
+ADDRESS-CITY: Plunge
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 
+ADDRESS-COUNTRY: Lithuania
+GRID-LOCATOR: KO05WV
+EMAIL: ly2rj@rumsas.lt
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28487 PH 2025-03-08 1206 LY7T          59   15   PY2UD         59   11   
+QSO:   28508 PH 2025-03-08 1208 LY7T          59   15   PT7PT         59   11   
+QSO:   28505 PH 2025-03-08 1209 LY7T          59   15   PY2GTA        59   11   
+QSO:   28495 PH 2025-03-08 1209 LY7T          59   15   PV2K          59   11   
+QSO:   28460 PH 2025-03-08 1211 LY7T          59   15   PU5DUD        59   11   
+QSO:   28457 PH 2025-03-08 1212 LY7T          59   15   PU2VLW        59   11   
+QSO:   28447 PH 2025-03-08 1217 LY7T          59   15   CE4JZO        59   12   
+QSO:   28423 PH 2025-03-08 1219 LY7T          59   15   TA3T          59   20   
+QSO:   28415 PH 2025-03-08 1221 LY7T          59   15   PY6GOE        59   11   
+QSO:   28417 PH 2025-03-08 1223 LY7T          59   15   CE7VP         59   12   
+QSO:   28412 PH 2025-03-08 1226 LY7T          59   15   CW5A          59   13   
+QSO:   28405 PH 2025-03-08 1227 LY7T          59   15   PT2AP         59   11   
+QSO:   28370 PH 2025-03-08 1233 LY7T          59   15   CS7BPW        59   14   
+QSO:   28370 PH 2025-03-08 1239 LY7T          59   15   CS7BPO        59   14   
+QSO:   28470 PH 2025-03-08 1246 LY7T          59   15   PU2PLW        59   11   
+QSO:   28480 PH 2025-03-08 1301 LY7T          59   15   PY2EZL        59   11   
+QSO:   28480 PH 2025-03-08 1302 LY7T          59   15   EA4GGE        59   14   
+QSO:   28480 PH 2025-03-08 1304 LY7T          59   15   LU9HVR        59   13   
+QSO:   28480 PH 2025-03-08 1307 LY7T          59   15   KB4KK         59   5    
+QSO:   28480 PH 2025-03-08 1309 LY7T          59   15   PY1KB         59   11   
+QSO:   28480 PH 2025-03-08 1311 LY7T          59   15   4X1UF/M       59   20   
+QSO:   28480 PH 2025-03-08 1314 LY7T          59   15   LU4JEA        59   13   
+QSO:   28480 PH 2025-03-08 1315 LY7T          59   15   LU1JHF        59   13   
+QSO:   28480 PH 2025-03-08 1317 LY7T          59   15   EA3RCA        59   14   
+QSO:   28480 PH 2025-03-08 1322 LY7T          59   15   YC8IEL        59   28   
+QSO:   28480 PH 2025-03-08 1355 LY7T          59   15   PY2DR         59   11   
+QSO:   28500 PH 2025-03-08 1357 LY7T          59   15   PY2BRP        59   11   
+QSO:   28469 PH 2025-03-08 1357 LY7T          59   15   LT3E          59   13   
+QSO:   28430 PH 2025-03-08 1401 LY7T          59   15   4Z4ML         59   20   
+QSO:   28423 PH 2025-03-08 1405 LY7T          59   15   LU1VM         59   13   
+QSO:   28418 PH 2025-03-08 1406 LY7T          59   15   LU3DDH        59   13   
+QSO:   28415 PH 2025-03-08 1406 LY7T          59   15   PY5FO         59   11   
+QSO:   28393 PH 2025-03-08 1408 LY7T          59   15   PR1T          59   11   
+QSO:   28389 PH 2025-03-08 1410 LY7T          59   15   LU2WJV        59   13   
+QSO:   28372 PH 2025-03-08 1411 LY7T          59   15   A65D          59   21   
+QSO:   28367 PH 2025-03-08 1417 LY7T          59   15   PT1M          59   11   
+QSO:   28507 PH 2025-03-08 1433 LY7T          59   15   CW5A          59   13   
+QSO:   28470 PH 2025-03-08 1445 LY7T          59   15   PY2EX         59   11   
+QSO:   28451 PH 2025-03-08 1447 LY7T          59   15   PP1WW         59   11   
+QSO:   28463 PH 2025-03-08 1453 LY7T          59   15   PW2A          59   11   
+QSO:   28474 PH 2025-03-08 1454 LY7T          59   15   PY2TB         59   11   
+QSO:   28442 PH 2025-03-08 1509 LY7T          59   15   LU3VED        59   13   
+QSO:   28500 PH 2025-03-08 1512 LY7T          59   15   PY5MM         59   11   
+QSO:   28467 PH 2025-03-08 1513 LY7T          59   15   PU1SKO        59   11   
+QSO:   28438 PH 2025-03-08 1519 LY7T          59   15   IT9JDR        59   15   
+QSO:   28049 CW 2025-03-08 1524 LY7T          599  15   N8OO          599  4    
+QSO:   28049 CW 2025-03-08 1527 LY7T          599  15   SN4K          599  15   
+QSO:   28049 CW 2025-03-08 1528 LY7T          599  15   EA4JM         599  14   
+QSO:   28049 CW 2025-03-08 1528 LY7T          599  15   WA2CP         599  5    
+QSO:   28049 CW 2025-03-08 1528 LY7T          599  15   OH2PM         599  15   
+QSO:   28027 CW 2025-03-08 1533 LY7T          599  15   LU1HLH        599  13   
+QSO:   28022 CW 2025-03-08 1534 LY7T          599  15   EA5/UM1WA     599  14   
+QSO:   28019 CW 2025-03-08 1534 LY7T          599  15   AA3B          599  5    
+QSO:   28015 CW 2025-03-08 1535 LY7T          599  15   CT1DRB        599  14   
+QSO:   28020 CW 2025-03-08 1644 LY7T          599  15   K1LZ          599  5    
+QSO:   28014 CW 2025-03-08 1647 LY7T          599  15   CB3A          599  12   
+QSO:   28019 CW 2025-03-08 1650 LY7T          599  15   PY2EX         599  11   
+QSO:   28028 CW 2025-03-08 1652 LY7T          599  15   PY2KJ         599  11   
+QSO:   28033 CW 2025-03-08 1652 LY7T          599  15   K3IE          599  4    
+QSO:   28035 CW 2025-03-08 1655 LY7T          599  15   LU9GBR        599  13   
+QSO:   28054 CW 2025-03-08 1657 LY7T          599  15   PT2AW         599  11   
+QSO:   28373 PH 2025-03-08 1701 LY7T          59   15   PU2SXE        59   11   
+QSO:   28437 PH 2025-03-08 1704 LY7T          59   15   YY5ALI        59   9    
+QSO:   28462 PH 2025-03-08 1706 LY7T          59   15   PY4JW         59   11   
+QSO:   28475 PH 2025-03-08 1759 LY7T          59   15   LU2PWY        59   13   
+QSO:   28435 PH 2025-03-08 1800 LY7T          59   15   CS7AXM        59   14   
+QSO:   28411 PH 2025-03-08 1803 LY7T          59   15   PY5ZHP        59   11   
+QSO:   28465 PH 2025-03-08 1807 LY7T          59   15   PR7RBA        59   11   
+QSO:   28520 PH 2025-03-08 1812 LY7T          59   15   LU4FM         59   13   
+QSO:   28517 PH 2025-03-08 1813 LY7T          59   15   LQ4D          59   13   
+QSO:   28513 PH 2025-03-08 1814 LY7T          59   15   CX1AR         59   13   
+QSO:   28495 PH 2025-03-08 1918 LY7T          59   15   PY8ML         59   11   
+QSO:   28385 PH 2025-03-08 1924 LY7T          59   15   CX7ACH        59   13   
+QSO:   28415 PH 2025-03-08 1930 LY7T          59   15   LU1WCL        59   13   
+QSO:   28445 PH 2025-03-08 1933 LY7T          59   15   PY1VOY        59   11   
+END-OF-LOG:

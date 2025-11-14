@@ -1,0 +1,205 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: PP7GB
+CLUB: FALCONS DX GROUP
+CONTEST: SA10-SA
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 51912
+OPERATORS: PP7GB
+NAME: Anderson Barros
+ADDRESS: P.O.Box 727
+ADDRESS-CITY: MACEIO
+ADDRESS-STATE-PROVINCE: AL
+ADDRESS-POSTALCODE: 57055970
+ADDRESS-COUNTRY: BRAZIL 
+GRID-LOCATOR: JJ00AA
+EMAIL: andersonjmbarros@gmail.com
+CREATED-BY: N1MM Logger+ 1.0.10628.0
+QSO:   28450 PH 2025-03-08 1211 PP7GB         59   11   CX1DF         59   13   
+QSO:   28450 PH 2025-03-08 1212 PP7GB         59   11   DP7D          59   14   
+QSO:   28450 PH 2025-03-08 1213 PP7GB         59   11   EC5EA         59   14   
+QSO:   28450 PH 2025-03-08 1214 PP7GB         59   11   LU9HVR        59   13   
+QSO:   28450 PH 2025-03-08 1216 PP7GB         59   11   LT3E          59   13   
+QSO:   28450 PH 2025-03-08 1218 PP7GB         59   11   LU4JEA        59   13   
+QSO:   28450 PH 2025-03-08 1222 PP7GB         59   11   CX5A          59   13   
+QSO:   28450 PH 2025-03-08 1227 PP7GB         59   11   TA3T          59   20   
+QSO:   28450 PH 2025-03-08 1229 PP7GB         59   11   PW8RB         59   11   
+QSO:   28450 PH 2025-03-08 1231 PP7GB         59   11   F5OHM         59   14   
+QSO:   28450 PH 2025-03-08 1234 PP7GB         59   11   OK2PVF        59   15   
+QSO:   28450 PH 2025-03-08 1305 PP7GB         59   11   N8OO          59   4    
+QSO:   28450 PH 2025-03-08 1509 PP7GB         59   11   LQ4D          59   13   
+QSO:   28450 PH 2025-03-08 1510 PP7GB         59   11   XM9A          59   5    
+QSO:   28450 PH 2025-03-08 1512 PP7GB         59   11   LU3VED        59   13   
+QSO:   28450 PH 2025-03-08 1514 PP7GB         59   11   HB9HLM        59   14   
+QSO:   28450 PH 2025-03-08 1516 PP7GB         59   11   LW2DHD        59   13   
+QSO:   28450 PH 2025-03-08 1517 PP7GB         59   11   PY5FO         59   11   
+QSO:   28450 PH 2025-03-08 1519 PP7GB         59   11   PY2SAA        59   11   
+QSO:   28450 PH 2025-03-08 1519 PP7GB         59   11   PY2BRP        59   11   
+QSO:   28450 PH 2025-03-08 1519 PP7GB         59   11   PY2TDB        59   11   
+QSO:   28450 PH 2025-03-08 1520 PP7GB         59   11   PY2EX         59   11   
+QSO:   28450 PH 2025-03-08 1521 PP7GB         59   11   CA1NPX        59   12   
+QSO:   28450 PH 2025-03-08 1524 PP7GB         59   11   W4CMA         59   5    
+QSO:   28450 PH 2025-03-08 1528 PP7GB         59   11   PY2GTA        59   11   
+QSO:   28450 PH 2025-03-08 1529 PP7GB         59   11   PQ5D          59   11   
+QSO:   28450 PH 2025-03-08 1529 PP7GB         59   11   PR2L          59   11   
+QSO:   28450 PH 2025-03-08 1529 PP7GB         59   11   PU2KNW        59   11   
+QSO:   28450 PH 2025-03-08 1529 PP7GB         59   11   LT2D          59   13   
+QSO:   28450 PH 2025-03-08 1531 PP7GB         59   11   PU2NZO        59   11   
+QSO:   28450 PH 2025-03-08 1532 PP7GB         59   11   F6HRP         59   14   
+QSO:   28450 PH 2025-03-08 1532 PP7GB         59   11   LU1IDC        59   13   
+QSO:   28450 PH 2025-03-08 1532 PP7GB         59   11   LU1XM         59   13   
+QSO:   28450 PH 2025-03-08 1533 PP7GB         59   11   PY2SG         59   11   
+QSO:   28450 PH 2025-03-08 1534 PP7GB         59   11   PW3W          59   11   
+QSO:   28450 PH 2025-03-08 1535 PP7GB         59   11   PU3OET        59   11   
+QSO:   28450 PH 2025-03-08 1536 PP7GB         59   11   ZS6STN        59   38   
+QSO:   28450 PH 2025-03-08 1539 PP7GB         59   11   PY5MM         59   11   
+QSO:   28450 PH 2025-03-08 1539 PP7GB         59   11   PU2XAE        59   11   
+QSO:   28450 PH 2025-03-08 1539 PP7GB         59   11   SV3RPQ        59   20   
+QSO:   28450 PH 2025-03-08 1544 PP7GB         59   11   PY2KMM        59   11   
+QSO:   28450 PH 2025-03-08 1544 PP7GB         59   11   PY2GMR        59   11   
+QSO:   28450 PH 2025-03-08 1544 PP7GB         59   11   PX9D          59   11   
+QSO:   28450 PH 2025-03-08 1544 PP7GB         59   11   PU2OXB        59   11   
+QSO:   28450 PH 2025-03-08 1545 PP7GB         59   11   CS7AXM        59   14   
+QSO:   28450 PH 2025-03-08 1547 PP7GB         59   11   KE3DAX        59   5    
+QSO:   28450 PH 2025-03-08 1547 PP7GB         59   11   ON4JL         59   14   
+QSO:   28450 PH 2025-03-08 1547 PP7GB         59   11   PU5MFI        59   11   
+QSO:   28450 PH 2025-03-08 1548 PP7GB         59   11   PY4BAL        59   11   
+QSO:   28450 PH 2025-03-08 1548 PP7GB         59   11   SQ3M          59   15   
+QSO:   28450 PH 2025-03-08 1549 PP7GB         59   11   PY2LHA        59   11   
+QSO:   28450 PH 2025-03-08 1552 PP7GB         59   11   HB3YCS        59   14   
+QSO:   28450 PH 2025-03-08 1552 PP7GB         59   11   IZ6JPK        59   15   
+QSO:   28450 PH 2025-03-08 1555 PP7GB         59   11   DO2HG         59   14   
+QSO:   28450 PH 2025-03-08 1559 PP7GB         59   11   EA8AM         59   33   
+QSO:   28450 PH 2025-03-08 1600 PP7GB         59   11   CE7VP         59   12   
+QSO:   28450 PH 2025-03-08 1602 PP7GB         59   11   LU2WJV        59   13   
+QSO:   28450 PH 2025-03-08 1606 PP7GB         59   11   CA2FHD        59   12   
+QSO:   28450 PH 2025-03-08 1611 PP7GB         59   11   PX3DDO        59   11   
+QSO:   28450 PH 2025-03-08 1611 PP7GB         59   11   CX3DDO        59   13   
+QSO:   28450 PH 2025-03-08 1612 PP7GB         59   11   LV9D          59   13   
+QSO:   28450 PH 2025-03-08 1612 PP7GB         59   11   PY2PLL        59   11   
+QSO:   28450 PH 2025-03-08 1614 PP7GB         59   11   HB9DPY        59   14   
+QSO:   28450 PH 2025-03-08 1615 PP7GB         59   11   PU5BBR        59   11   
+QSO:   28450 PH 2025-03-08 1618 PP7GB         59   11   PU3LCA        59   11   
+QSO:   28450 PH 2025-03-08 1621 PP7GB         59   11   PU2ORS        59   11   
+QSO:   28450 PH 2025-03-08 1623 PP7GB         59   11   PY2ZAE        59   11   
+QSO:   28450 PH 2025-03-08 1623 PP7GB         59   11   PW8AB         59   11   
+QSO:   28450 PH 2025-03-08 1628 PP7GB         59   11   PP5IP         59   11   
+QSO:   28450 PH 2025-03-08 1631 PP7GB         59   11   PY2MZ         59   11   
+QSO:   28450 PH 2025-03-08 1633 PP7GB         59   11   LU1WCL        59   13   
+QSO:   28450 PH 2025-03-08 1635 PP7GB         59   11   K4BDE         59   5    
+QSO:   28450 PH 2025-03-08 1636 PP7GB         59   11   CX4DPG        59   13   
+QSO:   28450 PH 2025-03-08 1638 PP7GB         59   11   IK2DBR        59   15   
+QSO:   28450 PH 2025-03-08 1639 PP7GB         59   11   W1GD          59   5    
+QSO:   28450 PH 2025-03-08 1639 PP7GB         59   11   PY5VE         59   11   
+QSO:   28450 PH 2025-03-08 1640 PP7GB         59   11   PE1NBD        59   14   
+QSO:   28450 PH 2025-03-08 1641 PP7GB         59   11   PU2RDB        59   11   
+QSO:   28450 PH 2025-03-08 1641 PP7GB         59   11   IT9JDR        59   15   
+QSO:   28450 PH 2025-03-08 1645 PP7GB         59   11   YC5NBY        59   28   
+QSO:   28450 PH 2025-03-08 1647 PP7GB         59   11   EA4AOC        59   14   
+QSO:   28450 PH 2025-03-08 1647 PP7GB         59   11   F5NBX         59   14   
+QSO:   28450 PH 2025-03-08 1648 PP7GB         59   11   DO2CT         59   14   
+QSO:   28450 PH 2025-03-08 1650 PP7GB         59   11   DH8WE         59   14   
+QSO:   28450 PH 2025-03-08 1650 PP7GB         59   11   ES6RW         59   15   
+QSO:   28450 PH 2025-03-08 1739 PP7GB         59   11   F6IRA         59   14   
+QSO:   28450 PH 2025-03-08 1740 PP7GB         59   11   TO3Z          59   8    
+QSO:   28450 PH 2025-03-08 1755 PP7GB         59   11   IZ4UFB        59   15   
+QSO:   28450 PH 2025-03-08 1755 PP7GB         59   11   YO9DBP        59   20   
+QSO:   28450 PH 2025-03-08 1755 PP7GB         59   11   SQ3M          59   15   
+QSO:   28450 PH 2025-03-08 1756 PP7GB         59   11   DL4VAI        59   14   
+QSO:   28450 PH 2025-03-08 1756 PP7GB         59   11   HF4A          59   15   
+QSO:   28450 PH 2025-03-08 1756 PP7GB         59   11   OM3CW         59   15   
+QSO:   28450 PH 2025-03-08 1756 PP7GB         59   11   LU1FQ         59   13   
+QSO:   28450 PH 2025-03-08 1757 PP7GB         59   11   PY5YM         59   11   
+QSO:   28450 PH 2025-03-08 1757 PP7GB         59   11   LT5A          59   13   
+QSO:   28450 PH 2025-03-08 1757 PP7GB         59   11   CN8YE         59   33   
+QSO:   28450 PH 2025-03-08 1757 PP7GB         59   11   HA4FB         59   15   
+QSO:   28450 PH 2025-03-08 1757 PP7GB         59   11   LU9JDZ        59   13   
+QSO:   28450 PH 2025-03-08 1758 PP7GB         59   11   DL8UV         59   14   
+QSO:   28450 PH 2025-03-08 1758 PP7GB         59   11   LW2DHD        59   13   
+QSO:   28450 PH 2025-03-08 1758 PP7GB         59   11   F1PNJ         59   14   
+QSO:   28450 PH 2025-03-08 1759 PP7GB         59   11   PY2HZ         59   11   
+QSO:   28450 PH 2025-03-08 1800 PP7GB         59   11   OM5M          59   15   
+QSO:   28450 PH 2025-03-08 1801 PP7GB         59   11   SV8IIR        59   20   
+QSO:   28450 PH 2025-03-08 1802 PP7GB         59   11   F8DVD         59   14   
+QSO:   28450 PH 2025-03-08 1804 PP7GB         59   11   UZ7C          59   16   
+QSO:   28450 PH 2025-03-08 1807 PP7GB         59   11   PU5SKW        59   11   
+QSO:   28450 PH 2025-03-08 1808 PP7GB         59   11   SV3JZT        59   20   
+QSO:   28450 PH 2025-03-08 1808 PP7GB         59   11   PP5BJF        59   11   
+QSO:   28450 PH 2025-03-08 1811 PP7GB         59   11   HB9CIC        59   14   
+QSO:   28450 PH 2025-03-08 1811 PP7GB         59   11   EA8DNX        59   33   
+QSO:   28450 PH 2025-03-08 1811 PP7GB         59   11   PY5AMF        59   11   
+QSO:   28450 PH 2025-03-08 1811 PP7GB         59   11   HG3TAD        59   15   
+QSO:   28450 PH 2025-03-08 1816 PP7GB         59   11   LO5U          59   13   
+QSO:   28450 PH 2025-03-08 1818 PP7GB         59   11   LU9EB         59   13   
+QSO:   28450 PH 2025-03-08 1819 PP7GB         59   11   IW0HLZ        59   15   
+QSO:   28450 PH 2025-03-08 1828 PP7GB         59   11   SP5GNI        59   15   
+QSO:   28450 PH 2025-03-08 1834 PP7GB         59   11   CE2LK         59   12   
+QSO:   28450 PH 2025-03-08 1834 PP7GB         59   11   LW7DQW        59   13   
+QSO:   28450 PH 2025-03-08 1845 PP7GB         59   11   N8OO          59   4    
+QSO:   28450 PH 2025-03-08 1848 PP7GB         59   11   CE2SCP        59   12   
+QSO:   28450 PH 2025-03-08 1857 PP7GB         59   11   IK0ETA        59   15   
+QSO:   28450 PH 2025-03-08 1859 PP7GB         59   11   HB9OAB        59   14   
+QSO:   28450 PH 2025-03-08 1902 PP7GB         59   11   CS7BPO        59   14   
+QSO:   28450 PH 2025-03-08 1907 PP7GB         59   11   LU2PWY        59   13   
+QSO:   28450 PH 2025-03-08 1911 PP7GB         59   11   LO5U          59   13   
+QSO:   28450 PH 2025-03-08 1935 PP7GB         59   11   F4BHW         59   14   
+QSO:   28450 PH 2025-03-08 1935 PP7GB         59   11   K3IE          59   4    
+QSO:   28450 PH 2025-03-08 1944 PP7GB         59   11   EA3OW         59   14   
+QSO:   28450 PH 2025-03-08 1946 PP7GB         59   11   KC1OXM        59   5    
+QSO:   28450 PH 2025-03-08 1947 PP7GB         59   11   PU5FIG        59   11   
+QSO:   28450 PH 2025-03-08 1947 PP7GB         59   11   F6IRS         59   14   
+QSO:   28450 PH 2025-03-08 1949 PP7GB         59   11   W7BD          59   3    
+QSO:   28450 PH 2025-03-08 1949 PP7GB         59   11   EA1JCV        59   14   
+QSO:   28450 PH 2025-03-08 1951 PP7GB         59   11   VA3IPG        59   4    
+QSO:   28450 PH 2025-03-08 1958 PP7GB         59   11   PY2PPZ        59   11   
+QSO:   28450 PH 2025-03-08 2005 PP7GB         59   11   LT7L          59   13   
+QSO:   28450 PH 2025-03-08 2010 PP7GB         59   11   LU4FM         59   13   
+QSO:   28450 PH 2025-03-08 2014 PP7GB         59   11   LU7YZ         59   13   
+QSO:   28450 PH 2025-03-08 2016 PP7GB         59   11   LU7EY         59   13   
+QSO:   28450 PH 2025-03-08 2019 PP7GB         59   11   PU3POE        59   11   
+QSO:   28450 PH 2025-03-08 2035 PP7GB         59   11   LU1VM         59   13   
+QSO:   28450 PH 2025-03-08 2040 PP7GB         59   11   CE1QR         59   12   
+QSO:   28450 PH 2025-03-08 2046 PP7GB         59   11   XE3R          59   6    
+QSO:   28450 PH 2025-03-08 2050 PP7GB         59   11   PY5QW         59   11   
+QSO:   28450 PH 2025-03-08 2050 PP7GB         59   11   IU0PVZ        59   15   
+QSO:   28450 PH 2025-03-08 2051 PP7GB         59   11   PP5MZ         59   11   
+QSO:   28450 PH 2025-03-08 2054 PP7GB         59   11   CE4JZO        59   12   
+QSO:   28450 PH 2025-03-08 2057 PP7GB         59   11   PU5WMA        59   11   
+QSO:   28450 PH 2025-03-08 2100 PP7GB         59   11   PU5WMA        59   11   
+QSO:   28450 PH 2025-03-08 2100 PP7GB         59   11   PD3W          59   14   
+QSO:   28450 PH 2025-03-08 2101 PP7GB         59   11   K4BDX         59   5    
+QSO:   28450 PH 2025-03-08 2158 PP7GB         59   11   K1LZ          59   5    
+QSO:   28450 PH 2025-03-08 2301 PP7GB         59   11   PY1WG         59   11   
+QSO:   28450 PH 2025-03-08 2301 PP7GB         59   11   PU3PET        59   11   
+QSO:   28450 PH 2025-03-08 2308 PP7GB         59   11   PU5DUD        59   11   
+QSO:   28450 PH 2025-03-08 2313 PP7GB         59   11   PU1PRD        59   11   
+QSO:   28450 PH 2025-03-08 2315 PP7GB         59   11   PU9SVF        59   11   
+QSO:   28450 PH 2025-03-08 2316 PP7GB         59   11   PY1MSA        59   11   
+QSO:   28450 PH 2025-03-08 2319 PP7GB         59   11   PY1KB         59   11   
+QSO:   28450 PH 2025-03-09 0905 PP7GB         59   11   EA9ACD        59   33   
+QSO:   28450 PH 2025-03-09 0930 PP7GB         59   11   DO1UTE        59   14   
+QSO:   28450 PH 2025-03-09 0930 PP7GB         59   11   DG1GOY        59   14   
+QSO:   28450 PH 2025-03-09 0932 PP7GB         59   11   DF5GZ         59   14   
+QSO:   28450 PH 2025-03-09 0940 PP7GB         59   11   CT3IQ         59   33   
+QSO:   28450 PH 2025-03-09 0944 PP7GB         59   11   EA3RCA        59   14   
+QSO:   28450 PH 2025-03-09 0957 PP7GB         59   11   IW0HLZ        59   15   
+QSO:   28450 PH 2025-03-09 1023 PP7GB         59   11   F5MNC         59   14   
+QSO:   28450 PH 2025-03-09 1028 PP7GB         59   11   CX6TU         59   13   
+QSO:   28450 PH 2025-03-09 1030 PP7GB         59   11   LQ5A          59   13   
+QSO:   28450 PH 2025-03-09 1032 PP7GB         59   11   IT9FZT        59   15   
+QSO:   28450 PH 2025-03-09 1047 PP7GB         59   11   S51JQ         59   15   
+QSO:   28450 PH 2025-03-09 1101 PP7GB         59   11   F5LIW         59   14   
+QSO:   28450 PH 2025-03-09 1106 PP7GB         59   11   F4HRG         59   14   
+QSO:   28450 PH 2025-03-09 1118 PP7GB         59   11   LU5HCB        59   13   
+QSO:   28450 PH 2025-03-09 1120 PP7GB         59   11   LO7H          59   13   
+QSO:   28450 PH 2025-03-09 1126 PP7GB         59   11   R6AF          59   16   
+QSO:   28450 PH 2025-03-09 1134 PP7GB         59   11   LU5EA         59   13   
+QSO:   28450 PH 2025-03-09 1151 PP7GB         59   11   HB0TLH        59   14   
+QSO:   28450 PH 2025-03-09 1200 PP7GB         59   11   S56V          59   15   
+END-OF-LOG:

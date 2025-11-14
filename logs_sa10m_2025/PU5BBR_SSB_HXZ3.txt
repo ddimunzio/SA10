@@ -1,0 +1,107 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: PU5BBR
+CLUB:  
+CONTEST: CQ-WW-SSB
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 6150
+OPERATORS: PU5BBR
+NAME: ALEX
+ADDRESS: 
+ADDRESS-CITY: FLORIANOOLIS
+ADDRESS-STATE-PROVINCE: SC
+ADDRESS-POSTALCODE: 
+ADDRESS-COUNTRY:BRAZIL 
+GRID-LOCATOR: GG52RJ
+EMAIL:  PU3PIL@AOL.COM
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28432 PH 2025-03-08 1256 PU5BBR        59  11     LU7YE         59  13       
+QSO:   28457 PH 2025-03-08 1257 PU5BBR        59  11     CE1KR         59  12       
+QSO:   28462 PH 2025-03-08 1259 PU5BBR        59  11     LU9WE         59  13       
+QSO:   28518 PH 2025-03-08 1300 PU5BBR        59  11     CB4W          59  12       
+QSO:   28460 PH 2025-03-08 1302 PU5BBR        59  11     CE2LK         59  12       
+QSO:   28439 PH 2025-03-08 1304 PU5BBR        59  11     OZ1AXG        59  14       
+QSO:   28424 PH 2025-03-08 1308 PU5BBR        59  11     LU1WCL        59  13       
+QSO:   28417 PH 2025-03-08 1310 PU5BBR        59  11     N8OO          59  04       
+QSO:   28430 PH 2025-03-08 1328 PU5BBR        59  11     PY8ML         59  11       
+QSO:   28423 PH 2025-03-08 1329 PU5BBR        59  11     LU1VM         59  13       
+QSO:   28405 PH 2025-03-08 1332 PU5BBR        59  11     CE7VP         59  12       
+QSO:   28389 PH 2025-03-08 1339 PU5BBR        59  11     LU2WJV        59  13       
+QSO:   28494 PH 2025-03-08 1358 PU5BBR        59  11     CA6SNT        59  12       
+QSO:   28445 PH 2025-03-08 1409 PU5BBR        59  11     DP7D          59  14       
+QSO:   28493 PH 2025-03-08 1503 PU5BBR        59  11     OA4DOS        59  10       
+QSO:   28510 PH 2025-03-08 1510 PU5BBR        59  11     LU9SOJ        59  13       
+QSO:   28490 PH 2025-03-08 1512 PU5BBR        59  11     PU8PSF        59  11       
+QSO:   28450 PH 2025-03-08 1514 PU5BBR        59  11     PU7MLI        59  11       
+QSO:   28330 PH 2025-03-08 1519 PU5BBR        59  11     E77DX         59  15       
+QSO:   28544 PH 2025-03-08 1602 PU5BBR        59  11     CE5AUC        59  12       
+QSO:   28533 PH 2025-03-08 1605 PU5BBR        59  11     F5LIW         59  14       
+QSO:   28420 PH 2025-03-08 1615 PU5BBR        59  11     PP7GB         59  11       
+QSO:   28452 PH 2025-03-08 1625 PU5BBR        59  11     XQ5CIE        59  12       
+QSO:   28452 PH 2025-03-08 1627 PU5BBR        59  11     CE2EH         59  12       
+QSO:   28377 PH 2025-03-08 1714 PU5BBR        59  11     EI3JZ         59  14       
+QSO:   28318 PH 2025-03-08 1716 PU5BBR        59  11     EA3AR         59  14       
+QSO:   28347 PH 2025-03-08 1726 PU5BBR        59  11     IT9JDR        59  15       
+QSO:   28397 PH 2025-03-08 1730 PU5BBR        59  11     LU9EB         59  13       
+QSO:   28408 PH 2025-03-08 1731 PU5BBR        59  11     EA8AM         59  33       
+QSO:   28475 PH 2025-03-08 1736 PU5BBR        59  11     LU2PWY        59  13       
+QSO:   28528 PH 2025-03-08 1903 PU5BBR        59  11     S51JQ         59  15       
+QSO:   28480 PH 2025-03-08 1912 PU5BBR        59  11     IK0ETA        59  15       
+QSO:   28446 PH 2025-03-08 1915 PU5BBR        59  11     CE4JZO        59  12       
+QSO:   28535 PH 2025-03-08 1945 PU5BBR        59  11     LU1VJC        59  13       
+QSO:   28542 PH 2025-03-08 1946 PU5BBR        59  11     CE2SCP        59  12       
+QSO:   28578 PH 2025-03-08 1947 PU5BBR        59  11     CA2PJP        59  12       
+QSO:   28477 PH 2025-03-08 1957 PU5BBR        59  11     K1LZ          59  05       
+QSO:   28560 PH 2025-03-08 2005 PU5BBR        59  11     PP5TI         59  11       
+QSO:   28403 PH 2025-03-08 2052 PU5BBR        59  11     CA2FHD        59  12       
+QSO:   28442 PH 2025-03-08 2055 PU5BBR        59  11     NF2Q          59  05       
+QSO:   28507 PH 2025-03-08 2057 PU5BBR        59  11     AA2A          59  05       
+QSO:   28475 PH 2025-03-08 2102 PU5BBR        59  11     CA2YWW        59  12       
+QSO:   28507 PH 2025-03-08 2121 PU5BBR        59  11     PT7PT         59  11       
+QSO:   28503 PH 2025-03-08 2124 PU5BBR        59  11     CE2OF         59  12       
+QSO:   28452 PH 2025-03-08 2130 PU5BBR        59  11     CE2PM         59  12       
+QSO:   28452 PH 2025-03-08 2131 PU5BBR        59  11     PU5DFR        59  11       
+QSO:   28452 PH 2025-03-08 2134 PU5BBR        59  11     CA3LVK        59  12       
+QSO:   28487 PH 2025-03-08 2141 PU5BBR        59  11     CA2OGG        59  12       
+QSO:   28450 PH 2025-03-08 2206 PU5BBR        59  11     LU3VED        59  13       
+QSO:   28436 PH 2025-03-08 2207 PU5BBR        59  11     LU7YZ         59  13       
+QSO:   28383 PH 2025-03-08 2208 PU5BBR        59  11     XM9A          59  05       
+QSO:   28355 PH 2025-03-08 2210 PU5BBR        59  11     LU4SAA        59  13       
+QSO:   28514 PH 2025-03-08 2223 PU5BBR        59  11     CB3A          59  12       
+QSO:   28370 PH 2025-03-08 2258 PU5BBR        59  11     CE2RK         59  12       
+QSO:   28452 PH 2025-03-08 2301 PU5BBR        59  11     KU7T          59  03       
+QSO:   28455 PH 2025-03-08 2306 PU5BBR        59  11     AB1F          59  05       
+QSO:   28350 PH 2025-03-08 2309 PU5BBR        59  11     CE5PR         59  12       
+QSO:   28350 PH 2025-03-08 2310 PU5BBR        59  11     CO2QU         59  08       
+QSO:   28350 PH 2025-03-08 2311 PU5BBR        59  11     XE2CS         59  06       
+QSO:   28350 PH 2025-03-08 2313 PU5BBR        59  11     PS7MA         59  11       
+QSO:   28350 PH 2025-03-08 2314 PU5BBR        59  11     WQ6X          59  03       
+QSO:   28441 PH 2025-03-08 2336 PU5BBR        59  11     JA7OWD        59  25       
+QSO:   28340 PH 2025-03-08 2351 PU5BBR        59  11     CE7TS         59  12       
+QSO:   28434 PH 2025-03-09 0031 PU5BBR        59  11     W1PR          59  03       
+QSO:   28520 PH 2025-03-09 0034 PU5BBR        59  11     JJ1MBU        59  25       
+QSO:   28305 PH 2025-03-09 0038 PU5BBR        59  11     YY5ALI        59  09       
+QSO:   28455 PH 2025-03-09 0050 PU5BBR        59  11     HI8R          59  08       
+QSO:   28478 PH 2025-03-09 0054 PU5BBR        59  11     YV1GIY        59  09       
+QSO:   28455 PH 2025-03-09 0056 PU5BBR        59  11     HI8R          59  08       
+QSO:   28410 PH 2025-03-09 0105 PU5BBR        59  11     KE2AY         59  05       
+QSO:   28431 PH 2025-03-09 1031 PU5BBR        59  11     CS7BPO        59  14       
+QSO:   28373 PH 2025-03-09 1038 PU5BBR        59  11     F4BHW         59  14       
+QSO:   28420 PH 2025-03-09 1039 PU5BBR        59  11     IW0HLZ        59  15       
+QSO:   28468 PH 2025-03-09 1043 PU5BBR        59  11     F8DVD         59  14       
+QSO:   28515 PH 2025-03-09 1049 PU5BBR        59  11     HB9OAB        59  14       
+QSO:   28466 PH 2025-03-09 1053 PU5BBR        59  11     EA3RCA        59  14       
+QSO:   28431 PH 2025-03-09 1058 PU5BBR        59  11     F5NBX         59  14       
+QSO:   28439 PH 2025-03-09 1110 PU5BBR        59  11     F4HRG         59  14       
+QSO:   28487 PH 2025-03-09 1135 PU5BBR        59  11     CS7BFV        59  14       
+QSO:   28488 PH 2025-03-09 1136 PU5BBR        59  11     PU8WCB        59  11       
+QSO:   28368 PH 2025-03-09 1141 PU5BBR        59  11     SP7M          59  15       
+QSO:   28530 PH 2025-03-09 1147 PU5BBR        59  11     CS7AXM        59  14       
+QSO:   28495 PH 2025-03-09 1150 PU5BBR        59  11     UZ7C          59  16       
+END-OF-LOG:

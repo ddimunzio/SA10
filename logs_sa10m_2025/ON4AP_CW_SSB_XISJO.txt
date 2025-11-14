@@ -1,0 +1,113 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: ON4AP
+CLUB: UBA KTK
+CONTEST: CQ-WW-CW
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: ALL
+CATEGORY-MODE: MIXED
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 10208
+OPERATORS: ON4AP
+NAME: Cesar Henrique Assad dos Santos
+ADDRESS: Koning Albertpark 11
+ADDRESS-CITY: Kortrijk
+ADDRESS-STATE-PROVINCE: West Flandres
+ADDRESS-POSTALCODE: 8500
+ADDRESS-COUNTRY: Belgium
+GRID-LOCATOR: JO10PU
+EMAIL: py1xh.cesar@gmail.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28015 CW 2025-03-08 1241 ON4AP         599 14     PY2XL         599 11       
+QSO:   28038 CW 2025-03-08 1245 ON4AP         599 14     PY1VOY        599 11       
+QSO:   28010 CW 2025-03-08 1249 ON4AP         599 14     ZW8T          599 11       
+QSO:   28020 CW 2025-03-08 1254 ON4AP         599 14     IK1PMR        599 15       
+QSO:   28029 CW 2025-03-08 1300 ON4AP         599 14     VR2CO         599 24       
+QSO:   28028 CW 2025-03-08 1302 ON4AP         599 14     NM4AA         599 05       
+QSO:   28025 CW 2025-03-08 1303 ON4AP         599 14     FY5KE         599 09       
+QSO:   28023 CW 2025-03-08 1304 ON4AP         599 14     R1ZM          599 16       
+QSO:   28026 CW 2025-03-08 1307 ON4AP         599 14     LU1HLH        599 13       
+QSO:   28006 CW 2025-03-08 1311 ON4AP         599 14     PP8ZAC        599 11       
+QSO:   28015 CW 2025-03-08 1313 ON4AP         599 14     EA7BEZ        599 14       
+QSO:   28042 CW 2025-03-08 1315 ON4AP         599 14     PY2KJ         599 11       
+QSO:   28040 CW 2025-03-08 1316 ON4AP         599 14     PY1KO         599 11       
+QSO:   28050 CW 2025-03-08 1318 ON4AP         599 14     LU5HCB        599 13       
+QSO:   28041 CW 2025-03-08 1320 ON4AP         599 14     4X6FR         599 20       
+QSO:   28022 CW 2025-03-08 1321 ON4AP         599 14     9Z4Y          599 09       
+QSO:   28019 CW 2025-03-08 1323 ON4AP         599 14     PY3TD         599 11       
+QSO:   28008 CW 2025-03-08 1333 ON4AP         599 14     K1LZ          599 05       
+QSO:   28039 CW 2025-03-08 1407 ON4AP         599 14     UY5LW         599 16       
+QSO:   28021 CW 2025-03-08 1408 ON4AP         599 14     AA2A          599 05       
+QSO:   28004 CW 2025-03-08 1411 ON4AP         599 14     VA2EBI        599 05       
+QSO:   28062 CW 2025-03-08 1415 ON4AP         599 14     PU2UAF        599 11       
+QSO:   28045 CW 2025-03-08 1416 ON4AP         599 14     K4BAI         599 05       
+QSO:   28011 CW 2025-03-08 1420 ON4AP         599 14     VE1ANU        599 05       
+QSO:   28031 CW 2025-03-08 1423 ON4AP         599 14     WA2CP         599 05       
+QSO:   28471 PH 2025-03-08 1425 ON4AP         59  14     PV2K          59  11       
+QSO:   28415 PH 2025-03-08 1430 ON4AP         59  14     N8OO          59  04       
+QSO:   28392 PH 2025-03-08 1433 ON4AP         59  14     PR1T          59  11       
+QSO:   28375 PH 2025-03-08 1434 ON4AP         59  14     TA3T          59  20       
+QSO:   28520 PH 2025-03-08 1435 ON4AP         59  14     WA1Z          59  05       
+QSO:   28529 PH 2025-03-08 1438 ON4AP         59  14     CE5AUC        59  12       
+QSO:   28435 PH 2025-03-08 1444 ON4AP         59  14     PU5WMA        59  11       
+QSO:   28432 PH 2025-03-08 1445 ON4AP         59  14     R6AF          59  16       
+QSO:   28433 PH 2025-03-08 1455 ON4AP         59  14     HB9HLM        59  14       
+QSO:   28442 PH 2025-03-08 1503 ON4AP         59  14     LU3VED        59  13       
+QSO:   28537 PH 2025-03-08 1506 ON4AP         59  14     AY7J          59  13       
+QSO:   28526 PH 2025-03-08 1510 ON4AP         59  14     PP1WW         59  11       
+QSO:   28056 CW 2025-03-08 1518 ON4AP         599 14     PT2AW         599 11       
+QSO:   28032 CW 2025-03-08 1520 ON4AP         599 14     KG9N          599 04       
+QSO:   28028 CW 2025-03-08 1521 ON4AP         599 14     PX9D          599 11       
+QSO:   28015 CW 2025-03-08 1535 ON4AP         599 14     8P9YI         599 08       
+QSO:   28037 CW 2025-03-08 1540 ON4AP         599 14     PY1NSC        599 11       
+QSO:   28520 PH 2025-03-08 1546 ON4AP         59  14     PU2VLW        59  11       
+QSO:   28472 PH 2025-03-08 1548 ON4AP         59  14     PY4JW         59  11       
+QSO:   28428 PH 2025-03-08 1554 ON4AP         59  14     UT3QZ         59  16       
+QSO:   28423 PH 2025-03-08 1555 ON4AP         59  14     LU1VM         59  13       
+QSO:   28422 PH 2025-03-08 1558 ON4AP         59  14     PT2AP         59  11       
+QSO:   28416 PH 2025-03-08 1559 ON4AP         59  14     LU3DDH        59  13       
+QSO:   28408 PH 2025-03-08 1606 ON4AP         59  14     EA8AM         59  33       
+QSO:   28050 CW 2025-03-08 1621 ON4AP         599 14     MP7DX         599 14       
+QSO:   28465 PH 2025-03-08 1759 ON4AP         59  14     PR7RBA        59  11       
+QSO:   28495 PH 2025-03-08 1804 ON4AP         59  14     PY2TB         59  11       
+QSO:   28498 PH 2025-03-08 1804 ON4AP         59  14     PU5DUD        59  11       
+QSO:   28043 CW 2025-03-08 1814 ON4AP         599 14     PY2EX         599 11       
+QSO:   28042 CW 2025-03-08 1815 ON4AP         599 14     PY2XC         599 11       
+QSO:   28016 CW 2025-03-08 1827 ON4AP         599 14     VE3RHQ        599 04       
+QSO:   28047 CW 2025-03-08 1832 ON4AP         599 14     PY1MK         599 11       
+QSO:   28016 CW 2025-03-08 1834 ON4AP         599 14     NP2X          599 08       
+QSO:   28413 PH 2025-03-08 1959 ON4AP         59  14     CW5A          59  13       
+QSO:   28390 PH 2025-03-08 2009 ON4AP         59  14     PW8AB         59  11       
+QSO:   28469 PH 2025-03-08 2013 ON4AP         59  14     LT3E          59  13       
+QSO:   28023 CW 2025-03-08 2020 ON4AP         599 14     CB3A          599 12       
+QSO:   28040 CW 2025-03-08 2037 ON4AP         599 14     LU6DW         599 13       
+QSO:   28033 CW 2025-03-09 0731 ON4AP         599 14     SV1BJW        599 20       
+QSO:   28020 CW 2025-03-09 0734 ON4AP         599 14     DP7D          599 14       
+QSO:   28018 CW 2025-03-09 0747 ON4AP         599 14     HG5D          599 15       
+QSO:   28044 CW 2025-03-09 0916 ON4AP         599 14     TA3NE         599 20       
+QSO:   28022 CW 2025-03-09 0919 ON4AP         599 14     F5OHM         599 14       
+QSO:   28028 CW 2025-03-09 1000 ON4AP         599 14     4Z5ML         599 20       
+QSO:   28420 PH 2025-03-09 1030 ON4AP         59  14     IW0HLJ        59  15       
+QSO:   28035 CW 2025-03-09 1036 ON4AP         599 14     ZD7BG         599 36       
+QSO:   28008 CW 2025-03-09 1040 ON4AP         599 14     PY2GTA        599 11       
+QSO:   28012 CW 2025-03-09 1047 ON4AP         599 14     9N7AA         599 22       
+QSO:   28017 CW 2025-03-09 1057 ON4AP         599 14     PY5ZHP        599 11       
+QSO:   28415 PH 2025-03-09 1059 ON4AP         59  14     PW2A          59  11       
+QSO:   28044 CW 2025-03-09 1101 ON4AP         599 14     PP2RON        599 11       
+QSO:   28040 CW 2025-03-09 1103 ON4AP         599 14     SV1DAY        599 20       
+QSO:   28431 PH 2025-03-09 1105 ON4AP         59  14     CS7BPO        59  14       
+QSO:   28046 CW 2025-03-09 1112 ON4AP         599 14     UR4L          599 16       
+QSO:   28050 CW 2025-03-09 1113 ON4AP         599 14     PY1AX         599 11       
+QSO:   28034 CW 2025-03-09 1124 ON4AP         599 14     PP5IP         599 11       
+QSO:   28038 CW 2025-03-09 1125 ON4AP         599 14     RX9WN         599 16       
+QSO:   28006 CW 2025-03-09 1128 ON4AP         599 14     EA9ACD        599 33       
+QSO:   28385 PH 2025-03-09 1130 ON4AP         59  14     PU1JSV        59  11       
+QSO:   28398 PH 2025-03-09 1131 ON4AP         59  14     PY1KB         59  11       
+QSO:   28443 PH 2025-03-09 1136 ON4AP         59  14     PT1M          59  11       
+QSO:   28480 PH 2025-03-09 1151 ON4AP         59  14     PY1AX         59  11       
+QSO:   28500 PH 2025-03-09 1157 ON4AP         59  14     PY5MM         59  11       
+QSO:   28574 PH 2025-03-09 1159 ON4AP         59  14     LU4FM         59  13       
+END-OF-LOG:

@@ -1,0 +1,85 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: HK3BIA
+CLUB:  
+CONTEST: CQ-WW-SSB
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 4445
+OPERATORS: HK3BIA
+NAME: Fernando Bendek
+ADDRESS: Carrera 56 # 59 - 96
+ADDRESS-CITY: Bogota
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 111010
+ADDRESS-COUNTRY: Colombia
+GRID-LOCATOR: FJ24ML
+EMAIL: bendeckfernando@hotmaiL.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28000 PH 2025-03-08 1202 HK3BIA        59  9      DP7D          59  14       
+QSO:   28000 PH 2025-03-08 1206 HK3BIA        59  9      LU1WCL        59  13       
+QSO:   28000 PH 2025-03-08 1211 HK3BIA        59  9      LU1WE         59  13       
+QSO:   28000 PH 2025-03-08 1214 HK3BIA        59  9      F4BHW         59  14       
+QSO:   28000 PH 2025-03-08 1224 HK3BIA        59  9      CS7BPO        59  14       
+QSO:   28000 PH 2025-03-08 1226 HK3BIA        59  9      XM9A          59  05       
+QSO:   28000 PH 2025-03-08 1240 HK3BIA        59  9      CE7VP         59  12       
+QSO:   28000 PH 2025-03-08 1247 HK3BIA        59  9      LU7YE         59  13       
+QSO:   28000 PH 2025-03-08 1258 HK3BIA        59  9      OZ1AXG        59  14       
+QSO:   28000 PH 2025-03-08 1300 HK3BIA        59  9      N8OO          59  04       
+QSO:   28000 PH 2025-03-08 1302 HK3BIA        59  9      CE1KR         59  12       
+QSO:   28000 PH 2025-03-08 1325 HK3BIA        59  9      PT1M          59  11       
+QSO:   28000 PH 2025-03-08 1349 HK3BIA        59  9      UZ7C          59  16       
+QSO:   28000 PH 2025-03-08 1358 HK3BIA        59  9      F5LIW         59  14       
+QSO:   28000 PH 2025-03-08 1400 HK3BIA        59  9      HB2Y          59  14       
+QSO:   28000 PH 2025-03-08 1401 HK3BIA        59  9      F8DVD         59  14       
+QSO:   28000 PH 2025-03-08 1405 HK3BIA        59  9      XE3R          59  06       
+QSO:   28000 PH 2025-03-08 1412 HK3BIA        59  9      YU7RCI        59  15       
+QSO:   28000 PH 2025-03-08 1418 HK3BIA        59  9      LU1VM         59  13       
+QSO:   28000 PH 2025-03-08 1439 HK3BIA        59  9      SP7M          59  15       
+QSO:   28000 PH 2025-03-08 1441 HK3BIA        59  9      S51JQ         59  15       
+QSO:   28000 PH 2025-03-08 1444 HK3BIA        59  9      PR1T          59  11       
+QSO:   28000 PH 2025-03-08 1503 HK3BIA        59  9      TK4TH         59  15       
+QSO:   28000 PH 2025-03-08 1506 HK3BIA        59  9      UR2Y          59  16       
+QSO:   28000 PH 2025-03-08 1508 HK3BIA        59  9      HB9OAB        59  14       
+QSO:   28000 PH 2025-03-08 1513 HK3BIA        59  9      N4OX          59  05       
+QSO:   28000 PH 2025-03-08 1524 HK3BIA        59  9      IK5RLP        59  15       
+QSO:   28000 PH 2025-03-08 1538 HK3BIA        59  9      VE2IAA        59  05       
+QSO:   28000 PH 2025-03-08 1550 HK3BIA        59  9      EA8AM         59  33       
+QSO:   28000 PH 2025-03-08 1553 HK3BIA        59  9      LU3DDH        59  13       
+QSO:   28000 PH 2025-03-08 1559 HK3BIA        59  9      LU1VJC        59  13       
+QSO:   28000 PH 2025-03-08 1600 HK3BIA        59  9      PW2A          59  11       
+QSO:   28000 PH 2025-03-08 1635 HK3BIA        59  9      XE2Q          59  06       
+QSO:   28000 PH 2025-03-08 1642 HK3BIA        59  9      TO3Z          59  08       
+QSO:   28000 PH 2025-03-08 1647 HK3BIA        59  9      AA2A          59  05       
+QSO:   28000 PH 2025-03-08 1651 HK3BIA        59  9      AY7J          59  13       
+QSO:   28000 PH 2025-03-08 1704 HK3BIA        59  9      IZ1PJX        59  15       
+QSO:   28000 PH 2025-03-08 1710 HK3BIA        59  9      F5IG          59  14       
+QSO:   28000 PH 2025-03-08 1717 HK3BIA        59  9      IK4UPB        59  15       
+QSO:   28000 PH 2025-03-08 1721 HK3BIA        59  9      PD7V          59  14       
+QSO:   28000 PH 2025-03-08 1723 HK3BIA        59  9      CE5PR         59  12       
+QSO:   28000 PH 2025-03-08 1725 HK3BIA        59  9      EI3JZ         59  14       
+QSO:   28000 PH 2025-03-08 1728 HK3BIA        59  9      PD3W          59  14       
+QSO:   28000 PH 2025-03-08 1752 HK3BIA        59  9      CB3A          59  12       
+QSO:   28000 PH 2025-03-08 1755 HK3BIA        59  9      PT2AP         59  11       
+QSO:   28000 PH 2025-03-08 1757 HK3BIA        59  9      LU2PWY        59  13       
+QSO:   28000 PH 2025-03-08 1829 HK3BIA        59  9      CT7AIX        59  14       
+QSO:   28000 PH 2025-03-08 1831 HK3BIA        59  9      LU9HVR        59  13       
+QSO:   28000 PH 2025-03-08 1840 HK3BIA        59  9      IW0HLZ        59  15       
+QSO:   28000 PH 2025-03-08 1843 HK3BIA        59  9      LT3E          59  13       
+QSO:   28000 PH 2025-03-08 1908 HK3BIA        59  9      PU5WMA        59  11       
+QSO:   28000 PH 2025-03-08 1910 HK3BIA        59  9      LQ5H          59  13       
+QSO:   28000 PH 2025-03-08 1915 HK3BIA        59  9      OA4DXW        59  10       
+QSO:   28000 PH 2025-03-08 1918 HK3BIA        59  9      PU2KNM        59  11       
+QSO:   28000 PH 2025-03-09 1140 HK3BIA        59  9      CE1LTJ        59  12       
+QSO:   28000 PH 2025-03-09 1218 HK3BIA        59  9      W1PR          59  03       
+QSO:   28000 PH 2025-03-09 1230 HK3BIA        59  9      PY2COI        59  11       
+QSO:   28000 PH 2025-03-09 1237 HK3BIA        59  9      PU1TSV        59  11       
+QSO:   28000 PH 2025-03-09 1239 HK3BIA        59  9      PU2SXE        59  11       
+QSO:   28000 PH 2025-03-09 1246 HK3BIA        59  9      PP1WW         59  11       
+QSO:   28000 PH 2025-03-09 1310 HK3BIA        59  9      CA1NPK        59  12       
+END-OF-LOG:

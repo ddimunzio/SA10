@@ -1,0 +1,96 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: PD3JWB
+CLUB:  
+CONTEST: CQ-WW-SSB
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TIME: 24-HOURS
+CATEGORY-TRANSMITTER: ONE
+CATEGORY-OVERLAY: NOVICE-TECH
+CLAIMED-SCORE: 5100
+OPERATORS: PD3JWB
+NAME: Kobus Buitenhuis
+ADDRESS: Vliedbergstraat 147
+ADDRESS-CITY: Wolphaartsdijk
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 4471CE
+ADDRESS-COUNTRY: Netherlands
+GRID-LOCATOR: JO11VM
+EMAIL: pd3jwb@zeelandnet.nl
+CREATED-BY: N1MM Logger+ 1.0.10628.0
+QSO:   28393 PH 2025-03-08 1344 PD3JWB        59  14     PR1T          59  11       
+QSO:   28350 PH 2025-03-08 1345 PD3JWB        59  14     CS7BPO        59  14       
+QSO:   28454 PH 2025-03-08 1347 PD3JWB        59  14     PT2AP         59  11       
+QSO:   28470 PH 2025-03-08 1348 PD3JWB        59  14     PU2VLW        59  11       
+QSO:   28479 PH 2025-03-08 1349 PD3JWB        59  14     K1LZ          59  05       
+QSO:   28429 PH 2025-03-08 1355 PD3JWB        59  14     UT3QZ         59  16       
+QSO:   28508 PH 2025-03-08 1409 PD3JWB        59  14     PT7PT         59  11       
+QSO:   28550 PH 2025-03-08 1411 PD3JWB        59  14     CT3IQ         59  33       
+QSO:   28528 PH 2025-03-08 1412 PD3JWB        59  14     CE5AUC        59  12       
+QSO:   28500 PH 2025-03-08 1413 PD3JWB        59  14     PY5MM         59  11       
+QSO:   28498 PH 2025-03-08 1416 PD3JWB        59  14     PU5DUD        59  11       
+QSO:   28474 PH 2025-03-08 1430 PD3JWB        59  14     PY2TB         59  11       
+QSO:   28535 PH 2025-03-08 1433 PD3JWB        59  14     LQ4D          59  13       
+QSO:   28507 PH 2025-03-08 1455 PD3JWB        59  14     CW5A          59  13       
+QSO:   28484 PH 2025-03-08 1502 PD3JWB        59  14     PU2ULN        59  11       
+QSO:   28484 PH 2025-03-08 1507 PD3JWB        59  14     LU4WJV        59  13       
+QSO:   28375 PH 2025-03-08 1519 PD3JWB        59  14     TA3T          59  20       
+QSO:   28461 PH 2025-03-08 1525 PD3JWB        59  14     PU2POE        59  11       
+QSO:   28472 PH 2025-03-08 1526 PD3JWB        59  14     PY4JW         59  11       
+QSO:   28505 PH 2025-03-08 1527 PD3JWB        59  14     AA2A          59  05       
+QSO:   28526 PH 2025-03-08 1530 PD3JWB        59  14     PP1WW         59  11       
+QSO:   28377 PH 2025-03-08 1533 PD3JWB        59  14     PY2EX         59  11       
+QSO:   28367 PH 2025-03-08 1533 PD3JWB        59  14     PT1M          59  11       
+QSO:   28490 PH 2025-03-08 1625 PD3JWB        59  14     LT3E          59  13       
+QSO:   28463 PH 2025-03-08 1626 PD3JWB        59  14     PW2A          59  11       
+QSO:   28430 PH 2025-03-08 1716 PD3JWB        59  14     PY8ML         59  11       
+QSO:   28354 PH 2025-03-08 1718 PD3JWB        59  14     S51JQ         59  15       
+QSO:   28465 PH 2025-03-08 1721 PD3JWB        59  14     PR7RBA        59  11       
+QSO:   28536 PH 2025-03-08 1722 PD3JWB        59  14     PU2KNM        59  11       
+QSO:   28523 PH 2025-03-08 1726 PD3JWB        59  14     PY2UD         59  11       
+QSO:   28546 PH 2025-03-08 1731 PD3JWB        59  14     PY1JDX        59  11       
+QSO:   28502 PH 2025-03-08 1735 PD3JWB        59  14     PY1WK         59  11       
+QSO:   28438 PH 2025-03-08 1739 PD3JWB        59  14     PY2ZR         59  11       
+QSO:   28432 PH 2025-03-08 1741 PD3JWB        59  14     PP5IP         59  11       
+QSO:   28551 PH 2025-03-08 1742 PD3JWB        59  14     YV1GIY        59  09       
+QSO:   28475 PH 2025-03-08 1743 PD3JWB        59  14     LU2PWY        59  13       
+QSO:   28563 PH 2025-03-08 1751 PD3JWB        59  14     LO7H          59  13       
+QSO:   28388 PH 2025-03-08 1755 PD3JWB        59  14     PW8RB         59  11       
+QSO:   28411 PH 2025-03-08 1757 PD3JWB        59  14     PY5ZHP        59  11       
+QSO:   28463 PH 2025-03-08 1759 PD3JWB        59  14     PU1SKO        59  11       
+QSO:   28397 PH 2025-03-08 1809 PD3JWB        59  14     LU9EB         59  13       
+QSO:   28444 PH 2025-03-08 1810 PD3JWB        59  14     PY2GZ         59  11       
+QSO:   28557 PH 2025-03-08 1813 PD3JWB        59  14     CX6TU         59  13       
+QSO:   28408 PH 2025-03-08 1818 PD3JWB        59  14     HC5VF         59  10       
+QSO:   28474 PH 2025-03-08 1821 PD3JWB        59  14     LU2WJV        59  13       
+QSO:   28513 PH 2025-03-08 1823 PD3JWB        59  14     CX1AR         59  13       
+QSO:   28580 PH 2025-03-08 1826 PD3JWB        59  14     LU2DX         59  13       
+QSO:   28485 PH 2025-03-08 1827 PD3JWB        59  14     PS7MA         59  11       
+QSO:   28404 PH 2025-03-08 1830 PD3JWB        59  14     PY2CP         59  11       
+QSO:   28426 PH 2025-03-08 1833 PD3JWB        59  14     LU1VM         59  13       
+QSO:   28430 PH 2025-03-08 1836 PD3JWB        59  14     LU7YE         59  13       
+QSO:   28398 PH 2025-03-08 1837 PD3JWB        59  14     LO5U          59  13       
+QSO:   28467 PH 2025-03-08 1838 PD3JWB        59  14     LW7DQW	       59  13       
+QSO:   28521 PH 2025-03-08 1844 PD3JWB        59  14     LU4FM         59  13       
+QSO:   28422 PH 2025-03-08 1846 PD3JWB        59  14     PU2RDB        59  11       
+QSO:   28385 PH 2025-03-08 1855 PD3JWB        59  14     CX7ACH        59  13       
+QSO:   28505 PH 2025-03-08 1907 PD3JWB        59  14     HH2AA         59  08       
+QSO:   28423 PH 2025-03-08 1918 PD3JWB        59  14     PY4LH         59  11       
+QSO:   28415 PH 2025-03-08 1920 PD3JWB        59  14     LU1WCL        59  13       
+QSO:   28445 PH 2025-03-08 1922 PD3JWB        59  14     PY1VOY        59  11       
+QSO:   28505 PH 2025-03-08 1924 PD3JWB        59  14     AY7J          59  13       
+QSO:   28578 PH 2025-03-08 1929 PD3JWB        59  14     CA2PJP        59  12       
+QSO:   28485 PH 2025-03-08 1931 PD3JWB        59  14     PY5FO         59  11       
+QSO:   28381 PH 2025-03-08 1933 PD3JWB        59  14     PP5LC         59  11       
+QSO:   28514 PH 2025-03-08 1935 PD3JWB        59  14     PT2AW         59  11       
+QSO:   28396 PH 2025-03-08 1940 PD3JWB        59  14     PU2SXE        59  11       
+QSO:   28445 PH 2025-03-08 2102 PD3JWB        59  14     LU5HCB        59  13       
+QSO:   28411 PH 2025-03-09 1046 PD3JWB        59  14     LQ5A          59  13       
+QSO:   28535 PH 2025-03-09 1054 PD3JWB        59  14     PU4JOE        59  11       
+QSO:   28535 PH 2025-03-09 1055 PD3JWB        59  14     CX8DS         59  13       
+END-OF-LOG:

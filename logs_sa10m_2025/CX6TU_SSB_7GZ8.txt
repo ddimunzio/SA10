@@ -1,0 +1,255 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: CX6TU
+CLUB: CENTRO RADIOAFICIONADOS ROCHA
+CONTEST: SA10_SA
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: ALL
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 107682
+OPERATORS: CX6TU
+NAME: Boris Danilo Morrones
+ADDRESS: Guayabo casi Tabare s/n
+ADDRESS: Pueblo 19 de Abril
+ADDRESS-CITY: Rocha
+ADDRESS-STATE-PROVINCE: RO
+ADDRESS-POSTALCODE: 27003
+ADDRESS-COUNTRY: Uruguay
+GRID-LOCATOR: GF25XP
+EMAIL: danilo.cx6tu@gmail.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28333 PH 2025-03-08 1641 CX6TU         59   13   CT3IQ         59   33   
+QSO:   28360 PH 2025-03-08 1643 CX6TU         59   13   YT8WW         59   15   
+QSO:   28384 PH 2025-03-08 1644 CX6TU         59   13   PT2AW         59   11   
+QSO:   28403 PH 2025-03-08 1646 CX6TU         59   13   CE7VP         59   12   
+QSO:   28481 PH 2025-03-08 1651 CX6TU         59   13   IZ8ESP        59   15   
+QSO:   28481 PH 2025-03-08 1651 CX6TU         59   13   CE5PR         59   12   
+QSO:   28481 PH 2025-03-08 1652 CX6TU         59   13   PU4FAR        59   11   
+QSO:   28481 PH 2025-03-08 1653 CX6TU         59   13   DM6LE         59   14   
+QSO:   28481 PH 2025-03-08 1653 CX6TU         59   13   CE7TS         59   12   
+QSO:   28481 PH 2025-03-08 1653 CX6TU         59   13   IK4UPB        59   15   
+QSO:   28481 PH 2025-03-08 1654 CX6TU         59   13   PY4BAL        59   11   
+QSO:   28481 PH 2025-03-08 1655 CX6TU         59   13   PU7NLD        59   11   
+QSO:   28481 PH 2025-03-08 1655 CX6TU         59   13   PY8ML         59   11   
+QSO:   28481 PH 2025-03-08 1656 CX6TU         59   13   PU1AJN        59   11   
+QSO:   28481 PH 2025-03-08 1656 CX6TU         59   13   DL8UV         59   14   
+QSO:   28481 PH 2025-03-08 1657 CX6TU         59   13   OK7XA         59   15   
+QSO:   28540 PH 2025-03-08 1719 CX6TU         59   13   EA9ACD        59   33   
+QSO:   28557 PH 2025-03-08 1721 CX6TU         59   13   DL2BDA        59   14   
+QSO:   28557 PH 2025-03-08 1721 CX6TU         59   13   F4VWK         59   14   
+QSO:   28557 PH 2025-03-08 1722 CX6TU         59   13   PD3W          59   14   
+QSO:   28557 PH 2025-03-08 1722 CX6TU         59   13   PU4JOE        59   11   
+QSO:   28557 PH 2025-03-08 1723 CX6TU         59   13   DL7OD         59   14   
+QSO:   28557 PH 2025-03-08 1723 CX6TU         59   13   K5ZD          59   5    
+QSO:   28557 PH 2025-03-08 1724 CX6TU         59   13   HB9CIC        59   14   
+QSO:   28557 PH 2025-03-08 1725 CX6TU         59   13   2E1DNC        59   14   
+QSO:   28557 PH 2025-03-08 1726 CX6TU         59   13   DO2CT         59   14   
+QSO:   28557 PH 2025-03-08 1726 CX6TU         59   13   CS7BPO        59   14   
+QSO:   28557 PH 2025-03-08 1727 CX6TU         59   13   IU5CJP        59   15   
+QSO:   28557 PH 2025-03-08 1728 CX6TU         59   13   EA4AOC        59   14   
+QSO:   28557 PH 2025-03-08 1728 CX6TU         59   13   PE1NBD        59   14   
+QSO:   28557 PH 2025-03-08 1728 CX6TU         59   13   PT2AP         59   11   
+QSO:   28557 PH 2025-03-08 1728 CX6TU         59   13   EA3RCA        59   14   
+QSO:   28557 PH 2025-03-08 1729 CX6TU         59   13   HF7A          59   15   
+QSO:   28557 PH 2025-03-08 1729 CX6TU         59   13   CS7AXM        59   14   
+QSO:   28557 PH 2025-03-08 1730 CX6TU         59   13   UZ7C          59   16   
+QSO:   28557 PH 2025-03-08 1730 CX6TU         59   13   F4EDW         59   14   
+QSO:   28557 PH 2025-03-08 1731 CX6TU         59   13   F6IRA         59   14   
+QSO:   28557 PH 2025-03-08 1731 CX6TU         59   13   PP2RON        59   11   
+QSO:   28557 PH 2025-03-08 1731 CX6TU         59   13   SQ3M          59   15   
+QSO:   28557 PH 2025-03-08 1732 CX6TU         59   13   DL4VAI        59   14   
+QSO:   28557 PH 2025-03-08 1732 CX6TU         59   13   M0WDK         59   14   
+QSO:   28557 PH 2025-03-08 1733 CX6TU         59   13   IK7UXU        59   15   
+QSO:   28557 PH 2025-03-08 1733 CX6TU         59   13   F5JNX         59   14   
+QSO:   28557 PH 2025-03-08 1734 CX6TU         59   13   CA6SNT        59   12   
+QSO:   28557 PH 2025-03-08 1734 CX6TU         59   13   HA4FB         59   15   
+QSO:   28557 PH 2025-03-08 1734 CX6TU         59   13   ES6RW         59   15   
+QSO:   28557 PH 2025-03-08 1735 CX6TU         59   13   TK4RC         59   15   
+QSO:   28557 PH 2025-03-08 1735 CX6TU         59   13   IU8OYQ        59   15   
+QSO:   28557 PH 2025-03-08 1736 CX6TU         59   13   IU1TMN        59   15   
+QSO:   28557 PH 2025-03-08 1737 CX6TU         59   13   SP9VL         59   15   
+QSO:   28557 PH 2025-03-08 1737 CX6TU         59   13   GM4JR         59   14   
+QSO:   28557 PH 2025-03-08 1738 CX6TU         59   13   DO1FFW        59   14   
+QSO:   28557 PH 2025-03-08 1738 CX6TU         59   13   F6IRS         59   14   
+QSO:   28557 PH 2025-03-08 1739 CX6TU         59   13   F1EIT         59   14   
+QSO:   28557 PH 2025-03-08 1739 CX6TU         59   13   G4AFA         59   14   
+QSO:   28557 PH 2025-03-08 1740 CX6TU         59   13   DL3MB         59   14   
+QSO:   28557 PH 2025-03-08 1740 CX6TU         59   13   W1GD          59   5    
+QSO:   28557 PH 2025-03-08 1740 CX6TU         59   13   PU1SKO        59   11   
+QSO:   28557 PH 2025-03-08 1741 CX6TU         59   13   DJ5OR         59   14   
+QSO:   28557 PH 2025-03-08 1742 CX6TU         59   13   M7HET         59   14   
+QSO:   28557 PH 2025-03-08 1743 CX6TU         59   13   SV8IIR        59   20   
+QSO:   28557 PH 2025-03-08 1744 CX6TU         59   13   KI4PHE        59   4    
+QSO:   28557 PH 2025-03-08 1744 CX6TU         59   13   PY1KV         59   11   
+QSO:   28557 PH 2025-03-08 1745 CX6TU         59   13   M0MCV         59   14   
+QSO:   28557 PH 2025-03-08 1746 CX6TU         59   13   IZ4UFB        59   15   
+QSO:   28557 PH 2025-03-08 1746 CX6TU         59   13   DH8WE         59   14   
+QSO:   28557 PH 2025-03-08 1746 CX6TU         59   13   CE2JEZ        59   12   
+QSO:   28557 PH 2025-03-08 1749 CX6TU         59   13   PY4WJ         59   11   
+QSO:   28557 PH 2025-03-08 1751 CX6TU         59   13   OK1DVN        59   15   
+QSO:   28557 PH 2025-03-08 1751 CX6TU         59   13   DM5LA         59   14   
+QSO:   28557 PH 2025-03-08 1752 CX6TU         59   13   DL2AAK        59   14   
+QSO:   28557 PH 2025-03-08 1752 CX6TU         59   13   OE5JSL        59   15   
+QSO:   28557 PH 2025-03-08 1753 CX6TU         59   13   SP3FLY        59   15   
+QSO:   28557 PH 2025-03-08 1753 CX6TU         59   13   N1GNF         59   5    
+QSO:   28557 PH 2025-03-08 1754 CX6TU         59   13   PR7KSA        59   11   
+QSO:   28557 PH 2025-03-08 1754 CX6TU         59   13   S51JQ         59   15   
+QSO:   28557 PH 2025-03-08 1755 CX6TU         59   13   CE2SCP        59   12   
+QSO:   28557 PH 2025-03-08 1755 CX6TU         59   13   CD7OFZ        59   12   
+QSO:   28557 PH 2025-03-08 1757 CX6TU         59   13   M7OND         59   14   
+QSO:   28557 PH 2025-03-08 1800 CX6TU         59   13   HB9HST        59   14   
+QSO:   28557 PH 2025-03-08 1801 CX6TU         59   13   PU4WST        59   11   
+QSO:   28557 PH 2025-03-08 1802 CX6TU         59   13   F1BGY         59   14   
+QSO:   28557 PH 2025-03-08 1803 CX6TU         59   13   CE7BV         59   12   
+QSO:   28557 PH 2025-03-08 1803 CX6TU         59   13   LU9YLH        59   13   
+QSO:   28557 PH 2025-03-08 1804 CX6TU         59   13   SP5GNI        59   15   
+QSO:   28557 PH 2025-03-08 1804 CX6TU         59   13   M0HHG         59   14   
+QSO:   28557 PH 2025-03-08 1805 CX6TU         59   13   2E0IWX        59   14   
+QSO:   28557 PH 2025-03-08 1805 CX6TU         59   13   M0YCQ         59   14   
+QSO:   28557 PH 2025-03-08 1806 CX6TU         59   13   PP1WW         59   11   
+QSO:   28557 PH 2025-03-08 1807 CX6TU         59   13   PP6MS         59   11   
+QSO:   28557 PH 2025-03-08 1808 CX6TU         59   13   OH5LF         59   15   
+QSO:   28557 PH 2025-03-08 1808 CX6TU         59   13   EC5EA         59   14   
+QSO:   28557 PH 2025-03-08 1810 CX6TU         59   13   M7VOT         59   14   
+QSO:   28557 PH 2025-03-08 1810 CX6TU         59   13   F1BGY         59   14   
+QSO:   28557 PH 2025-03-08 1810 CX6TU         59   13   F8DVD         59   14   
+QSO:   28557 PH 2025-03-08 1812 CX6TU         59   13   OK1UOZ        59   15   
+QSO:   28557 PH 2025-03-08 1812 CX6TU         59   13   MM0GTU        59   14   
+QSO:   28557 PH 2025-03-08 1812 CX6TU         59   13   HB9OAB        59   14   
+QSO:   28557 PH 2025-03-08 1812 CX6TU         59   13   EA5DIT        59   14   
+QSO:   28557 PH 2025-03-08 1813 CX6TU         59   13   PD3JWB        59   14   
+QSO:   28557 PH 2025-03-08 1813 CX6TU         59   13   F5JSQ         59   14   
+QSO:   28557 PH 2025-03-08 1813 CX6TU         59   13   DL4FCM        59   14   
+QSO:   28557 PH 2025-03-08 1815 CX6TU         59   13   SP7M          59   15   
+QSO:   28557 PH 2025-03-08 1815 CX6TU         59   13   DF5GZ         59   14   
+QSO:   28557 PH 2025-03-08 1816 CX6TU         59   13   YO9GDN        59   20   
+QSO:   28557 PH 2025-03-08 1816 CX6TU         59   13   GW4NOO        59   14   
+QSO:   28557 PH 2025-03-08 1817 CX6TU         59   13   M5AEH         59   14   
+QSO:   28557 PH 2025-03-08 1817 CX6TU         59   13   G0VJG         59   14   
+QSO:   28557 PH 2025-03-08 1818 CX6TU         59   13   DK9BTX        59   14   
+QSO:   28557 PH 2025-03-08 1819 CX6TU         59   13   DF8HS         59   14   
+QSO:   28557 PH 2025-03-08 1819 CX6TU         59   13   EA3OW         59   14   
+QSO:   28557 PH 2025-03-08 1820 CX6TU         59   13   K1LZ          59   5    
+QSO:   28557 PH 2025-03-08 1820 CX6TU         59   13   CS7BFE        59   14   
+QSO:   28557 PH 2025-03-08 1822 CX6TU         59   13   PU8PSF        59   11   
+QSO:   28557 PH 2025-03-08 1823 CX6TU         59   13   PA3GSQ        59   14   
+QSO:   28557 PH 2025-03-08 1824 CX6TU         59   13   M0YMJ         59   14   
+QSO:   28557 PH 2025-03-08 1825 CX6TU         59   13   EA8AM         59   33   
+QSO:   28557 PH 2025-03-08 1826 CX6TU         59   13   SV3JZT        59   20   
+QSO:   28557 PH 2025-03-08 1829 CX6TU         59   13   SP5EXA        59   15   
+QSO:   28557 PH 2025-03-08 1831 CX6TU         59   13   DL2RTJ        59   14   
+QSO:   28557 PH 2025-03-08 1832 CX6TU         59   13   CT1FOQ        59   14   
+QSO:   28557 PH 2025-03-08 1834 CX6TU         59   13   DK6DL         59   14   
+QSO:   28557 PH 2025-03-08 1834 CX6TU         59   13   PS7MA         59   11   
+QSO:   28557 PH 2025-03-08 1835 CX6TU         59   13   DG1NPM        59   14   
+QSO:   28557 PH 2025-03-08 1836 CX6TU         59   13   PU4GOL        59   11   
+QSO:   28557 PH 2025-03-08 1836 CX6TU         59   13   EA4RR         59   14   
+QSO:   28557 PH 2025-03-08 1837 CX6TU         59   13   F4CZK         59   14   
+QSO:   28557 PH 2025-03-08 1838 CX6TU         59   13   PT2AZ         59   11   
+QSO:   28557 PH 2025-03-08 1839 CX6TU         59   13   EA5QA         59   14   
+QSO:   28557 PH 2025-03-08 1839 CX6TU         59   13   PA3CGJ        59   14   
+QSO:   28557 PH 2025-03-08 1840 CX6TU         59   13   G4UNB         59   14   
+QSO:   28557 PH 2025-03-08 1840 CX6TU         59   13   OZ1AXG        59   14   
+QSO:   28557 PH 2025-03-08 1842 CX6TU         59   13   2E0RCV        59   14   
+QSO:   28392 PH 2025-03-08 1844 CX6TU         59   13   TO3Z          59   08   
+QSO:   28401 PH 2025-03-08 1845 CX6TU         59   13   N8OO          59   4    
+QSO:   28453 PH 2025-03-08 1847 CX6TU         59   13   XM9A          59   5    
+QSO:   28557 PH 2025-03-08 1849 CX6TU         59   13   K3EWZ         59   5    
+QSO:   28388 PH 2025-03-08 1855 CX6TU         59   13   PW8RB         59   11   
+QSO:   28462 PH 2025-03-08 1856 CX6TU         59   13   PY4JW         59   11   
+QSO:   28470 PH 2025-03-08 1856 CX6TU         59   13   LT3E          59   13   
+QSO:   28557 PH 2025-03-08 1900 CX6TU         59   13   K7ALW         59   3    
+QSO:   28557 PH 2025-03-08 1900 CX6TU         59   13   PP1OY         59   11   
+QSO:   28557 PH 2025-03-08 1900 CX6TU         59   13   K6YYG         59   3    
+QSO:   28557 PH 2025-03-08 1901 CX6TU         59   13   KH6KW         59   31   
+QSO:   28557 PH 2025-03-08 1902 CX6TU         59   13   OA4DXW        59   10   
+QSO:   28445 PH 2025-03-08 1908 CX6TU         59   13   DP7D          59   14   
+QSO:   28355 PH 2025-03-08 1910 CX6TU         59   13   EI3JZ         59   14   
+QSO:   28489 PH 2025-03-09 0137 CX6TU         59   13   JG7QKY        59   25   
+QSO:   28489 PH 2025-03-09 0137 CX6TU         59   13   WH6LU         59   31   
+QSO:   28489 PH 2025-03-09 0138 CX6TU         59   13   JA7SPJ        59   25   
+QSO:   28489 PH 2025-03-09 0139 CX6TU         59   13   JS2EEF        59   25   
+QSO:   28489 PH 2025-03-09 0140 CX6TU         59   13   JG1LFR        59   25   
+QSO:   28506 PH 2025-03-09 0145 CX6TU         59   13   LU4JEA        59   13   
+QSO:   28428 PH 2025-03-09 0151 CX6TU         59   13   PX9D          59   11   
+QSO:   28444 PH 2025-03-09 0153 CX6TU         59   13   LW7DQW        59   13   
+QSO:   28489 PH 2025-03-09 0158 CX6TU         59   13   CE1SWH        59   12   
+QSO:   28489 PH 2025-03-09 0159 CX6TU         59   13   JR1MZE        59   25   
+QSO:   28489 PH 2025-03-09 0201 CX6TU         59   13   JR7QKY        59   25   
+QSO:   28488 PH 2025-03-09 0202 CX6TU         59   13   JE1MBG        59   25   
+QSO:   28488 PH 2025-03-09 0204 CX6TU         59   13   JH7RTQ        59   25   
+QSO:   28419 PH 2025-03-09 0215 CX6TU         59   13   LO7H          59   13   
+QSO:   28432 PH 2025-03-09 0307 CX6TU         59   13   JS6RTY        59   25   
+QSO:   28450 PH 2025-03-09 0313 CX6TU         59   13   LU7YE         59   13   
+QSO:   28408 PH 2025-03-09 1021 CX6TU         59   13   G4KFK         59   14   
+QSO:   28408 PH 2025-03-09 1021 CX6TU         59   13   G3UDA         59   14   
+QSO:   28408 PH 2025-03-09 1022 CX6TU         59   13   IW5EKR        59   15   
+QSO:   28408 PH 2025-03-09 1022 CX6TU         59   13   2E0IWX        59   14   
+QSO:   28408 PH 2025-03-09 1023 CX6TU         59   13   PU7PSJ        59   11   
+QSO:   28408 PH 2025-03-09 1024 CX6TU         59   13   SP8UFT        59   15   
+QSO:   28408 PH 2025-03-09 1024 CX6TU         59   13   PD1JN         59   14   
+QSO:   28408 PH 2025-03-09 1024 CX6TU         59   13   F4BHW         59   14   
+QSO:   28408 PH 2025-03-09 1025 CX6TU         59   13   I4VIL         59   15   
+QSO:   28408 PH 2025-03-09 1026 CX6TU         59   13   IZ6JPK        59   15   
+QSO:   28408 PH 2025-03-09 1026 CX6TU         59   13   RX9WN         59   16   
+QSO:   28408 PH 2025-03-09 1026 CX6TU         59   13   PY7GB         59   11   
+QSO:   28408 PH 2025-03-09 1027 CX6TU         59   13   IK1XVO        59   15   
+QSO:   28408 PH 2025-03-09 1027 CX6TU         59   13   IT9BOE        59   15   
+QSO:   28408 PH 2025-03-09 1028 CX6TU         59   13   OE3HBS        59   15   
+QSO:   28408 PH 2025-03-09 1028 CX6TU         59   13   PP7GB         59   11   
+QSO:   28408 PH 2025-03-09 1029 CX6TU         59   13   HB9GPG        59   14   
+QSO:   28408 PH 2025-03-09 1029 CX6TU         59   13   CT7AQF        59   14   
+QSO:   28408 PH 2025-03-09 1030 CX6TU         59   13   F5MNC         59   14   
+QSO:   28408 PH 2025-03-09 1030 CX6TU         59   13   DK9VA         59   14   
+QSO:   28408 PH 2025-03-09 1030 CX6TU         59   13   TA3NE         59   20   
+QSO:   28408 PH 2025-03-09 1031 CX6TU         59   13   SQ3TGN        59   15   
+QSO:   28408 PH 2025-03-09 1031 CX6TU         59   13   F5APM         59   14   
+QSO:   28408 PH 2025-03-09 1032 CX6TU         59   13   IZ4ATU        59   15   
+QSO:   28408 PH 2025-03-09 1032 CX6TU         59   13   G0BXS         59   14   
+QSO:   28408 PH 2025-03-09 1033 CX6TU         59   13   F4IQU         59   14   
+QSO:   28408 PH 2025-03-09 1033 CX6TU         59   13   DF2HP         59   14   
+QSO:   28408 PH 2025-03-09 1036 CX6TU         59   13   F4FPQ         59   14   
+QSO:   28408 PH 2025-03-09 1036 CX6TU         59   13   DB5OG         59   14   
+QSO:   28408 PH 2025-03-09 1036 CX6TU         59   13   SV1FTY        59   20   
+QSO:   28408 PH 2025-03-09 1037 CX6TU         59   13   S55DD         59   15   
+QSO:   28408 PH 2025-03-09 1037 CX6TU         59   13   IU0PVZ        59   15   
+QSO:   28408 PH 2025-03-09 1037 CX6TU         59   13   YO9DBP        59   20   
+QSO:   28408 PH 2025-03-09 1038 CX6TU         59   13   DO7KAI        59   14   
+QSO:   28408 PH 2025-03-09 1038 CX6TU         59   13   F8FBB         59   14   
+QSO:   28408 PH 2025-03-09 1039 CX6TU         59   13   IZ1QLT        59   15   
+QSO:   28408 PH 2025-03-09 1039 CX6TU         59   13   SQ7OVT        59   15   
+QSO:   28408 PH 2025-03-09 1040 CX6TU         59   13   IZ1OMY        59   15   
+QSO:   28408 PH 2025-03-09 1041 CX6TU         59   13   S51DZI        59   15   
+QSO:   28408 PH 2025-03-09 1042 CX6TU         59   13   DL6PJI        59   14   
+QSO:   28408 PH 2025-03-09 1042 CX6TU         59   13   IU5TQG        59   15   
+QSO:   28408 PH 2025-03-09 1043 CX6TU         59   13   HB2Y          59   14   
+QSO:   28408 PH 2025-03-09 1043 CX6TU         59   13   DC5FI         59   14   
+QSO:   28408 PH 2025-03-09 1044 CX6TU         59   13   IK2BDR        59   15   
+QSO:   28408 PH 2025-03-09 1044 CX6TU         59   13   IK6TOS        59   15   
+QSO:   28408 PH 2025-03-09 1045 CX6TU         59   13   DL3MY         59   14   
+QSO:   28408 PH 2025-03-09 1045 CX6TU         59   13   SV1BJW        59   20   
+QSO:   28408 PH 2025-03-09 1045 CX6TU         59   13   ON7AH         59   14   
+QSO:   28408 PH 2025-03-09 1046 CX6TU         59   13   DL1EBN        59   14   
+QSO:   28408 PH 2025-03-09 1046 CX6TU         59   13   PD5LM         59   14   
+QSO:   28408 PH 2025-03-09 1047 CX6TU         59   13   ER3UA         59   16   
+QSO:   28408 PH 2025-03-09 1048 CX6TU         59   13   YO3IPR        59   20   
+QSO:   28408 PH 2025-03-09 1049 CX6TU         59   13   IU5CJP        59   15   
+QSO:   28408 PH 2025-03-09 1050 CX6TU         59   13   PB4GA         59   14   
+QSO:   28408 PH 2025-03-09 1050 CX6TU         59   13   DG4KAL        59   14   
+QSO:   28408 PH 2025-03-09 1052 CX6TU         59   13   2E0WSE        59   14   
+QSO:   28408 PH 2025-03-09 1052 CX6TU         59   13   EA8DNX        59   33   
+QSO:   28408 PH 2025-03-09 1053 CX6TU         59   13   9A9O          59   15   
+QSO:   28408 PH 2025-03-09 1053 CX6TU         59   13   M7YEK         59   14   
+QSO:   28408 PH 2025-03-09 1054 CX6TU         59   13   PD0OUM        59   14   
+QSO:   28408 PH 2025-03-09 1055 CX6TU         59   13   OM3CW         59   15   
+QSO:   28408 PH 2025-03-09 1056 CX6TU         59   13   G1GZY         59   14   
+QSO:   28408 PH 2025-03-09 1057 CX6TU         59   13   G4ZEJ         59   14   
+QSO:   28408 PH 2025-03-09 1058 CX6TU         59   13   M7SLB         59   14   
+QSO:   28408 PH 2025-03-09 1059 CX6TU         59   13   DL9YBZ        59   14   
+QSO:   28408 PH 2025-03-09 1101 CX6TU         59   13   CT1BWO        59   14   
+QSO:   28408 PH 2025-03-09 1101 CX6TU         59   13   EA8DMS        59   33   
+END-OF-LOG:

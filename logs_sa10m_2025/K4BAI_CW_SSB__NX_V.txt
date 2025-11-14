@@ -1,0 +1,180 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: K4BAI
+CLUB: SOUTH EAST CONTEST CLUB
+CONTEST: SOUTH-AMERICA-10-METER
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: MIXED
+CATEGORY-POWER: HIGH
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 54312
+OPERATORS: K4BAI
+NAME: John T. Laney III
+ADDRESS: PO Box 421
+ADDRESS-CITY: Columbus
+ADDRESS-STATE-PROVINCE: GA
+ADDRESS-POSTALCODE: 31902-0421
+ADDRESS-COUNTRY: UNITED STATES
+GRID-LOCATOR: EM72ML
+EMAIL: k4bai@att.net
+CREATED-BY: N1MM Logger+ 1.0.10619.0
+QSO:   28008 CW 2025-03-08 1342 K4BAI         599 5      EA9ACD        599 33       
+QSO:   28010 CW 2025-03-08 1343 K4BAI         599 5      ZW8T          599 11       
+QSO:   28011 CW 2025-03-08 1345 K4BAI         599 5      HA5OV         599 15       
+QSO:   28020 CW 2025-03-08 1348 K4BAI         599 5      IK2UEX        599 15       
+QSO:   28023 CW 2025-03-08 1348 K4BAI         599 5      CB3A          599 12       
+QSO:   28024 CW 2025-03-08 1349 K4BAI         599 5      FY5KE         599 09       
+QSO:   28035 CW 2025-03-08 1350 K4BAI         599 5      4X6FR         599 20       
+QSO:   28040 CW 2025-03-08 1351 K4BAI         599 5      F6IRA         599 14       
+QSO:   28041 CW 2025-03-08 1351 K4BAI         599 5      PY2MZ         599 11       
+QSO:   28042 CW 2025-03-08 1352 K4BAI         599 5      PY2KJ         599 11       
+QSO:   28043 CW 2025-03-08 1352 K4BAI         599 5      EA4AOC        599 14       
+QSO:   28050 CW 2025-03-08 1353 K4BAI         599 5      PY2EX         599 11       
+QSO:   28013 CW 2025-03-08 1355 K4BAI         599 5      OP5T          599 14       
+QSO:   28014 CW 2025-03-08 1355 K4BAI         599 5      EA7BEZ        599 14       
+QSO:   28015 CW 2025-03-08 1355 K4BAI         599 5      PZ5TW         599 09       
+QSO:   28026 CW 2025-03-08 1357 K4BAI         599 5      LU1HLH        599 13       
+QSO:   28042 CW 2025-03-08 1359 K4BAI         599 5      HA8TKS        599 15       
+QSO:   28042 CW 2025-03-08 1402 K4BAI         599 5      R6AF          599 16       
+QSO:   28042 CW 2025-03-08 1403 K4BAI         599 5      RG5A          599 16       
+QSO:   28042 CW 2025-03-08 1403 K4BAI         599 5      DL1GKC        599 14       
+QSO:   28042 CW 2025-03-08 1405 K4BAI         599 5      OK1AGE        599 15       
+QSO:   28042 CW 2025-03-08 1406 K4BAI         599 5      YU1YV         599 15       
+QSO:   28042 CW 2025-03-08 1406 K4BAI         599 5      UT4WA         599 16       
+QSO:   28045 CW 2025-03-08 1413 K4BAI         599 5      SV1BJW        599 20       
+QSO:   28045 CW 2025-03-08 1413 K4BAI         599 5      DL2OM         599 14       
+QSO:   28045 CW 2025-03-08 1414 K4BAI         599 5      OZ5KU         599 14       
+QSO:   28045 CW 2025-03-08 1416 K4BAI         599 5      ON4AP         599 14       
+QSO:   28045 CW 2025-03-08 1417 K4BAI         599 5      PJ2/W2APF     599 09       
+QSO:   28061 CW 2025-03-08 1421 K4BAI         599 5      CE3FZL        539 12       
+QSO:   28015 CW 2025-03-08 1423 K4BAI         599 5      PY2XL         599 11       
+QSO:   28019 CW 2025-03-08 1424 K4BAI         599 5      IT9IVU        599 15       
+QSO:   28019 CW 2025-03-08 1425 K4BAI         599 5      PY3TD         599 11       
+QSO:   28023 CW 2025-03-08 1426 K4BAI         599 5      PY2XC         599 11       
+QSO:   28027 CW 2025-03-08 1427 K4BAI         599 5      YQ8E          599 20       
+QSO:   28028 CW 2025-03-08 1428 K4BAI         599 5      9A3YT         599 15       
+QSO:   28029 CW 2025-03-08 1429 K4BAI         599 5      TA3D          599 20       
+QSO:   28029 CW 2025-03-08 1430 K4BAI         599 5      CX5FK         599 13       
+QSO:   28030 CW 2025-03-08 1433 K4BAI         599 5      PA3EPA        599 14       
+QSO:   28030 CW 2025-03-08 1433 K4BAI         599 5      PD5BS         599 14       
+QSO:   28030 CW 2025-03-08 1434 K4BAI         599 5      OK2BRJ        599 15       
+QSO:   28030 CW 2025-03-08 1436 K4BAI         599 5      DL8UKW        599 14       
+QSO:   28030 CW 2025-03-08 1436 K4BAI         599 5      DL7SX         599 14       
+QSO:   28030 CW 2025-03-08 1436 K4BAI         599 5      OM5CM         599 15       
+QSO:   28030 CW 2025-03-08 1437 K4BAI         599 5      UW3WF         599 16       
+QSO:   28030 CW 2025-03-08 1438 K4BAI         599 5      DF9EY         599 14       
+QSO:   28030 CW 2025-03-08 1438 K4BAI         599 5      CT1ELZ        599 14       
+QSO:   28031 CW 2025-03-08 1440 K4BAI         599 5      PA3KL         599 14       
+QSO:   28031 CW 2025-03-08 1441 K4BAI         599 5      DL4DZ         599 14       
+QSO:   28031 CW 2025-03-08 1442 K4BAI         599 5      HA3HX         599 15       
+QSO:   28031 CW 2025-03-08 1443 K4BAI         599 5      OH5ZA         599 15       
+QSO:   28032 CW 2025-03-08 1445 K4BAI         599 5      LU6OA         599 13       
+QSO:   28011 CW 2025-03-08 1454 K4BAI         599 5      P3X           599 20       
+QSO:   28015 CW 2025-03-08 1454 K4BAI         599 5      CT1DRB        599 14       
+QSO:   28016 CW 2025-03-08 1455 K4BAI         599 5      OM3CW         599 15       
+QSO:   28029 CW 2025-03-08 1458 K4BAI         599 5      OK2PVF        599 15       
+QSO:   28031 CW 2025-03-08 1500 K4BAI         599 5      PY2UDB        599 11       
+QSO:   28031 CW 2025-03-08 1501 K4BAI         599 5      DJ1MM         599 14       
+QSO:   28031 CW 2025-03-08 1503 K4BAI         599 5      PY4ARS        599 11       
+QSO:   28031 CW 2025-03-08 1503 K4BAI         599 5      EA7BHO        599 14       
+QSO:   28031 CW 2025-03-08 1505 K4BAI         599 5      PY2DN         599 11       
+QSO:   28031 CW 2025-03-08 1506 K4BAI         599 5      OK1OA         599 15       
+QSO:   28031 CW 2025-03-08 1506 K4BAI         599 5      LU7DLS        599 13       
+QSO:   28008 CW 2025-03-08 1535 K4BAI         599 5      OZ1HDF        599 14       
+QSO:   28013 CW 2025-03-08 1537 K4BAI         599 5      SP8UFT        599 15       
+QSO:   28021 CW 2025-03-08 1538 K4BAI         599 5      IK1PMR        599 15       
+QSO:   28022 CW 2025-03-08 1539 K4BAI         599 5      EA5/UW1WA     599 14       
+QSO:   28023 CW 2025-03-08 1539 K4BAI         599 5      LT3E          599 13       
+QSO:   28024 CW 2025-03-08 1540 K4BAI         599 5      UT3QZ         599 16       
+QSO:   28030 CW 2025-03-08 1543 K4BAI         599 5      OK1FCA        599 15       
+QSO:   28030 CW 2025-03-08 1544 K4BAI         599 5      E7/K7GM       599 15       
+QSO:   28030 CW 2025-03-08 1545 K4BAI         599 5      IT9WDC        599 15       
+QSO:   28030 CW 2025-03-08 1546 K4BAI         599 5      CT7AIX        599 14       
+QSO:   28030 CW 2025-03-08 1548 K4BAI         599 5      US5VX         599 16       
+QSO:   28030 CW 2025-03-08 1550 K4BAI         599 5      UR5SCK        599 16       
+QSO:   28050 CW 2025-03-08 1553 K4BAI         599 5      YO4FZX        599 20       
+QSO:   28335 PH 2025-03-08 1556 K4BAI         59  5      CT3IQ         59  33       
+QSO:   28376 PH 2025-03-08 1558 K4BAI         59  5      EI3JZ         59  14       
+QSO:   28380 PH 2025-03-08 1558 K4BAI         59  5      F4BHW         59  14       
+QSO:   28390 PH 2025-03-08 1600 K4BAI         59  5      PP5LC         59  11       
+QSO:   28395 PH 2025-03-08 1602 K4BAI         59  5      OA4EFA        59  10       
+QSO:   28392 PH 2025-03-08 1912 K4BAI         59  5      TO3Z          59  08       
+QSO:   28408 PH 2025-03-08 1913 K4BAI         59  5      PY2EX         59  11       
+QSO:   28435 PH 2025-03-08 1914 K4BAI         59  5      PU5WMA        59  11       
+QSO:   28440 PH 2025-03-08 1915 K4BAI         59  5      XE1BLA        59  06       
+QSO:   28445 PH 2025-03-08 1916 K4BAI         59  5      PY1VOY        59  11       
+QSO:   28462 PH 2025-03-08 1916 K4BAI         59  5      PY4JW         59  11       
+QSO:   28476 PH 2025-03-08 1917 K4BAI         59  5      EA8AM         59  33       
+QSO:   28513 PH 2025-03-08 1921 K4BAI         59  5      CX1AR         59  13       
+QSO:   28520 PH 2025-03-08 1924 K4BAI         59  5      LU4RM         59  13       
+QSO:   28520 PH 2025-03-08 1925 K4BAI         59  5      LU4FM         59  13       
+QSO:   28371 PH 2025-03-08 1927 K4BAI         59  5      CA1NPK        59  12       
+QSO:   28405 PH 2025-03-08 1927 K4BAI         59  5      PU2KNM        59  11       
+QSO:   28420 PH 2025-03-08 1928 K4BAI         59  5      PY6GOE        59  11       
+QSO:   28433 PH 2025-03-08 1930 K4BAI         59  5      CE7VP         59  12       
+QSO:   28022 CW 2025-03-08 1935 K4BAI         599 5      PU3POE        599 11       
+QSO:   28032 CW 2025-03-08 1935 K4BAI         599 5      LU7U          599 13       
+QSO:   28043 CW 2025-03-08 1938 K4BAI         599 5      LW7DW         599 13       
+QSO:   28044 CW 2025-03-08 1940 K4BAI         599 5      LU9MA         599 13       
+QSO:   28041 CW 2025-03-08 1940 K4BAI         599 5      IZ8GUQ        599 15       
+QSO:   28031 CW 2025-03-08 1942 K4BAI         599 5      DK9IP         599 14       
+QSO:   28029 CW 2025-03-08 1942 K4BAI         599 5      LU7HN         599 13       
+QSO:   28026 CW 2025-03-08 1944 K4BAI         599 5      HK1A          599 09       
+QSO:   28026 CW 2025-03-08 1944 K4BAI         599 5      NP2X          599 08       
+QSO:   28026 CW 2025-03-08 1945 K4BAI         599 5      I1YTO         599 15       
+QSO:   28026 CW 2025-03-08 1945 K4BAI         599 5      PY2KA         599 11       
+QSO:   28026 CW 2025-03-08 1947 K4BAI         599 5      KH6AQ         599 31       
+QSO:   28026 CW 2025-03-08 1948 K4BAI         599 5      PY1KO         599 11       
+QSO:   28026 CW 2025-03-08 1950 K4BAI         599 5      KP3W          599 08       
+QSO:   28026 CW 2025-03-08 1951 K4BAI         599 5      XE1CT         599 06       
+QSO:   28016 CW 2025-03-08 1953 K4BAI         599 5      EI6JK         599 14       
+QSO:   28014 CW 2025-03-08 1959 K4BAI         599 5      PP5RB         599 11       
+QSO:   28014 CW 2025-03-08 2000 K4BAI         599 5      PP8ZAC        599 11       
+QSO:   28014 CW 2025-03-08 2002 K4BAI         599 5      LU7U          599 13       
+QSO:   28013 CW 2025-03-08 2009 K4BAI         599 5      F5NBX         599 14       
+QSO:   28017 CW 2025-03-08 2010 K4BAI         599 5      IK0FUX        599 15       
+QSO:   28021 CW 2025-03-08 2010 K4BAI         599 5      PY1VOY        599 11       
+QSO:   28025 CW 2025-03-08 2011 K4BAI         599 5      PY6TS         599 11       
+QSO:   28006 CW 2025-03-08 2126 K4BAI         599 5      LU5HCB        599 13       
+QSO:   28019 CW 2025-03-08 2129 K4BAI         599 5      LW2DX         599 13       
+QSO:   28026 CW 2025-03-08 2131 K4BAI         599 5      PV8DX         599 11       
+QSO:   28028 CW 2025-03-08 2133 K4BAI         599 5      LU2TAO        599 13       
+QSO:   28012 CW 2025-03-08 2137 K4BAI         599 5      PY5AMF        599 11       
+QSO:   28024 CW 2025-03-08 2141 K4BAI         599 5      PY5IN         599 11       
+QSO:   28036 CW 2025-03-08 2144 K4BAI         599 5      PY1NSC        599 11       
+QSO:   28040 CW 2025-03-08 2152 K4BAI         599 5      LU4FM         599 13       
+QSO:   28040 CW 2025-03-08 2154 K4BAI         599 5      AA2A          599 05       
+QSO:   28040 CW 2025-03-08 2156 K4BAI         599 5      PY2EBD        599 11       
+QSO:   28040 CW 2025-03-08 2156 K4BAI         599 5      PP5AX         599 11       
+QSO:   28040 CW 2025-03-08 2158 K4BAI         599 5      PU3VON        599 11       
+QSO:   28040 CW 2025-03-08 2200 K4BAI         599 5      PY2DN         599 11       
+QSO:   28040 CW 2025-03-08 2201 K4BAI         599 5      PP5BLU        599 11       
+QSO:   28040 CW 2025-03-08 2201 K4BAI         599 5      K9OM          599 05       
+QSO:   28040 CW 2025-03-08 2203 K4BAI         599 5      KA2MGE        599 05       
+QSO:   28011 CW 2025-03-08 2219 K4BAI         599 5      K3IE          599 04       
+QSO:   28016 CW 2025-03-08 2221 K4BAI         599 5      PY1CMT        599 11       
+QSO:   28017 CW 2025-03-08 2222 K4BAI         599 5      PY2PLL        599 11       
+QSO:   28021 CW 2025-03-08 2223 K4BAI         599 5      CA4OMQ        599 12       
+QSO:   28024 CW 2025-03-08 2224 K4BAI         599 5      PP5KP         599 11       
+QSO:   28025 CW 2025-03-08 2225 K4BAI         599 5      PY1MK         599 11       
+QSO:   28040 CW 2025-03-08 2226 K4BAI         599 5      PY6IQ         599 11       
+QSO:   28034 CW 2025-03-08 2232 K4BAI         599 5      PY1DI         599 11       
+QSO:   28034 CW 2025-03-08 2232 K4BAI         599 5      WQ6X          599 03       
+QSO:   28034 CW 2025-03-08 2233 K4BAI         599 5      PY2GZ         599 11       
+QSO:   28023 CW 2025-03-08 2241 K4BAI         599 5      PY2HA         599 11       
+QSO:   28023 CW 2025-03-08 2242 K4BAI         599 5      K1LZ          599 05       
+QSO:   28023 CW 2025-03-08 2243 K4BAI         599 5      XE2S          599 06       
+QSO:   28023 CW 2025-03-08 2243 K4BAI         599 5      PU2TJQ        599 11       
+QSO:   28023 CW 2025-03-08 2244 K4BAI         599 5      PY2OP         599 11       
+QSO:   28023 CW 2025-03-08 2248 K4BAI         599 5      XE1AY         599 06       
+QSO:   28023 CW 2025-03-08 2250 K4BAI         599 5      YB9ELS        599 28       
+QSO:   28023 CW 2025-03-08 2250 K4BAI         599 5      W1PR          599 03       
+QSO:   28023 CW 2025-03-08 2252 K4BAI         599 5      PY2GZ         599 11       
+QSO:   28023 CW 2025-03-08 2252 K4BAI         599 5      PU2TES        599 11       
+QSO:   28023 CW 2025-03-08 2254 K4BAI         599 5      PY4WZ         599 11       
+QSO:   28023 CW 2025-03-08 2256 K4BAI         599 5      PY1TTN        599 11       
+QSO:   28023 CW 2025-03-08 2257 K4BAI         599 5      PY5ZHP        599 11       
+END-OF-LOG:

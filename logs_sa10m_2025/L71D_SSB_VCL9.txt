@@ -1,0 +1,108 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: L71D
+CLUB:  
+CONTEST: SA10_SA
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CATEGORY-OVERLAY: CLASSIC
+CLAIMED-SCORE: 10406
+OPERATORS: LU7DUE
+NAME: DARIO OSVALDO SILVANI
+ADDRESS: R. 9 PANAMERICANA KM.47
+ADDRESS: BELEN DE ESCOBAR
+ADDRESS-CITY: BUENOS AIRES
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 1625
+ADDRESS-COUNTRY: ARGENTINA
+GRID-LOCATOR: GF05OO
+EMAIL: lu7due@gmail.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28000 PH 2025-03-08 1344 L71D          59   13   F5MNC         59   14   
+QSO:   28000 PH 2025-03-08 1345 L71D          59   13   PY6GOE        59   11   
+QSO:   28000 PH 2025-03-08 1346 L71D          59   13   F5LIW         59   14   
+QSO:   28000 PH 2025-03-08 1348 L71D          59   13   HB9OAB        59   14   
+QSO:   28000 PH 2025-03-08 1349 L71D          59   13   CT3IQ         59   33   
+QSO:   28000 PH 2025-03-08 1351 L71D          59   13   HB3Y          59   14   
+QSO:   28000 PH 2025-03-08 1354 L71D          59   13   CX1AR         59   13   
+QSO:   28000 PH 2025-03-08 1400 L71D          59   13   PW2A          59   11   
+QSO:   28000 PH 2025-03-08 1407 L71D          59   13   PT2AW         59   11   
+QSO:   28000 PH 2025-03-08 1408 L71D          59   13   OZ1AXG        59   14   
+QSO:   28000 PH 2025-03-08 1409 L71D          59   13   PR1T          59   11   
+QSO:   28000 PH 2025-03-08 1417 L71D          59   13   PT1M          59   11   
+QSO:   28000 PH 2025-03-08 1419 L71D          59   13   UZ7C          59   16   
+QSO:   28000 PH 2025-03-08 1422 L71D          59   13   LU3DDH        59   13   
+QSO:   28000 PH 2025-03-08 1424 L71D          59   13   PT2AP         59   11   
+QSO:   28000 PH 2025-03-08 1426 L71D          59   13   PD3W          59   14   
+QSO:   28000 PH 2025-03-08 1434 L71D          59   13   LU4ASR        59   13   
+QSO:   28000 PH 2025-03-08 1435 L71D          59   13   F6HRP         59   14   
+QSO:   28000 PH 2025-03-08 1436 L71D          59   13   EA9ACD        59   33   
+QSO:   28000 PH 2025-03-08 1440 L71D          59   13   HB9HLM        59   14   
+QSO:   28000 PH 2025-03-08 1442 L71D          59   13   OK2PVF        59   15   
+QSO:   28000 PH 2025-03-08 1444 L71D          59   13   R6AF          59   16   
+QSO:   28000 PH 2025-03-08 1447 L71D          59   13   PY8ML         59   11   
+QSO:   28000 PH 2025-03-08 1449 L71D          59   13   PU1RTR        59   11   
+QSO:   28000 PH 2025-03-08 1451 L71D          59   13   PY4BZK        59   11   
+QSO:   28000 PH 2025-03-08 1452 L71D          59   13   RG5A          59   16   
+QSO:   28000 PH 2025-03-08 1453 L71D          59   13   EA4AOC        59   14   
+QSO:   28000 PH 2025-03-08 1501 L71D          59   13   CS7AXM        59   14   
+QSO:   28000 PH 2025-03-08 1502 L71D          59   13   PU4JOE        59   11   
+QSO:   28000 PH 2025-03-08 1503 L71D          59   13   PY1EI         59   11   
+QSO:   28000 PH 2025-03-08 1503 L71D          59   13   E77DX         59   15   
+QSO:   28000 PH 2025-03-08 1514 L71D          59   13   DP7D          59   14   
+QSO:   28000 PH 2025-03-08 1519 L71D          59   13   PP1WW         59   11   
+QSO:   28000 PH 2025-03-08 1527 L71D          59   13   PY4JW         59   11   
+QSO:   28000 PH 2025-03-08 1529 L71D          59   13   EA3RCA        59   14   
+QSO:   28000 PH 2025-03-08 1604 L71D          59   13   CE1LTJ        59   12   
+QSO:   28000 PH 2025-03-08 1803 L71D          59   13   F5NBX         59   14   
+QSO:   28000 PH 2025-03-08 1809 L71D          59   13   LU2DXC        59   13   
+QSO:   28000 PH 2025-03-08 1834 L71D          59   13   K1LZ          59   5    
+QSO:   28000 PH 2025-03-08 1838 L71D          59   13   PY2EU         59   11   
+QSO:   28000 PH 2025-03-08 1838 L71D          59   13   PU1JSV        59   11   
+QSO:   28000 PH 2025-03-08 1839 L71D          59   13   EA8AM         59   33   
+QSO:   28000 PH 2025-03-08 1841 L71D          59   13   ES6RW         59   15   
+QSO:   28000 PH 2025-03-08 1919 L71D          59   13   EI3JZ         59   14   
+QSO:   28000 PH 2025-03-08 1922 L71D          59   13   PU4GOL        59   11   
+QSO:   28000 PH 2025-03-08 1927 L71D          59   13   CX7ACH        59   13   
+QSO:   28000 PH 2025-03-08 1932 L71D          59   13   F4BHW         59   14   
+QSO:   28000 PH 2025-03-08 1937 L71D          59   13   S58N          59   15   
+QSO:   28000 PH 2025-03-08 1938 L71D          59   13   PY1VOY        59   11   
+QSO:   28000 PH 2025-03-08 1939 L71D          59   13   HA1TMP        59   15   
+QSO:   28000 PH 2025-03-08 1946 L71D          59   13   AA2A          59   5    
+QSO:   28000 PH 2025-03-08 1956 L71D          59   13   CS7BPO        59   14   
+QSO:   28000 PH 2025-03-08 2000 L71D          59   13   PP2RON        59   11   
+QSO:   28000 PH 2025-03-08 2007 L71D          59   13   PY1KG         59   11   
+QSO:   28000 PH 2025-03-08 2008 L71D          59   13   PP2CS         59   11   
+QSO:   28000 PH 2025-03-08 2131 L71D          59   13   OA4EFA        59   10   
+QSO:   28000 PH 2025-03-08 2134 L71D          59   13   LU5EA         59   13   
+QSO:   28000 PH 2025-03-08 2136 L71D          59   13   PU2MCY        59   11   
+QSO:   28000 PH 2025-03-08 2139 L71D          59   13   OA4DXW        59   10   
+QSO:   28000 PH 2025-03-08 2142 L71D          59   13   PU1PRD        59   11   
+QSO:   28000 PH 2025-03-08 2142 L71D          59   13   PY4LI         59   11   
+QSO:   28000 PH 2025-03-08 2151 L71D          59   13   LT3E          59   13   
+QSO:   28000 PH 2025-03-08 2153 L71D          59   13   CE1KR         59   12   
+QSO:   28000 PH 2025-03-08 2155 L71D          59   13   K3IE          59   4    
+QSO:   28000 PH 2025-03-08 2224 L71D          59   13   VE2IAA        59   5    
+QSO:   28000 PH 2025-03-08 2230 L71D          59   13   CT7AQF        59   14   
+QSO:   28000 PH 2025-03-08 2233 L71D          59   13   N8OO          59   4    
+QSO:   28000 PH 2025-03-08 2238 L71D          59   13   OA4DOS        59   10   
+QSO:   28000 PH 2025-03-08 2252 L71D          59   13   LU2WJV        59   13   
+QSO:   28000 PH 2025-03-08 2257 L71D          59   13   W4SDX         59   4    
+QSO:   28000 PH 2025-03-09 0023 L71D          59   13   PY4BAL        59   11   
+QSO:   28000 PH 2025-03-09 0026 L71D          59   13   W1PR          59   3    
+QSO:   28000 PH 2025-03-09 0027 L71D          59   13   JA7OWD        59   25   
+QSO:   28000 PH 2025-03-09 0038 L71D          59   13   JJ1MBU        59   25   
+QSO:   28000 PH 2025-03-09 1137 L71D          59   13   IT9FZT        59   15   
+QSO:   28000 PH 2025-03-09 1142 L71D          59   13   HF7A          59   15   
+QSO:   28000 PH 2025-03-09 1142 L71D          59   13   HB9TIH        59   14   
+QSO:   28000 PH 2025-03-09 1146 L71D          59   13   F8DVD         59   14   
+QSO:   28000 PH 2025-03-09 1148 L71D          59   13   S51JQ         59   15   
+QSO:   28000 PH 2025-03-09 1149 L71D          59   13   SP5GNI        59   15   
+QSO:   28000 PH 2025-03-09 1157 L71D          59   13   CS7BFV        59   14   
+QSO:   28000 PH 2025-03-09 1158 L71D          59   13   S56V          59   18   
+END-OF-LOG:

@@ -1,0 +1,49 @@
+START-OF-LOG: 3.0
+CREATED-BY: QARTest 15.2.1
+CONTEST: 10mt SA Contest
+CALLSIGN: IZ1HHT
+LOCATION: DX
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-TRANSMITTER: ONE
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-MODE: SSB
+CATEGORY-BAND: ALL
+CATEGORY-POWER: HIGH
+CLAIMED-SCORE:
+NAME: Giorgio Guala
+ADDRESS: Via Evangelista Torricelli 23
+ADDRESS: 10028, Trofarello, Torino
+ADDRESS: ITALIA
+EMAIL: iz1hht@gmail.com
+GRID-LOCATOR: JN34UX
+CLUB: ARI Torino
+
+QSO: 28367 PH 2025-03-08 1557 IZ1HHT        59     15 PT1M          59  11              
+QSO: 28404 PH 2025-03-08 1559 IZ1HHT        59     15 LU3VED        59  13              
+QSO: 28422 PH 2025-03-08 1601 IZ1HHT        59     15 PT2AP         59  11             
+QSO: 28430 PH 2025-03-08 1604 IZ1HHT        59     15 PY8ML         59  11             
+QSO: 28463 PH 2025-03-08 1605 IZ1HHT        59     15 PW2A          59  11             
+QSO: 28481 PH 2025-03-08 1606 IZ1HHT        59     15 PY2UD         59  11             
+QSO: 28494 PH 2025-03-08 1607 IZ1HHT        59     15 PY5MM         59  11             
+QSO: 28526 PH 2025-03-08 1612 IZ1HHT        59     15 PP1WW         59  11             
+QSO: 28512 PH 2025-03-08 1618 IZ1HHT        59     15 CX1AR         59  13             
+QSO: 28487 PH 2025-03-08 1619 IZ1HHT        59     15 PY2DR         59  11             
+QSO: 28462 PH 2025-03-08 1620 IZ1HHT        59     15 PY4JW         59  11             
+QSO: 28417 PH 2025-03-08 1621 IZ1HHT        59     15 CE1KR         59  12             
+QSO: 28403 PH 2025-03-08 1623 IZ1HHT        59     15 CE7VP         59  12             
+QSO: 28333 PH 2025-03-08 1626 IZ1HHT        59     15 CT3IQ         59  33             
+QSO: 28337 PH 2025-03-08 1627 IZ1HHT        59     15 PU1JSV        59  11             
+QSO: 28400 PH 2025-03-08 1633 IZ1HHT        59     15 OA4DXW        59  10             
+QSO: 28410 PH 2025-03-08 1637 IZ1HHT        59     15 N8OO          59  04             
+QSO: 28450 PH 2025-03-08 1641 IZ1HHT        59     15 LU2WJV        59  13             
+QSO: 28515 PH 2025-03-08 1643 IZ1HHT        59     15 CB4W          59  12             
+QSO: 28533 PH 2025-03-08 1645 IZ1HHT        59     15 F5LIW         59  14             
+QSO: 28505 PH 2025-03-08 1647 IZ1HHT        59     15 AA2A          59  05             
+QSO: 28467 PH 2025-03-08 1648 IZ1HHT        59     15 PU1SKO        59  11             
+QSO: 28447 PH 2025-03-08 1651 IZ1HHT        59     15 CE4JZO        59  12             
+QSO: 28435 PH 2025-03-08 1652 IZ1HHT        59     15 PU5WMA        59  11             
+QSO: 28370 PH 2025-03-08 1656 IZ1HHT        59     15 PY1WK         59  11             
+QSO: 28373 PH 2025-03-08 1658 IZ1HHT        59     15 PU2SXE        59  11             
+QSO: 28384 PH 2025-03-08 1700 IZ1HHT        59     15 K0EJ          59  04             
+QSO: 28392 PH 2025-03-08 1716 IZ1HHT        59     15 TO3Z          59  08             
+END-OF-LOG:

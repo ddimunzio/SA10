@@ -1,0 +1,64 @@
+START-OF-LOG: 3.0
+LOCATION: CT
+CALLSIGN: W1ARY
+CLUB:  
+CONTEST: SA10M
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: ASSISTED
+CATEGORY-BAND: 
+CATEGORY-MODE: CW
+CATEGORY-POWER: HIGH
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 40
+OPERATORS: W1ARY
+NAME: Marcel Vasile
+ADDRESS: 110 Old Belden Hill Road
+ADDRESS-CITY: Wilton
+ADDRESS-STATE-PROVINCE: CT
+ADDRESS-POSTALCODE: 06897
+ADDRESS-COUNTRY: USA
+GRID-LOCATOR: FN31GE
+EMAIL: marcelvasile@yahoo.com
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28008 CW 2025-03-08 1416 W1ARY         599 05  EA9ACD        599  33                                                  
+QSO:   28012 CW 2025-03-08 1418 W1ARY         599 05  IT9WDC        599  15                                                  
+QSO:   28015 CW 2025-03-08 1420 W1ARY         599 05  PY2XL         599  11                                                  
+QSO:   28016 CW 2025-03-08 1421 W1ARY         599 05  HA8TKS        599  15                                                  
+QSO:   28024 CW 2025-03-08 1425 W1ARY         599 05  AA2A          599  05                                                   
+QSO:   28024 CW 2025-03-08 1426 W1ARY         599 05  FY5KE         599  09                                                   
+QSO:   28026 CW 2025-03-08 1427 W1ARY         599 05  YQ8E          599  20                                                  
+QSO:   28028 CW 2025-03-08 1428 W1ARY         599 05  9A3YT         599  15                                                  
+QSO:   28026 CW 2025-03-08 1937 W1ARY         599 05  CB3A          599  12                                                  
+QSO:   28025 CW 2025-03-08 1943 W1ARY         599 05  KR2AA         599  05                                                   
+QSO:   28024 CW 2025-03-08 1944 W1ARY         599 05  LU1HLH        599  13                                                  
+QSO:   28022 CW 2025-03-08 1946 W1ARY         599 05  PU3POE        599  11                                                  
+QSO:   28017 CW 2025-03-08 1947 W1ARY         599 05  PX9D          599  11                                                  
+QSO:   28016 CW 2025-03-08 1947 W1ARY         599 05  PY1KO         599  11                                                  
+QSO:   28013 CW 2025-03-08 1948 W1ARY         599 05  NP2X          599  08                                                   
+QSO:   28008 CW 2025-03-08 1949 W1ARY         599 05  PP8ZAC        599  11                                                  
+QSO:   28005 CW 2025-03-08 1951 W1ARY         599 05  PY2AXS        599  11                                                    
+QSO:   28005 CW 2025-03-08 1951 W1ARY         599 05  PY2AXH        599  11                                                  
+QSO:   28012 CW 2025-03-08 1952 W1ARY         599 05  VA7MM         599  03                                                   
+QSO:   28028 CW 2025-03-08 1957 W1ARY         599 05  PY3TD         599  11                                                  
+QSO:   28029 CW 2025-03-08 1958 W1ARY         599 05  LU7HN         599  13                                                  
+QSO:   28035 CW 2025-03-08 1959 W1ARY         599 05  LU9GBR        599  13                                                  
+QSO:   28036 CW 2025-03-08 2001 W1ARY         599 05  K7DK          599  03                                                   
+QSO:   28037 CW 2025-03-08 2003 W1ARY         599 05  PY1NSC        599  11                                                  
+QSO:   28039 CW 2025-03-08 2004 W1ARY         599 05  K7D           599  03          bnr                                      
+QSO:   28041 CW 2025-03-08 2006 W1ARY         599 05  W7ZRC         599  03          ada                                      
+QSO:   28036 CW 2025-03-08 2008 W1ARY         599 05  LW6DW         599  13                                                  
+QSO:   28044 CW 2025-03-08 2010 W1ARY         599 05  LU9MA         599  13                                                  
+QSO:   28032 CW 2025-03-08 2152 W1ARY         599 05  CX5FK         599  13                                                  
+QSO:   28034 CW 2025-03-08 2153 W1ARY         599 05  LT3E          599  13                                                  
+QSO:   28029 CW 2025-03-08 2154 W1ARY         599 05  N8OO          599  04                                                   
+QSO:   28024 CW 2025-03-08 2156 W1ARY         599 05  LU7YS         599  13                                                  
+QSO:   28023 CW 2025-03-08 2157 W1ARY         599 05  PY5IQ         599  11                                                  
+QSO:   28022 CW 2025-03-08 2157 W1ARY         599 05  LW2DX         599  13                                                  
+QSO:   28020 CW 2025-03-08 2158 W1ARY         599 05  PP5AX         599  11                                                  
+QSO:   28013 CW 2025-03-08 2159 W1ARY         599 05  PT9DX         599  11                                                  
+QSO:   28006 CW 2025-03-08 2202 W1ARY         599 05  LU5HCB        599  13                                                    
+QSO:   28015 CW 2025-03-08 2207 W1ARY         599 05  PZ5TW         599  09                                                   
+QSO:   28016 CW 2025-03-08 2208 W1ARY         599 05  PY1CMT        599  11                                                  
+QSO:   28034 CW 2025-03-08 2210 W1ARY         599 05  PP5BLU        599  11                                                  
+END-OF-LOG:

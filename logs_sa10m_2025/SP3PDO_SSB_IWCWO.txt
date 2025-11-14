@@ -1,0 +1,59 @@
+START-OF-LOG: 3.0
+CONTEST: South America 10 Meter Contest
+CALLSIGN: SP3PDO
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-TRANSMITTER: ONE
+CATEGORY-POWER: QRP
+CATEGORY-BAND: 10m 
+CATEGORY-MODE: SSB
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-STATION: FIXED 
+CATEGORY-TIME: 6-HOURS 
+LOCATION: DX
+CATEGORY-OVERLAY: 
+CLUB: SP3PDO
+CLAIMED-SCORE: 
+OPERATORS: SP3TYJ
+EMAIL: sp3tyj@wp.pl
+NAME: DARIUSZ FLORCZYK
+ADDRESS: DOBRZYCKI KLUB KR”TKOFALOWC”W SP3PDO
+ADDRESS: UL.KOèMI—SKA 35
+ADDRESS: 63-330 DOBRZYCA, Poland
+CREATED-BY: DQR_Log v. 3.2.5 - (c) SP7DQR
+SOAPBOX: ft840
+QSO: 28000 PH 2025-03-08 1826 SP3PDO        59           15 PT2AP           59           11
+QSO: 28000 PH 2025-03-08 1827 SP3PDO        59           15 PR1T            59           11
+QSO: 28000 PH 2025-03-08 1828 SP3PDO        59           15 PY2DN           59           11
+QSO: 28000 PH 2025-03-08 1828 SP3PDO        59           15 PW2A            59           11
+QSO: 28000 PH 2025-03-08 1829 SP3PDO        59           15 PU1VKG          59           11
+QSO: 28000 PH 2025-03-08 1830 SP3PDO        59           15 LU4JEA          59           13
+QSO: 28000 PH 2025-03-08 1834 SP3PDO        59           15 PY2CP           59           11
+QSO: 28000 PH 2025-03-08 1837 SP3PDO        59           15 PT1M            59           11
+QSO: 28000 PH 2025-03-08 1841 SP3PDO        59           15 PY2EX           59           11
+QSO: 28000 PH 2025-03-08 1847 SP3PDO        59           15 PU2RTR          59           11
+QSO: 28000 PH 2025-03-08 1847 SP3PDO        59           15 PU1JSV          59           11
+QSO: 28000 PH 2025-03-08 1851 SP3PDO        59           15 PU2RDB          59           11
+QSO: 28000 PH 2025-03-08 1857 SP3PDO        59           15 CB3A            59           12
+QSO: 28000 PH 2025-03-08 1859 SP3PDO        59           15 PU5DUD          59           11
+QSO: 28000 PH 2025-03-08 1903 SP3PDO        59           15 LU4FM           59           13
+QSO: 28000 PH 2025-03-08 1905 SP3PDO        59           15 PY5MM           59           11
+QSO: 28000 PH 2025-03-08 1912 SP3PDO        59           15 CX7ACH          59           13
+QSO: 28000 PH 2025-03-08 1920 SP3PDO        59           15 PU2MGE          59           11
+QSO: 28000 PH 2025-03-08 1922 SP3PDO        59           15 PU2VLW          59           11
+QSO: 28000 PH 2025-03-08 1928 SP3PDO        59           15 CW5A            59           13
+QSO: 28000 PH 2025-03-08 1929 SP3PDO        59           15 PP5IP           59           11
+QSO: 28000 PH 2025-03-08 1931 SP3PDO        59           15 LU1VM           59           13
+QSO: 28000 PH 2025-03-08 1935 SP3PDO        59           15 LT3E            59           13
+QSO: 28000 PH 2025-03-08 1937 SP3PDO        59           15 PY5FO           59           11
+QSO: 28000 PH 2025-03-08 1939 SP3PDO        59           15 LU2WJV          59           13
+QSO: 28000 PH 2025-03-08 1944 SP3PDO        59           15 PU5SKW          59           11
+QSO: 28000 PH 2025-03-08 1947 SP3PDO        59           15 PU2SXE          59           11
+QSO: 28000 PH 2025-03-08 1949 SP3PDO        59           15 PU2VLW          59           11
+QSO: 28000 PH 2025-03-09 1124 SP3PDO        59           15 CS7BFV          59           14
+QSO: 28000 PH 2025-03-09 1128 SP3PDO        59           15 PY6GOE          59           11
+QSO: 28000 PH 2025-03-09 1130 SP3PDO        59           15 PY7GB           59           11
+QSO: 28000 PH 2025-03-09 1132 SP3PDO        59           15 PY2VZ           59           11
+QSO: 28000 PH 2025-03-09 1134 SP3PDO        59           15 PY2ZR           59           11
+QSO: 28000 PH 2025-03-09 1137 SP3PDO        59           15 PY4JW           59           11
+QSO: 28000 PH 2025-03-09 1138 SP3PDO        59           15 PY2YD           59           11
+END-OF-LOG:

@@ -1,0 +1,209 @@
+START-OF-LOG: 3.0
+LOCATION: DX
+CALLSIGN: CX8DS
+CLUB:  
+CONTEST: SA10-SA
+CATEGORY-OPERATOR: SINGLE-OP
+CATEGORY-ASSISTED: NON-ASSISTED
+CATEGORY-BAND: 10M
+CATEGORY-MODE: SSB
+CATEGORY-POWER: LOW
+CATEGORY-STATION: FIXED
+CATEGORY-TRANSMITTER: ONE
+CLAIMED-SCORE: 95062
+OPERATORS: CX8DS
+NAME: Oscar Sosa
+ADDRESS: Republica Argentina 512
+ADDRESS-CITY: Las Piedras
+ADDRESS-STATE-PROVINCE: 
+ADDRESS-POSTALCODE: 15900
+ADDRESS-COUNTRY: URUGUAY
+GRID-LOCATOR: GF15VG
+EMAIL: oesosa@yahoo.com.ar
+CREATED-BY: N1MM Logger+ 1.0.10631.0
+QSO:   28537 PH 2025-03-08 1245 CX8DS         59   13   HF7A          59   15   
+QSO:   28537 PH 2025-03-08 1302 CX8DS         59   13   HB9HDK        59   14   
+QSO:   28537 PH 2025-03-08 1308 CX8DS         59   13   YT8WW         59   15   
+QSO:   28537 PH 2025-03-08 1310 CX8DS         59   13   DF5GZ         59   14   
+QSO:   28537 PH 2025-03-08 1313 CX8DS         59   13   OM5M          59   15   
+QSO:   28537 PH 2025-03-08 1314 CX8DS         59   13   CS7BPO        59   14   
+QSO:   28537 PH 2025-03-08 1314 CX8DS         59   13   DJ6HR         59   14   
+QSO:   28537 PH 2025-03-08 1315 CX8DS         59   13   9A9O          59   15   
+QSO:   28537 PH 2025-03-08 1315 CX8DS         59   13   GW5GDP        59   14   
+QSO:   28537 PH 2025-03-08 1318 CX8DS         59   13   EA4AOC        59   14   
+QSO:   28537 PH 2025-03-08 1318 CX8DS         59   13   OK1UOZ        59   15   
+QSO:   28537 PH 2025-03-08 1322 CX8DS         59   13   DL2BDA        59   14   
+QSO:   28537 PH 2025-03-08 1323 CX8DS         59   13   HB9IIH        59   14   
+QSO:   28537 PH 2025-03-08 1326 CX8DS         59   13   PA4I          59   14   
+QSO:   28537 PH 2025-03-08 1330 CX8DS         59   13   F5OHM         59   14   
+QSO:   28537 PH 2025-03-08 1330 CX8DS         59   13   R6DNB         59   16   
+QSO:   28537 PH 2025-03-08 1332 CX8DS         59   13   YO2LEA        59   20   
+QSO:   28537 PH 2025-03-08 1333 CX8DS         59   13   UA1OLM        59   16   
+QSO:   28537 PH 2025-03-08 1334 CX8DS         59   13   OZ1T          59   14   
+QSO:   28537 PH 2025-03-08 1334 CX8DS         59   13   F5LIW         59   14   
+QSO:   28537 PH 2025-03-08 1335 CX8DS         59   13   PY6GOE        59   11   
+QSO:   28537 PH 2025-03-08 1336 CX8DS         59   13   DO1UTE        59   14   
+QSO:   28537 PH 2025-03-08 1339 CX8DS         59   13   2I0EVH        59   21   
+QSO:   28537 PH 2025-03-08 1340 CX8DS         59   13   PY8ML         59   11   
+QSO:   28537 PH 2025-03-08 1340 CX8DS         59   13   UZ7C          59   16   
+QSO:   28537 PH 2025-03-08 1341 CX8DS         59   13   DG1GHY        59   14   
+QSO:   28537 PH 2025-03-08 1342 CX8DS         59   13   PT2AZ         59   11   
+QSO:   28537 PH 2025-03-08 1342 CX8DS         59   13   R6AF          59   16   
+QSO:   28537 PH 2025-03-08 1343 CX8DS         59   13   GM4JR         59   14   
+QSO:   28537 PH 2025-03-08 1344 CX8DS         59   13   ON6TM         59   14   
+QSO:   28537 PH 2025-03-08 1345 CX8DS         59   13   RX9WN         59   16   
+QSO:   28537 PH 2025-03-08 1346 CX8DS         59   13   S53R          59   15   
+QSO:   28537 PH 2025-03-08 1347 CX8DS         59   13   DL9OHA        59   14   
+QSO:   28537 PH 2025-03-08 1347 CX8DS         59   13   RZ3Z          59   16   
+QSO:   28537 PH 2025-03-08 1349 CX8DS         59   13   2I0NQC        59   14   
+QSO:   28537 PH 2025-03-08 1350 CX8DS         59   13   F8GBR         59   14   
+QSO:   28537 PH 2025-03-08 1352 CX8DS         59   13   OH8DJ         59   15   
+QSO:   28537 PH 2025-03-08 1353 CX8DS         59   13   CT1FOQ        59   14   
+QSO:   28537 PH 2025-03-08 1354 CX8DS         59   13   CX1DF         59   13   
+QSO:   28537 PH 2025-03-08 1355 CX8DS         59   13   TK4RC         59   15   
+QSO:   28537 PH 2025-03-08 1356 CX8DS         59   13   OH5HUZ        59   15   
+QSO:   28537 PH 2025-03-08 1357 CX8DS         59   13   9A0DIG        59   15   
+QSO:   28537 PH 2025-03-08 1358 CX8DS         59   13   DK4PB         59   14   
+QSO:   28537 PH 2025-03-08 1358 CX8DS         59   13   PD3W          59   14   
+QSO:   28537 PH 2025-03-08 1358 CX8DS         59   13   SM7L          59   14   
+QSO:   28537 PH 2025-03-08 1359 CX8DS         59   13   PU4JOE        59   11   
+QSO:   28537 PH 2025-03-08 1401 CX8DS         59   13   SP7M          59   15   
+QSO:   28537 PH 2025-03-08 1403 CX8DS         59   13   S57RO         59   15   
+QSO:   28537 PH 2025-03-08 1413 CX8DS         59   13   DK2KPS        59   14   
+QSO:   28537 PH 2025-03-08 1414 CX8DS         59   13   PU7RML        59   11   
+QSO:   28537 PH 2025-03-08 1424 CX8DS         59   13   F5MNC         59   14   
+QSO:   28537 PH 2025-03-08 1428 CX8DS         59   13   IU4FKE        59   15   
+QSO:   28537 PH 2025-03-08 1430 CX8DS         59   13   PU8PSF        59   11   
+QSO:   28537 PH 2025-03-08 1432 CX8DS         59   13   S51JQ         59   15   
+QSO:   28537 PH 2025-03-08 1433 CX8DS         59   13   CE1KR         59   12   
+QSO:   28537 PH 2025-03-08 1433 CX8DS         59   13   F6HRP         59   14   
+QSO:   28537 PH 2025-03-08 1434 CX8DS         59   13   EC5EA         59   14   
+QSO:   28537 PH 2025-03-08 1437 CX8DS         59   13   IK3XTT        59   15   
+QSO:   28537 PH 2025-03-08 1728 CX8DS         59   13   PY1CMT        59   11   
+QSO:   28537 PH 2025-03-08 1729 CX8DS         59   13   PY4BAL        59   11   
+QSO:   28537 PH 2025-03-08 1729 CX8DS         59   13   ES6RW         59   15   
+QSO:   28537 PH 2025-03-08 1730 CX8DS         59   13   PP2RON        59   11   
+QSO:   28537 PH 2025-03-08 1731 CX8DS         59   13   PA2MD         59   14   
+QSO:   28537 PH 2025-03-08 1731 CX8DS         59   13   K0EJ          59   4    
+QSO:   28537 PH 2025-03-08 1732 CX8DS         59   13   4Z5ML         59   20   
+QSO:   28537 PH 2025-03-08 1732 CX8DS         59   13   DO2CT         59   14   
+QSO:   28537 PH 2025-03-08 1733 CX8DS         59   13   F6IRA         59   14   
+QSO:   28537 PH 2025-03-08 1733 CX8DS         59   13   DL4VAI        59   14   
+QSO:   28537 PH 2025-03-08 1735 CX8DS         59   13   SP9VL         59   15   
+QSO:   28537 PH 2025-03-08 1735 CX8DS         59   13   CT7AIX        59   14   
+QSO:   28537 PH 2025-03-08 1736 CX8DS         59   13   F6IRS         59   14   
+QSO:   28537 PH 2025-03-08 1737 CX8DS         59   13   PU4GOL        59   11   
+QSO:   28537 PH 2025-03-08 1737 CX8DS         59   13   PY1EI         59   11   
+QSO:   28537 PH 2025-03-08 1738 CX8DS         59   13   OE5JSL        59   15   
+QSO:   28537 PH 2025-03-08 1739 CX8DS         59   13   SQ3M          59   15   
+QSO:   28537 PH 2025-03-08 1740 CX8DS         59   13   PY1KB         59   11   
+QSO:   28537 PH 2025-03-08 1744 CX8DS         59   13   PU4FAR        59   11   
+QSO:   28537 PH 2025-03-08 1744 CX8DS         59   13   PY4WJ         59   11   
+QSO:   28537 PH 2025-03-08 1745 CX8DS         59   13   PT2AP         59   11   
+QSO:   28537 PH 2025-03-08 1745 CX8DS         59   13   PU2NEZ        59   11   
+QSO:   28537 PH 2025-03-08 1746 CX8DS         59   13   HA4FB         59   15   
+QSO:   28537 PH 2025-03-08 1747 CX8DS         59   13   M7VOT         59   14   
+QSO:   28537 PH 2025-03-08 1747 CX8DS         59   13   EA8DNX        59   33   
+QSO:   28537 PH 2025-03-08 1747 CX8DS         59   13   HB9OAB        59   14   
+QSO:   28537 PH 2025-03-08 1748 CX8DS         59   13   PD2WL         59   14   
+QSO:   28537 PH 2025-03-08 1749 CX8DS         59   13   OM3CW         59   15   
+QSO:   28537 PH 2025-03-08 1750 CX8DS         59   13   DK9BTX        59   14   
+QSO:   28537 PH 2025-03-08 1752 CX8DS         59   13   SV8IIR        59   20   
+QSO:   28537 PH 2025-03-08 1753 CX8DS         59   13   PY1JDX        59   11   
+QSO:   28565 PH 2025-03-08 1755 CX8DS         59   13   PR7KSA        59   11   
+QSO:   28565 PH 2025-03-08 1756 CX8DS         59   13   PU2KMM        59   11   
+QSO:   28565 PH 2025-03-08 1757 CX8DS         59   13   ES2NJ         59   15   
+QSO:   28565 PH 2025-03-08 1758 CX8DS         59   13   DL8UV         59   14   
+QSO:   28565 PH 2025-03-08 1758 CX8DS         59   13   HB9CIC        59   14   
+QSO:   28565 PH 2025-03-08 1800 CX8DS         59   13   M6DBC         59   14   
+QSO:   28565 PH 2025-03-08 1806 CX8DS         59   13   PU2NZO        59   11   
+QSO:   28565 PH 2025-03-08 1806 CX8DS         59   13   PY1WE         59   11   
+QSO:   28565 PH 2025-03-08 1807 CX8DS         59   13   PY1CV         59   11   
+QSO:   28565 PH 2025-03-08 1808 CX8DS         59   13   M0HHG         59   14   
+QSO:   28565 PH 2025-03-08 1809 CX8DS         59   13   2E0IWX        59   14   
+QSO:   28565 PH 2025-03-08 1809 CX8DS         59   13   PY1TTN        59   11   
+QSO:   28565 PH 2025-03-08 1810 CX8DS         59   13   PU1LEO        59   11   
+QSO:   28565 PH 2025-03-08 1812 CX8DS         59   13   F8DVD         59   14   
+QSO:   28565 PH 2025-03-08 1812 CX8DS         59   13   PY1XW         59   11   
+QSO:   28565 PH 2025-03-08 1813 CX8DS         59   13   GW4NOO        59   14   
+QSO:   28565 PH 2025-03-08 1814 CX8DS         59   13   CT7/OK1SR     59   14   
+QSO:   28565 PH 2025-03-08 1814 CX8DS         59   13   PY1WK         59   11   
+QSO:   28565 PH 2025-03-08 1815 CX8DS         59   13   PU1AJN        59   11   
+QSO:   28565 PH 2025-03-08 1816 CX8DS         59   13   PU1JSV        59   11   
+QSO:   28565 PH 2025-03-08 1820 CX8DS         59   13   EA3OW         59   14   
+QSO:   28565 PH 2025-03-08 1823 CX8DS         59   13   M0MCV         59   14   
+QSO:   28565 PH 2025-03-08 1826 CX8DS         59   13   K5RHZ         59   4    
+QSO:   28565 PH 2025-03-08 1829 CX8DS         59   13   PU4WST        59   11   
+QSO:   28565 PH 2025-03-08 1830 CX8DS         59   13   SP5EXA        59   15   
+QSO:   28565 PH 2025-03-08 1831 CX8DS         59   13   DK6DL         59   14   
+QSO:   28565 PH 2025-03-08 1833 CX8DS         59   13   PU1KPS        59   11   
+QSO:   28565 PH 2025-03-08 1836 CX8DS         59   13   PU1PRD        59   11   
+QSO:   28565 PH 2025-03-08 1840 CX8DS         59   13   EA4RR         59   14   
+QSO:   28565 PH 2025-03-08 1841 CX8DS         59   13   OZ1AXG        59   14   
+QSO:   28565 PH 2025-03-08 1847 CX8DS         59   13   K3EWZ         59   5    
+QSO:   28565 PH 2025-03-08 1848 CX8DS         59   13   NZ8V          59   4    
+QSO:   28565 PH 2025-03-08 1849 CX8DS         59   13   XE2Q          59   6    
+QSO:   28565 PH 2025-03-08 1851 CX8DS         59   13   XE2CS         59   6    
+QSO:   28565 PH 2025-03-08 1852 CX8DS         59   13   PW8AB         59   11   
+QSO:   28565 PH 2025-03-08 1854 CX8DS         59   13   CS7BFV        59   14   
+QSO:   28565 PH 2025-03-08 1854 CX8DS         59   13   N8OO          59   4    
+QSO:   28565 PH 2025-03-08 1859 CX8DS         59   13   K3MPG         59   5    
+QSO:   28565 PH 2025-03-08 1901 CX8DS         59   13   KH6KW         59   31   
+QSO:   28565 PH 2025-03-08 1903 CX8DS         59   13   PP1OY         59   11   
+QSO:   28565 PH 2025-03-08 1905 CX8DS         59   13   KJ4CGU        59   5    
+QSO:   28565 PH 2025-03-08 1907 CX8DS         59   13   DH8WE         59   14   
+QSO:   28565 PH 2025-03-08 1908 CX8DS         59   13   N3EXA         59   5    
+QSO:   28565 PH 2025-03-08 1911 CX8DS         59   13   ON4APU        59   14   
+QSO:   28565 PH 2025-03-08 1911 CX8DS         59   13   DO7GO         59   14   
+QSO:   28565 PH 2025-03-08 1917 CX8DS         59   13   PA3CGJ        59   14   
+QSO:   28565 PH 2025-03-08 1928 CX8DS         59   13   KJ6KNF        59   3    
+QSO:   28550 PH 2025-03-08 2049 CX8DS         59   13   N1GNF         59   5    
+QSO:   28550 PH 2025-03-08 2052 CX8DS         59   13   CE1SWH        59   12   
+QSO:   28550 PH 2025-03-08 2054 CX8DS         59   13   KZ4PW         59   5    
+QSO:   28550 PH 2025-03-08 2055 CX8DS         59   13   LU4JEA        59   13   
+QSO:   28550 PH 2025-03-08 2055 CX8DS         59   13   K6TQ          59   3    
+QSO:   28550 PH 2025-03-08 2056 CX8DS         59   13   KB4LOA        59   5    
+QSO:   28550 PH 2025-03-08 2057 CX8DS         59   13   PP1WW         59   11   
+QSO:   28550 PH 2025-03-08 2058 CX8DS         59   13   AC1SQ         59   5    
+QSO:   28550 PH 2025-03-08 2058 CX8DS         59   13   CE1LTJ        59   12   
+QSO:   28550 PH 2025-03-08 2058 CX8DS         59   13   K1LZ          59   5    
+QSO:   28550 PH 2025-03-08 2059 CX8DS         59   13   HC4ER         59   10   
+QSO:   28550 PH 2025-03-08 2100 CX8DS         59   13   KC5DI         59   4    
+QSO:   28550 PH 2025-03-08 2101 CX8DS         59   13   CB3A          59   12   
+QSO:   28550 PH 2025-03-08 2102 CX8DS         59   13   VA6SZ         59   4    
+QSO:   28550 PH 2025-03-08 2103 CX8DS         59   13   N6RND         59   3    
+QSO:   28550 PH 2025-03-08 2104 CX8DS         59   13   EI3JZ         59   14   
+QSO:   28550 PH 2025-03-08 2107 CX8DS         59   13   WB6UIA        59   4    
+QSO:   28550 PH 2025-03-08 2108 CX8DS         59   13   CO2QU         59   8    
+QSO:   28550 PH 2025-03-08 2109 CX8DS         59   13   N1WRK         59   5    
+QSO:   28550 PH 2025-03-08 2112 CX8DS         59   13   YS1JFE        59   7    
+QSO:   28550 PH 2025-03-08 2113 CX8DS         59   13   PP2CS         59   11   
+QSO:   28550 PH 2025-03-08 2114 CX8DS         59   13   PY4CT         59   11   
+QSO:   28550 PH 2025-03-08 2115 CX8DS         59   13   VA1SEA        59   5    
+QSO:   28550 PH 2025-03-08 2115 CX8DS         59   13   WQ0X          59   5    
+QSO:   28550 PH 2025-03-08 2117 CX8DS         59   13   K1JB          59   5    
+QSO:   28550 PH 2025-03-08 2117 CX8DS         59   13   PY1MU         59   11   
+QSO:   28550 PH 2025-03-08 2120 CX8DS         59   13   W6LFB         59   4    
+QSO:   28550 PH 2025-03-08 2123 CX8DS         59   13   KF8AHK        59   4    
+QSO:   28550 PH 2025-03-08 2125 CX8DS         59   13   LO5U          59   13   
+QSO:   28550 PH 2025-03-08 2125 CX8DS         59   13   PY2ZEA        59   11   
+QSO:   28550 PH 2025-03-08 2128 CX8DS         59   13   N0VUN         59   4    
+QSO:   28550 PH 2025-03-08 2129 CX8DS         59   13   K6WDE         59   3    
+QSO:   28550 PH 2025-03-08 2129 CX8DS         59   13   KC4OJB        59   5    
+QSO:   28550 PH 2025-03-08 2130 CX8DS         59   13   YV1GIY        59   9    
+QSO:   28550 PH 2025-03-08 2131 CX8DS         59   13   VA3AAA        59   4    
+QSO:   28550 PH 2025-03-08 2132 CX8DS         59   13   PY4LI         59   11   
+QSO:   28510 PH 2025-03-08 2252 CX8DS         59   13   AA2A          59   5    
+QSO:   28441 PH 2025-03-08 2352 CX8DS         59   13   JA7OWD        59   25   
+QSO:   28439 PH 2025-03-09 1052 CX8DS         59   13   F4HRG         59   14   
+QSO:   28535 PH 2025-03-09 1055 CX8DS         59   13   PD3JWB        59   14   
+QSO:   28431 PH 2025-03-09 1059 CX8DS         59   13   F5NBX         59   14   
+QSO:   28426 PH 2025-03-09 1112 CX8DS         59   13   SP5GNI        59   15   
+QSO:   28466 PH 2025-03-09 1115 CX8DS         59   13   EA3RCA        59   14   
+QSO:   28506 PH 2025-03-09 1124 CX8DS         59   13   EA8DMS        59   33   
+QSO:   28435 PH 2025-03-09 1128 CX8DS         59   13   HB9TIH        59   14   
+QSO:   28375 PH 2025-03-09 1137 CX8DS         59   13   TA3NE         59   20   
+QSO:   28380 PH 2025-03-09 1138 CX8DS         59   13   IT9FZT        59   15   
+QSO:   28574 PH 2025-03-09 1142 CX8DS         59   13   LU4FM         59   13   
+QSO:   28455 PH 2025-03-09 1145 CX8DS         59   13   PR7RBA        59   11   
+END-OF-LOG:
