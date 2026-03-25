@@ -58,6 +58,25 @@ Thumbs.db
 
 # Contest logs (uploaded)
 uploads/
+
+# Environment variables (secrets)
+.env
+.env.*
+
+# Contest log submissions (kept locally only)
+logs_sa10m_2025/
+logs_sa10m__2026/
+ubn_reports/
+
+# Generated exports and local data
+*.xlsx
+*.csv
+*.db
+*.sqlite
+*.sqlite3
+
+# Local analysis files
+*_analysis.txt
 data/logs/
 
 # Reports (generated)

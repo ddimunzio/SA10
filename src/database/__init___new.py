@@ -27,3 +27,4 @@ __all__ = [
     "ContestStatus",
     "ValidationStatus",
 ]
+
