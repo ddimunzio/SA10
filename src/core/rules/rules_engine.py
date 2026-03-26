@@ -329,7 +329,14 @@ class RulesEngine:
         # CQ Zone
         elif mult_type == 'cq_zone':
             zone = contact.exchange_received.get('cq_zone', '')
-            
+            # Must be a valid CQ zone number (1-40); skip non-numeric values like "MG"
+            try:
+                zone_num = int(zone)
+                if not (1 <= zone_num <= 40):
+                    return False
+            except (ValueError, TypeError):
+                return False
+
             if scope == 'per_band_mode':
                 key = self._get_band_mode_key(contact)
                 if key not in self.worked_zones_per_band_mode:
@@ -368,13 +375,20 @@ class RulesEngine:
 
         elif mult_type == 'cq_zone':
             zone = contact.exchange_received.get('cq_zone', '')
-            
+            # Only record valid CQ zone numbers (1-40)
+            try:
+                zone_num = int(zone)
+                if not (1 <= zone_num <= 40):
+                    return
+            except (ValueError, TypeError):
+                return
+
             if scope == 'per_band_mode':
                 key = self._get_band_mode_key(contact)
                 if key not in self.worked_zones_per_band_mode:
                     self.worked_zones_per_band_mode[key] = set()
                 self.worked_zones_per_band_mode[key].add(zone)
-            
+
             # Always update per-band tracking (for backward compatibility)
             band = contact.band
             if band not in self.worked_zones_per_band:

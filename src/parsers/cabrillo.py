@@ -249,7 +249,13 @@ class CabrilloParser:
         
         if s in band_map:
             return band_map[s]
-            
+
+        # Handle float-format frequencies like "28000.00"
+        try:
+            return int(float(freq_str))
+        except (ValueError, TypeError):
+            pass
+
         # Fallback to int conversion which will raise ValueError if invalid
         return int(freq_str)
 

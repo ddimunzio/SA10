@@ -151,8 +151,23 @@ class SA10App(tk.Tk):
         # Redirect stdout/print to the log pane
         sys.stdout = TextRedirector(self._log_text, "stdout")
 
+        # Ensure the database exists and has all tables before first use
+        self._init_database()
+
         # Load contests on startup
         self.after(200, self._refresh_contests)
+
+    # ── Database bootstrap ────────────────────────────────────────────
+
+    def _init_database(self):
+        """Create the database file and all tables if they don't exist yet."""
+        try:
+            from src.database.db_manager import DatabaseManager
+            db = DatabaseManager(self._db_path.get())
+            db.create_all_tables()
+        except Exception as e:
+            # Non-fatal: user can still choose a different DB via File menu
+            self._log(f"Warning: could not initialise database '{self._db_path.get()}': {e}", "warn")
 
     # ── Menu ──────────────────────────────────────────────────────────
 
@@ -815,6 +830,9 @@ class SA10App(tk.Tk):
         tk.Button(btn_row, text="⬇ Export Scores CSV", command=self._export_scores_csv,
                   bg="#6a3d9a", fg="white", font=("Segoe UI", 9, "bold"),
                   relief="flat", padx=10).pack(side="left", padx=(6, 0))
+        tk.Button(btn_row, text="⬇ QSO Report (Excel)", command=self._export_qso_excel,
+                  bg="#b8560a", fg="white", font=("Segoe UI", 9, "bold"),
+                  relief="flat", padx=10).pack(side="left", padx=(6, 0))
 
         # Callsign filter
         self._ldr_filter = tk.StringVar()
@@ -1164,6 +1182,262 @@ class SA10App(tk.Tk):
 
         threading.Thread(target=_run, daemon=True).start()
 
+    def _export_qso_excel(self):
+        """Export a per-participant QSO Excel report with an Observations column."""
+        cid = self._selected_contest_id.get()
+        if not cid:
+            messagebox.showinfo("No contest", "Select an active contest first.")
+            return
+
+        out_path = filedialog.asksaveasfilename(
+            title="Export QSO Report to Excel",
+            defaultextension=".xlsx",
+            filetypes=[("Excel files", "*.xlsx")],
+            initialfile="qso_report.xlsx",
+            initialdir="."
+        )
+        if not out_path:
+            return
+
+        db_path = self._db_path.get()
+
+        def _run():
+            self._set_status("Building QSO report…", busy=True)
+            try:
+                import openpyxl
+                from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+                from openpyxl.utils import get_column_letter
+                from src.database.db_manager import DatabaseManager
+                from sqlalchemy import text as sql_text
+
+                # Human-readable labels for each validation status
+                STATUS_LABEL = {
+                    "valid":              "VALID",
+                    "duplicate":          "DUPLICATE",
+                    "invalid":            "INVALID",
+                    "invalid_callsign":   "INVALID CALLSIGN",
+                    "invalid_exchange":   "INVALID EXCHANGE",
+                    "out_of_period":      "OUT OF PERIOD",
+                    "invalid_band":       "INVALID BAND",
+                    "invalid_mode":       "INVALID MODE",
+                    "not_in_log":         "NIL (NOT IN LOG)",
+                    "time_mismatch":      "TIME MISMATCH",
+                    "exchange_mismatch":  "EXCHANGE MISMATCH",
+                    "unique_call":        "UNIQUE CALL",
+                }
+
+                # Fill colours per status
+                STATUS_FILL = {
+                    "valid":             PatternFill("solid", fgColor="C6EFCE"),  # light green
+                    "duplicate":         PatternFill("solid", fgColor="FFEB9C"),  # yellow
+                    "not_in_log":        PatternFill("solid", fgColor="FFC7CE"),  # light red
+                    "invalid_callsign":  PatternFill("solid", fgColor="FFC7CE"),
+                    "invalid_exchange":  PatternFill("solid", fgColor="FFC7CE"),
+                    "out_of_period":     PatternFill("solid", fgColor="FFC7CE"),
+                    "invalid_band":      PatternFill("solid", fgColor="FFC7CE"),
+                    "invalid_mode":      PatternFill("solid", fgColor="FFC7CE"),
+                    "invalid":           PatternFill("solid", fgColor="FFC7CE"),
+                    "time_mismatch":     PatternFill("solid", fgColor="FFEB9C"),
+                    "exchange_mismatch": PatternFill("solid", fgColor="FFEB9C"),
+                    "unique_call":       PatternFill("solid", fgColor="DDEBF7"),  # light blue
+                }
+
+                db = DatabaseManager(db_path)
+                with db.get_session() as session:
+                    # ── Summary data ──────────────────────────────────────────────
+                    summary_rows = session.execute(sql_text("""
+                        SELECT l.id AS log_id, l.callsign, l.name,
+                               l.category_operator, l.category_power,
+                               l.category_mode,
+                               COALESCE(s.total_qsos,   0) AS total_qsos,
+                               COALESCE(s.valid_qsos,   0) AS valid_qsos,
+                               COALESCE(s.duplicate_qsos, 0) AS dupe_qsos,
+                               COALESCE(s.not_in_log_qsos, 0) AS nil_qsos,
+                               COALESCE(s.invalid_qsos, 0) AS invalid_qsos,
+                               COALESCE(s.final_score,  0) AS final_score
+                        FROM logs l
+                        LEFT JOIN scores s ON s.log_id = l.id
+                        WHERE l.contest_id = :cid
+                        ORDER BY final_score DESC
+                    """), {"cid": cid}).fetchall()
+
+                    # ── Contact data ──────────────────────────────────────────────
+                    contact_rows = session.execute(sql_text("""
+                        SELECT c.log_id, c.qso_date, c.qso_time, c.band, c.mode,
+                               c.call_sent, c.rst_sent, c.exchange_sent,
+                               c.call_received, c.rst_received, c.exchange_received,
+                               COALESCE(c.points, 0) AS points,
+                               c.validation_status, c.validation_notes
+                        FROM contacts c
+                        JOIN logs l ON c.log_id = l.id
+                        WHERE l.contest_id = :cid
+                        ORDER BY c.log_id, c.qso_date, c.qso_time
+                    """), {"cid": cid}).fetchall()
+
+                # Group contacts by log_id
+                from collections import defaultdict
+                contacts_by_log = defaultdict(list)
+                for row in contact_rows:
+                    contacts_by_log[row.log_id].append(row)
+
+                # ── Build workbook ────────────────────────────────────────────────
+                wb = openpyxl.Workbook()
+
+                # ── Sheet 1: Summary ──────────────────────────────────────────────
+                ws_sum = wb.active
+                ws_sum.title = "Summary"
+
+                hdr_font  = Font(bold=True, color="FFFFFF")
+                hdr_fill  = PatternFill("solid", fgColor="1A3A5C")
+                ctr_align = Alignment(horizontal="center", vertical="center")
+
+                sum_headers = [
+                    "#", "Callsign", "Name", "Category", "Power", "Mode",
+                    "Total QSOs", "Valid QSOs", "Duplicates", "NIL", "Invalid",
+                    "Final Score",
+                ]
+                for col_num, h in enumerate(sum_headers, 1):
+                    cell = ws_sum.cell(1, col_num, h)
+                    cell.font = hdr_font
+                    cell.fill = hdr_fill
+                    cell.alignment = ctr_align
+
+                for idx, r in enumerate(summary_rows, 1):
+                    is_checklog = (r.category_operator or "").upper() == "CHECKLOG"
+                    ws_sum.append([
+                        idx,
+                        r.callsign or "",
+                        r.name or "",
+                        r.category_operator or "",
+                        r.category_power or "",
+                        r.category_mode or "",
+                        r.total_qsos,
+                        r.valid_qsos,
+                        r.dupe_qsos,
+                        r.nil_qsos,
+                        r.invalid_qsos,
+                        0 if is_checklog else r.final_score,
+                    ])
+
+                # Auto-size summary columns
+                for col in ws_sum.columns:
+                    max_len = max((len(str(c.value or "")) for c in col), default=8)
+                    ws_sum.column_dimensions[col[0].column_letter].width = min(max_len + 2, 40)
+
+                # Freeze header row
+                ws_sum.freeze_panes = "A2"
+
+                # ── Per-participant sheets ────────────────────────────────────────
+                qso_headers = [
+                    "#", "Date", "Time", "Band", "Mode",
+                    "Call Sent", "RST Sent", "Exch Sent",
+                    "Call Rcvd", "RST Rcvd", "Exch Rcvd",
+                    "Points", "Observations",
+                ]
+
+                used_titles = set()
+
+                def _safe_sheet_name(callsign: str) -> str:
+                    """Return a valid, unique Excel sheet name (max 31 chars)."""
+                    # Strip characters not allowed in sheet names
+                    for ch in "/\\?*[]:'":
+                        callsign = callsign.replace(ch, "_")
+                    title = callsign[:31]
+                    base, counter = title, 2
+                    while title in used_titles:
+                        suffix = f"_{counter}"
+                        title = base[:31 - len(suffix)] + suffix
+                        counter += 1
+                    used_titles.add(title)
+                    return title
+
+                for r in summary_rows:
+                    log_id   = r.log_id
+                    callsign = r.callsign or f"LOG{log_id}"
+                    contacts = contacts_by_log.get(log_id, [])
+
+                    ws = wb.create_sheet(title=_safe_sheet_name(callsign))
+
+                    # Sheet title row
+                    ws.merge_cells(start_row=1, start_column=1,
+                                   end_row=1,   end_column=len(qso_headers))
+                    title_cell = ws.cell(1, 1, f"{callsign}  —  QSO Report")
+                    title_cell.font = Font(bold=True, size=13, color="FFFFFF")
+                    title_cell.fill = PatternFill("solid", fgColor="1A3A5C")
+                    title_cell.alignment = Alignment(horizontal="left", vertical="center")
+                    ws.row_dimensions[1].height = 22
+
+                    # Column headers (row 2)
+                    for col_num, h in enumerate(qso_headers, 1):
+                        cell = ws.cell(2, col_num, h)
+                        cell.font = hdr_font
+                        cell.fill = hdr_fill
+                        cell.alignment = ctr_align
+
+                    # QSO rows (starting at row 3)
+                    for qso_num, c in enumerate(contacts, 1):
+                        status   = (c.validation_status or "valid").lower()
+                        label    = STATUS_LABEL.get(status, status.upper())
+                        row_fill = STATUS_FILL.get(status)
+                        row_num  = qso_num + 2
+
+                        values = [
+                            qso_num,
+                            c.qso_date or "",
+                            c.qso_time or "",
+                            c.band or "",
+                            c.mode or "",
+                            c.call_sent or "",
+                            c.rst_sent or "",
+                            c.exchange_sent or "",
+                            c.call_received or "",
+                            c.rst_received or "",
+                            c.exchange_received or "",
+                            c.points,
+                            label,
+                        ]
+                        ws.append(values)
+
+                        if row_fill:
+                            for col_num in range(1, len(qso_headers) + 1):
+                                ws.cell(row_num, col_num).fill = row_fill
+
+                    # Auto-size columns
+                    col_widths = [4, 12, 6, 6, 5, 14, 6, 10, 14, 6, 10, 7, 20]
+                    for col_num, width in enumerate(col_widths, 1):
+                        ws.column_dimensions[
+                            get_column_letter(col_num)
+                        ].width = width
+
+                    # Freeze title + header rows
+                    ws.freeze_panes = "A3"
+
+                wb.save(out_path)
+                self._log(
+                    f"QSO report exported: {len(summary_rows)} participants, "
+                    f"{len(contact_rows)} QSOs → {out_path}", "ok"
+                )
+                messagebox.showinfo(
+                    "Export complete",
+                    f"QSO report saved to:\n{out_path}\n\n"
+                    f"{len(summary_rows)} participants / {len(contact_rows)} QSOs"
+                )
+
+            except ImportError:
+                self._log("openpyxl is not installed. Run: pip install openpyxl", "error")
+                messagebox.showerror(
+                    "Missing dependency",
+                    "openpyxl is required for Excel export.\n\nRun: pip install openpyxl")
+            except Exception as e:
+                import traceback
+                self._log(f"QSO report export error: {e}", "error")
+                self._log(traceback.format_exc(), "error")
+                messagebox.showerror("Export error", str(e))
+            finally:
+                self._set_status("Ready")
+
+        threading.Thread(target=_run, daemon=True).start()
+
     def _export_scores_csv(self):
         cid = self._selected_contest_id.get()
         if not cid:
@@ -1227,6 +1501,7 @@ class SA10App(tk.Tk):
         if path:
             self._db_path.set(path)
             self._log(f"Database changed to: {path}", "ok")
+            self._init_database()
             self._refresh_contests()
 
 

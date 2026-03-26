@@ -10,6 +10,8 @@ Uses pure SQL queries to perform fast cross-log validation:
 Based on Phase 4.3 implementation plan.
 """
 
+from bisect import bisect_left, insort
+from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from typing import List, Dict, Tuple, Optional, Set
 from sqlalchemy.orm import Session
@@ -452,6 +454,12 @@ class CrossCheckService:
 
         print(f"   Comparing {len(non_submitted)} non-submitted calls against {len(submitted_calls)} submitted calls...")
 
+        # Pre-load all contact data once so busted-call checks use in-memory
+        # lookups instead of individual SQL queries (major performance win).
+        print("   Pre-loading contact data for fast in-memory lookups...")
+        reciprocal_map, dominant_zone_cache = self._build_lookup_caches(contest_id)
+        _tolerance_sec = self.TIME_TOLERANCE_DAYS * 86400
+
         # Find busted calls by comparing with submitted calls
         # Optimize by filtering by first character and length first
         busted_mapping: Dict[str, List[Tuple[str, float]]] = {}
@@ -563,6 +571,10 @@ class CrossCheckService:
                         best_similarity = 0
                         has_qso = False
 
+                        # Track best distance-1 zone-match candidate (no reciprocal fallback)
+                        best_zone_match_suggestion = None
+                        best_zone_match_similarity = 0
+
                         for suggested_call, similarity in busted_mapping[worked_call]:
                             # Guard: the same suggested_call cannot be used twice for the
                             # same log within 10 minutes (one station can't log us twice)
@@ -572,10 +584,12 @@ class CrossCheckService:
                                 if abs((qso_timestamp - prev_ts).total_seconds()) < 600:
                                     continue
 
+                            edit_distance = Levenshtein.distance(worked_call, suggested_call)
+
                             # Check if suggested station has QSO with logging station at approximately same time
-                            if self._check_reciprocal_exists(
-                                contest_id, suggested_call, row.log_callsign,
-                                qso_timestamp, row.band, row.mode
+                            if self._reciprocal_exists_mem(
+                                reciprocal_map, suggested_call, row.log_callsign,
+                                qso_timestamp, row.band, row.mode, _tolerance_sec
                             ):
                                 # Found a match with reciprocal QSO
                                 best_suggestion = suggested_call
@@ -583,9 +597,23 @@ class CrossCheckService:
                                 has_qso = True
                                 break
 
-                        # Only report as busted if we found a reciprocal QSO
-                        # Otherwise it might just be a station that didn't submit logs
-                        if has_qso and best_suggestion:
+                            # Fallback for distance-1: check if the logged exchange zone
+                            # matches the most common zone sent by the suggested call.
+                            # This catches copies where the other station didn't log us.
+                            if edit_distance == 1 and best_zone_match_suggestion is None:
+                                if self._zone_match_mem(
+                                    dominant_zone_cache, suggested_call,
+                                    row.exchange_received, row.band, row.mode
+                                ):
+                                    best_zone_match_suggestion = suggested_call
+                                    best_zone_match_similarity = similarity
+
+                        # Use zone-match fallback only when no reciprocal was found
+                        if not has_qso and best_zone_match_suggestion:
+                            best_suggestion = best_zone_match_suggestion
+                            best_similarity = best_zone_match_similarity
+
+                        if best_suggestion:
                             used_suggestion[(row.log_id, best_suggestion)] = qso_timestamp
                             entries.append(UBNEntry(
                                 contact_id=row.contact_id,
@@ -603,13 +631,137 @@ class CrossCheckService:
                                 exchange_received=row.exchange_received,
                                 suggested_call=best_suggestion,
                                 similarity_score=best_similarity,
-                                other_station_has_qso=True
+                                other_station_has_qso=has_qso
                             ))
 
                 if (batch_start + batch_size) % 2000 == 0:
                     print(f"   Processed {min(batch_start + batch_size, len(busted_calls_list)):,} / {len(busted_calls_list):,} busted calls...")
 
         return entries
+
+    def _build_lookup_caches(self, contest_id: int):
+        """
+        Pre-load all contact data for the contest into memory so that
+        _find_busted_calls can do O(log n) bisect lookups instead of
+        one SQL round-trip per candidate.
+
+        Returns:
+            reciprocal_map  – {(log_callsign, call_received, band, mode): sorted [datetime, ...]}
+            dominant_zone_cache – {(callsign, band, mode): dominant_exchange_sent_str}
+        """
+        query = text("""
+            SELECT l.callsign, c.call_received, c.band, c.mode,
+                   c.qso_datetime, c.exchange_sent
+            FROM contacts c
+            INNER JOIN logs l ON c.log_id = l.id
+            WHERE l.contest_id = :contest_id
+        """)
+
+        reciprocal_map: Dict[tuple, list] = defaultdict(list)
+        zone_tally: Dict[tuple, Dict[str, int]] = defaultdict(lambda: defaultdict(int))
+
+        for row in self.session.execute(query, {"contest_id": contest_id}):
+            log_callsign, call_received, band, mode, qso_dt_str, exchange_sent = row
+            key = (log_callsign, call_received, band, mode)
+            try:
+                dt = parse_datetime(qso_dt_str)
+                insort(reciprocal_map[key], dt)
+            except Exception:
+                pass
+            if exchange_sent:
+                zone_key = (log_callsign, band, mode)
+                zone_tally[zone_key][str(exchange_sent).strip()] += 1
+
+        dominant_zone_cache = {
+            key: max(counts, key=counts.get)
+            for key, counts in zone_tally.items()
+        }
+        return dict(reciprocal_map), dominant_zone_cache
+
+    @staticmethod
+    def _reciprocal_exists_mem(reciprocal_map: dict, log_callsign: str,
+                                call_received: str, timestamp: datetime,
+                                band: str, mode: str, tolerance_sec: float) -> bool:
+        """In-memory equivalent of _check_reciprocal_exists using bisect."""
+        times = reciprocal_map.get((log_callsign, call_received, band, mode))
+        if not times:
+            return False
+        pos = bisect_left(times, timestamp)
+        for i in (pos - 1, pos):
+            if 0 <= i < len(times):
+                if abs((times[i] - timestamp).total_seconds()) <= tolerance_sec:
+                    return True
+        return False
+
+    @staticmethod
+    def _zone_match_mem(dominant_zone_cache: dict, callsign: str,
+                        logged_exchange: str, band: str, mode: str) -> bool:
+        """In-memory equivalent of _check_zone_match using a pre-built cache."""
+        if not logged_exchange:
+            return False
+        logged_zone = logged_exchange.strip().lstrip('0') or '0'
+        try:
+            zone_num = int(logged_zone)
+            if not (1 <= zone_num <= 40):
+                return False
+        except ValueError:
+            return False
+        dominant = dominant_zone_cache.get((callsign, band, mode))
+        if not dominant:
+            return False
+        station_zone = str(dominant).strip().lstrip('0') or '0'
+        return station_zone == logged_zone
+
+    def _check_zone_match(self, contest_id: int, callsign: str,
+                          logged_exchange: str, band: str, mode: str) -> bool:
+        """
+        Check if the zone logged for a contact matches what the suggested callsign
+        typically sent in this contest.  Used as a distance-1 busted-call fallback
+        when no reciprocal QSO exists.
+
+        Normalises both sides by stripping leading zeros before comparing.
+        Returns True only if there is exactly one dominant zone for the suggested
+        station AND it matches the logged exchange.
+        """
+        if not logged_exchange:
+            return False
+
+        logged_zone = logged_exchange.strip().lstrip('0') or '0'
+
+        # Validate it is a plausible CQ zone number
+        try:
+            zone_num = int(logged_zone)
+            if not (1 <= zone_num <= 40):
+                return False
+        except ValueError:
+            return False
+
+        query = text("""
+            SELECT c.exchange_sent, COUNT(*) as cnt
+            FROM contacts c
+            INNER JOIN logs l ON c.log_id = l.id
+            WHERE l.contest_id = :contest_id
+              AND l.callsign   = :callsign
+              AND c.band       = :band
+              AND c.mode       = :mode
+              AND c.exchange_sent IS NOT NULL
+              AND c.exchange_sent != ''
+            GROUP BY c.exchange_sent
+            ORDER BY cnt DESC
+            LIMIT 1
+        """)
+        row = self.session.execute(query, {
+            "contest_id": contest_id,
+            "callsign": callsign,
+            "band": band,
+            "mode": mode,
+        }).fetchone()
+
+        if not row:
+            return False
+
+        station_zone = str(row[0]).strip().lstrip('0') or '0'
+        return station_zone == logged_zone
 
     def _check_reciprocal_exists(self, contest_id: int, callsign1: str, callsign2: str,
                                   timestamp: datetime, band: str, mode: str) -> bool:
