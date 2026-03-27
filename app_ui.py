@@ -1249,6 +1249,8 @@ class SA10App(tk.Tk):
                         SELECT l.id AS log_id, l.callsign, l.name,
                                l.category_operator, l.category_power,
                                l.category_mode,
+                               l.operators, l.club, l.extra_data,
+                               l.address_country,
                                COALESCE(s.total_qsos,   0) AS total_qsos,
                                COALESCE(s.valid_qsos,   0) AS valid_qsos,
                                COALESCE(s.duplicate_qsos, 0) AS dupe_qsos,
@@ -1260,6 +1262,21 @@ class SA10App(tk.Tk):
                         WHERE l.contest_id = :cid
                         ORDER BY final_score DESC
                     """), {"cid": cid}).fetchall()
+
+                    # ── Country / continent lookup via CTY data ───────────────────
+                    continent_cache = {}
+                    country_cache = {}
+                    try:
+                        from src.services.callsign_lookup import CallsignLookupService
+                        lookup_svc = CallsignLookupService(session)
+                        for r in summary_rows:
+                            cs = r.callsign or ""
+                            if cs and cs not in continent_cache:
+                                info = lookup_svc.lookup_callsign(cs)
+                                continent_cache[cs] = info.get("continent", "") if info else ""
+                                country_cache[cs]   = info.get("country_name", "") if info else ""
+                    except Exception:
+                        pass
 
                     # ── Contact data ──────────────────────────────────────────────
                     contact_rows = session.execute(sql_text("""
@@ -1280,6 +1297,14 @@ class SA10App(tk.Tk):
                 for row in contact_rows:
                     contacts_by_log[row.log_id].append(row)
 
+                def _get_soapbox_qso(extra_data):
+                    if isinstance(extra_data, dict):
+                        val = extra_data.get("soapbox") or extra_data.get("SOAPBOX")
+                        if isinstance(val, list):
+                            return " | ".join(val)
+                        return val or ""
+                    return ""
+
                 # ── Build workbook ────────────────────────────────────────────────
                 wb = openpyxl.Workbook()
 
@@ -1293,6 +1318,7 @@ class SA10App(tk.Tk):
 
                 sum_headers = [
                     "#", "Callsign", "Name", "Category", "Power", "Mode",
+                    "Operators", "Club", "Soapbox", "Country", "Continent",
                     "Total QSOs", "Valid QSOs", "Duplicates", "NIL", "Invalid",
                     "Final Score",
                 ]
@@ -1304,13 +1330,19 @@ class SA10App(tk.Tk):
 
                 for idx, r in enumerate(summary_rows, 1):
                     is_checklog = (r.category_operator or "").upper() == "CHECKLOG"
+                    cs = r.callsign or ""
                     ws_sum.append([
                         idx,
-                        r.callsign or "",
+                        cs,
                         r.name or "",
                         r.category_operator or "",
                         r.category_power or "",
                         r.category_mode or "",
+                        r.operators or "",
+                        r.club or "",
+                        _get_soapbox_qso(r.extra_data),
+                        country_cache.get(cs, "") or r.address_country or "",
+                        continent_cache.get(cs, ""),
                         r.total_qsos,
                         r.valid_qsos,
                         r.dupe_qsos,
@@ -1351,7 +1383,7 @@ class SA10App(tk.Tk):
                     used_titles.add(title)
                     return title
 
-                for r in summary_rows:
+                for r in sorted(summary_rows, key=lambda r: (r.callsign or "").upper()):
                     log_id   = r.log_id
                     callsign = r.callsign or f"LOG{log_id}"
                     contacts = contacts_by_log.get(log_id, [])
