@@ -6,7 +6,7 @@ Represents the header information from Cabrillo log files.
 
 from datetime import datetime
 from typing import Optional, List, Dict, Any
-from pydantic import BaseModel, Field, validator, EmailStr
+from pydantic import BaseModel, ConfigDict, Field, field_validator, EmailStr
 
 
 class LogBase(BaseModel):
@@ -59,7 +59,8 @@ class LogBase(BaseModel):
     # Additional metadata
     metadata: Optional[Dict[str, Any]] = Field(None, description="Additional Cabrillo fields")
 
-    @validator('callsign')
+    @field_validator('callsign')
+    @classmethod
     def validate_callsign(cls, v):
         """Validate and normalize callsign"""
         v = v.upper().strip()
@@ -67,14 +68,14 @@ class LogBase(BaseModel):
             raise ValueError('Callsign cannot be empty')
         return v
 
-    @validator('category_operator', 'category_assisted', 'category_band', 'category_mode',
+    @field_validator('category_operator', 'category_assisted', 'category_band', 'category_mode',
                'category_power', 'category_station', 'category_transmitter', 'category_overlay')
+    @classmethod
     def normalize_category(cls, v):
         """Normalize category fields to uppercase"""
         return v.upper() if v else None
 
-    class Config:
-        use_enum_values = True
+    model_config = ConfigDict(use_enum_values=True)
 
 
 class Log(LogBase):
@@ -96,8 +97,7 @@ class Log(LogBase):
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class LogCreate(LogBase):
@@ -124,8 +124,7 @@ class LogUpdate(BaseModel):
     claimed_score: Optional[int] = None
     metadata: Optional[Dict[str, Any]] = None
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class StationInfo(BaseModel):
@@ -151,13 +150,13 @@ class StationInfo(BaseModel):
     state_province: Optional[str] = None
     country: Optional[str] = None
 
-    @validator('operators', pre=True)
+    @field_validator('operators', mode='before')
+    @classmethod
     def parse_operators(cls, v):
         """Parse comma-separated operators into list"""
         if isinstance(v, str):
             return [op.strip() for op in v.split(',') if op.strip()]
         return v
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 

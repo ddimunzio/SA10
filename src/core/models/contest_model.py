@@ -6,7 +6,7 @@ Represents contest definitions and metadata.
 
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class ContestBase(BaseModel):
@@ -17,7 +17,8 @@ class ContestBase(BaseModel):
     end_date: datetime = Field(..., description="Contest end date/time")
     rules_file: str = Field(..., description="Path to YAML rules file", max_length=200)
 
-    @validator('slug')
+    @field_validator('slug')
+    @classmethod
     def validate_slug(cls, v):
         """Ensure slug is lowercase and alphanumeric with dashes"""
         v = v.lower().strip()
@@ -25,15 +26,15 @@ class ContestBase(BaseModel):
             raise ValueError('Slug must contain only letters, numbers, dashes, and underscores')
         return v
 
-    @validator('end_date')
-    def validate_end_date(cls, v, values):
+    @field_validator('end_date')
+    @classmethod
+    def validate_end_date(cls, v, info):
         """Ensure end date is after start date"""
-        if 'start_date' in values and v <= values['start_date']:
+        if 'start_date' in info.data and v <= info.data['start_date']:
             raise ValueError('End date must be after start date')
         return v
 
-    class Config:
-        use_enum_values = True
+    model_config = ConfigDict(use_enum_values=True)
 
 
 class Contest(ContestBase):
@@ -42,8 +43,7 @@ class Contest(ContestBase):
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ContestCreate(ContestBase):
@@ -58,8 +58,7 @@ class ContestUpdate(BaseModel):
     end_date: Optional[datetime] = None
     rules_file: Optional[str] = Field(None, max_length=200)
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ContestSummary(BaseModel):
@@ -73,6 +72,5 @@ class ContestSummary(BaseModel):
     end_date: datetime
     total_logs: int = 0
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 

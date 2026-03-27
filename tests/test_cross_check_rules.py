@@ -448,6 +448,72 @@ class TestBUSTEDDetection:
         busted_entries = [e for e in ubn_by_log[log_lw5hr.id] if e.ubn_type == UBNType.BUSTED]
         assert len(busted_entries) == 0
 
+    def test_busted_zone_match_fallback_no_reciprocal(self, db_session, test_contest):
+        """
+        Case: Distance-1 busted call detected via zone-match fallback when the
+        other station submitted NO reciprocal QSO.
+
+        Setup:
+          PU4GOL logs 9Y4N (wrong — should be 9Y4I, distance 1)
+          9Y4I submitted a log and sends exchange "9" (zone 9)
+          PU4GOL logged exchange_received "9" from the contact → zone matches
+          9Y4I has NO QSO with PU4GOL in their log → no reciprocal
+
+        Expected:
+          - BUSTED entry for 9Y4N → suggested_call == "9Y4I"
+          - other_station_has_qso is False  ← zone-match fallback branch
+        """
+        log_pu4gol = Log(contest_id=test_contest.id, callsign="PU4GOL", operators="PU4GOL")
+        log_9y4i   = Log(contest_id=test_contest.id, callsign="9Y4I",   operators="9Y4I")
+        db_session.add_all([log_pu4gol, log_9y4i])
+        db_session.commit()
+
+        # PU4GOL heard 9Y4N — 1 char different from 9Y4I — and logged zone "9"
+        contact_pu4gol = Contact(
+            log_id=log_pu4gol.id,
+            qso_datetime=datetime(2025, 3, 8, 15, 0, 0),
+            call_received="9Y4N",   # typo: should be 9Y4I  (distance 1)
+            band="28MHz",
+            mode="SSB",
+            frequency=28500,
+            rst_sent="59", rst_received="59",
+            exchange_sent="11", exchange_received="9",  # zone 9 — matches 9Y4I's sent zone
+            is_valid=True,
+        )
+
+        # 9Y4I's log has ONLY a QSO with someone else — NOT PU4GOL — so no reciprocal
+        contact_9y4i_other = Contact(
+            log_id=log_9y4i.id,
+            qso_datetime=datetime(2025, 3, 8, 15, 1, 0),
+            call_received="LW5HR",  # different station, not PU4GOL
+            band="28MHz",
+            mode="SSB",
+            frequency=28500,
+            rst_sent="59", rst_received="59",
+            exchange_sent="9", exchange_received="13",  # 9Y4I always sends zone 9
+            is_valid=True,
+        )
+        db_session.add_all([contact_pu4gol, contact_9y4i_other])
+        db_session.commit()
+
+        service = CrossCheckService(db_session)
+        ubn_by_log = service.check_all_logs(test_contest.id)
+
+        busted_entries = [e for e in ubn_by_log.get(log_pu4gol.id, [])
+                          if e.ubn_type == UBNType.BUSTED]
+
+        assert len(busted_entries) == 1, (
+            f"Expected 1 BUSTED entry for 9Y4N, got {len(busted_entries)}"
+        )
+        entry = busted_entries[0]
+        assert entry.worked_callsign == "9Y4N"
+        assert entry.suggested_call  == "9Y4I"
+        # Zone-match fallback fires only when no reciprocal QSO was confirmed
+        assert entry.other_station_has_qso is False, (
+            "other_station_has_qso must be False when busted call is detected "
+            "via zone-match fallback (no reciprocal QSO in suggested station's log)"
+        )
+
 
 class TestValidQSO:
     """Test valid QSO detection (no errors)"""

@@ -127,3 +127,12 @@ scoring:
 validation:
   duplicate_window:
     type: band_mode
+  exchange_format:
+    cq_zone:
+      min: 1
+      max: 40
+      description: "CQ Zone (1-40)"
+    rs_rst:
+      ssb_pattern: '^\d{2}$'
+      cw_pattern: '^\d{3}$'
+      description: "Signal report (59 for SSB, 599 for CW)"

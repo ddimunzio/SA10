@@ -6,7 +6,7 @@ Represents calculated scores and breakdowns.
 
 from datetime import datetime
 from typing import Optional, Dict, List, Any
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class ScoreBreakdown(BaseModel):
@@ -43,8 +43,7 @@ class ScoreBreakdown(BaseModel):
     # Validation errors
     validation_errors: Optional[Dict[str, int]] = Field(None, description="Validation error counts")
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class Score(ScoreBreakdown):
@@ -66,8 +65,7 @@ class Score(ScoreBreakdown):
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ScoreCreate(BaseModel):
@@ -109,8 +107,7 @@ class ScoreUpdate(BaseModel):
     rank_country: Optional[int] = None
     notes: Optional[str] = None
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ScoreSummary(BaseModel):
@@ -134,8 +131,7 @@ class ScoreSummary(BaseModel):
     # Category for grouping
     category: Optional[str] = None
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class LeaderboardEntry(BaseModel):
@@ -156,6 +152,5 @@ class LeaderboardEntry(BaseModel):
     multipliers: int
     score: int
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 

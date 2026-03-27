@@ -27,7 +27,7 @@ class TestRulesLoader:
         
         assert rules.contest.name == "South America 10m Contest"
         assert rules.contest.slug == "sa10m"
-        assert "10" in rules.contest.bands
+        assert "10m" in rules.contest.bands
         assert "SSB" in rules.contest.modes
         assert "CW" in rules.contest.modes
     
@@ -45,7 +45,7 @@ class TestRulesLoader:
         
         assert info['name'] == "South America 10m Contest"
         assert info['slug'] == "sa10m"
-        assert '10' in info['bands']
+        assert '10m' in info['bands']
     
     def test_load_nonexistent_contest(self):
         """Test loading a contest that doesn't exist."""

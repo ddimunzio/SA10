@@ -199,7 +199,8 @@ class ScoringService:
         # Add validation errors if present
         validation_status = getattr(db_contact, 'validation_status_str', 'VALID')
         if validation_status and validation_status.lower() in [
-            'not_in_log', 'busted_call', 'invalid_callsign', 
+            'not_in_log', 'busted_call', 'invalid_callsign',
+            'invalid_exchange', 'invalid',
             'time_mismatch', 'exchange_mismatch'
         ]:
             rules_contact.validation_errors.append(validation_status)
@@ -226,7 +227,8 @@ class ScoringService:
             # Check validation status from cross-check
             validation_status = getattr(db_contact, 'validation_status_str', 'VALID')
             is_invalid = validation_status and validation_status.lower() in [
-                'not_in_log', 'busted_call', 'invalid_callsign', 
+                'not_in_log', 'busted_call', 'invalid_callsign',
+                'invalid_exchange', 'invalid',
                 'time_mismatch', 'exchange_mismatch'
             ]
             
