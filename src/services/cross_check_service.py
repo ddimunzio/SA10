@@ -660,17 +660,27 @@ class CrossCheckService:
         reciprocal_map: Dict[tuple, list] = defaultdict(list)
         zone_tally: Dict[tuple, Dict[str, int]] = defaultdict(lambda: defaultdict(int))
 
+        _skipped = 0
         for row in self.session.execute(query, {"contest_id": contest_id}):
             log_callsign, call_received, band, mode, qso_dt_str, exchange_sent = row
             key = (log_callsign, call_received, band, mode)
             try:
                 dt = parse_datetime(qso_dt_str)
                 insort(reciprocal_map[key], dt)
-            except Exception:
-                pass
+            except (ValueError, TypeError) as exc:
+                _skipped += 1
+                print(
+                    f"   [WARN] _build_lookup_caches: skipped unparseable datetime "
+                    f"for {log_callsign} -> {call_received} "
+                    f"band={band} mode={mode} qso_datetime={qso_dt_str!r}: {exc}"
+                )
             if exchange_sent:
                 zone_key = (log_callsign, band, mode)
                 zone_tally[zone_key][str(exchange_sent).strip()] += 1
+
+        if _skipped:
+            print(f"   [WARN] _build_lookup_caches: {_skipped} contact(s) omitted from "
+                  f"reciprocal map due to unparseable datetimes (see warnings above).")
 
         dominant_zone_cache = {
             key: max(counts, key=counts.get)

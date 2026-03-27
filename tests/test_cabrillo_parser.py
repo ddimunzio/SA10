@@ -386,6 +386,61 @@ END-OF-LOG:
         assert log.qsos[0].frequency == 28400
         assert 28000 <= log.qsos[0].frequency <= 29000  # 10m band
 
+    def test_float_frequency_format(self, temp_file):
+        """
+        CQ Logs Android and some other loggers write frequency as a float
+        (e.g. "28000.00") instead of an integer.  The parser must handle this
+        without producing a parse error and must return the correct integer kHz.
+
+        Real-world trigger: LU3DSR_20260317_232829_2966.cbr logged 28000.00.
+        """
+        log_text = """START-OF-LOG: 3.0
+CALLSIGN: LU3DSR
+CONTEST: SA10M
+QSO: 28000.00 PH 2025-03-15 1430 LU3DSR 59 13 LU7YE 59 13
+QSO: 28450.50 CW 2025-03-15 1445 LU3DSR 599 13 PY1KJA 599 11
+END-OF-LOG:
+"""
+        temp_file.write(log_text)
+        temp_file.close()
+
+        log = parse_cabrillo_file(temp_file.name)
+
+        # No parse errors — the whole log must be accepted
+        assert log.parse_errors == [], (
+            f"Unexpected parse errors for float-frequency log: {log.parse_errors}"
+        )
+        assert len(log.qsos) == 2
+
+        # Decimal part must be truncated, not rounded
+        assert log.qsos[0].frequency == 28000
+        assert log.qsos[1].frequency == 28450
+
+    def test_float_frequency_edge_cases(self, temp_file):
+        """
+        Additional float-frequency edge cases:
+        - ".0" suffix (no leading digit before decimal)
+        - Large fractional part that still truncates to a valid integer
+        """
+        log_text = """START-OF-LOG: 3.0
+CALLSIGN: W1AW
+CONTEST: SA10M
+QSO: 28000.9 PH 2025-03-15 1200 W1AW 59 5 K1ABC 59 4
+QSO: 28999.0 PH 2025-03-15 1201 W1AW 59 5 K2DEF 59 3
+END-OF-LOG:
+"""
+        temp_file.write(log_text)
+        temp_file.close()
+
+        log = parse_cabrillo_file(temp_file.name)
+
+        assert log.parse_errors == [], (
+            f"Unexpected parse errors: {log.parse_errors}"
+        )
+        assert len(log.qsos) == 2
+        assert log.qsos[0].frequency == 28000   # truncated, not 28001
+        assert log.qsos[1].frequency == 28999
+
 
 if __name__ == '__main__':
     pytest.main([__file__, '-v'])

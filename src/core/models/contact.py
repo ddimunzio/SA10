@@ -7,7 +7,7 @@ and provide type safety throughout the application.
 
 from datetime import datetime
 from typing import Optional, Dict, Any
-from pydantic import BaseModel, Field, validator, root_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from enum import Enum
 
 
@@ -65,7 +65,8 @@ class ContactBase(BaseModel):
 
     transmitter_id: Optional[str] = Field(None, description="Transmitter ID for multi-transmitter", max_length=5)
 
-    @validator('mode')
+    @field_validator('mode')
+    @classmethod
     def validate_mode(cls, v):
         """Normalize and validate mode"""
         v = v.upper()
@@ -76,7 +77,8 @@ class ContactBase(BaseModel):
             raise ValueError(f'Invalid mode: {v}')
         return v
 
-    @validator('call_sent', 'call_received')
+    @field_validator('call_sent', 'call_received')
+    @classmethod
     def validate_callsign(cls, v):
         """Basic callsign validation - lenient to allow import of invalid calls"""
         v = v.upper().strip()
@@ -90,7 +92,8 @@ class ContactBase(BaseModel):
             raise ValueError(f'Callsign contains invalid characters: {v}')
         return v
 
-    @validator('frequency')
+    @field_validator('frequency')
+    @classmethod
     def validate_frequency(cls, v):
         """Validate frequency is within amateur bands"""
         # Add basic frequency validation
@@ -98,8 +101,7 @@ class ContactBase(BaseModel):
             raise ValueError('Frequency must be at least 1800 kHz')
         return v
 
-    class Config:
-        use_enum_values = True
+    model_config = ConfigDict(use_enum_values=True)
 
 
 class Contact(ContactBase):
@@ -130,15 +132,15 @@ class Contact(ContactBase):
     created_at: Optional[datetime] = None
     updated_at: Optional[datetime] = None
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ContactCreate(ContactBase):
     """Model for creating a new contact"""
     log_id: int
 
-    @root_validator(skip_on_failure=True)
+    @model_validator(mode='before')
+    @classmethod
     def compute_datetime(cls, values):
         """Compute the combined datetime from date and time"""
         qso_date = values.get('qso_date')
@@ -152,7 +154,8 @@ class ContactCreate(ContactBase):
         return values
 
 
-    @root_validator(skip_on_failure=True)
+    @model_validator(mode='before')
+    @classmethod
     def compute_band(cls, values):
         """Derive band from frequency"""
         freq = values.get('frequency')
@@ -180,8 +183,7 @@ class ContactUpdate(BaseModel):
 
     metadata: Optional[Dict[str, Any]] = None
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 def frequency_to_band(frequency_khz: int) -> str:

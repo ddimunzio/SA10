@@ -1205,7 +1205,7 @@ class SA10App(tk.Tk):
             self._set_status("Building QSO report…", busy=True)
             try:
                 import openpyxl
-                from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+                from openpyxl.styles import Font, PatternFill, Alignment
                 from openpyxl.utils import get_column_letter
                 from src.database.db_manager import DatabaseManager
                 from sqlalchemy import text as sql_text
