@@ -20,6 +20,84 @@ from dataclasses import dataclass
 from enum import Enum
 import Levenshtein
 
+from ..utils import extract_cq_zone
+
+# ---------------------------------------------------------------------------
+# Morse code table and mode-aware callsign similarity
+# ---------------------------------------------------------------------------
+_MORSE: Dict[str, str] = {
+    'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..',   'E': '.',
+    'F': '..-.',  'G': '--.',   'H': '....',  'I': '..',    'J': '.---',
+    'K': '-.-',   'L': '.-..',  'M': '--',    'N': '-.',    'O': '---',
+    'P': '.--.',  'Q': '--.-',  'R': '.-.',   'S': '...',   'T': '-',
+    'U': '..-',   'V': '...-',  'W': '.--',   'X': '-..-',  'Y': '-.--',
+    'Z': '--..',
+    '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
+    '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.',
+}
+
+
+def _morse_char_cost(c1: str, c2: str) -> float:
+    """
+    Substitution cost for two callsign characters in CW context.
+    Returns 0.0 for identical characters and up to 1.0 for completely
+    unrelated Morse sequences.  Pairs that share most of their Morse
+    elements (e.g. E/I, T/N, A/N, D/B) receive a fractional cost so
+    they are treated as more likely confusions than random swaps.
+    """
+    c1, c2 = c1.upper(), c2.upper()
+    if c1 == c2:
+        return 0.0
+    m1 = _MORSE.get(c1)
+    m2 = _MORSE.get(c2)
+    if m1 is None or m2 is None:
+        return 1.0
+    ldist = Levenshtein.distance(m1, m2)
+    return ldist / max(len(m1), len(m2))
+
+
+def callsign_similarity(worked: str, suggested: str, mode: str) -> float:
+    """
+    Mode-aware callsign similarity in [0, 1] (higher = more similar).
+
+    CW  — weighted Levenshtein where each substitution cost equals the
+          normalised Morse edit distance between the two characters.
+          Morse-similar pairs (E/I, T/N, D/B, …) get a lower cost and
+          therefore a higher overall similarity score.
+    PH  — Jaro-Winkler, which emphasises prefix matches and is a good
+          fit for callsign phonetic copying errors.
+    other — plain Levenshtein ratio (unchanged behaviour).
+    """
+    w, s = worked.upper(), suggested.upper()
+    if w == s:
+        return 1.0
+
+    m = (mode or "").upper()
+
+    if m in ("PH", "SSB", "FM"):
+        return Levenshtein.jaro_winkler(w, s)
+
+    if m == "CW":
+        n, slen = len(w), len(s)
+        if n == 0 or slen == 0:
+            return 0.0
+        # Standard Levenshtein DP with Morse-weighted substitution costs.
+        prev = [float(j) for j in range(slen + 1)]
+        for i in range(1, n + 1):
+            curr = [float(i)] + [0.0] * slen
+            for j in range(1, slen + 1):
+                cost = _morse_char_cost(w[i - 1], s[j - 1])
+                curr[j] = min(
+                    prev[j] + 1.0,        # deletion
+                    curr[j - 1] + 1.0,    # insertion
+                    prev[j - 1] + cost,   # substitution
+                )
+            prev = curr
+        return 1.0 - prev[slen] / (n + slen)
+
+    # Fallback: plain Levenshtein ratio
+    return Levenshtein.ratio(w, s)
+
 
 def get_utc_now() -> datetime:
     """Get current UTC time in a timezone-aware way"""
@@ -115,6 +193,31 @@ class CrossCheckService:
         self.session = session
         self.stats = {}
 
+    def _reset_cross_check_results(self, contest_id: int) -> None:
+        """
+        Reset all contacts that were previously written by the cross-check
+        (invalid_callsign, not_in_log, unique_call) back to 'valid' / is_valid=1
+        so that a fresh run starts from a clean state.
+
+        Contacts that were originally valid (not flagged by import validation)
+        are the only ones touched; duplicates and import-time errors are left alone.
+        """
+        query = text("""
+            UPDATE contacts
+            SET
+                validation_status = 'valid',
+                validation_notes  = NULL,
+                is_valid          = 1,
+                updated_at        = :now
+            WHERE log_id IN (
+                SELECT id FROM logs WHERE contest_id = :contest_id
+            )
+            AND validation_status IN ('invalid_callsign', 'not_in_log', 'unique_call')
+        """)
+        result = self.session.execute(query, {"contest_id": contest_id, "now": get_utc_now()})
+        self.session.flush()
+        print(f"   Reset {result.rowcount} contact(s) from previous cross-check run")
+
     def check_all_logs(self, contest_id: int, progress_callback=None) -> Dict[int, List[UBNEntry]]:
         """
         Run complete cross-check on all logs for a contest
@@ -127,6 +230,14 @@ class CrossCheckService:
             Dictionary mapping log_id to list of UBN entries
         """
         print(f"\n[CROSSCHECK] Starting cross-check for contest ID {contest_id}...")
+
+        # Reset any results written by a previous cross-check run so that
+        # stale invalid_callsign / not_in_log / unique_call flags do not
+        # interfere with the new run (e.g. a wrongly-busted call that is
+        # now correctly treated as unique would stay is_valid=0 forever
+        # without this reset).
+        print("\n[RESET] Clearing previous cross-check results...")
+        self._reset_cross_check_results(contest_id)
 
         # Get all submitted callsigns first
         submitted_calls = self._get_submitted_callsigns(contest_id)
@@ -399,8 +510,8 @@ class CrossCheckService:
             INNER JOIN logs l ON c.log_id = l.id
             WHERE 
                 l.contest_id = :contest_id
-                AND c.is_valid = 1
-                AND c.validation_status != 'duplicate'
+                AND c.validation_status NOT IN ('duplicate', 'invalid', 'out_of_period',
+                                                'invalid_band', 'invalid_mode')
                 AND UPPER(COALESCE(l.category_operator,'')) != 'CHECKLOG'
             ORDER BY l.callsign, c.qso_datetime
         """)
@@ -431,13 +542,16 @@ class CrossCheckService:
 
     def _find_busted_calls(self, contest_id: int, submitted_calls: Set[str]) -> List[UBNEntry]:
         """
-        Find busted (incorrectly copied) callsigns using Levenshtein distance
+        Find busted (incorrectly copied) callsigns using mode-aware similarity.
 
         Strategy:
-        1. Get all unique worked calls that didn't submit
-        2. For each, find similar submitted callsigns (distance 1-2)
-        3. Check if the suggested call has a QSO with the logging station at approximately the same time
-        4. Only report as busted if the suggested station has the reciprocal QSO
+        1. Get all unique worked calls that didn't submit.
+        2. Build a candidate list using Levenshtein distance 1-2 as a coarse filter.
+        3. Per contact, re-rank candidates with mode-aware similarity:
+              CW  — Morse-weighted edit distance (likely Morse confusions rank higher).
+              PH  — Jaro-Winkler (rewards common prefixes).
+        4. Accept the top-ranked candidate that has a reciprocal QSO; fall back to
+           zone-match for distance-1 candidates when no reciprocal is found.
         """
         # Get all unique non-submitted calls
         query = text("""
@@ -575,7 +689,23 @@ class CrossCheckService:
                         best_zone_match_suggestion = None
                         best_zone_match_similarity = 0
 
-                        for suggested_call, similarity in busted_mapping[worked_call]:
+                        # Re-rank candidates using mode-aware similarity so that
+                        # Morse-plausible (CW) or phonetically-plausible (PH) swaps
+                        # are tried before generic edit-distance candidates.
+                        mode_ranked = sorted(
+                            (
+                                (sug, callsign_similarity(worked_call, sug, row.mode))
+                                for sug, _ in busted_mapping[worked_call]
+                            ),
+                            key=lambda x: x[1],
+                            reverse=True,
+                        )
+
+                        for suggested_call, mode_similarity in mode_ranked:
+                            # Guard: a station cannot work itself
+                            if suggested_call == row.log_callsign:
+                                continue
+
                             # Guard: the same suggested_call cannot be used twice for the
                             # same log within 10 minutes (one station can't log us twice)
                             dedup_key = (row.log_id, suggested_call)
@@ -593,7 +723,7 @@ class CrossCheckService:
                             ):
                                 # Found a match with reciprocal QSO
                                 best_suggestion = suggested_call
-                                best_similarity = similarity
+                                best_similarity = mode_similarity
                                 has_qso = True
                                 break
 
@@ -606,7 +736,7 @@ class CrossCheckService:
                                     row.exchange_received, row.band, row.mode
                                 ):
                                     best_zone_match_suggestion = suggested_call
-                                    best_zone_match_similarity = similarity
+                                    best_zone_match_similarity = mode_similarity
 
                         # Use zone-match fallback only when no reciprocal was found
                         if not has_qso and best_zone_match_suggestion:
@@ -676,7 +806,9 @@ class CrossCheckService:
                 )
             if exchange_sent:
                 zone_key = (log_callsign, band, mode)
-                zone_tally[zone_key][str(exchange_sent).strip()] += 1
+                zone_value = extract_cq_zone(exchange_sent)
+                if zone_value is not None:
+                    zone_tally[zone_key][zone_value] += 1
 
         if _skipped:
             print(f"   [WARN] _build_lookup_caches: {_skipped} contact(s) omitted from "
@@ -709,18 +841,13 @@ class CrossCheckService:
         """In-memory equivalent of _check_zone_match using a pre-built cache."""
         if not logged_exchange:
             return False
-        logged_zone = logged_exchange.strip().lstrip('0') or '0'
-        try:
-            zone_num = int(logged_zone)
-            if not (1 <= zone_num <= 40):
-                return False
-        except ValueError:
+        logged_zone = extract_cq_zone(logged_exchange)
+        if logged_zone is None:
             return False
         dominant = dominant_zone_cache.get((callsign, band, mode))
         if not dominant:
             return False
-        station_zone = str(dominant).strip().lstrip('0') or '0'
-        return station_zone == logged_zone
+        return dominant == logged_zone
 
     def _check_zone_match(self, contest_id: int, callsign: str,
                           logged_exchange: str, band: str, mode: str) -> bool:
@@ -736,14 +863,8 @@ class CrossCheckService:
         if not logged_exchange:
             return False
 
-        logged_zone = logged_exchange.strip().lstrip('0') or '0'
-
-        # Validate it is a plausible CQ zone number
-        try:
-            zone_num = int(logged_zone)
-            if not (1 <= zone_num <= 40):
-                return False
-        except ValueError:
+        logged_zone = extract_cq_zone(logged_exchange)
+        if logged_zone is None:
             return False
 
         query = text("""
@@ -770,7 +891,7 @@ class CrossCheckService:
         if not row:
             return False
 
-        station_zone = str(row[0]).strip().lstrip('0') or '0'
+        station_zone = extract_cq_zone(row[0])
         return station_zone == logged_zone
 
     def _check_reciprocal_exists(self, contest_id: int, callsign1: str, callsign2: str,

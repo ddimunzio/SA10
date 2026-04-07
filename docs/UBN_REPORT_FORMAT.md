@@ -75,13 +75,13 @@ this QSO. Possible reasons:
   28MHz SSB   2025-03-08 2234  PY2AA      59  05         (NOT FOUND)
 
   (*) = Other station's log shows a contact near this time/band/mode
-        but not within ±1 minute tolerance window
+        but not within ±5 minute tolerance window
 
 ================================================================================
 NOTES:
 ================================================================================
 
-1. Time tolerance: ±1 minute for matching QSOs
+1. Time tolerance: ±5 minutes for matching QSOs
 2. UNIQUE calls may be valid if station did not submit a log
 3. BUSTED calls are high-confidence errors - check your original log
 4. NIL contacts may be timing errors or other station's logging mistakes
@@ -301,34 +301,71 @@ WHERE
 
 ### 3. BUSTED Call Detection (Python + SQL)
 
+Busted call detection uses a **two-stage pipeline**:
+
+**Stage 1 — Coarse candidate generation** (mode-independent)  
+Levenshtein edit distance 1–2 is used as a fast filter to build a candidate
+list of submitted calls that could be the intended callsign.
+
+**Stage 2 — Mode-aware re-ranking**  
+Candidates are re-scored using a mode-aware similarity function before
+being checked for a reciprocal QSO:
+
+| Mode | Algorithm | Rationale |
+|------|-----------|----------|
+| `CW` | Morse-weighted edit distance | Characters with similar Morse sequences (E/I, T/N, D/B, U/V …) receive a lower substitution cost and rank higher |
+| `PH` / `SSB` / `FM` | Jaro-Winkler | Rewards shared prefixes; well-suited to phonetic copying errors |
+| Other | Plain Levenshtein ratio | Unchanged fallback |
+
+**Guards against false positives**
+- A station is never suggested as a busted-call correction for its own
+  logged call (self-reference guard).
+- The same suggested call cannot be assigned to two different worked calls
+  in the same log within 10 minutes.
+
 ```python
-# Step 1: Get all submitted callsigns
-submitted_calls = db.query("SELECT DISTINCT callsign FROM logs")
+# Simplified representation of the actual implementation
 
-# Step 2: Get all worked calls that don't have logs
-worked_not_submitted = db.query("""
-    SELECT DISTINCT c.callsign
-    FROM contacts c
-    LEFT JOIN logs l ON l.callsign = c.callsign
-    WHERE l.id IS NULL
-""")
+# Stage 1: coarse filter (edit distance 1-2)
+for worked_call in non_submitted_calls:
+    candidates = [
+        (sub, Levenshtein.ratio(worked_call, sub))
+        for sub in submitted_calls
+        if 1 <= Levenshtein.distance(worked_call, sub) <= 2
+        and Levenshtein.ratio(worked_call, sub) >= 0.65
+    ]
 
-# Step 3: For each worked call, find similar submitted calls
-from Levenshtein import distance
+# Stage 2: re-rank per contact with mode-aware similarity
+mode_ranked = sorted(
+    [(sug, callsign_similarity(worked_call, sug, row.mode))
+     for sug, _ in candidates],
+    key=lambda x: x[1], reverse=True
+)
 
-busted = []
-for worked_call in worked_not_submitted:
-    for submitted_call in submitted_calls:
-        dist = distance(worked_call, submitted_call)
-        if 1 <= dist <= 2:  # Close match
-            # Check if submitted station has QSO with correct call
-            has_qso = check_reciprocal_qso(submitted_call, log_id)
-            busted.append({
-                'logged_as': worked_call,
-                'should_be': submitted_call,
-                'distance': dist,
-                'confirmed': has_qso
-            })
+for suggested_call, similarity in mode_ranked:
+    if suggested_call == row.log_callsign:   # self-reference guard
+        continue
+    if reciprocal_qso_exists(suggested_call, log_callsign, timestamp, ±5min):
+        mark_as_busted(worked_call, suggested_call, similarity)
+        break
+    if edit_distance == 1 and zone_matches(suggested_call, logged_exchange):
+        # Zone-match fallback when reciprocal not found
+        mark_as_busted(worked_call, suggested_call, similarity)
+        break
+```
+
+**Cross-check reset**  
+Before each cross-check run, contacts previously marked `invalid_callsign`,
+`not_in_log`, or `unique_call` are **reset to `valid`** so that a re-run
+always starts from clean import-time data. This prevents a wrongly-busted
+call from remaining `is_valid=0` across subsequent runs.
+
+```python
+# Executed automatically at the start of check_all_logs()
+UPDATE contacts
+SET validation_status = 'valid', validation_notes = NULL, is_valid = 1
+WHERE log_id IN (SELECT id FROM logs WHERE contest_id = :contest_id)
+  AND validation_status IN ('invalid_callsign', 'not_in_log', 'unique_call')
 ```
 
 ## Export Formats
@@ -397,7 +434,12 @@ ubn_gen.export_text(summary, "reports/UBN_SUMMARY.txt")
 
 ---
 
-**Document Version**: 1.0  
+**Document Version**: 1.2  
 **Created**: November 19, 2025  
-**Status**: Specification for Phase 4.3 Implementation
+**Updated**: April 7, 2026  
+**Changes**:
+- Corrected time tolerance from ±1 min to ±5 min
+- Documented mode-aware busted-call detection (CW: Morse-weighted distance; PH: Jaro-Winkler)
+- Added self-reference guard documentation
+- Added cross-check reset mechanism documentation
 

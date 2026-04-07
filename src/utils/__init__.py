@@ -7,9 +7,12 @@ Provides helper functions and utilities for the contest system.
 from .ham_radio_utils import (
     HamRadioUtils,
     CallsignInfo,
+    cq_zones_match,
+    extract_cq_zone,
     get_ham_utils,
     extract_wpx_prefix,
     get_callsign_info,
+    normalize_cq_zone,
     validate_callsign,
     get_cq_zone,
 )
@@ -23,9 +26,12 @@ from .logger import (
 __all__ = [
     "HamRadioUtils",
     "CallsignInfo",
+    "cq_zones_match",
+    "extract_cq_zone",
     "get_ham_utils",
     "extract_wpx_prefix",
     "get_callsign_info",
+    "normalize_cq_zone",
     "validate_callsign",
     "get_cq_zone",
     "setup_logger",

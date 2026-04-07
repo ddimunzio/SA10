@@ -25,6 +25,52 @@ except ImportError:
 logger = logging.getLogger(__name__)
 
 
+def extract_cq_zone(exchange: Optional[str]) -> Optional[str]:
+    """Extract a valid SA10M CQ zone from a raw exchange string."""
+    if exchange is None:
+        return None
+
+    exchange_text = str(exchange).strip()
+    if not exchange_text:
+        return None
+
+    for token in re.split(r"\s+", exchange_text):
+        if token.isdigit():
+            zone_num = int(token)
+            if 1 <= zone_num <= 40:
+                return str(zone_num)
+
+    match = re.match(r"^\s*0*([1-9]|[1-2]\d|3\d|40)(?:\D.*)?$", exchange_text)
+    if match:
+        return str(int(match.group(1)))
+
+    return None
+
+
+def normalize_cq_zone(exchange: Optional[str]) -> str:
+    """Return a normalized CQ zone when present, otherwise the trimmed input."""
+    zone = extract_cq_zone(exchange)
+    if zone is not None:
+        return zone
+    return "" if exchange is None else str(exchange).strip()
+
+
+def cq_zones_match(left: Optional[str], right: Optional[str]) -> bool:
+    """Compare two exchange strings using normalized CQ zone semantics."""
+    left_zone = extract_cq_zone(left)
+    right_zone = extract_cq_zone(right)
+
+    if left_zone is not None and right_zone is not None:
+        return left_zone == right_zone
+
+    if left_zone is not None or right_zone is not None:
+        return False
+
+    left_text = "" if left is None else str(left).strip().lstrip('0') or '0'
+    right_text = "" if right is None else str(right).strip().lstrip('0') or '0'
+    return left_text == right_text
+
+
 @dataclass
 class CallsignInfo:
     """Information about a callsign"""

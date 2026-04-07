@@ -16,6 +16,7 @@ import json
 import csv
 
 from src.services.cross_check_service import UBNEntry, UBNType, CrossCheckStats, parse_datetime
+from src.utils import cq_zones_match, normalize_cq_zone
 
 
 class UBNReportGenerator:
@@ -448,22 +449,22 @@ class UBNReportGenerator:
                 AND c2.mode = c1.mode
             WHERE l1.id = :log_id
               AND ABS(JULIANDAY(c1.qso_datetime) - JULIANDAY(c2.qso_datetime)) < 0.003472
-              AND c1.exchange_received != c2.exchange_sent
-              AND TRIM(LTRIM(c1.exchange_received, '0')) != TRIM(LTRIM(c2.exchange_sent, '0'))
               AND c1.is_valid = 0  -- Assuming these are marked invalid
         """)
         
         results = self.session.execute(query, {"log_id": log_id}).fetchall()
         entries = []
         for row in results:
+            if cq_zones_match(row.exchange_received, row.correct_exchange):
+                continue
             entries.append({
                 'frequency': row.frequency,
                 'mode': row.mode,
                 'timestamp': parse_datetime(row.qso_datetime),
-                'exchange_sent': row.exchange_sent,
+                'exchange_sent': normalize_cq_zone(row.exchange_sent),
                 'call_received': row.call_received,
-                'exchange_received': row.exchange_received,
-                'correct_exchange': row.correct_exchange
+                'exchange_received': normalize_cq_zone(row.exchange_received),
+                'correct_exchange': normalize_cq_zone(row.correct_exchange)
             })
         return entries
 
@@ -544,21 +545,21 @@ class UBNReportGenerator:
                 AND c2.mode = c1.mode
             WHERE l1.id = :log_id
               AND ABS(JULIANDAY(c1.qso_datetime) - JULIANDAY(c2.qso_datetime)) < 0.003472
-              AND c2.exchange_received != c1.exchange_sent
-              AND TRIM(LTRIM(c2.exchange_received, '0')) != TRIM(LTRIM(c1.exchange_sent, '0'))
         """)
         
         results = self.session.execute(query, {"log_id": log_id}).fetchall()
         entries = []
         for row in results:
+            if cq_zones_match(row.logged_exchange, row.correct_exchange):
+                continue
             entries.append({
                 'frequency': row.frequency,
                 'mode': row.mode,
                 'timestamp': parse_datetime(row.qso_datetime),
                 'their_call': row.their_call,
                 'their_rst': row.their_rst,
-                'logged_exchange': row.logged_exchange,
-                'correct_exchange': row.correct_exchange
+                'logged_exchange': normalize_cq_zone(row.logged_exchange),
+                'correct_exchange': normalize_cq_zone(row.correct_exchange)
             })
         return entries
 
