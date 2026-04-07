@@ -75,13 +75,13 @@ este QSO. Posibles razones:
   28MHz  SSB   2025-03-08 2234  PY2AA       59  05         (NO ENCONTRADO)
 
   (*) = El log de la otra estación muestra un contacto cerca de esta hora/banda/modo
-        pero no dentro de la ventana de tolerancia de ±1 minuto
+        pero no dentro de la ventana de tolerancia de ±5 minutos
 
 ================================================================================
 NOTAS:
 ================================================================================
 
-1. Tolerancia de tiempo: ±1 minuto para hacer coincidir QSOs
+1. Tolerancia de tiempo: ±5 minutos para hacer coincidir QSOs
 2. Los indicativos ÚNICOS pueden ser válidos si la estación no envió log
 3. Los indicativos ERRÓNEOS son errores de alta confianza — revisar el log original
 4. Los contactos NIL pueden ser errores de tiempo o errores de anotación de la otra estación
@@ -248,33 +248,72 @@ WHERE
 
 ### 3. Detección de Indicativos Erróneos (Python + SQL)
 
+La detección de indicativos erróneos utiliza un **proceso en dos etapas**:
+
+**Etapa 1 — Generación de candidatos (filtro grueso)** (independiente del modo)  
+Se utiliza la distancia de edición Levenshtein 1–2 como filtro rápido para
+construir una lista de candidatos entre los indicativos enviados.
+
+**Etapa 2 — Reordenamiento según el modo de operación**  
+Los candidatos se puntúan con una función de similitud que depende del modo
+antes de verificar si existe un QSO recíproco:
+
+| Modo | Algoritmo | Justificación |
+|------|-----------|---------------|
+| `CW` | Distancia de edición ponderada por Morse | Los caracteres con secuencias Morse similares (E/I, T/N, D/B, U/V …) reciben un costo de sustitución menor y se ordenan primero |
+| `PH` / `SSB` / `FM` | Jaro-Winkler | Premio al prefijo compartido; adecuado para errores de copia fonética |
+| Otros | Ratio Levenshtein estándar | Comportamiento sin cambios |
+
+**Protecciones contra falsos positivos**
+- Un indicativo nunca es sugerido como corrección de error para sí mismo
+  (protección contra auto-referencia).
+- El mismo indicativo sugerido no puede asignarse a dos indicativos erróneos
+  distintos en el mismo log dentro de una ventana de 10 minutos.
+
 ```python
-# Paso 1: Obtener todos los indicativos enviados
-submitted_calls = db.query("SELECT DISTINCT callsign FROM logs")
+# Representación simplificada de la implementación real
 
-# Paso 2: Obtener indicativos trabajados sin log
-worked_not_submitted = db.query("""
-    SELECT DISTINCT c.callsign
-    FROM contacts c
-    LEFT JOIN logs l ON l.callsign = c.callsign
-    WHERE l.id IS NULL
-""")
+# Etapa 1: filtro grueso (distancia de edición 1-2)
+for worked_call in indicativos_no_enviados:
+    candidatos = [
+        (sub, Levenshtein.ratio(worked_call, sub))
+        for sub in indicativos_enviados
+        if 1 <= Levenshtein.distance(worked_call, sub) <= 2
+        and Levenshtein.ratio(worked_call, sub) >= 0.65
+    ]
 
-# Paso 3: Para cada indicativo trabajado, buscar indicativos similares enviados
-from Levenshtein import distance
+# Etapa 2: reordenar por similitud según el modo
+reclasificados = sorted(
+    [(sug, callsign_similarity(worked_call, sug, row.mode))
+     for sug, _ in candidatos],
+    key=lambda x: x[1], reverse=True
+)
 
-busted = []
-for worked_call in worked_not_submitted:
-    for submitted_call in submitted_calls:
-        dist = distance(worked_call, submitted_call)
-        if 1 <= dist <= 2:  # Coincidencia cercana
-            has_qso = check_reciprocal_qso(submitted_call, log_id)
-            busted.append({
-                'logged_as': worked_call,
-                'should_be': submitted_call,
-                'distance': dist,
-                'confirmed': has_qso
-            })
+for indicativo_sugerido, similitud in reclasificados:
+    if indicativo_sugerido == row.log_callsign:   # protección auto-referencia
+        continue
+    if existe_qso_reciproco(indicativo_sugerido, log_callsign, timestamp, ±5min):
+        marcar_como_erroneo(worked_call, indicativo_sugerido, similitud)
+        break
+    if edit_distance == 1 and zona_coincide(indicativo_sugerido, exchange_recibido):
+        # Alternativa por zona cuando no hay QSO recíproco
+        marcar_como_erroneo(worked_call, indicativo_sugerido, similitud)
+        break
+```
+
+**Reinicio de la verificación cruzada**  
+Antes de cada ejecución, los contactos previamente marcados como
+`invalid_callsign`, `not_in_log` o `unique_call` se **restauran a `valid`**
+para que cada re-ejecución parta de los datos tal como fueron importados.
+Esto evita que un indicativo erróneamente penalizado permanezca
+`is_valid=0` en ejecuciones posteriores.
+
+```python
+# Se ejecuta automáticamente al inicio de check_all_logs()
+UPDATE contacts
+SET validation_status = 'valid', validation_notes = NULL, is_valid = 1
+WHERE log_id IN (SELECT id FROM logs WHERE contest_id = :contest_id)
+  AND validation_status IN ('invalid_callsign', 'not_in_log', 'unique_call')
 ```
 
 ## Formatos de Exportación
@@ -343,6 +382,11 @@ ubn_gen.export_text(summary, "reportes/UBN_RESUMEN.txt")
 
 ---
 
-**Versión del Documento**: 1.0  
+**Versión del Documento**: 1.2  
 **Creado**: Noviembre 19, 2025  
-**Estado**: Especificación para implementación de Fase 4.3
+**Actualizado**: 7 de Abril de 2026  
+**Cambios**:
+- Corregida la tolerancia de tiempo de ±1 min a ±5 min
+- Documentada la detección de indicativos erróneos con similitud según el modo (CW: distancia ponderada por Morse; PH: Jaro-Winkler)
+- Documentada la protección contra auto-referencia
+- Documentado el mecanismo de reinicio de la verificación cruzada

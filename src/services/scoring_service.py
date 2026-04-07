@@ -19,6 +19,7 @@ from ..database.models import Log, Contact, Score
 from ..core.rules.rules_engine import RulesEngine, Contact as RulesContact
 from ..core.rules.rules_loader import RulesLoader
 from .callsign_lookup import CallsignLookupService
+from ..utils import normalize_cq_zone
 
 
 class ScoringService:
@@ -171,8 +172,8 @@ class ScoringService:
         # - exchange_sent/exchange_received contains just the zone (e.g., "12", "05")
         
         # Normalize zone by removing leading zeros
-        zone_sent = db_contact.exchange_sent.strip().lstrip('0') or '0'
-        zone_received = db_contact.exchange_received.strip().lstrip('0') or '0'
+        zone_sent = normalize_cq_zone(db_contact.exchange_sent) or '0'
+        zone_received = normalize_cq_zone(db_contact.exchange_received) or '0'
         
         exchange_sent = {
             'rs_rst': db_contact.rst_sent,

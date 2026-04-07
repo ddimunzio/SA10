@@ -17,6 +17,7 @@ import logging
 from ..rules.rules_loader import ContestRules
 from ...database.repositories import ContactRepository
 from ...database.models import Contact
+from ...utils import extract_cq_zone
 
 logger = logging.getLogger(__name__)
 
@@ -217,13 +218,8 @@ class ContactValidator:
         if not zone:
             result.add_error("Missing CQ zone in exchange")
         else:
-            # Try to extract zone number
-            zone_str = str(zone).strip()
-            try:
-                zone_num = int(zone_str)
-                if zone_num < 1 or zone_num > 40:
-                    result.add_error(f"Invalid CQ zone: {zone_num} (must be 1-40)")
-            except (ValueError, TypeError):
+            zone_str = extract_cq_zone(zone)
+            if zone_str is None:
                 result.add_error(f"Invalid CQ zone format: '{zone}' (must be a number 1-40)")
 
     def _validate_callsign(self, contact: Contact, result: ValidationResult):

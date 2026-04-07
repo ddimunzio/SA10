@@ -577,17 +577,36 @@ class SA10App(tk.Tk):
                                 list(Path(src_path).glob("*.log")) + \
                                 list(Path(src_path).glob("*.cbr"))
                     self._log(f"Found {len(log_files)} log file(s) in '{src_path}'")
-                    ok = err = 0
+                    ok = err = replaced = 0
                     for lf in log_files:
                         with db.get_session() as session:
                             svc = LogImportService(db)
                             result = svc.import_cabrillo_file(str(lf), contest_id)
                         if result["success"]:
                             ok += 1
+                            if result.get("is_replacement"):
+                                replaced += 1
                         else:
                             err += 1
                             self._log(f"  SKIP {lf.name}: {result['message']}", "warn")
-                    self._log(f"Import done — {ok} OK, {err} skipped/failed.", "ok")
+                    from sqlalchemy import text as sql_text
+                    with db.get_session() as session:
+                        station_count = session.execute(
+                            sql_text("SELECT COUNT(*) FROM logs WHERE contest_id = :cid"),
+                            {"cid": contest_id}
+                        ).scalar_one()
+
+                    created = ok - replaced
+                    self._log(
+                        f"Import done — {ok} accepted file(s): "
+                        f"{created} new, {replaced} replacement(s), "
+                        f"{err} skipped/failed.",
+                        "ok"
+                    )
+                    self._log(
+                        f"Contest now has {station_count} station log(s) for scoring.",
+                        "ok"
+                    )
                 else:
                     with db.get_session() as session:
                         svc = LogImportService(db)
@@ -1215,7 +1234,7 @@ class SA10App(tk.Tk):
                     "valid":              "VALID",
                     "duplicate":          "DUPLICATE",
                     "invalid":            "INVALID",
-                    "invalid_callsign":   "INVALID CALLSIGN",
+                    "invalid_callsign":   "BAD CALL",
                     "invalid_exchange":   "INVALID EXCHANGE",
                     "out_of_period":      "OUT OF PERIOD",
                     "invalid_band":       "INVALID BAND",
@@ -1284,7 +1303,7 @@ class SA10App(tk.Tk):
                                c.call_sent, c.rst_sent, c.exchange_sent,
                                c.call_received, c.rst_received, c.exchange_received,
                                COALESCE(c.points, 0) AS points,
-                               c.validation_status, c.validation_notes
+                               c.is_duplicate, c.validation_status, c.validation_notes
                         FROM contacts c
                         JOIN logs l ON c.log_id = l.id
                         WHERE l.contest_id = :cid
@@ -1304,6 +1323,19 @@ class SA10App(tk.Tk):
                             return " | ".join(val)
                         return val or ""
                     return ""
+
+                def _build_qso_observation(status: str, validation_notes: str | None) -> str:
+                    label = STATUS_LABEL.get(status, status.upper())
+                    notes = (validation_notes or "").strip()
+
+                    if status == "invalid_callsign":
+                        match = _re.search(r"should be:\s*([^)?\s]+)", notes, _re.IGNORECASE)
+                        if match:
+                            return f"{label} - correct {match.group(1)}"
+                        if notes:
+                            return f"{label} - {notes}"
+
+                    return label
 
                 # ── Build workbook ────────────────────────────────────────────────
                 wb = openpyxl.Workbook()
@@ -1408,8 +1440,8 @@ class SA10App(tk.Tk):
 
                     # QSO rows (starting at row 3)
                     for qso_num, c in enumerate(contacts, 1):
-                        status   = (c.validation_status or "valid").lower()
-                        label    = STATUS_LABEL.get(status, status.upper())
+                        status   = 'duplicate' if c.is_duplicate else (c.validation_status or "valid").lower()
+                        label    = _build_qso_observation(status, c.validation_notes)
                         row_fill = STATUS_FILL.get(status)
                         row_num  = qso_num + 2
 

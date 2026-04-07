@@ -68,6 +68,7 @@ class LogImportService:
             'qso_count': 0,
             'contest_id': None,
             'contest_name': None,
+            'is_replacement': False,
             'parse_errors': [],
             'parse_warnings': [],
             'message': ''
@@ -125,6 +126,7 @@ class LogImportService:
                               f"(old: {existing_log.file_modified_at}, new: {file_modified_at})")
                     log_repo.delete(existing_log.id)
                     is_replacement = True
+                    result['is_replacement'] = True
 
                 # Step 5: Create log entry
                 logger.info(f"{'Replacing' if is_replacement else 'Creating'} log entry for {parsed_log.callsign}")

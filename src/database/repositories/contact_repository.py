@@ -10,6 +10,7 @@ import logging
 
 from ..models import Contact as DBContact
 from ...core.models.contact import ContactBase
+from ...utils import normalize_cq_zone
 
 logger = logging.getLogger(__name__)
 
@@ -67,12 +68,12 @@ class ContactRepository:
                 # Sent information
                 call_sent=contact_data.call_sent,
                 rst_sent=contact_data.rst_sent,
-                exchange_sent=contact_data.exchange_sent,
+                exchange_sent=normalize_cq_zone(contact_data.exchange_sent),
 
                 # Received information
                 call_received=contact_data.call_received,
                 rst_received=contact_data.rst_received,
-                exchange_received=contact_data.exchange_received,
+                exchange_received=normalize_cq_zone(contact_data.exchange_received),
 
                 # Optional
                 transmitter_id=contact_data.transmitter_id,
@@ -135,10 +136,10 @@ class ContactRepository:
                     qso_datetime=qso_datetime,
                     call_sent=contact_data.call_sent,
                     rst_sent=contact_data.rst_sent,
-                    exchange_sent=contact_data.exchange_sent,
+                    exchange_sent=normalize_cq_zone(contact_data.exchange_sent),
                     call_received=contact_data.call_received,
                     rst_received=contact_data.rst_received,
-                    exchange_received=contact_data.exchange_received,
+                    exchange_received=normalize_cq_zone(contact_data.exchange_received),
                     transmitter_id=contact_data.transmitter_id,
                     is_valid=is_valid,
                     is_duplicate=False,
