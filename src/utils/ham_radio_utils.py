@@ -9,8 +9,9 @@ This module provides utilities for:
 - Country/continent determination
 """
 
-from typing import Optional, Dict, Any, Tuple
+from typing import Optional, Dict, Any, Tuple, FrozenSet
 from dataclasses import dataclass
+from pathlib import Path
 import re
 import logging
 
@@ -389,6 +390,42 @@ def get_cq_zone(callsign: str) -> int:
     """Get CQ zone for a callsign"""
     info = get_callsign_info(callsign)
     return info.cq_zone
+
+
+def load_master_scp(file_path: str | Path) -> FrozenSet[str]:
+    """
+    Load a Super Check Partial (MASTER.SCP) file and return a frozenset of
+    uppercase callsigns for O(1) membership testing.
+
+    Lines beginning with '!' or '#' are header/comment lines and are skipped.
+    If the file does not exist a warning is logged and an empty frozenset is
+    returned so the caller can gracefully fall back to corroboration-only checks.
+
+    Args:
+        file_path: Path to the MASTER.SCP file.
+
+    Returns:
+        frozenset of uppercase callsign strings.
+    """
+    path = Path(file_path)
+    if not path.exists():
+        logging.getLogger(__name__).warning(
+            "MASTER.SCP not found at %s — SCP check skipped", path
+        )
+        return frozenset()
+
+    calls: set[str] = set()
+    with open(path, "r", encoding="ascii", errors="ignore") as fh:
+        for line in fh:
+            stripped = line.strip()
+            if not stripped or stripped[0] in ("!", "#"):
+                continue
+            calls.add(stripped.upper())
+
+    logging.getLogger(__name__).info(
+        "Loaded %d callsigns from %s", len(calls), path
+    )
+    return frozenset(calls)
 
 
 if __name__ == "__main__":

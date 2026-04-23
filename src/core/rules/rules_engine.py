@@ -39,7 +39,8 @@ class Contact:
         self.operator_info = operator_info or {}
 
         # Calculated fields (set by RulesEngine)
-        self.points = 0
+        self.points = 0          # Effective points (0 for invalid/duplicate)
+        self.raw_points = 0      # Points the QSO would earn if valid (for reporting)
         self.is_duplicate = False
         self.is_multiplier = False
         self.multiplier_types: List[str] = []
@@ -91,11 +92,14 @@ class RulesEngine:
         # Check for duplicates
         contact.is_duplicate = self._is_duplicate(contact)
 
-        # Calculate points (0 for duplicates or invalid)
+        # Always compute the raw point value (used for penalty reporting)
+        contact.raw_points = self._calculate_points(contact)
+
+        # Effective points: 0 for duplicates or invalid contacts
         if contact.is_duplicate or is_invalid:
             contact.points = 0
         else:
-            contact.points = self._calculate_points(contact)
+            contact.points = contact.raw_points
 
         # Check multipliers
         if not contact.is_duplicate and not is_invalid:

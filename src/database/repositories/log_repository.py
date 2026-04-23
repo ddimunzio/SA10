@@ -73,6 +73,13 @@ class LogRepository:
                 # Cabrillo-specific
                 claimed_score=getattr(log_data, 'claimed_score', None),
 
+                # Extra Cabrillo fields (soapbox, offtime, …)
+                extra_data={
+                    k: getattr(log_data, k)
+                    for k in ('soapbox', 'offtime')
+                    if getattr(log_data, k, None)
+                },
+
                 # Metadata
                 created_at=None,  # Will use database default
                 updated_at=None,
@@ -131,4 +138,62 @@ class LogRepository:
             logger.info(f"Deleted log {log_id}")
             return True
         return False
+
+    def backfill_extra_data(self, contest_id: int) -> int:
+        """
+        Read each log’s original file and populate extra_data (soapbox, offtime)
+        for rows where extra_data is currently NULL or empty.
+
+        Returns the number of logs updated.
+        """
+        import re
+        from pathlib import Path as _Path
+
+        logs = (
+            self.session.query(DBLog)
+            .filter(
+                DBLog.contest_id == contest_id,
+                DBLog.file_path.isnot(None),
+            )
+            .all()
+        )
+
+        updated = 0
+        for log in logs:
+            # Skip if extra_data already has soapbox
+            if isinstance(log.extra_data, dict) and log.extra_data.get("soapbox"):
+                continue
+
+            fpath = _Path(log.file_path)
+            if not fpath.exists():
+                continue
+
+            try:
+                text = fpath.read_text(encoding="utf-8", errors="replace")
+            except OSError:
+                continue
+
+            soapbox_lines = [
+                m.group(1).strip()
+                for m in re.finditer(r"^SOAPBOX:\s*(.*)", text, re.IGNORECASE | re.MULTILINE)
+            ]
+            offtime_lines = [
+                m.group(1).strip()
+                for m in re.finditer(r"^OFFTIME:\s*(.*)", text, re.IGNORECASE | re.MULTILINE)
+            ]
+
+            extra: dict = dict(log.extra_data) if isinstance(log.extra_data, dict) else {}
+            if soapbox_lines:
+                extra["soapbox"] = soapbox_lines
+            if offtime_lines:
+                extra["offtime"] = offtime_lines
+
+            if extra:
+                log.extra_data = extra
+                updated += 1
+
+        if updated:
+            self.session.flush()
+        logger.info(f"backfill_extra_data: updated {updated} log(s) for contest {contest_id}")
+        return updated
 

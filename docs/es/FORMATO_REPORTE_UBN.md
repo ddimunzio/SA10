@@ -3,7 +3,73 @@
 **UBN**: Reporte de Únicos / Erróneos / No en el Log (Unique / Busted / Not-in-log)  
 **Propósito**: Identificar errores en los envíos de logs mediante validación cruzada entre logs
 
-## Estructura del Reporte UBN
+## Penalizaciones de Puntaje
+
+| Tipo de error | Efecto en puntos QSO | Efecto en multiplicadores |
+|---|---|---|
+| **DUPLICATE** | 0 puntos (no penaliza) | No contabilizado |
+| **UNIQUE** | Puntos completos (QSO válido) | Mult contabilizado normalmente |
+| **BUSTED** (Indicativo Incorrecto) | QSO eliminado (0 puntos) | Mult perdido si ningún otro QSO válido lo cubría |
+| **NIL** (No en el Log) | QSO eliminado **+ penalidad extra 1×** | Mult perdido si ningún otro QSO válido lo cubría |
+
+> **Detalle penalidad NIL**: El QSO se retira del pool válido (pierde su valor 1×) y
+> además se sustrae una penalidad adicional igual al valor bruto del QSO — en total
+> una **deducción de 2×** del total de puntos finales.
+
+## Estadísticas Bruto vs Final
+
+El resumen del reporte muestra dos filas para QSOs, puntos, multiplicadores y puntaje:
+
+```
+   1201  Raw    QSO before checking (does not include duplicates)
+    903  Final  QSO after  checking reductions
+
+   4216  Raw    QSO points
+   3084  Final  QSO points
+
+    411  Raw    mults
+    398  Final  mults
+
+1732776  Raw    score
+1229604  Final  score
+```
+
+**Bruto (Raw):** todos los contactos no duplicados, independientemente de la validez.  
+**Final:** sólo contactos válidos tras las reducciones del cross-check.
+
+### Cómo se calculan los multiplicadores brutos vs finales
+
+Los multiplicadores se computan mediante **conjuntos Python** sobre los datos brutos
+de los contactos, **no** a partir del flag `is_multiplier` de la base de datos
+(ese flag sólo está activo en contactos válidos — usarlo daría bruto = final siempre).
+
+- **Bruto:** cualquier contacto no-duplicado que reclamó ese prefijo/zona.
+- **Final:** sólo contactos con `is_valid = 1`.
+- Scope **per_band_mode**: `clave = (banda, modo, tipo, valor)`.
+
+## Detección de Fraude en Indicativos Únicos (MASTER.SCP + Corroboración)
+
+Para distinguir operadores casuales legítimos de indicativos inventados, el sistema
+aplica una verificación de dos capas antes de mantener el estado UNIQUE:
+
+1. **Base MASTER.SCP** — el indicativo se busca en la base Super Check Partial
+   (`config/master.scp`). Si está presente, se mantiene como UNIQUE.
+2. **Corroboración entre logs** — si no está en SCP, se verifica si al menos
+   **otro log enviado** también trabajó ese indicativo. Si es así, UNIQUE se mantiene.
+
+Si el indicativo **falla ambos controles** (no está en SCP **y** ningún otro log
+lo corrobora), se reclasifica como **BUSTED sin sugerencia** (`correct ?` en el reporte)
+y el QSO es eliminado.
+
+### Gestión de MASTER.SCP
+
+El archivo se descarga desde la pestaña Cross-Check de la interfaz:
+
+- **URL**: `https://www.supercheckpartial.com/MASTER.SCP`
+- **Ruta local**: `config/master.scp`
+- La UI muestra el total de indicativos y la fecha de la última actualización.
+
+
 
 ### Formato de Reporte por Estación
 

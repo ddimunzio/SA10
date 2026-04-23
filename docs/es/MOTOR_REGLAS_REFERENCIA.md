@@ -113,11 +113,23 @@ engine = RulesEngine(rules, operator_info)
 result = engine.process_contact(contact)
 
 # Ver resultados
-print(f"Puntos: {result.points}")
+print(f"Puntos efectivos:  {result.points}")
+print(f"Puntos nominales:  {result.raw_points}")
 print(f"Duplicado: {result.is_duplicate}")
 print(f"Multiplicador: {result.is_multiplier}")
 print(f"Tipos de mult.: {result.multiplier_types}")
 ```
+
+### `points` vs `raw_points`
+
+| Campo | Significado | Valor para inválido/duplicado |
+|---|---|---|
+| `raw_points` | Lo que el QSO *valdría* si fuera válido | Siempre el valor nominal |
+| `points` | Contribución efectiva al puntaje | `0` para duplicados e inválidos |
+
+`raw_points` se almacena en la columna `contacts.points` de la base de datos para
+que el reporte UBN muestre correctamente las estadísticas brutas vs finales. El
+motor siempre usa `points` (efectivo) para los cálculos internos.
 
 ## Calcular Puntajes
 
@@ -178,13 +190,20 @@ prefix = engine._extract_wpx_prefix('9A3YT')     # Retorna: '9A3'
 | no-SA → estación no-SA | 2 |
 
 ### Multiplicadores
-1. **Prefijo WPX** — Cada prefijo único (en todo el concurso)
-2. **Zona CQ** — Cada zona única por banda
+1. **Prefijo WPX** — Cada prefijo único, rastreado **por banda+modo**
+2. **Zona CQ** — Cada zona única, rastreada **por banda+modo**
 
-### Fórmula de Puntaje Final
+> Los multiplicadores solo se acreditan a contactos **válidos y no duplicados**.
+> Los contactos inválidos (NIL, BUSTED, INVALID_CALLSIGN, etc.) nunca incrementan
+> los conjuntos de multiplicadores del motor, por lo que los mults perdidos se
+> reflejan automáticamente en el puntaje final.
+
+### Fórmula de Puntaje Final (SUM_OF_MODE_SCORES)
 ```
-Puntaje por Banda = Puntos QSO × (Mults Prefijo WPX + Mults Zona CQ en esa banda)
-Puntaje Final = Suma de puntajes de todas las bandas
+Para cada modo (CW, SSB):
+    puntaje_modo = puntos_modo × (mults_WPX_modo + mults_zona_modo)
+
+Puntaje Final = puntaje_modo(CW) + puntaje_modo(SSB)
 ```
 
 ### Ejemplo de Cálculo

@@ -10,6 +10,7 @@ from datetime import datetime
 
 from src.database.db_manager import DatabaseManager
 from src.services.cross_check_service import CrossCheckService
+from src.core.rules.rules_loader import RulesLoader
 from src.utils import setup_logger
 
 def main():
@@ -42,13 +43,34 @@ def main():
                 sys.exit(1)
                 
             print(f"Contest: {result[0]}")
-            
+
+            # Load contest rules to get master_calls_file setting
+            master_calls_file = None
+            try:
+                from sqlalchemy import text as _text
+                slug_row = session.execute(
+                    _text("SELECT slug, rules_file FROM contests WHERE id = :id"),
+                    {"id": args.contest_id}
+                ).fetchone()
+                if slug_row:
+                    contest_slug = slug_row[0]
+                    loader = RulesLoader()
+                    rules = loader.load_contest(contest_slug)
+                    if rules.validation.master_calls_file:
+                        master_calls_file = rules.validation.master_calls_file
+                        print(f"Master calls file: {master_calls_file}")
+            except Exception as re:
+                print(f"[WARN] Could not load contest rules: {re} — SCP check skipped")
+
             # Initialize service
             cross_check = CrossCheckService(session)
-            
+
             # Run cross-check
             start_time = datetime.now()
-            ubn_by_log = cross_check.check_all_logs(args.contest_id)
+            ubn_by_log = cross_check.check_all_logs(
+                args.contest_id,
+                master_calls_file=master_calls_file,
+            )
             elapsed = (datetime.now() - start_time).total_seconds()
             
             print(f"\n[TIME] Cross-check completed in {elapsed:.2f} seconds")

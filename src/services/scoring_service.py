@@ -278,7 +278,7 @@ class ScoringService:
                     WHERE id = :contact_id
                 """),
                 {
-                    'points': rules_contact.points,
+                    'points': getattr(rules_contact, 'raw_points', rules_contact.points),
                     'is_duplicate': is_duplicate,
                     'is_valid': is_valid,
                     'is_multiplier': is_multiplier,

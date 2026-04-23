@@ -20,7 +20,7 @@ from dataclasses import dataclass
 from enum import Enum
 import Levenshtein
 
-from ..utils import extract_cq_zone
+from ..utils import extract_cq_zone, load_master_scp
 
 # ---------------------------------------------------------------------------
 # Morse code table and mode-aware callsign similarity
@@ -218,13 +218,15 @@ class CrossCheckService:
         self.session.flush()
         print(f"   Reset {result.rowcount} contact(s) from previous cross-check run")
 
-    def check_all_logs(self, contest_id: int, progress_callback=None) -> Dict[int, List[UBNEntry]]:
+    def check_all_logs(self, contest_id: int, progress_callback=None,
+                       master_calls_file: Optional[str] = None) -> Dict[int, List[UBNEntry]]:
         """
         Run complete cross-check on all logs for a contest
 
         Args:
             contest_id: Contest ID to check
             progress_callback: Optional callback function for progress updates
+            master_calls_file: Optional path to MASTER.SCP for unique-call verification
 
         Returns:
             Dictionary mapping log_id to list of UBN entries
@@ -243,6 +245,13 @@ class CrossCheckService:
         submitted_calls = self._get_submitted_callsigns(contest_id)
         print(f"   Found {len(submitted_calls)} submitted logs")
 
+        # Load master SCP if provided
+        master_calls = load_master_scp(master_calls_file) if master_calls_file else frozenset()
+        if master_calls:
+            print(f"   Loaded {len(master_calls)} callsigns from MASTER.SCP")
+        elif master_calls_file:
+            print(f"   [WARN] MASTER.SCP not found — corroboration-only check will run")
+
         # Step 1: Find Not-in-Log contacts
         print("\n[STEP 1/3] Detecting Not-in-Log (NIL) contacts...")
         nil_entries = self._find_not_in_log(contest_id)
@@ -253,14 +262,34 @@ class CrossCheckService:
         unique_entries = self._find_unique_calls(contest_id, submitted_calls)
         print(f"   Found {len(unique_entries)} unique calls")
 
+        # Step 2b: Reclassify suspicious unique calls as BUSTED
+        reclassified = self._apply_unique_call_filter(unique_entries, master_calls)
+        if reclassified:
+            print(f"   Reclassified {reclassified} unique call(s) as BUSTED "
+                  f"(not in SCP + no corroboration)")
+
         # Step 3: Find Busted calls
         print("\n[STEP 3/3] Detecting BUSTED calls...")
         busted_entries = self._find_busted_calls(contest_id, submitted_calls)
         print(f"   Found {len(busted_entries)} busted calls")
 
-        # Organize by log_id
-        ubn_by_log: Dict[int, List[UBNEntry]] = {}
+        # Merge all entries, deduplicating by contact_id.
+        # A contact may appear in both unique_entries (reclassified as BUSTED
+        # with no suggestion) and busted_entries (found with a real suggestion).
+        # When that happens, keep the entry that has a suggested_call (busted_entries
+        # wins over the no-suggestion reclassified entry).
+        seen: Dict[int, UBNEntry] = {}
         for entry in nil_entries + unique_entries + busted_entries:
+            existing = seen.get(entry.contact_id)
+            if existing is None:
+                seen[entry.contact_id] = entry
+            else:
+                # Prefer the entry with an actual suggested call
+                if entry.suggested_call is not None and existing.suggested_call is None:
+                    seen[entry.contact_id] = entry
+
+        ubn_by_log: Dict[int, List[UBNEntry]] = {}
+        for entry in seen.values():
             if entry.log_id not in ubn_by_log:
                 ubn_by_log[entry.log_id] = []
             ubn_by_log[entry.log_id].append(entry)
@@ -272,6 +301,50 @@ class CrossCheckService:
         print(f"   Total logs with issues: {len(ubn_by_log)}")
 
         return ubn_by_log
+
+    def _apply_unique_call_filter(
+        self,
+        unique_entries: List[UBNEntry],
+        master_calls: frozenset,
+    ) -> int:
+        """
+        Reclassify unique calls that are likely fabricated as BUSTED.
+
+        A unique call is considered suspicious — and reclassified to
+        UBNType.BUSTED with no suggested replacement — when it fails BOTH:
+          1. It is NOT present in the provided MASTER.SCP callsign set.
+          2. It is NOT corroborated: no log OTHER than the one being evaluated
+             also worked the same callsign.
+
+        A call that satisfies either condition is left as UNIQUE (trusted).
+
+        Args:
+            unique_entries: List of UNIQUE UBNEntry objects (modified in place).
+            master_calls:   frozenset of uppercase SCP callsigns (may be empty).
+
+        Returns:
+            Number of entries reclassified as BUSTED.
+        """
+        if not unique_entries:
+            return 0
+
+        # Build corroboration index: call → set of log_ids that worked it
+        call_to_logs: Dict[str, Set[int]] = defaultdict(set)
+        for entry in unique_entries:
+            call_to_logs[entry.worked_callsign.upper()].add(entry.log_id)
+
+        reclassified = 0
+        for entry in unique_entries:
+            call_upper = entry.worked_callsign.upper()
+            in_scp = bool(master_calls) and call_upper in master_calls
+            corroborated = len(call_to_logs[call_upper] - {entry.log_id}) >= 1
+
+            if not in_scp and not corroborated:
+                entry.ubn_type = UBNType.BUSTED
+                entry.suggested_call = None  # No known correct call
+                reclassified += 1
+
+        return reclassified
 
     def _get_submitted_callsigns(self, contest_id: int) -> Set[str]:
         """Get all callsigns that submitted logs"""
@@ -997,7 +1070,8 @@ class CrossCheckService:
                             updated_at = :now
                         WHERE id = :contact_id
                     """)
-                    notes = f"Busted call: {entry.worked_callsign} (should be: {entry.suggested_call}?)"
+                    suggested = entry.suggested_call or "?"
+                    notes = f"Busted call: {entry.worked_callsign} (should be: {suggested})"
                     if entry.other_station_has_qso:
                         notes += " - Other station has QSO with correct call"
 

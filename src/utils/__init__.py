@@ -15,6 +15,7 @@ from .ham_radio_utils import (
     normalize_cq_zone,
     validate_callsign,
     get_cq_zone,
+    load_master_scp,
 )
 
 from .logger import (
@@ -34,6 +35,7 @@ __all__ = [
     "normalize_cq_zone",
     "validate_callsign",
     "get_cq_zone",
+    "load_master_scp",
     "setup_logger",
     "get_logger",
     "LoggerConfig",

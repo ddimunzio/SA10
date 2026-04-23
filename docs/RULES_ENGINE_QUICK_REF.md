@@ -113,11 +113,23 @@ engine = RulesEngine(rules, operator_info)
 result = engine.process_contact(contact)
 
 # Check results
-print(f"Points: {result.points}")
+print(f"Points (effective):  {result.points}")
+print(f"Points (raw/nominal):{result.raw_points}")
 print(f"Duplicate: {result.is_duplicate}")
 print(f"Multiplier: {result.is_multiplier}")
 print(f"Mult Types: {result.multiplier_types}")
 ```
+
+### `points` vs `raw_points`
+
+| Field | Meaning | Value for invalid/duplicate |
+|---|---|---|
+| `raw_points` | What the QSO *would* score if valid | Always the nominal point value |
+| `points` | Effective score contribution | `0` for duplicates and invalid contacts |
+
+`raw_points` is stored in the database `contacts.points` column so that the UBN
+report can display correct raw-vs-final statistics. The scoring engine always
+uses `points` (effective) internally.
 
 ## Calculating Scores
 
@@ -178,13 +190,20 @@ prefix = engine._extract_wpx_prefix('9A3YT')     # Returns: '9A3'
 | non-SA → non-SA station | 2 |
 
 ### Multipliers
-1. **WPX Prefix** - Each unique prefix (contest-wide)
-2. **CQ Zone** - Each unique zone per band
+1. **WPX Prefix** — Each unique prefix, tracked **per band+mode**
+2. **CQ Zone** — Each unique zone, tracked **per band+mode**
 
-### Final Score Formula
+> Multipliers are only credited for **valid, non-duplicate** contacts. Invalid
+> contacts (NIL, BUSTED, INVALID_CALLSIGN, etc.) never add to the multiplier
+> sets inside `RulesEngine`, so lost mults are automatically reflected in the
+> final score.
+
+### Final Score Formula (SUM_OF_MODE_SCORES)
 ```
-Per Band Score = QSO Points × (WPX Prefix Mults + CQ Zone Mults for that band)
-Final Score = Sum of all band scores
+For each mode (CW, SSB):
+    mode_score = mode_points × (WPX_mults_for_mode + zone_mults_for_mode)
+
+Final Score = mode_score(CW) + mode_score(SSB)
 ```
 
 ### Example Calculation

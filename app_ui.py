@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 SA10M Contest Manager - Tkinter Desktop UI
 
@@ -6,11 +6,13 @@ Simple GUI to manage contest logs: import, cross-check, and scoring.
 """
 
 import tkinter as tk
+import sv_ttk
 from tkinter import ttk, filedialog, messagebox, scrolledtext
 import threading
 import sys
 import io
 import os
+import urllib.request
 from datetime import datetime
 from pathlib import Path
 
@@ -53,7 +55,7 @@ import re as _re
 # Argentine allocations: LU, LW, LO, LP, LQ (2-letter), AY, AZ
 # and L2-L9 (1 letter + digit)
 _ARGENTINA_PREFIXES = frozenset({
-    'LU', 'LW', 'LO', 'LP', 'LQ',
+    'LO', 'LP', 'LQ', 'LR', 'LS', 'LT', 'LU', 'LV', 'LW',
     'AY', 'AZ',
 })
 
@@ -135,12 +137,14 @@ class SA10App(tk.Tk):
         self.geometry("960x720")
         self.resizable(True, True)
         self.configure(bg="#f0f0f0")
+        sv_ttk.set_theme("light")
 
         # State
         self._db_path = tk.StringVar(value=DEFAULT_DB)
         self._selected_contest_id = tk.IntVar(value=0)
         self._selected_contest_name = tk.StringVar(value="(none)")
         self._running = False
+        self._scp_status = tk.StringVar(value="")
 
         self._build_menu()
         self._build_header()
@@ -156,6 +160,8 @@ class SA10App(tk.Tk):
 
         # Load contests on startup
         self.after(200, self._refresh_contests)
+        # Populate SCP status badge on startup
+        self.after(300, self._update_scp_status)
 
     # ── Database bootstrap ────────────────────────────────────────────
 
@@ -295,8 +301,7 @@ class SA10App(tk.Tk):
             tk.Label(create_frame, text=lbl, font=("Segoe UI", 9)).grid(
                 row=0, column=col*2, sticky="e", padx=(8, 2), pady=4)
             var = tk.StringVar(value=dflt)
-            ent = tk.Entry(create_frame, textvariable=var, width=22,
-                           font=("Segoe UI", 9))
+            ent = ttk.Entry(create_frame, textvariable=var, width=22)
             ent.grid(row=0, column=col*2+1, sticky="w", padx=(0, 8))
             self._contest_entries[lbl] = var
 
@@ -466,18 +471,15 @@ class SA10App(tk.Tk):
         src_frame.pack(fill="x", padx=10, pady=(10, 4))
 
         self._import_mode = tk.StringVar(value="dir")
-        tk.Radiobutton(src_frame, text="Directory (all .txt/.log files)",
-                       variable=self._import_mode, value="dir",
-                       font=("Segoe UI", 9)).grid(row=0, column=0, sticky="w", padx=4)
-        tk.Radiobutton(src_frame, text="Single file",
-                       variable=self._import_mode, value="file",
-                       font=("Segoe UI", 9)).grid(row=0, column=1, sticky="w", padx=4)
+        ttk.Radiobutton(src_frame, text="Directory (all .txt/.log files)",
+                       variable=self._import_mode, value="dir").grid(row=0, column=0, sticky="w", padx=4)
+        ttk.Radiobutton(src_frame, text="Single file",
+                       variable=self._import_mode, value="file").grid(row=0, column=1, sticky="w", padx=4)
 
         self._import_path = tk.StringVar(value="logs_sa10m_2025")
         tk.Label(src_frame, text="Path:", font=("Segoe UI", 9)).grid(
             row=1, column=0, sticky="e", padx=(0, 4), pady=4)
-        tk.Entry(src_frame, textvariable=self._import_path, width=60,
-                 font=("Segoe UI", 9)).grid(row=1, column=1, sticky="w")
+        ttk.Entry(src_frame, textvariable=self._import_path, width=60).grid(row=1, column=1, sticky="w")
         tk.Button(src_frame, text="Browse…", command=self._browse_import,
                   font=("Segoe UI", 8), padx=6).grid(row=1, column=2, padx=4)
 
@@ -496,15 +498,13 @@ class SA10App(tk.Tk):
                                   if self._selected_contest_id.get() else "")
         self._selected_contest_id.trace_add("write", _sync_cid)
 
-        tk.Entry(opt_frame, textvariable=self._import_cid, width=8,
-                 font=("Segoe UI", 9)).grid(row=0, column=1, sticky="w", padx=4)
+        ttk.Entry(opt_frame, textvariable=self._import_cid, width=8).grid(row=0, column=1, sticky="w", padx=4)
         tk.Label(opt_frame, text="(uses active contest if empty)",
                  font=("Segoe UI", 8), fg="gray").grid(row=0, column=2, sticky="w")
 
         self._import_clear_db = tk.BooleanVar(value=False)
-        tk.Checkbutton(opt_frame, text="Clear ALL contest data before import (fresh start)",
-                       variable=self._import_clear_db,
-                       font=("Segoe UI", 9), fg="#9f2d2d").grid(
+        ttk.Checkbutton(opt_frame, text="Clear ALL contest data before import (fresh start)",
+                       variable=self._import_clear_db).grid(
             row=1, column=0, columnspan=3, sticky="w", padx=4, pady=2)
 
         # Run button
@@ -647,10 +647,29 @@ class SA10App(tk.Tk):
             row=0, column=1, sticky="w")
 
         self._xcheck_save_ubn = tk.BooleanVar(value=True)
-        tk.Checkbutton(info, text="Save UBN reports to ubn_reports/ folder",
-                       variable=self._xcheck_save_ubn,
-                       font=("Segoe UI", 9)).grid(
+        ttk.Checkbutton(info, text="Save UBN reports to ubn_reports/ folder",
+                       variable=self._xcheck_save_ubn).grid(
             row=1, column=0, columnspan=2, sticky="w", padx=4, pady=4)
+
+        # ── Master Calls (SCP) ────────────────────────────────────────
+        scp_frame = tk.LabelFrame(f, text="Master Calls Database (SCP)",
+                                  font=("Segoe UI", 9), padx=8, pady=8)
+        scp_frame.pack(fill="x", padx=10, pady=(0, 4))
+
+        tk.Label(scp_frame, text="Status:", font=("Segoe UI", 9)).grid(
+            row=0, column=0, sticky="e", padx=4)
+        tk.Label(scp_frame, textvariable=self._scp_status,
+                 font=("Segoe UI", 9), fg="#555555").grid(
+            row=0, column=1, sticky="w")
+
+        ttk.Button(scp_frame, text="⬇  Download MASTER.SCP",
+                   command=self._download_master_scp).grid(
+            row=1, column=0, columnspan=2, sticky="w", padx=4, pady=(6, 2))
+
+        tk.Label(scp_frame,
+                 text="Source: supercheckpartial.com — updated twice weekly",
+                 font=("Segoe UI", 8), fg="gray").grid(
+            row=2, column=0, columnspan=2, sticky="w", padx=4)
 
         tk.Button(f, text="▶  Run Cross-Check", command=self._run_crosscheck,
                   bg="#2d8a46", fg="white", font=("Segoe UI", 11, "bold"),
@@ -658,6 +677,55 @@ class SA10App(tk.Tk):
 
         tk.Label(f, text="Tip: Make sure logs are imported before running cross-check.",
                  font=("Segoe UI", 8), fg="gray").pack()
+
+    def _update_scp_status(self):
+        """Refresh the SCP status label based on the local MASTER.SCP file."""
+        scp_path = Path("config/master.scp")
+        if not scp_path.exists():
+            self._scp_status.set("⚠  Not downloaded yet")
+            return
+
+        try:
+            call_count = sum(
+                1 for line in scp_path.read_text(encoding="ascii", errors="ignore").splitlines()
+                if line.strip() and line.strip()[0] not in ("!", "#")
+            )
+            mtime = datetime.fromtimestamp(scp_path.stat().st_mtime).strftime("%Y-%m-%d")
+            self._scp_status.set(f"✓  {call_count:,} calls — last updated: {mtime}")
+        except Exception as e:
+            self._scp_status.set(f"⚠  Error reading file: {e}")
+
+    def _download_master_scp(self):
+        """Download the latest MASTER.SCP from supercheckpartial.com in a background thread."""
+        if self._running:
+            messagebox.showinfo("Busy", "An operation is already running.")
+            return
+
+        def _run():
+            self._running = True
+            self._set_status("Downloading MASTER.SCP…", busy=True)
+            try:
+                Path("config").mkdir(exist_ok=True)
+                dest = Path("config/master.scp")
+                urllib.request.urlretrieve(
+                    "https://www.supercheckpartial.com/MASTER.SCP",
+                    dest,
+                )
+                self.after(0, self._update_scp_status)
+                # Count for the log message
+                call_count = sum(
+                    1 for line in dest.read_text(encoding="ascii", errors="ignore").splitlines()
+                    if line.strip() and line.strip()[0] not in ("!", "#")
+                )
+                self._log(
+                    f"MASTER.SCP downloaded — {call_count:,} callsigns loaded.", "ok")
+            except Exception as e:
+                self._log(f"Download failed: {e}", "error")
+            finally:
+                self._running = False
+                self._set_status("Ready")
+
+        threading.Thread(target=_run, daemon=True).start()
 
     def _run_crosscheck(self):
         if self._running:
@@ -679,8 +747,25 @@ class SA10App(tk.Tk):
                 db = DatabaseManager(db_path)
                 with db.get_session() as session:
                     svc = CrossCheckService(session)
+
+                    # Resolve master_calls_file from contest rules
+                    master_calls_file = None
+                    try:
+                        from src.core.rules.rules_loader import RulesLoader
+                        from sqlalchemy import text as _sql_text
+                        slug_row = session.execute(
+                            _sql_text("SELECT slug FROM contests WHERE id = :id"),
+                            {"id": cid}
+                        ).fetchone()
+                        if slug_row:
+                            rules = RulesLoader().load_contest(slug_row[0])
+                            if rules.validation.master_calls_file:
+                                master_calls_file = rules.validation.master_calls_file
+                    except Exception as re:
+                        self._log(f"[WARN] Could not load contest rules: {re} — SCP check skipped", "warn")
+
                     t0 = datetime.now()
-                    ubn_by_log = svc.check_all_logs(cid)
+                    ubn_by_log = svc.check_all_logs(cid, master_calls_file=master_calls_file)
                     elapsed = (datetime.now() - t0).total_seconds()
                     self._log(
                         f"Cross-check complete in {elapsed:.1f}s — "
@@ -767,8 +852,7 @@ class SA10App(tk.Tk):
         tk.Label(info, text="Rules slug:", font=("Segoe UI", 9)).grid(
             row=1, column=0, sticky="e", padx=4, pady=(4, 0))
         self._scoring_slug = tk.StringVar(value="sa10m")
-        tk.Entry(info, textvariable=self._scoring_slug, width=20,
-                 font=("Segoe UI", 9)).grid(row=1, column=1, sticky="w", pady=(4, 0))
+        ttk.Entry(info, textvariable=self._scoring_slug, width=20).grid(row=1, column=1, sticky="w", pady=(4, 0))
 
         tk.Button(f, text="▶  Score All Logs", command=self._run_scoring,
                   bg="#7a3aaf", fg="white", font=("Segoe UI", 11, "bold"),
@@ -857,8 +941,8 @@ class SA10App(tk.Tk):
         self._ldr_filter = tk.StringVar()
         tk.Label(btn_row, text="  Filter callsign:",
                  font=("Segoe UI", 9)).pack(side="left")
-        filter_entry = tk.Entry(btn_row, textvariable=self._ldr_filter,
-                                width=14, font=("Segoe UI", 9))
+        filter_entry = ttk.Entry(btn_row, textvariable=self._ldr_filter,
+                                width=14)
         filter_entry.pack(side="left", padx=4)
         filter_entry.bind("<KeyRelease>", lambda _: self._apply_leaderboard_filter())
 
