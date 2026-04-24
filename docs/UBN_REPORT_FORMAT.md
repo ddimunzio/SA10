@@ -3,7 +3,81 @@
 **UBN**: Unique / Busted / Not-in-log Report  
 **Purpose**: Identify errors in contest log submissions through cross-log validation
 
-## UBN Report Structure
+## Scoring Penalties
+
+| Error Type | Effect on QSO Points | Effect on Multipliers |
+|---|---|---|
+| **DUPLICATE** | 0 points (not penalised) | Not counted |
+| **UNIQUE** | Full points (QSO kept) | Counted as normal mult |
+| **BUSTED** (Incorrect Call) | QSO removed (0 points) | Mult lost if no other valid QSO covered it |
+| **NIL** (Not-in-Log) | QSO removed **+ extra 1× penalty** | Mult lost if no other valid QSO covered it |
+
+> **NIL penalty detail**: The QSO is first removed from the valid pool (losing its
+> point value once), and then an additional penalty equal to the QSO's raw point
+> value is subtracted — effectively a **2× deduction** from the final points total.
+
+## Raw vs Final Statistics
+
+The UBN summary shows two rows for QSOs, points, multipliers, and score:
+
+```
+   1201  Raw    QSO before checking (does not include duplicates)
+    903  Final  QSO after  checking reductions
+
+   4216  Raw    QSO points
+   3084  Final  QSO points
+
+    411  Raw    mults
+    398  Final  mults
+
+1732776  Raw    score
+1229604  Final  score
+```
+
+**Raw** figures are computed from all non-duplicate contacts, regardless of
+validation status.  
+**Final** figures reflect only valid contacts after all cross-check reductions.
+
+### How multipliers are computed
+
+Multipliers (WPX prefixes and CQ zones) are computed independently for raw and
+final using **Python set logic** over raw contact data, not the database
+`is_multiplier` flag. This ensures lost multipliers are correctly reported:
+
+- A multiplier is counted **raw** if any non-duplicate contact claimed it.  
+- A multiplier is counted **final** only if at least one **valid** contact
+  claimed it (`is_valid = 1`).  
+- If an invalid QSO was the sole contact for a given prefix or zone in that
+  mode, that multiplier disappears from the final count.
+
+Both types use **per_band_mode** scope (matching SA10M rules):  
+`key = (band, mode, type, value)` — e.g. `('10m', 'SSB', 'zone', '14')`.
+
+## Unique Call Fraud Detection (MASTER.SCP + Corroboration)
+
+To distinguish genuine casual operators from fabricated callsigns, the system
+applies a two-layer check before crediting a Unique Call:
+
+1. **MASTER.SCP lookup** — the callsign is checked against the Super Check
+   Partial database (`config/master.scp`). If found, the station is a known
+   active contester and the QSO keeps its UNIQUE status.
+2. **Cross-log corroboration** — if not in SCP, the system checks whether at
+   least **one other submitted log** also worked the same callsign. If so, the
+   QSO keeps its UNIQUE status.
+
+If the callsign **fails both checks** (not in SCP **and** not corroborated by
+any other log), it is reclassified as **BUSTED** with no suggested correction
+(`correct ?` in the UBN report), and the QSO is removed without penalty credit.
+
+### MASTER.SCP management
+
+The SCP database can be downloaded from the Cross-Check tab in the UI:
+
+- **URL**: `https://www.supercheckpartial.com/MASTER.SCP`  
+- **Local path**: `config/master.scp`  
+- The UI shows the current file size (callsign count) and last-updated date.
+
+
 
 ### Per-Station Report Format
 

@@ -127,6 +127,7 @@ scoring:
 validation:
   duplicate_window:
     type: band_mode
+  master_calls_file: "config/master.scp"
   exchange_format:
     cq_zone:
       min: 1

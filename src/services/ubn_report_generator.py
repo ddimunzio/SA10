@@ -15,8 +15,32 @@ from sqlalchemy import text
 import json
 import csv
 
+import re
+
 from src.services.cross_check_service import UBNEntry, UBNType, CrossCheckStats, parse_datetime
 from src.utils import cq_zones_match, normalize_cq_zone
+
+
+def _extract_wpx_prefix(callsign: str) -> str:
+    """Extract WPX prefix from a callsign (mirrors RulesEngine logic)."""
+    base_call = callsign.split('/')[0]
+    match = re.search(r'\d', base_call)
+    if not match:
+        return base_call
+    digit_pos = match.start()
+    if digit_pos == 0:
+        prefix = base_call[0]
+        for i in range(1, len(base_call)):
+            if base_call[i].isalpha():
+                prefix += base_call[i]
+            elif base_call[i].isdigit():
+                prefix += base_call[i]
+                break
+            else:
+                break
+    else:
+        prefix = base_call[:digit_pos + 1]
+    return prefix
 
 
 class UBNReportGenerator:
@@ -209,7 +233,8 @@ class UBNReportGenerator:
                 freq_str = str(entry.frequency) if entry.frequency else ""
                 # Format: Freq Mode Date Time Call Sent Rcvd Correct
                 # 7068 CW 2025-05-24 0052 LP1H    074   NZ3N    027  correct NZ3D
-                lines.append(f"{freq_str:>6} {entry.mode:<3} {date_str} {log_info['callsign']:<10} {entry.exchange_sent:<6} {entry.worked_callsign:<10} {entry.exchange_received:<5} correct {entry.suggested_call}")
+                suggested = entry.suggested_call or "?"
+                lines.append(f"{freq_str:>6} {entry.mode:<3} {date_str} {log_info['callsign']:<10} {entry.exchange_sent:<6} {entry.worked_callsign:<10} {entry.exchange_received:<5} correct {suggested}")
             lines.append("")
 
         # Not In Log
@@ -330,96 +355,131 @@ class UBNReportGenerator:
             },
             'bands': {}
         }
-        
-        # Get Raw Stats (including invalid but not duplicates)
+
+        # Get Raw QSO/points stats (non-duplicates)
         query_raw = text("""
-            SELECT 
-                band,
-                COUNT(*) as qsos,
-                SUM(points) as points,
-                SUM(CASE WHEN is_multiplier = 1 THEN 1 ELSE 0 END) as mults
+            SELECT band, COUNT(*) as qsos, SUM(points) as points
             FROM contacts
-            WHERE log_id = :log_id AND validation_status != 'duplicate'
+            WHERE log_id = :log_id AND UPPER(validation_status) != 'DUPLICATE'
             GROUP BY band
         """)
-        
-        # Get Final Stats (only valid)
+
+        # Get Final QSO/points stats (valid contacts only)
         query_final = text("""
-            SELECT 
-                band,
-                COUNT(*) as qsos,
-                SUM(points) as points,
-                SUM(CASE WHEN is_multiplier = 1 THEN 1 ELSE 0 END) as mults
+            SELECT band, COUNT(*) as qsos, SUM(points) as points
             FROM contacts
             WHERE log_id = :log_id AND is_valid = 1
             GROUP BY band
         """)
-        
-        # Get Duplicates count
-        query_dupes = text("""
-            SELECT COUNT(*) FROM contacts WHERE log_id = :log_id AND validation_status = 'duplicate'
-        """)
-        stats['summary']['duplicates'] = self.session.execute(query_dupes, {"log_id": log_id}).scalar()
 
-        # Process Raw
-        raw_results = self.session.execute(query_raw, {"log_id": log_id}).fetchall()
-        for row in raw_results:
+        # Duplicates count
+        query_dupes = text("""
+            SELECT COUNT(*) FROM contacts
+            WHERE log_id = :log_id AND UPPER(validation_status) = 'DUPLICATE'
+        """)
+        stats['summary']['duplicates'] = self.session.execute(query_dupes, {"log_id": log_id}).scalar() or 0
+
+        # Process raw QSOs / points
+        for row in self.session.execute(query_raw, {"log_id": log_id}).fetchall():
             band = row.band
             if band not in stats['bands']:
-                stats['bands'][band] = {'raw_qsos': 0, 'raw_points': 0, 'raw_mults': 0, 
-                                      'final_qsos': 0, 'final_points': 0, 'final_mults': 0}
-            
+                stats['bands'][band] = {'raw_qsos': 0, 'raw_points': 0, 'raw_mults': 0,
+                                        'final_qsos': 0, 'final_points': 0, 'final_mults': 0}
             stats['bands'][band]['raw_qsos'] = row.qsos
             stats['bands'][band]['raw_points'] = row.points or 0
-            stats['bands'][band]['raw_mults'] = row.mults or 0
-            
             stats['summary']['raw_qsos'] += row.qsos
             stats['summary']['raw_points'] += row.points or 0
-            stats['summary']['raw_mults'] += row.mults or 0
 
-        # Process Final
-        final_results = self.session.execute(query_final, {"log_id": log_id}).fetchall()
-        for row in final_results:
+        # Process final QSOs / points
+        for row in self.session.execute(query_final, {"log_id": log_id}).fetchall():
             band = row.band
             if band not in stats['bands']:
-                stats['bands'][band] = {'raw_qsos': 0, 'raw_points': 0, 'raw_mults': 0, 
-                                      'final_qsos': 0, 'final_points': 0, 'final_mults': 0}
-            
+                stats['bands'][band] = {'raw_qsos': 0, 'raw_points': 0, 'raw_mults': 0,
+                                        'final_qsos': 0, 'final_points': 0, 'final_mults': 0}
             stats['bands'][band]['final_qsos'] = row.qsos
             stats['bands'][band]['final_points'] = row.points or 0
-            stats['bands'][band]['final_mults'] = row.mults or 0
-            
             stats['summary']['final_qsos'] += row.qsos
             stats['summary']['final_points'] += row.points or 0
-            stats['summary']['final_mults'] += row.mults or 0
 
-        # Process Penalties (NIL and Busted Calls)
-        # Penalty is 2x the points of the invalid QSO
-        query_penalties = text("""
-            SELECT 
-                band,
-                SUM(points) as penalty_base
+        # NIL extra penalty: QSO is already excluded by is_valid=0 (1x removal).
+        # SA10M adds a further 1x penalty on top, making it effectively 2x total.
+        # Busted calls are removed only (no extra penalty beyond exclusion).
+        query_nil_penalty = text("""
+            SELECT band, SUM(points) as nil_points
             FROM contacts
-            WHERE log_id = :log_id 
-              AND validation_status IN ('not_in_log', 'invalid_callsign')
+            WHERE log_id = :log_id AND UPPER(validation_status) = 'NOT_IN_LOG'
             GROUP BY band
         """)
-        
-        penalty_results = self.session.execute(query_penalties, {"log_id": log_id}).fetchall()
-        for row in penalty_results:
-            band = row.band
-            # Penalty is 2x the point value
-            penalty = (row.penalty_base or 0) * 2
-            
-            if band in stats['bands']:
-                stats['bands'][band]['final_points'] -= penalty
-            
-            stats['summary']['final_points'] -= penalty
+        for row in self.session.execute(query_nil_penalty, {"log_id": log_id}).fetchall():
+            extra = row.nil_points or 0
+            if row.band in stats['bands']:
+                stats['bands'][row.band]['final_points'] -= extra
+            stats['summary']['final_points'] -= extra
 
-        # Calculate Scores
+        # ------------------------------------------------------------------ #
+        # Multiplier computation                                              #
+        # SA10M: WPX prefix (per_band_mode) + CQ zone (per_band_mode)        #
+        #                                                                     #
+        # We derive mults directly from raw contact data rather than from    #
+        # the DB is_multiplier flag, because that flag is only set True for   #
+        # VALID contacts — so raw mults would otherwise equal final mults.   #
+        # ------------------------------------------------------------------ #
+        query_contacts = text("""
+            SELECT band, mode, exchange_received, call_received, is_valid
+            FROM contacts
+            WHERE log_id = :log_id AND UPPER(validation_status) != 'DUPLICATE'
+        """)
+
+        raw_mults_set: set = set()
+        final_mults_set: set = set()
+        band_raw: Dict[str, set] = {}
+        band_final: Dict[str, set] = {}
+
+        for row in self.session.execute(query_contacts, {"log_id": log_id}).fetchall():
+            band = row.band or ''
+            mode = row.mode or ''
+            call = (row.call_received or '').upper().strip()
+            zone = (row.exchange_received or '').strip()
+            valid = bool(row.is_valid)
+
+            if band not in band_raw:
+                band_raw[band] = set()
+                band_final[band] = set()
+
+            # CQ zone (per_band_mode)
+            try:
+                zone_int = int(zone)
+                if 1 <= zone_int <= 40:
+                    key = (band, mode, 'zone', str(zone_int))
+                    raw_mults_set.add(key)
+                    band_raw[band].add(key)
+                    if valid:
+                        final_mults_set.add(key)
+                        band_final[band].add(key)
+            except (ValueError, TypeError):
+                pass
+
+            # WPX prefix (per_band_mode)
+            if call:
+                prefix = _extract_wpx_prefix(call)
+                if prefix:
+                    key = (band, mode, 'prefix', prefix)
+                    raw_mults_set.add(key)
+                    band_raw[band].add(key)
+                    if valid:
+                        final_mults_set.add(key)
+                        band_final[band].add(key)
+
+        stats['summary']['raw_mults'] = len(raw_mults_set)
+        stats['summary']['final_mults'] = len(final_mults_set)
+        for band in stats['bands']:
+            stats['bands'][band]['raw_mults'] = len(band_raw.get(band, set()))
+            stats['bands'][band]['final_mults'] = len(band_final.get(band, set()))
+
+        # Final score (simplified product formula used for UBN display)
         stats['summary']['raw_score'] = stats['summary']['raw_points'] * stats['summary']['raw_mults']
         stats['summary']['final_score'] = stats['summary']['final_points'] * stats['summary']['final_mults']
-        
+
         return stats
 
     def _get_incorrect_exchanges(self, log_id: int) -> List[Dict]:

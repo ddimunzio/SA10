@@ -302,13 +302,30 @@ Si el recíproco no existe → el contacto de A se marca como `NOT_IN_LOG`.
 hash_map[(call_received.upper(), band, mode)] → [lista de contactos]
 ```
 
-#### 6.2 UNIQUE CALL
+#### 6.2 UNIQUE CALL y detección de fraude
 
+Un "Unique Call" inicial es cualquier indicativo en el que ningún otro log del concurso aparece como call_sent recíproco. Para distinguir operadores casuales legítimos de indicativos inventados, el sistema aplica una verificación de dos capas:
+
+**Paso A — MASTER.SCP (Super Check Partial)**
 ```
-Si call_received ∉ conjunto_de_todos_los_callsigns_enviados → UNIQUE
+Si call_received ∈ master_calls  →  mantiene estado UNIQUE (le damos crédito)
 ```
 
-Un "Unique Call" es un indicativo que nadie en el concurso afirma haber trabajado desde su propio lado. Es altamente probable que sea un error de copia.
+`master_calls` se carga desde `config/master.scp` (descargable desde la UI). El archivo contiene decenas de miles de indicativos de radioaficionados activos en concursos.
+
+**Paso B — Corroboración entre logs**
+```
+Si ≥ 1 otro log (distinto al evaluado) también trabajó ese indicativo  →  UNIQUE
+Si fallan ambos pasos A y B  →  reclasificar como BUSTED (sin sugerencia: "correct ?")
+```
+
+La reclasificación como BUSTED implica eliminación del QSO sin ningún crédito.
+
+> **Configuración:** La ruta del archivo SCP se define en `config/contests/sa10m.yaml`:
+> ```yaml
+> validation:
+>   master_calls_file: "config/master.scp"
+> ```
 
 #### 6.3 BUSTED CALL
 
@@ -321,6 +338,8 @@ ratio = similitud(call_logged, call_real)
 if distancia <= 2 and ratio >= 0.65:
     → BUSTED (posible indicativo correcto: call_real)
 ```
+
+Si el indicativo BUSTED no tiene sugerencia (por reclasificación desde UNIQUE), el reporte muestra `correct ?`.
 
 ### Resultado del cross-check
 
@@ -371,15 +390,15 @@ sequenceDiagram
         loop Por cada contacto (orden cronológico)
             SS->>RE: process_contact(contact)
             RE->>RE: _is_duplicate()
-            RE->>RE: _calculate_points()
-            RE->>RE: _check_multipliers()
-            RE-->>SS: contact procesado (points, is_dup, is_mult)
+            RE->>RE: _calculate_points() → raw_points
+            RE->>RE: _check_multipliers() (solo si válido)
+            RE-->>SS: contact (points=0 si inválido, raw_points=valor nominal)
         end
 
         SS->>RE: calculate_final_score(contacts)
         RE-->>SS: score_breakdown
 
-        SS->>DB: UPDATE contacts (points, is_duplicate, is_multiplier...)
+        SS->>DB: UPDATE contacts (raw_points→points, is_duplicate, is_multiplier...)
         SS->>DB: UPSERT scores table
         SS->>DB: SET log.status = SCORED
     end
@@ -417,9 +436,20 @@ if callsign in worked_calls:
             return True  # DUPLICADO
 ```
 
-#### 7.3.2 Cálculo de Puntos — `_calculate_points()`
+#### 7.3.2 Cálculo de Puntos — `_calculate_points()` y los campos `points` / `raw_points`
 
-Las reglas se evalúan **en orden**. La **primera que se cumple** asigna los puntos:
+El motor calcula **siempre** el valor nominal del QSO como `raw_points`. Luego asigna:
+
+| Campo | Descripción | Contacto inválido/duplicado |
+|---|---|---|
+| `raw_points` | Valor que tendría el QSO si fuera válido | Siempre el valor nominal |
+| `points` | Contribución efectiva al puntaje | `0` para inválidos y duplicados |
+
+`raw_points` se almacena en la columna `contacts.points` de la base de datos, lo que permite que el reporte UBN muestre correctamente los valores brutos (Raw) vs finales.
+
+`_check_multipliers()` **solo se llama** para contactos que no son duplicados ni inválidos, por lo que los contactos inválidos nunca incrementan los sets de multiplicadores internos del motor.
+
+Las reglas de puntuación se evalúan **en orden**. La **primera que se cumple** asigna los puntos:
 
 ```mermaid
 %%{init: {'theme': 'default', 'themeVariables': {'fontSize': '18px'}}}%%
@@ -488,6 +518,8 @@ La fórmula es `SUM_OF_MODE_SCORES`:
 
 $$\text{Score Final} = \sum_{\text{modo} \in \{CW, SSB\}} \left( \text{puntos}_{modo} \times (\text{mults\_WPX}_{modo} + \text{mults\_zona}_{modo}) \right)$$
 
+Donde `puntos_modo` es la suma de los `points` efectivos (no `raw_points`) de los contactos válidos.
+
 **Ejemplo:**
 
 | Modo | Puntos | Mults WPX | Mults Zona | Sub-total |
@@ -522,6 +554,59 @@ El resultado se almacena en la tabla `scores` con el desglose completo por banda
 **Archivo:** `src/services/ubn_report_generator.py`
 
 Para cada estación se genera un reporte UBN (Unique, Busted, Not-in-log) en texto plano, que es el formato estándar de los concursos internacionales.
+
+### Penalizaciones aplicadas
+
+| Tipo | Efecto en puntos | Efecto en multiplicadores |
+|---|---|---|
+| DUPLICATE | 0 puntos (no penaliza) | No contabilizado |
+| UNIQUE | Puntos completos (QSO válido) | Mult contabilizado normalmente |
+| BUSTED | QSO eliminado (0 puntos) | Mult perdido si ningún otro QSO válido lo cubre |
+| NIL | QSO eliminado **+ penalidad extra 1×** | Mult perdido si ningún otro QSO válido lo cubre |
+
+> **Detalle penalidad NIL**: El QSO se retira del pool válido (pierde 1× su valor) y además se
+> sustrae un monto adicional igual al valor bruto del QSO: penalidad total **= 2× el valor del QSO**.
+
+### Estadísticas Bruto vs Final
+
+El reporte muestra dos filas para QSOs, puntos, multiplicadores y puntaje:
+
+```
+   1201  Raw    QSO before checking (does not include duplicates)
+    903  Final  QSO after  checking reductions
+
+   4216  Raw    QSO points
+   3084  Final  QSO points
+
+    411  Raw    mults
+    398  Final  mults
+
+1732776  Raw    score
+1229604  Final  score
+```
+
+**Bruto (Raw):** todos los contactos no duplicados, independientemente de su validez.  
+**Final:** solo contactos válidos (`is_valid = 1`) después de todas las reducciones del cross-check.
+
+#### Cómo se calculan los multiplicadores brutos vs finales
+
+Los multiplicadores se computan con **lógica de conjuntos Python** sobre los datos
+brutos de los contactos, **no** a partir del flag `is_multiplier` de la base de datos
+(ese flag sólo está activo en contactos válidos, por lo que usarlo produciría valores
+bruto = final en todos los casos).
+
+- Un multiplicador se cuenta como **bruto** si al menos un contacto no-duplicado lo reclamó.
+- Un multiplicador se cuenta como **final** sólo si al menos un contacto **válido**
+  (`is_valid = 1`) lo reclamó.
+- Si el único QSO que reclamaba un prefijo o zona resultó inválido, ese multiplicador
+  desaparece del conteo final.
+
+Ambos tipos usan scope **per_band_mode** (igual que las reglas del SA10M):  
+`clave = (banda, modo, tipo, valor)` — ej. `('10m', 'SSB', 'zone', '14')`.
+
+La función auxiliar `_extract_wpx_prefix()` (definida a nivel de módulo en
+`ubn_report_generator.py`) replica la lógica de `RulesEngine._extract_wpx_prefix()`
+para derivar prefijos WPX directamente desde el indicativo del contacto.
 
 ### Secciones del reporte
 

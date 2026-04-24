@@ -79,6 +79,7 @@ class ValidationRules(BaseModel):
     duplicate_window: DuplicateWindow
     exchange_format: Optional[Dict[str, ValidationFormat]] = None
     time_format: Optional[str] = None
+    master_calls_file: Optional[str] = None  # Path to MASTER.SCP for unique-call verification
 
 
 class CategoryDefinition(BaseModel):

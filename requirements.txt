@@ -38,3 +38,4 @@ mypy>=1.5.0
 
 
 Levenshtein~=0.27.3
+sv_ttk>=2.0.0
