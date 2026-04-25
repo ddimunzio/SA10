@@ -8,25 +8,6 @@ SA10M Contest Manager es una aplicación de escritorio construida con Python/Tki
 
 ![SA10M Contest Manager — ventana principal](../../assets/images/app-overview.png)
 
-```
-┌──────────────────────────────────────────────────────────────────┐
-│  SA10M Contest Manager          DB: sa10_contest.db  [Cambiar]   │
-├──────────────────────────────────────────────────────────────────┤
-│  Concursos │ Importar Logs │ Validación Cruzada │ Puntuar │ Tabla│
-├──────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   (contenido de la pestaña activa)                               │
-│                                                                  │
-├──────────────────────────────────────────────────────────────────┤
-│  Log de Salida                                  [Limpiar Log]    │
-│  ┌───────────────────────────────────────────────────────────┐   │
-│  │ [00:00:00] Listo...                                        │   │
-│  └───────────────────────────────────────────────────────────┘   │
-├──────────────────────────────────────────────────────────────────┤
-│  Listo                                       [barra de progreso] │
-└──────────────────────────────────────────────────────────────────┘
-```
-
 ### Barra de Encabezado
 - Muestra la ruta del **archivo de base de datos activo** a la derecha
 - El botón **Cambiar** abre un explorador de archivos para cambiar de base de datos
