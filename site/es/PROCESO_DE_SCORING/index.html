@@ -1,0 +1,4253 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation and user guide for the SA10M Ham Radio Contest scoring system">
+      
+      
+        <meta name="author" content="SA10M Team">
+      
+      
+        <link rel="canonical" href="https://ddimunzio.github.io/SA10/es/PROCESO_DE_SCORING/">
+      
+      
+        <link rel="prev" href="../SA10M_REFERENCIA_RAPIDA/">
+      
+      
+        <link rel="next" href="../MOTOR_REGLAS_REFERENCIA/">
+      
+      
+        
+          <link rel="alternate" href="/" hreflang="en">
+        
+          <link rel="alternate" href="/es/" hreflang="es">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Proceso de Scoring - Contest Manager</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#proceso-completo-de-scoring-sa10m-contest-manager" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Contest Manager" class="md-header__button md-logo" aria-label="Contest Manager" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Contest Manager
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Proceso de Scoring
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/es/" hreflang="es" class="md-select__link">
+              Español
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ddimunzio/SA10" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SA10
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../GETTING_STARTED/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../user-guide/" class="md-tabs__link">
+          
+  
+  
+  User Guide (UI)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../SA10M_QUICK_REFERENCE/" class="md-tabs__link">
+          
+  
+  
+  Contest Rules
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../IMPORT_LOGS_GUIDE/" class="md-tabs__link">
+          
+  
+  
+  Technical Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Español
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Contest Manager" class="md-nav__button md-logo" aria-label="Contest Manager" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Contest Manager
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ddimunzio/SA10" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    SA10
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GETTING_STARTED/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide (UI)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guide (UI)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/contests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contests Tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/import-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Import Logs Tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/cross-check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-Check Tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/scoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scoring Tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guide/leaderboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Leaderboard Tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contest Rules
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contest Rules
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SA10M_QUICK_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SA10M Quick Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PROCESO_DE_SCORING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scoring Process
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RULES_ENGINE_QUICK_REF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rules Engine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IMPORT_LOGS_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Log Import Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CONTEST_MANAGEMENT_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contest Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DATABASE_SCHEMA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DATABASE_QUICK_REF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Quick Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CABRILLO_PARSER_QUICK_REF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cabrillo Parser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DUPLICATE_HANDLING/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Duplicate Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DXCC_DATA_GUIDE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DXCC Data Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PYHAMTOOLS_INTEGRATION/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyHamtools Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PIPELINE_QUICK_REF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UBN_REPORT_FORMAT/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UBN Report Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Español
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Español
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PRIMEROS_PASOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Primeros Pasos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía de Usuario (Interfaz)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guía de Usuario (Interfaz)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Descripción General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/concursos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pestaña Concursos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/importar-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pestaña Importar Logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/validacion-cruzada/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pestaña Validación Cruzada
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/puntuacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pestaña Puntuar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/tabla-clasificacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pestaña Tabla de Clasificación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reglas del Concurso
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reglas del Concurso
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SA10M_REFERENCIA_RAPIDA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia Rápida SA10M
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proceso de Scoring
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proceso de Scoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tabla-de-contenidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla de Contenidos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-vision-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Visión General
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Visión General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulos-principales-involucrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Módulos principales involucrados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-diagrama-del-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Diagrama del Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-fase-1-configuracion-del-concurso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Fase 1 — Configuración del Concurso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-fase-2-importacion-de-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Fase 2 — Importación de Logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Fase 2 — Importación de Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-parsing-del-archivo-cabrillo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Parsing del archivo Cabrillo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-persistencia-en-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Persistencia en la base de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-campos-derivados-al-importar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Campos derivados al importar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-fase-3-validacion-intra-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Fase 3 — Validación Intra-Log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Fase 3 — Validación Intra-Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificaciones-aplicadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificaciones aplicadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detalle-de-cada-verificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detalle de cada verificación
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fase-4-cross-check-inter-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fase 4 — Cross-Check Inter-Log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Fase 4 — Cross-Check Inter-Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constantes-del-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constantes del algoritmo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tres-tipos-de-errores-detectados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tres tipos de errores detectados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tres tipos de errores detectados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-not-in-log-nil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 NOT IN LOG (NIL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-unique-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 UNIQUE CALL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-busted-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 BUSTED CALL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-del-cross-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado del cross-check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-fase-5-scoring-puntuacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Fase 5 — Scoring (Puntuación)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Fase 5 — Scoring (Puntuación)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-flujo-de-scoringservicescore_loglog_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Flujo de ScoringService.score_log(log_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-informacion-del-operador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Información del operador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-motor-de-reglas-rulesengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Motor de Reglas — RulesEngine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 Motor de Reglas — RulesEngine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-deteccion-de-duplicados-_is_duplicate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1 Detección de Duplicados — _is_duplicate()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-calculo-de-puntos-_calculate_points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2 Cálculo de Puntos — _calculate_points()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733-verificacion-de-multiplicadores-_check_multipliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.3 Verificación de Multiplicadores — _check_multipliers()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-calculo-del-puntaje-final-calculate_final_score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Cálculo del Puntaje Final — calculate_final_score()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-datos-almacenados-en-la-tabla-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Datos almacenados en la tabla scores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-fase-6-reportes-ubn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Fase 6 — Reportes UBN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Fase 6 — Reportes UBN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secciones-del-reporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secciones del reporte
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-reglas-del-sa10m-en-detalle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Reglas del SA10M en Detalle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Reglas del SA10M en Detalle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-parametros-del-concurso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Parámetros del concurso
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-tabla-de-puntuacion-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Tabla de puntuación completa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-multiplicadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Multiplicadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-formula-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Fórmula final
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-esquema-de-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Esquema de Base de Datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-referencia-de-estados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Referencia de Estados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Referencia de Estados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estados-del-log-conteststatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados del Log (ContestStatus)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estados-de-contacto-validationstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados de Contacto (ValidationStatus)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impacto-en-el-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impacto en el scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flujo-completo-de-comandos-linea-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flujo completo de comandos (línea de comandos)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MOTOR_REGLAS_REFERENCIA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Motor de Reglas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Referencia Técnica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Referencia Técnica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GUIA_GESTION_CONCURSO/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión de Concursos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GUIA_IMPORTACION_LOGS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importación de Logs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ESQUEMA_BASE_DATOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Esquema Base de Datos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BASE_DE_DATOS_REFERENCIA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de Datos - Referencia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MANEJO_DUPLICADOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manejo de Duplicados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../INTEGRACION_PYHAMTOOLS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integración PyHamtools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PIPELINE_REFERENCIA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FORMATO_REPORTE_UBN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reporte UBN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GUIA_DATOS_DXCC/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guía Datos DXCC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tabla-de-contenidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tabla de Contenidos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-vision-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Visión General
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Visión General">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modulos-principales-involucrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Módulos principales involucrados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-diagrama-del-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Diagrama del Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-fase-1-configuracion-del-concurso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Fase 1 — Configuración del Concurso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-fase-2-importacion-de-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Fase 2 — Importación de Logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Fase 2 — Importación de Logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-parsing-del-archivo-cabrillo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Parsing del archivo Cabrillo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-persistencia-en-la-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Persistencia en la base de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-campos-derivados-al-importar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Campos derivados al importar
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-fase-3-validacion-intra-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Fase 3 — Validación Intra-Log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Fase 3 — Validación Intra-Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verificaciones-aplicadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verificaciones aplicadas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#detalle-de-cada-verificacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detalle de cada verificación
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-fase-4-cross-check-inter-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Fase 4 — Cross-Check Inter-Log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Fase 4 — Cross-Check Inter-Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constantes-del-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constantes del algoritmo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tres-tipos-de-errores-detectados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tres tipos de errores detectados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tres tipos de errores detectados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-not-in-log-nil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 NOT IN LOG (NIL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-unique-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 UNIQUE CALL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-busted-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 BUSTED CALL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resultado-del-cross-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resultado del cross-check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-fase-5-scoring-puntuacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Fase 5 — Scoring (Puntuación)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Fase 5 — Scoring (Puntuación)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-flujo-de-scoringservicescore_loglog_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Flujo de ScoringService.score_log(log_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-informacion-del-operador" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Información del operador
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-motor-de-reglas-rulesengine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Motor de Reglas — RulesEngine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 Motor de Reglas — RulesEngine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-deteccion-de-duplicados-_is_duplicate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1 Detección de Duplicados — _is_duplicate()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-calculo-de-puntos-_calculate_points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2 Cálculo de Puntos — _calculate_points()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#733-verificacion-de-multiplicadores-_check_multipliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.3 Verificación de Multiplicadores — _check_multipliers()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-calculo-del-puntaje-final-calculate_final_score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Cálculo del Puntaje Final — calculate_final_score()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-datos-almacenados-en-la-tabla-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 Datos almacenados en la tabla scores
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-fase-6-reportes-ubn" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Fase 6 — Reportes UBN
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Fase 6 — Reportes UBN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secciones-del-reporte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secciones del reporte
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-reglas-del-sa10m-en-detalle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Reglas del SA10M en Detalle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Reglas del SA10M en Detalle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#91-parametros-del-concurso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.1 Parámetros del concurso
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#92-tabla-de-puntuacion-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.2 Tabla de puntuación completa
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#93-multiplicadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.3 Multiplicadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#94-formula-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9.4 Fórmula final
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-esquema-de-base-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Esquema de Base de Datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-referencia-de-estados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Referencia de Estados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Referencia de Estados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estados-del-log-conteststatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados del Log (ContestStatus)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estados-de-contacto-validationstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Estados de Contacto (ValidationStatus)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impacto-en-el-scoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Impacto en el scoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flujo-completo-de-comandos-linea-de-comandos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flujo completo de comandos (línea de comandos)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="proceso-completo-de-scoring-sa10m-contest-manager">Proceso Completo de Scoring — SA10M Contest Manager<a class="headerlink" href="#proceso-completo-de-scoring-sa10m-contest-manager" title="Permanent link">&para;</a></h1>
+<h2 id="tabla-de-contenidos">Tabla de Contenidos<a class="headerlink" href="#tabla-de-contenidos" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#1-visión-general">Visión General</a></li>
+<li><a href="#2-diagrama-del-pipeline">Diagrama del Pipeline</a></li>
+<li><a href="#3-fase-1--configuración-del-concurso">Fase 1 — Configuración del Concurso</a></li>
+<li><a href="#4-fase-2--importación-de-logs">Fase 2 — Importación de Logs</a></li>
+<li><a href="#5-fase-3--validación-intra-log">Fase 3 — Validación Intra-Log</a></li>
+<li><a href="#6-fase-4--cross-check-inter-log">Fase 4 — Cross-Check Inter-Log</a></li>
+<li><a href="#7-fase-5--scoring-puntuación">Fase 5 — Scoring (Puntuación)</a></li>
+<li><a href="#8-fase-6--reportes-ubn">Fase 6 — Reportes UBN</a></li>
+<li><a href="#9-reglas-del-sa10m-en-detalle">Reglas del SA10M en Detalle</a></li>
+<li><a href="#10-esquema-de-base-de-datos">Esquema de Base de Datos</a></li>
+<li><a href="#11-referencia-de-estados">Referencia de Estados</a></li>
+</ol>
+<hr />
+<h2 id="1-vision-general">1. Visión General<a class="headerlink" href="#1-vision-general" title="Permanent link">&para;</a></h2>
+<p>El sistema SA10M Contest Manager procesa logs de radioaficionados enviados en formato <strong>Cabrillo v3.0</strong> y produce un ranking final. El proceso se divide en <strong>6 fases secuenciales</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SETUP → IMPORTACIÓN → VALIDACIÓN → CROSS-CHECK → SCORING → REPORTE
+</code></pre></div>
+<p>Cada fase enriquece la base de datos SQLite con resultados parciales. El scoring final sólo se calcula <strong>después</strong> del cross-check, ya que los contactos inválidos (NIL, BUSTED, UNIQUE) afectan la puntuación.</p>
+<h3 id="modulos-principales-involucrados">Módulos principales involucrados<a class="headerlink" href="#modulos-principales-involucrados" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Archivo</th>
+<th>Rol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>manage_contest.py</code></td>
+<td>Raíz del proyecto</td>
+<td>Crea/gestiona registros de concurso</td>
+</tr>
+<tr>
+<td><code>import_logs.py</code> / <code>import_all.py</code></td>
+<td>Raíz</td>
+<td>CLI de importación</td>
+</tr>
+<tr>
+<td><code>CabrilloParser</code></td>
+<td><code>src/parsers/cabrillo.py</code></td>
+<td>Parsea archivos .cbr/.txt</td>
+</tr>
+<tr>
+<td><code>LogImportService</code></td>
+<td><code>src/services/log_import_service.py</code></td>
+<td>Persiste logs en DB</td>
+</tr>
+<tr>
+<td><code>ContactValidator</code></td>
+<td><code>src/core/validation/contact_validator.py</code></td>
+<td>Validación intra-log</td>
+</tr>
+<tr>
+<td><code>CrossCheckService</code></td>
+<td><code>src/services/cross_check_service.py</code></td>
+<td>Validación inter-log</td>
+</tr>
+<tr>
+<td><code>ScoringService</code></td>
+<td><code>src/services/scoring_service.py</code></td>
+<td>Orquestador de puntuación</td>
+</tr>
+<tr>
+<td><code>RulesEngine</code></td>
+<td><code>src/core/rules/rules_engine.py</code></td>
+<td>Motor de reglas</td>
+</tr>
+<tr>
+<td><code>CallsignLookupService</code></td>
+<td><code>src/services/callsign_lookup.py</code></td>
+<td>Búsqueda DXCC/continente/zona</td>
+</tr>
+<tr>
+<td><code>UBNReportGenerator</code></td>
+<td><code>src/services/ubn_report_generator.py</code></td>
+<td>Generación de reportes UBN</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-diagrama-del-pipeline">2. Diagrama del Pipeline<a class="headerlink" href="#2-diagrama-del-pipeline" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>%%{init: {&#39;theme&#39;: &#39;default&#39;, &#39;themeVariables&#39;: {&#39;fontSize&#39;: &#39;18px&#39;}}}%%
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>flowchart TD
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    subgraph ENTRADA[&quot;📥 ENTRADA&quot;]
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        F1[&quot;Archivos .cbr / .txt\n(formato Cabrillo v3.0)&quot;]
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        YAML[&quot;config/contests/sa10m.yaml\n(reglas del concurso)&quot;]
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        CTY[&quot;cty_wt.dat\n(datos DXCC/continente/zona)&quot;]
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    end
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    subgraph FASE1[&quot;⚙️ FASE 1 — SETUP&quot;]
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        MC[&quot;manage_contest.py\ncreate_contest()&quot;]
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        DB_CONT[(&quot;contests\ntable&quot;)]
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    end
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    subgraph FASE2[&quot;📂 FASE 2 — IMPORTACIÓN&quot;]
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        CP[&quot;CabrilloParser\nparse_file()&quot;]
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        LIS[&quot;LogImportService\nimport_cabrillo_file()&quot;]
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        DB_LOG[(&quot;logs\ntable&quot;)]
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>        DB_CON[(&quot;contacts\ntable&quot;)]
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    end
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    subgraph FASE3[&quot;✅ FASE 3 — VALIDACIÓN INTRA-LOG&quot;]
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        CV[&quot;ContactValidator\nvalidate_log()&quot;]
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        V1[&quot;Duplicados internos\n(mismo call+banda+modo)&quot;]
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        V2[&quot;Formato RST\n(59 / 599)&quot;]
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        V3[&quot;Zona CQ\n(1-40)&quot;]
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>        V4[&quot;Ventana de tiempo\n(dentro del concurso)&quot;]
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        V5[&quot;Banda válida\n(10m)&quot;]
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        V6[&quot;Modo válido\n(CW/SSB)&quot;]
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>    end
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>    subgraph FASE4[&quot;🔍 FASE 4 — CROSS-CHECK&quot;]
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>        CCS[&quot;CrossCheckService\ncheck_all_logs()&quot;]
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>        NIL[&quot;NOT IN LOG\nrecíproco ±5 min,\nmisma banda+modo&quot;]
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>        BUST[&quot;BUSTED CALL\nLevenshtein ≤ 2\nratio ≥ 0.65&quot;]
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        UNIQ[&quot;UNIQUE CALL\ncallsign no enviado\npor nadie&quot;]
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>    end
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>    subgraph FASE5[&quot;🏆 FASE 5 — SCORING&quot;]
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>        SS[&quot;ScoringService\nscore_log()&quot;]
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        CLS[&quot;CallsignLookupService\nlookup_callsign()&quot;]
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>        RE[&quot;RulesEngine\nprocess_contact()&quot;]
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>        PT[&quot;_calculate_points()\nprimer regla que matchea&quot;]
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>        DUP[&quot;_is_duplicate()\nwindow: band_mode&quot;]
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>        MUL[&quot;_check_multipliers()\nWPX prefix + zona CQ&quot;]
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>        FS[&quot;calculate_final_score()\nSUM_OF_MODE_SCORES&quot;]
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>        DB_SC[(&quot;scores\ntable&quot;)]
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>    end
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    subgraph FASE6[&quot;📄 FASE 6 — REPORTE UBN&quot;]
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>        UBN[&quot;UBNReportGenerator\ngenerate_text_report()&quot;]
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>        RPT[&quot;Archivo UBN\npor estación&quot;]
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>    end
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>    subgraph SALIDA[&quot;📊 SALIDA&quot;]
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>        RANK[&quot;Ranking Final\nCSV / UI / DB&quot;]
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>    end
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>    F1 --&gt; CP
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>    YAML --&gt; LIS
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>    CTY --&gt; CLS
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>    MC --&gt; DB_CONT
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>    DB_CONT --&gt; LIS
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>    CP --&gt; LIS
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>    LIS --&gt; DB_LOG
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>    LIS --&gt; DB_CON
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>    DB_CON --&gt; CV
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>    CV --&gt; V1 &amp; V2 &amp; V3 &amp; V4 &amp; V5 &amp; V6
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>    V1 &amp; V2 &amp; V3 &amp; V4 &amp; V5 &amp; V6 --&gt; DB_CON
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>    DB_CON --&gt; CCS
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>    CCS --&gt; NIL &amp; BUST &amp; UNIQ
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>    NIL &amp; BUST &amp; UNIQ --&gt; DB_CON
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>    DB_LOG &amp; DB_CON --&gt; SS
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>    CLS --&gt; RE
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>    SS --&gt; RE
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a>    RE --&gt; PT &amp; DUP &amp; MUL
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>    PT &amp; DUP &amp; MUL --&gt; FS
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>    FS --&gt; DB_SC
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>    FS --&gt; DB_CON
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>    DB_SC --&gt; UBN
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>    DB_CON --&gt; UBN
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>    UBN --&gt; RPT
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>    DB_SC --&gt; RANK
+<a id="__codelineno-1-89" name="__codelineno-1-89" href="#__codelineno-1-89"></a>
+<a id="__codelineno-1-90" name="__codelineno-1-90" href="#__codelineno-1-90"></a>    style ENTRADA fill:#e8f4f8,stroke:#2980b9
+<a id="__codelineno-1-91" name="__codelineno-1-91" href="#__codelineno-1-91"></a>    style FASE1 fill:#fef9e7,stroke:#f39c12
+<a id="__codelineno-1-92" name="__codelineno-1-92" href="#__codelineno-1-92"></a>    style FASE2 fill:#eafaf1,stroke:#27ae60
+<a id="__codelineno-1-93" name="__codelineno-1-93" href="#__codelineno-1-93"></a>    style FASE3 fill:#fdf2f8,stroke:#8e44ad
+<a id="__codelineno-1-94" name="__codelineno-1-94" href="#__codelineno-1-94"></a>    style FASE4 fill:#fef5e7,stroke:#e67e22
+<a id="__codelineno-1-95" name="__codelineno-1-95" href="#__codelineno-1-95"></a>    style FASE5 fill:#eaf2ff,stroke:#2471a3
+<a id="__codelineno-1-96" name="__codelineno-1-96" href="#__codelineno-1-96"></a>    style FASE6 fill:#f9ebea,stroke:#c0392b
+<a id="__codelineno-1-97" name="__codelineno-1-97" href="#__codelineno-1-97"></a>    style SALIDA fill:#f4f6f7,stroke:#7f8c8d
+</code></pre></div>
+<hr />
+<h2 id="3-fase-1-configuracion-del-concurso">3. Fase 1 — Configuración del Concurso<a class="headerlink" href="#3-fase-1-configuracion-del-concurso" title="Permanent link">&para;</a></h2>
+<p><strong>Archivo:</strong> <code>manage_contest.py</code></p>
+<p>El primer paso es registrar el concurso en la base de datos.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>manage_contest.py<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span>--name<span class="w"> </span><span class="s2">&quot;SA10M 2026&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span>--slug<span class="w"> </span><span class="s2">&quot;sa10m_2026&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span>--start<span class="w"> </span><span class="s2">&quot;2026-03-14 00:00:00&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span>--end<span class="w"> </span><span class="s2">&quot;2026-03-15 23:59:59&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span>--rules<span class="w"> </span><span class="s2">&quot;sa10m&quot;</span>
+</code></pre></div>
+<p>Esto inserta una fila en la tabla <code>contests</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">contests</span><span class="w"> </span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">slug</span><span class="p">,</span><span class="w"> </span><span class="n">start_date</span><span class="p">,</span><span class="w"> </span><span class="n">end_date</span><span class="p">,</span><span class="w"> </span><span class="n">rules_file</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;SA10M 2026&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;sa10m_2026&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2026-03-14&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;2026-03-15&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;sa10m&#39;</span><span class="p">);</span>
+</code></pre></div>
+<p>Las <strong>reglas</strong> (<code>rules_file</code>) apuntan a <code>config/contests/sa10m.yaml</code>, que contiene todas las definiciones de puntuación, multiplicadores, bandas y modos válidos.</p>
+<hr />
+<h2 id="4-fase-2-importacion-de-logs">4. Fase 2 — Importación de Logs<a class="headerlink" href="#4-fase-2-importacion-de-logs" title="Permanent link">&para;</a></h2>
+<p><strong>Archivo:</strong> <code>src/services/log_import_service.py</code>, <code>src/parsers/cabrillo.py</code></p>
+<h3 id="41-parsing-del-archivo-cabrillo">4.1 Parsing del archivo Cabrillo<a class="headerlink" href="#41-parsing-del-archivo-cabrillo" title="Permanent link">&para;</a></h3>
+<p><code>CabrilloParser.parse_file(file_path)</code> procesa el archivo línea por línea:</p>
+<ul>
+<li><strong>Cabeceras</strong> (<code>TAG: VALUE</code>): callsign, categoría, modo operativo, potencia, operadores, nombre, dirección, grid locator, email, claimed score.</li>
+<li><strong>QSOs</strong> (<code>QSO: freq modo fecha hora callsign_env RST_env exch_env callsign_rcb RST_rcb exch_rcb</code>): cada QSO se convierte en un objeto <code>CabrilloQSO</code>.</li>
+</ul>
+<p><strong>Detección de codificación:</strong> El parser intenta UTF-8 → latin-1 → cp1252 → reemplazo de caracteres desconocidos, para manejar archivos de distintos softwares de log.</p>
+<h3 id="42-persistencia-en-la-base-de-datos">4.2 Persistencia en la base de datos<a class="headerlink" href="#42-persistencia-en-la-base-de-datos" title="Permanent link">&para;</a></h3>
+<p><code>LogImportService.import_cabrillo_file()</code> realiza:</p>
+<ol>
+<li><strong>Verificar versionado</strong>: Si ya existe un log del mismo callsign en el mismo concurso, compara la fecha de modificación del archivo. Si la nueva versión es más reciente, <strong>elimina el log anterior</strong> y sus contactos.</li>
+<li><strong>Insertar Log</strong>: Crea un registro en la tabla <code>logs</code> con todos los campos de la cabecera Cabrillo. Estado inicial: <code>VALIDATED</code>.</li>
+<li><strong>Insertar Contactos</strong>: Inserta todos los QSOs en batch en la tabla <code>contacts</code>. Por cada contacto:</li>
+<li>Deriva la <strong>banda</strong> a partir de la frecuencia (ej. 28.000–29.999 kHz → <code>10m</code>).</li>
+<li>Si el QSO tiene un <code>validation_reason</code> del parser → <code>validation_status = invalid_exchange</code>.</li>
+</ol>
+<h3 id="43-campos-derivados-al-importar">4.3 Campos derivados al importar<a class="headerlink" href="#43-campos-derivados-al-importar" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo calculado</th>
+<th>Origen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>band</code></td>
+<td>Frecuencia → tabla de rangos de frecuencia</td>
+</tr>
+<tr>
+<td><code>qso_datetime</code></td>
+<td><code>qso_date</code> + <code>qso_time</code> combinados</td>
+</tr>
+<tr>
+<td><code>validation_status</code></td>
+<td><code>invalid_exchange</code> si el parser detectó error en el intercambio</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-fase-3-validacion-intra-log">5. Fase 3 — Validación Intra-Log<a class="headerlink" href="#5-fase-3-validacion-intra-log" title="Permanent link">&para;</a></h2>
+<p><strong>Archivo:</strong> <code>src/core/validation/contact_validator.py</code></p>
+<p><code>ContactValidator.validate_log(log_id, contest_start, contest_end)</code> ejecuta <strong>6 verificaciones</strong> en orden sobre cada QSO del log, marcando su <code>validation_status</code> en la base de datos.</p>
+<h3 id="verificaciones-aplicadas">Verificaciones aplicadas<a class="headerlink" href="#verificaciones-aplicadas" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>%%{init: {&#39;theme&#39;: &#39;default&#39;, &#39;themeVariables&#39;: {&#39;fontSize&#39;: &#39;18px&#39;}}}%%
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>flowchart LR
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    QSO[&quot;QSO cargado\nde la DB&quot;]
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    D{&quot;¿Duplicado\ninterno?&quot;}
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    E{&quot;¿RST+Zona\nválidos?&quot;}
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    C{&quot;¿Callsign\nválido?&quot;}
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    T{&quot;¿Dentro del\nperiodo?&quot;}
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    B{&quot;¿Banda\nválida?&quot;}
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    M{&quot;¿Modo\nválido?&quot;}
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    OK[&quot;✅ VALID&quot;]
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    KO_D[&quot;❌ DUPLICATE&quot;]
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    KO_E[&quot;❌ INVALID_EXCHANGE&quot;]
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    KO_C[&quot;❌ INVALID_CALLSIGN&quot;]
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    KO_T[&quot;❌ OUT_OF_PERIOD&quot;]
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>    KO_B[&quot;❌ INVALID_BAND&quot;]
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>    KO_M[&quot;❌ INVALID_MODE&quot;]
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>    QSO --&gt; D
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    D -- Sí --&gt; KO_D
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    D -- No --&gt; E
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>    E -- Error --&gt; KO_E
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    E -- OK --&gt; C
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    C -- Error --&gt; KO_C
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>    C -- OK --&gt; T
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>    T -- Error --&gt; KO_T
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>    T -- OK --&gt; B
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>    B -- Error --&gt; KO_B
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>    B -- OK --&gt; M
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    M -- Error --&gt; KO_M
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    M -- OK --&gt; OK
+</code></pre></div>
+<h3 id="detalle-de-cada-verificacion">Detalle de cada verificación<a class="headerlink" href="#detalle-de-cada-verificacion" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>N°</th>
+<th>Verificación</th>
+<th>Criterio de Fallo</th>
+<th>Estado Resultante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Duplicado</strong></td>
+<td><code>(call_received, banda, modo)</code> ya visto en el mismo log</td>
+<td><code>DUPLICATE</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Intercambio</strong></td>
+<td>RST no cumple regex <code>5[1-9]\|59</code> (SSB) o <code>5[1-9][1-9]\|599</code> (CW); zona CQ fuera de rango 1–40</td>
+<td><code>INVALID_EXCHANGE</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Callsign</strong></td>
+<td>No cumple regex estándar de indicativo</td>
+<td><code>INVALID_CALLSIGN</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Periodo</strong></td>
+<td><code>qso_datetime</code> antes de <code>contest_start</code> o después de <code>contest_end</code></td>
+<td><code>OUT_OF_PERIOD</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Banda</strong></td>
+<td><code>band</code> no está en la lista de bandas del concurso (<code>10m</code>)</td>
+<td><code>INVALID_BAND</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Modo</strong></td>
+<td><code>mode</code> no está en la lista de modos (<code>CW</code>, <code>SSB</code>)</td>
+<td><code>INVALID_MODE</code></td>
+</tr>
+</tbody>
+</table>
+<p>Al finalizar, se actualiza en bulk la tabla <code>contacts</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">contacts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">is_valid</span><span class="o">=?</span><span class="p">,</span><span class="w"> </span><span class="n">is_duplicate</span><span class="o">=?</span><span class="p">,</span><span class="w"> </span><span class="n">validation_status</span><span class="o">=?</span><span class="p">,</span><span class="w"> </span><span class="n">validation_notes</span><span class="o">=?</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="o">=?</span>
+</code></pre></div></p>
+<hr />
+<h2 id="6-fase-4-cross-check-inter-log">6. Fase 4 — Cross-Check Inter-Log<a class="headerlink" href="#6-fase-4-cross-check-inter-log" title="Permanent link">&para;</a></h2>
+<p><strong>Archivo:</strong> <code>src/services/cross_check_service.py</code></p>
+<p>El cross-check compara <strong>todos los logs entre sí</strong> para detectar discrepancias. Se ejecuta una sola vez, después de que todos los logs fueron importados.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>run_cross_check.py<span class="w"> </span>--contest-id<span class="w"> </span><span class="m">1</span>
+</code></pre></div>
+<h3 id="constantes-del-algoritmo">Constantes del algoritmo<a class="headerlink" href="#constantes-del-algoritmo" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Constante</th>
+<th>Valor</th>
+<th>Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TIME_TOLERANCE_DAYS</code></td>
+<td><code>0.003472</code></td>
+<td>±5 minutos de tolerancia horaria</td>
+</tr>
+<tr>
+<td><code>LEVENSHTEIN_THRESHOLD</code></td>
+<td><code>2</code></td>
+<td>Distancia máxima Levenshtein para BUSTED</td>
+</tr>
+<tr>
+<td><code>LEVENSHTEIN_MIN_RATIO</code></td>
+<td><code>0.65</code></td>
+<td>Ratio mínimo de similitud</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tres-tipos-de-errores-detectados">Tres tipos de errores detectados<a class="headerlink" href="#tres-tipos-de-errores-detectados" title="Permanent link">&para;</a></h3>
+<h4 id="61-not-in-log-nil">6.1 NOT IN LOG (NIL)<a class="headerlink" href="#61-not-in-log-nil" title="Permanent link">&para;</a></h4>
+<p>Para cada contacto en el log de la estación A, se verifica que exista un contacto recíproco en el log de la estación B:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>A trabajó B → ¿B tiene en su log un QSO con A?
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Condiciones:   misma banda + mismo modo + diferencia horaria ≤ 5 min
+</code></pre></div>
+<p>Si el recíproco no existe → el contacto de A se marca como <code>NOT_IN_LOG</code>.</p>
+<p><strong>Implementación:</strong> Se carga toda la tabla <code>contacts</code> en memoria y se construye un hash map:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">hash_map</span><span class="p">[(</span><span class="n">call_received</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="n">band</span><span class="p">,</span> <span class="n">mode</span><span class="p">)]</span> <span class="err">→</span> <span class="p">[</span><span class="n">lista</span> <span class="n">de</span> <span class="n">contactos</span><span class="p">]</span>
+</code></pre></div></p>
+<h4 id="62-unique-call">6.2 UNIQUE CALL<a class="headerlink" href="#62-unique-call" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Si call_received ∉ conjunto_de_todos_los_callsigns_enviados → UNIQUE
+</code></pre></div>
+<p>Un "Unique Call" es un indicativo que nadie en el concurso afirma haber trabajado desde su propio lado. Es altamente probable que sea un error de copia.</p>
+<h4 id="63-busted-call">6.3 BUSTED CALL<a class="headerlink" href="#63-busted-call" title="Permanent link">&para;</a></h4>
+<p>Para cada contacto cuyo <code>call_received</code> no está en el conjunto de callsigns enviados, se calcula la distancia Levenshtein con todos los callsigns enviados:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">distancia</span> <span class="o">=</span> <span class="n">levenshtein</span><span class="p">(</span><span class="n">call_logged</span><span class="p">,</span> <span class="n">call_real</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">ratio</span> <span class="o">=</span> <span class="n">similitud</span><span class="p">(</span><span class="n">call_logged</span><span class="p">,</span> <span class="n">call_real</span><span class="p">)</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">if</span> <span class="n">distancia</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">ratio</span> <span class="o">&gt;=</span> <span class="mf">0.65</span><span class="p">:</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="err">→</span> <span class="n">BUSTED</span> <span class="p">(</span><span class="n">posible</span> <span class="n">indicativo</span> <span class="n">correcto</span><span class="p">:</span> <span class="n">call_real</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="resultado-del-cross-check">Resultado del cross-check<a class="headerlink" href="#resultado-del-cross-check" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>CrossCheckService.check_all_logs() → Dict[log_id, List[UBNEntry]]
+</code></pre></div>
+<p>Cada <code>UBNEntry</code> contiene: <code>contact_id</code>, <code>log_id</code>, <code>log_callsign</code>, <code>worked_callsign</code>, <code>ubn_type</code> (NIL/BUSTED/UNIQUE), y campos de intercambio.</p>
+<p><code>update_database_with_results()</code> actualiza la tabla <code>contacts</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">contacts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">validation_status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;not_in_log&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">contacts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">validation_status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;busted_call&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="k">UPDATE</span><span class="w"> </span><span class="n">contacts</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">validation_status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;unique_call&#39;</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">?</span>
+</code></pre></div></p>
+<p>Luego, automáticamente se re-puntúan todos los logs afectados.</p>
+<hr />
+<h2 id="7-fase-5-scoring-puntuacion">7. Fase 5 — Scoring (Puntuación)<a class="headerlink" href="#7-fase-5-scoring-puntuacion" title="Permanent link">&para;</a></h2>
+<p><strong>Archivo:</strong> <code>src/services/scoring_service.py</code>, <code>src/core/rules/rules_engine.py</code></p>
+<p>Esta es la fase central. Se ejecuta por log, y se puede re-ejecutar en cualquier momento.</p>
+<h3 id="71-flujo-de-scoringservicescore_loglog_id">7.1 Flujo de <code>ScoringService.score_log(log_id)</code><a class="headerlink" href="#71-flujo-de-scoringservicescore_loglog_id" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>%%{init: {&#39;theme&#39;: &#39;default&#39;, &#39;themeVariables&#39;: {&#39;fontSize&#39;: &#39;18px&#39;}}}%%
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>sequenceDiagram
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    participant SS as ScoringService
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    participant DB as Base de Datos
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    participant CLS as CallsignLookupService
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    participant RE as RulesEngine
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>    SS-&gt;&gt;DB: Cargar Log + Contactos (raw SQL)
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    DB--&gt;&gt;SS: Log object + lista de contacts
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    alt Log es CHECKLOG
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>        SS-&gt;&gt;DB: Guardar score = 0 (sin penalización)
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>    else Log normal
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>        SS-&gt;&gt;CLS: lookup_callsign(log.callsign)
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>        CLS--&gt;&gt;SS: {continent, cq_zone, dxcc, country}
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>        SS-&gt;&gt;RE: RulesEngine(rules, operator_info, callsign_lookup)
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>        loop Por cada contacto (orden cronológico)
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>            SS-&gt;&gt;RE: process_contact(contact)
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>            RE-&gt;&gt;RE: _is_duplicate()
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>            RE-&gt;&gt;RE: _calculate_points()
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>            RE-&gt;&gt;RE: _check_multipliers()
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>            RE--&gt;&gt;SS: contact procesado (points, is_dup, is_mult)
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>        end
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a>        SS-&gt;&gt;RE: calculate_final_score(contacts)
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>        RE--&gt;&gt;SS: score_breakdown
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>        SS-&gt;&gt;DB: UPDATE contacts (points, is_duplicate, is_multiplier...)
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>        SS-&gt;&gt;DB: UPSERT scores table
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>        SS-&gt;&gt;DB: SET log.status = SCORED
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>    end
+</code></pre></div>
+<h3 id="72-informacion-del-operador">7.2 Información del operador<a class="headerlink" href="#72-informacion-del-operador" title="Permanent link">&para;</a></h3>
+<p><code>CallsignLookupService.lookup_callsign(callsign)</code> realiza una búsqueda progresiva en la tabla <code>CTYData</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Intenta matchear: 6 chars → 5 chars → 4 chars → 3 chars → 2 chars → 1 char
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>contra entity.prefixes en CTYData
+</code></pre></div>
+<p>Devuelve: <code>continent</code>, <code>cq_zone</code>, <code>country_name</code>, <code>dxcc_code</code>.</p>
+<h3 id="73-motor-de-reglas-rulesengine">7.3 Motor de Reglas — <code>RulesEngine</code><a class="headerlink" href="#73-motor-de-reglas-rulesengine" title="Permanent link">&para;</a></h3>
+<p>El motor mantiene <strong>estado acumulado</strong> durante el scoring de un log:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">worked_calls</span><span class="p">:</span>               <span class="n">Dict</span><span class="p">[</span><span class="n">callsign</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">Contact</span><span class="p">]]</span>   <span class="c1"># historial de contactos</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">worked_prefixes_per_band_mode</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[(</span><span class="n">band</span><span class="p">,</span><span class="n">mode</span><span class="p">),</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>  <span class="c1"># prefijos WPX trabajados</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">worked_zones_per_band_mode</span><span class="p">:</span>    <span class="n">Dict</span><span class="p">[(</span><span class="n">band</span><span class="p">,</span><span class="n">mode</span><span class="p">),</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span>  <span class="c1"># zonas CQ trabajadas</span>
+</code></pre></div>
+<h4 id="731-deteccion-de-duplicados-_is_duplicate">7.3.1 Detección de Duplicados — <code>_is_duplicate()</code><a class="headerlink" href="#731-deteccion-de-duplicados-_is_duplicate" title="Permanent link">&para;</a></h4>
+<p>Para el SA10M la ventana es <code>band_mode</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">if</span> <span class="n">callsign</span> <span class="ow">in</span> <span class="n">worked_calls</span><span class="p">:</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="k">for</span> <span class="n">prev</span> <span class="ow">in</span> <span class="n">worked_calls</span><span class="p">[</span><span class="n">callsign</span><span class="p">]:</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>        <span class="k">if</span> <span class="n">prev</span><span class="o">.</span><span class="n">band</span> <span class="o">==</span> <span class="n">contact</span><span class="o">.</span><span class="n">band</span> <span class="ow">and</span> <span class="n">prev</span><span class="o">.</span><span class="n">mode</span> <span class="o">==</span> <span class="n">contact</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>            <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># DUPLICADO</span>
+</code></pre></div>
+<h4 id="732-calculo-de-puntos-_calculate_points">7.3.2 Cálculo de Puntos — <code>_calculate_points()</code><a class="headerlink" href="#732-calculo-de-puntos-_calculate_points" title="Permanent link">&para;</a></h4>
+<p>Las reglas se evalúan <strong>en orden</strong>. La <strong>primera que se cumple</strong> asigna los puntos:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>%%{init: {&#39;theme&#39;: &#39;default&#39;, &#39;themeVariables&#39;: {&#39;fontSize&#39;: &#39;18px&#39;}}}%%
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>flowchart TD
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    R0{&quot;¿Mismo DXCC\nque el operador?&quot;}
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    R1{&quot;¿Es /M, /AM, /MM\nen zonas SA (9-13)?&quot;}
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    R2{&quot;¿Contacto en SA\n(continente)?&quot;}
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    R3{&quot;¿Operador en SA?&quot;}
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    R4{&quot;¿Contacto en SA?&quot;}
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    P0[&quot;0 puntos&quot;]
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    P2a[&quot;2 puntos\n(SA vs SA)&quot;]
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    P4a[&quot;4 puntos\n(SA vs DX)&quot;]
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>    P4b[&quot;4 puntos\n(Mobile SA vs DX)&quot;]
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    P2b[&quot;2 puntos\n(Mobile SA vs SA)&quot;]
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    P4c[&quot;4 puntos\n(DX vs SA)&quot;]
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>    P2c[&quot;2 puntos\n(DX vs DX)&quot;]
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>    R0 -- Sí --&gt; P0
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>    R0 -- No --&gt; R1
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>    R1 -- Sí (mobile) --&gt; R2
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>    R2 -- Sí --&gt; P2b
+<a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>    R2 -- No --&gt; P4b
+<a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>    R1 -- No --&gt; R3
+<a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>    R3 -- Sí (SA op) --&gt; R4
+<a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>    R4 -- Sí (SA contact) --&gt; P2a
+<a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>    R4 -- No (DX contact) --&gt; P4a
+<a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>    R3 -- No (DX op) --&gt; R4
+<a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>    R4 -- Sí (SA contact) --&gt; P4c
+<a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>    R4 -- No (DX contact) --&gt; P2c
+</code></pre></div>
+<p><strong>Evaluación de condiciones</strong> (<code>_evaluate_condition</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Tipo de condición</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>same_dxcc</code></td>
+<td>El callsign del operador y el del contacto son del mismo DXCC</td>
+</tr>
+<tr>
+<td><code>different_dxcc</code></td>
+<td>Diferente DXCC</td>
+</tr>
+<tr>
+<td><code>operator_continent</code></td>
+<td>El continente del operador es (o no es, con <code>!</code>) el especificado</td>
+</tr>
+<tr>
+<td><code>contact_continent</code></td>
+<td>El continente del contacto — usa <code>_cached_continent</code> si está disponible</td>
+</tr>
+<tr>
+<td><code>operator_zone</code></td>
+<td>La zona CQ del operador está en la lista (soporta negación <code>!9,10,11</code>)</td>
+</tr>
+<tr>
+<td><code>callsign_suffix</code></td>
+<td>El indicativo del operador termina en <code>/M</code>, <code>/AM</code>, <code>/MM</code></td>
+</tr>
+<tr>
+<td><code>contact_callsign_suffix</code></td>
+<td>El indicativo del contacto termina en <code>/M</code>, <code>/AM</code>, <code>/MM</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="733-verificacion-de-multiplicadores-_check_multipliers">7.3.3 Verificación de Multiplicadores — <code>_check_multipliers()</code><a class="headerlink" href="#733-verificacion-de-multiplicadores-_check_multipliers" title="Permanent link">&para;</a></h4>
+<p>Se verifican dos tipos de multiplicadores, ambos <code>per_band_mode</code>:</p>
+<p><strong>Prefijo WPX:</strong> Se extrae el prefijo WPX del callsign del contacto. Ejemplos:
+- <code>LU3DX</code> → <code>LU3</code>
+- <code>9A3YT</code> → <code>9A3</code> (casos especiales: indicativos que empiezan con dígito)
+- <code>CE1/DL5XX</code> → Se extrae del segmento más largo</p>
+<p>Si el prefijo <strong>no fue trabajado antes</strong> en esa banda+modo → es un multiplicador nuevo.</p>
+<p><strong>Zona CQ:</strong> Si la zona CQ del contacto <strong>no fue trabajada antes</strong> en esa banda+modo → es un multiplicador nuevo.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">new_prefix</span> <span class="o">=</span> <span class="n">prefix</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">worked_prefixes_per_band_mode</span><span class="p">[(</span><span class="n">band</span><span class="p">,</span> <span class="n">mode</span><span class="p">)]</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">new_zone</span>   <span class="o">=</span> <span class="n">zone</span>   <span class="ow">not</span> <span class="ow">in</span> <span class="n">worked_zones_per_band_mode</span><span class="p">[(</span><span class="n">band</span><span class="p">,</span> <span class="n">mode</span><span class="p">)]</span>
+</code></pre></div>
+<h3 id="74-calculo-del-puntaje-final-calculate_final_score">7.4 Cálculo del Puntaje Final — <code>calculate_final_score()</code><a class="headerlink" href="#74-calculo-del-puntaje-final-calculate_final_score" title="Permanent link">&para;</a></h3>
+<p>La fórmula es <code>SUM_OF_MODE_SCORES</code>:</p>
+<p>$$\text{Score Final} = \sum_{\text{modo} \in {CW, SSB}} \left( \text{puntos}<em modo="modo">{modo} \times (\text{mults_WPX}</em>) \right)$$} + \text{mults_zona}_{modo</p>
+<p><strong>Ejemplo:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Modo</th>
+<th>Puntos</th>
+<th>Mults WPX</th>
+<th>Mults Zona</th>
+<th>Sub-total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CW</td>
+<td>120</td>
+<td>15</td>
+<td>8</td>
+<td>120 × 23 = <strong>2.760</strong></td>
+</tr>
+<tr>
+<td>SSB</td>
+<td>80</td>
+<td>10</td>
+<td>6</td>
+<td>80 × 16 = <strong>1.280</strong></td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>4.040</strong></td>
+</tr>
+</tbody>
+</table>
+<p>El resultado se almacena en la tabla <code>scores</code> con el desglose completo por banda y modo.</p>
+<h3 id="75-datos-almacenados-en-la-tabla-scores">7.5 Datos almacenados en la tabla <code>scores</code><a class="headerlink" href="#75-datos-almacenados-en-la-tabla-scores" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>total_qsos</code></td>
+<td>Total de QSOs en el log</td>
+</tr>
+<tr>
+<td><code>valid_qsos</code></td>
+<td>QSOs que suman puntos</td>
+</tr>
+<tr>
+<td><code>duplicate_qsos</code></td>
+<td>QSOs duplicados (0 puntos, no penalizan)</td>
+</tr>
+<tr>
+<td><code>invalid_qsos</code></td>
+<td>QSOs inválidos (exchange, callsign, etc.)</td>
+</tr>
+<tr>
+<td><code>not_in_log_qsos</code></td>
+<td>QSOs con NIL del cross-check</td>
+</tr>
+<tr>
+<td><code>total_points</code></td>
+<td>Suma de puntos de QSOs válidos</td>
+</tr>
+<tr>
+<td><code>multipliers</code></td>
+<td>Total de multiplicadores</td>
+</tr>
+<tr>
+<td><code>final_score</code></td>
+<td>Puntaje final según fórmula</td>
+</tr>
+<tr>
+<td><code>points_by_band</code></td>
+<td>JSON: <code>{"10m": 200}</code></td>
+</tr>
+<tr>
+<td><code>qsos_by_band</code></td>
+<td>JSON: <code>{"10m": 85}</code></td>
+</tr>
+<tr>
+<td><code>multipliers_by_band</code></td>
+<td>JSON: <code>{"10m": {"CW": 23, "SSB": 16}}</code></td>
+</tr>
+<tr>
+<td><code>multipliers_list</code></td>
+<td>JSON: lista de todos los prefijos/zonas multiplicadores</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-fase-6-reportes-ubn">8. Fase 6 — Reportes UBN<a class="headerlink" href="#8-fase-6-reportes-ubn" title="Permanent link">&para;</a></h2>
+<p><strong>Archivo:</strong> <code>src/services/ubn_report_generator.py</code></p>
+<p>Para cada estación se genera un reporte UBN (Unique, Busted, Not-in-log) en texto plano, que es el formato estándar de los concursos internacionales.</p>
+<h3 id="secciones-del-reporte">Secciones del reporte<a class="headerlink" href="#secciones-del-reporte" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>REPORTE UBN — CE3ABC — SA10M 2025
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>===================================
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>[Encabezado con callsign, fecha, concurso]
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>ESTADÍSTICAS:
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>  QSOs enviados:        85
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>  QSOs válidos:         78
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>  NIL (No In Log):       4
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>  BUSTED:                3
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>  UNIQUE:                0
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>  Duplicados internos:   2
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>NIL — CONTACTOS NO ENCONTRADOS EN EL LOG DEL OTRO:
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>  ... tabla de QSOs donde el otro no tiene el recíproco
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>BUSTED CALLS — INDICATIVOS COPIADOS INCORRECTAMENTE:
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>  ... QSO logged | callsign real sugerido | similitud
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>UNIQUE CALLS:
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>  ... callsigns que nadie en el concurso reporta haber trabajado
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>MULTIPLICADORES PERDIDOS:
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>  ... prefijos/zonas que ya no cuentan como mult por los errores anteriores
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>
+<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>MULTIPLICADORES VÁLIDOS:
+<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>  ... lista de prefijos WPX y zonas CQ que suman
+<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>
+<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>ERRORES INVERSOS — OTRO COPIÓ MAL ESTE CALLSIGN:
+<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>  ... estaciones que bustearon el callsign de esta estación
+</code></pre></div>
+<p>El reporte se guarda en <code>ubn_reports/{callsign}_{contest}.txt</code>.</p>
+<hr />
+<h2 id="9-reglas-del-sa10m-en-detalle">9. Reglas del SA10M en Detalle<a class="headerlink" href="#9-reglas-del-sa10m-en-detalle" title="Permanent link">&para;</a></h2>
+<p><strong>Archivo:</strong> <code>config/contests/sa10m.yaml</code></p>
+<h3 id="91-parametros-del-concurso">9.1 Parámetros del concurso<a class="headerlink" href="#91-parametros-del-concurso" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Parámetro</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Banda</td>
+<td>10m (28 MHz)</td>
+</tr>
+<tr>
+<td>Modos</td>
+<td>CW, SSB</td>
+</tr>
+<tr>
+<td>Duración</td>
+<td>24 horas</td>
+</tr>
+<tr>
+<td>Intercambio</td>
+<td>RST + Zona CQ</td>
+</tr>
+<tr>
+<td>Ventana de duplicados</td>
+<td><code>band_mode</code> (misma banda Y modo)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="92-tabla-de-puntuacion-completa">9.2 Tabla de puntuación completa<a class="headerlink" href="#92-tabla-de-puntuacion-completa" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Operador</th>
+<th>Contacto</th>
+<th>Condición adicional</th>
+<th>Puntos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cualquiera</td>
+<td>mismo DXCC</td>
+<td>—</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>Mobile SA (<code>/M</code>, <code>/AM</code>, <code>/MM</code>) en zonas 9–13</td>
+<td>SA</td>
+<td>—</td>
+<td><strong>2</strong></td>
+</tr>
+<tr>
+<td>Mobile SA en zonas 9–13</td>
+<td>DX (no SA)</td>
+<td>—</td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>Mobile no-SA (fuera 9–13)</td>
+<td>SA</td>
+<td>—</td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>Mobile no-SA</td>
+<td>no-SA</td>
+<td>—</td>
+<td><strong>2</strong></td>
+</tr>
+<tr>
+<td>SA (no mobile)</td>
+<td>SA</td>
+<td>—</td>
+<td><strong>2</strong></td>
+</tr>
+<tr>
+<td>SA (no mobile)</td>
+<td>DX</td>
+<td>—</td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>DX (no-SA, no mobile)</td>
+<td>SA</td>
+<td>—</td>
+<td><strong>4</strong></td>
+</tr>
+<tr>
+<td>DX (no-SA, no mobile)</td>
+<td>DX</td>
+<td>—</td>
+<td><strong>2</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>SA</strong> = Sudamérica (continente <code>SA</code> según datos CTY). Zonas CQ 9–13.</p>
+</blockquote>
+<h3 id="93-multiplicadores">9.3 Multiplicadores<a class="headerlink" href="#93-multiplicadores" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Prefijo WPX</strong> por banda+modo: cada prefijo nuevo en ese modo vale 1 multiplicador</li>
+<li><strong>Zona CQ</strong> por banda+modo: cada zona CQ nueva en ese modo vale 1 multiplicador</li>
+</ul>
+<h3 id="94-formula-final">9.4 Fórmula final<a class="headerlink" href="#94-formula-final" title="Permanent link">&para;</a></h3>
+<p>$$\text{Score} = (P_{CW} \times M_{CW}) + (P_{SSB} \times M_{SSB})$$</p>
+<p>Donde:
+- $P_{modo}$ = puntos totales en ese modo
+- $M_{modo}$ = mults WPX en ese modo + mults Zona en ese modo</p>
+<hr />
+<h2 id="10-esquema-de-base-de-datos">10. Esquema de Base de Datos<a class="headerlink" href="#10-esquema-de-base-de-datos" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>%%{init: {&#39;theme&#39;: &#39;default&#39;, &#39;themeVariables&#39;: {&#39;fontSize&#39;: &#39;18px&#39;}}}%%
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>erDiagram
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    CONTESTS {
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>        int id PK
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>        string name
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>        string slug
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>        datetime start_date
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>        datetime end_date
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>        string rules_file
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>    }
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>    LOGS {
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>        int id PK
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>        int contest_id FK
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>        string callsign
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>        string category_operator
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>        string category_mode
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>        string category_power
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>        string category_band
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>        string operators
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>        string grid_locator
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>        string claimed_score
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>        string status
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>        string file_path
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>        datetime file_modified_at
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>    }
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>
+<a id="__codelineno-20-28" name="__codelineno-20-28" href="#__codelineno-20-28"></a>    CONTACTS {
+<a id="__codelineno-20-29" name="__codelineno-20-29" href="#__codelineno-20-29"></a>        int id PK
+<a id="__codelineno-20-30" name="__codelineno-20-30" href="#__codelineno-20-30"></a>        int log_id FK
+<a id="__codelineno-20-31" name="__codelineno-20-31" href="#__codelineno-20-31"></a>        float frequency
+<a id="__codelineno-20-32" name="__codelineno-20-32" href="#__codelineno-20-32"></a>        string mode
+<a id="__codelineno-20-33" name="__codelineno-20-33" href="#__codelineno-20-33"></a>        date qso_date
+<a id="__codelineno-20-34" name="__codelineno-20-34" href="#__codelineno-20-34"></a>        time qso_time
+<a id="__codelineno-20-35" name="__codelineno-20-35" href="#__codelineno-20-35"></a>        datetime qso_datetime
+<a id="__codelineno-20-36" name="__codelineno-20-36" href="#__codelineno-20-36"></a>        string call_sent
+<a id="__codelineno-20-37" name="__codelineno-20-37" href="#__codelineno-20-37"></a>        string rst_sent
+<a id="__codelineno-20-38" name="__codelineno-20-38" href="#__codelineno-20-38"></a>        string exchange_sent
+<a id="__codelineno-20-39" name="__codelineno-20-39" href="#__codelineno-20-39"></a>        string call_received
+<a id="__codelineno-20-40" name="__codelineno-20-40" href="#__codelineno-20-40"></a>        string rst_received
+<a id="__codelineno-20-41" name="__codelineno-20-41" href="#__codelineno-20-41"></a>        string exchange_received
+<a id="__codelineno-20-42" name="__codelineno-20-42" href="#__codelineno-20-42"></a>        string band
+<a id="__codelineno-20-43" name="__codelineno-20-43" href="#__codelineno-20-43"></a>        int points
+<a id="__codelineno-20-44" name="__codelineno-20-44" href="#__codelineno-20-44"></a>        bool is_multiplier
+<a id="__codelineno-20-45" name="__codelineno-20-45" href="#__codelineno-20-45"></a>        string multiplier_type
+<a id="__codelineno-20-46" name="__codelineno-20-46" href="#__codelineno-20-46"></a>        string multiplier_value
+<a id="__codelineno-20-47" name="__codelineno-20-47" href="#__codelineno-20-47"></a>        bool is_valid
+<a id="__codelineno-20-48" name="__codelineno-20-48" href="#__codelineno-20-48"></a>        bool is_duplicate
+<a id="__codelineno-20-49" name="__codelineno-20-49" href="#__codelineno-20-49"></a>        string validation_status
+<a id="__codelineno-20-50" name="__codelineno-20-50" href="#__codelineno-20-50"></a>        string contact_continent
+<a id="__codelineno-20-51" name="__codelineno-20-51" href="#__codelineno-20-51"></a>        string contact_country
+<a id="__codelineno-20-52" name="__codelineno-20-52" href="#__codelineno-20-52"></a>        string wpx_prefix
+<a id="__codelineno-20-53" name="__codelineno-20-53" href="#__codelineno-20-53"></a>    }
+<a id="__codelineno-20-54" name="__codelineno-20-54" href="#__codelineno-20-54"></a>
+<a id="__codelineno-20-55" name="__codelineno-20-55" href="#__codelineno-20-55"></a>    SCORES {
+<a id="__codelineno-20-56" name="__codelineno-20-56" href="#__codelineno-20-56"></a>        int log_id PK_FK
+<a id="__codelineno-20-57" name="__codelineno-20-57" href="#__codelineno-20-57"></a>        int total_qsos
+<a id="__codelineno-20-58" name="__codelineno-20-58" href="#__codelineno-20-58"></a>        int valid_qsos
+<a id="__codelineno-20-59" name="__codelineno-20-59" href="#__codelineno-20-59"></a>        int duplicate_qsos
+<a id="__codelineno-20-60" name="__codelineno-20-60" href="#__codelineno-20-60"></a>        int invalid_qsos
+<a id="__codelineno-20-61" name="__codelineno-20-61" href="#__codelineno-20-61"></a>        int not_in_log_qsos
+<a id="__codelineno-20-62" name="__codelineno-20-62" href="#__codelineno-20-62"></a>        int total_points
+<a id="__codelineno-20-63" name="__codelineno-20-63" href="#__codelineno-20-63"></a>        int multipliers
+<a id="__codelineno-20-64" name="__codelineno-20-64" href="#__codelineno-20-64"></a>        int final_score
+<a id="__codelineno-20-65" name="__codelineno-20-65" href="#__codelineno-20-65"></a>        json points_by_band
+<a id="__codelineno-20-66" name="__codelineno-20-66" href="#__codelineno-20-66"></a>        json qsos_by_band
+<a id="__codelineno-20-67" name="__codelineno-20-67" href="#__codelineno-20-67"></a>        json multipliers_by_band
+<a id="__codelineno-20-68" name="__codelineno-20-68" href="#__codelineno-20-68"></a>        json multipliers_list
+<a id="__codelineno-20-69" name="__codelineno-20-69" href="#__codelineno-20-69"></a>        datetime calculated_at
+<a id="__codelineno-20-70" name="__codelineno-20-70" href="#__codelineno-20-70"></a>    }
+<a id="__codelineno-20-71" name="__codelineno-20-71" href="#__codelineno-20-71"></a>
+<a id="__codelineno-20-72" name="__codelineno-20-72" href="#__codelineno-20-72"></a>    CTYDATA {
+<a id="__codelineno-20-73" name="__codelineno-20-73" href="#__codelineno-20-73"></a>        int id PK
+<a id="__codelineno-20-74" name="__codelineno-20-74" href="#__codelineno-20-74"></a>        string country_name
+<a id="__codelineno-20-75" name="__codelineno-20-75" href="#__codelineno-20-75"></a>        int cq_zone
+<a id="__codelineno-20-76" name="__codelineno-20-76" href="#__codelineno-20-76"></a>        int itu_zone
+<a id="__codelineno-20-77" name="__codelineno-20-77" href="#__codelineno-20-77"></a>        string continent
+<a id="__codelineno-20-78" name="__codelineno-20-78" href="#__codelineno-20-78"></a>        string dxcc_code
+<a id="__codelineno-20-79" name="__codelineno-20-79" href="#__codelineno-20-79"></a>        string primary_prefix
+<a id="__codelineno-20-80" name="__codelineno-20-80" href="#__codelineno-20-80"></a>        json prefixes
+<a id="__codelineno-20-81" name="__codelineno-20-81" href="#__codelineno-20-81"></a>    }
+<a id="__codelineno-20-82" name="__codelineno-20-82" href="#__codelineno-20-82"></a>
+<a id="__codelineno-20-83" name="__codelineno-20-83" href="#__codelineno-20-83"></a>    CONTESTS ||--o{ LOGS : &quot;tiene&quot;
+<a id="__codelineno-20-84" name="__codelineno-20-84" href="#__codelineno-20-84"></a>    LOGS ||--o{ CONTACTS : &quot;contiene&quot;
+<a id="__codelineno-20-85" name="__codelineno-20-85" href="#__codelineno-20-85"></a>    LOGS ||--o| SCORES : &quot;tiene&quot;
+</code></pre></div>
+<hr />
+<h2 id="11-referencia-de-estados">11. Referencia de Estados<a class="headerlink" href="#11-referencia-de-estados" title="Permanent link">&para;</a></h2>
+<h3 id="estados-del-log-conteststatus">Estados del Log (<code>ContestStatus</code>)<a class="headerlink" href="#estados-del-log-conteststatus" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>PENDING → VALIDATED → SCORED → PUBLISHED
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>               ↘                    ↗
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>                    ERROR
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>Cuándo se asigna</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PENDING</code></td>
+<td>En el futuro / no procesado</td>
+</tr>
+<tr>
+<td><code>VALIDATED</code></td>
+<td>Al importar correctamente el archivo</td>
+</tr>
+<tr>
+<td><code>SCORED</code></td>
+<td>Al completar el cálculo de puntuación</td>
+</tr>
+<tr>
+<td><code>PUBLISHED</code></td>
+<td>Al publicar resultados oficiales</td>
+</tr>
+<tr>
+<td><code>ERROR</code></td>
+<td>Si ocurre un error irrecuperable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="estados-de-contacto-validationstatus">Estados de Contacto (<code>ValidationStatus</code>)<a class="headerlink" href="#estados-de-contacto-validationstatus" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>Fase</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VALID</code></td>
+<td>Importación / Validación</td>
+<td>QSO correcto</td>
+</tr>
+<tr>
+<td><code>DUPLICATE</code></td>
+<td>Validación intra-log</td>
+<td>Mismo call+banda+modo ya en el log</td>
+</tr>
+<tr>
+<td><code>INVALID_EXCHANGE</code></td>
+<td>Importación / Validación</td>
+<td>RST o zona con formato incorrecto</td>
+</tr>
+<tr>
+<td><code>INVALID_CALLSIGN</code></td>
+<td>Validación</td>
+<td>Indicativo no cumple formato</td>
+</tr>
+<tr>
+<td><code>OUT_OF_PERIOD</code></td>
+<td>Validación</td>
+<td>QSO fuera del periodo del concurso</td>
+</tr>
+<tr>
+<td><code>INVALID_BAND</code></td>
+<td>Validación</td>
+<td>Banda no permitida</td>
+</tr>
+<tr>
+<td><code>INVALID_MODE</code></td>
+<td>Validación</td>
+<td>Modo no permitido</td>
+</tr>
+<tr>
+<td><code>NOT_IN_LOG</code></td>
+<td>Cross-check</td>
+<td>El otro no tiene el QSO recíproco</td>
+</tr>
+<tr>
+<td><code>TIME_MISMATCH</code></td>
+<td>Cross-check</td>
+<td>Diferencia horaria &gt; 5 min</td>
+</tr>
+<tr>
+<td><code>EXCHANGE_MISMATCH</code></td>
+<td>Cross-check</td>
+<td>Intercambio registrado en cada lado no coincide</td>
+</tr>
+</tbody>
+</table>
+<h3 id="impacto-en-el-scoring">Impacto en el scoring<a class="headerlink" href="#impacto-en-el-scoring" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Estado</th>
+<th>¿Suma puntos?</th>
+<th>¿Suma multiplicadores?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VALID</code></td>
+<td>✅ Sí</td>
+<td>✅ Sí</td>
+</tr>
+<tr>
+<td><code>DUPLICATE</code></td>
+<td>❌ 0 (no penaliza)</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>INVALID_EXCHANGE</code></td>
+<td>❌ No</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>INVALID_CALLSIGN</code></td>
+<td>❌ No</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>OUT_OF_PERIOD</code></td>
+<td>❌ No</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>NOT_IN_LOG</code></td>
+<td>❌ No</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>TIME_MISMATCH</code></td>
+<td>❌ No</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td><code>EXCHANGE_MISMATCH</code></td>
+<td>❌ No</td>
+<td>❌ No</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="flujo-completo-de-comandos-linea-de-comandos">Flujo completo de comandos (línea de comandos)<a class="headerlink" href="#flujo-completo-de-comandos-linea-de-comandos" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># 1. Activar entorno virtual</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>.venv<span class="se">\S</span>cripts<span class="se">\A</span>ctivate.ps1
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># 2. Crear el concurso</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>python<span class="w"> </span>manage_contest.py<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="s2">&quot;SA10M 2026&quot;</span><span class="w"> </span>--slug<span class="w"> </span><span class="s2">&quot;sa10m_2026&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">    </span>--start<span class="w"> </span><span class="s2">&quot;2026-03-14 00:00&quot;</span><span class="w"> </span>--end<span class="w"> </span><span class="s2">&quot;2026-03-15 23:59&quot;</span><span class="w"> </span>--rules<span class="w"> </span><span class="s2">&quot;sa10m&quot;</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="c1"># 3. Importar todos los logs</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>python<span class="w"> </span>import_logs.py<span class="w"> </span>--contest-id<span class="w"> </span><span class="m">1</span><span class="w"> </span>--directory<span class="w"> </span>logs_sa10m_2026/
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="c1"># 4. Ejecutar cross-check (y re-score automático)</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>python<span class="w"> </span>run_cross_check.py<span class="w"> </span>--contest-id<span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a><span class="c1"># 5. Ver resultados</span>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>python<span class="w"> </span>analyze_score.py<span class="w"> </span>--callsign<span class="w"> </span>CE3ABC
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="c1"># 6. Re-puntuar todos los logs si se modificaron las reglas</span>
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>python<span class="w"> </span>rescore_all_logs.py
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="c1"># Alternativa: todo en un solo comando</span>
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>python<span class="w"> </span>import_all.py
+</code></pre></div>
+<p>O usando la interfaz gráfica:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>python<span class="w"> </span>app_ui.py
+</code></pre></div></p>
+<hr />
+<p><em>Documento generado: 2026-03-25 | SA10M Contest Manager</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/your-github-username/SA10" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

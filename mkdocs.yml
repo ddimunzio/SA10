@@ -1,0 +1,119 @@
+site_name: Contest Manager
+site_description: Documentation and user guide for the SA10M Ham Radio Contest scoring system
+site_author: SA10M Team
+site_url: https://ddimunzio.github.io/SA10
+
+repo_name: SA10
+repo_url: https://github.com/ddimunzio/SA10
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.code.annotate
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - en
+        - es
+
+extra:
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: Español
+      link: /es/
+      lang: es
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-github-username/SA10
+
+nav:
+  - Home: index.md
+  - Getting Started: GETTING_STARTED.md
+  - User Guide (UI):
+    - Overview: user-guide/index.md
+    - Contests Tab: user-guide/contests.md
+    - Import Logs Tab: user-guide/import-logs.md
+    - Cross-Check Tab: user-guide/cross-check.md
+    - Scoring Tab: user-guide/scoring.md
+    - Leaderboard Tab: user-guide/leaderboard.md
+  - Contest Rules:
+    - SA10M Quick Reference: SA10M_QUICK_REFERENCE.md
+    - Scoring Process: PROCESO_DE_SCORING.md
+    - Rules Engine: RULES_ENGINE_QUICK_REF.md
+  - Technical Reference:
+    - Log Import Guide: IMPORT_LOGS_GUIDE.md
+    - Contest Management: CONTEST_MANAGEMENT_GUIDE.md
+    - Database Schema: DATABASE_SCHEMA.md
+    - Database Quick Reference: DATABASE_QUICK_REF.md
+    - Cabrillo Parser: CABRILLO_PARSER_QUICK_REF.md
+    - Duplicate Handling: DUPLICATE_HANDLING.md
+    - DXCC Data Guide: DXCC_DATA_GUIDE.md
+    - PyHamtools Integration: PYHAMTOOLS_INTEGRATION.md
+    - Pipeline Reference: PIPELINE_QUICK_REF.md
+    - UBN Report Format: UBN_REPORT_FORMAT.md
+  - Español:
+    - Inicio: es/index.md
+    - Primeros Pasos: es/PRIMEROS_PASOS.md
+    - Guía de Usuario (Interfaz):
+      - Descripción General: es/user-guide/index.md
+      - Pestaña Concursos: es/user-guide/concursos.md
+      - Pestaña Importar Logs: es/user-guide/importar-logs.md
+      - Pestaña Validación Cruzada: es/user-guide/validacion-cruzada.md
+      - Pestaña Puntuar: es/user-guide/puntuacion.md
+      - Pestaña Tabla de Clasificación: es/user-guide/tabla-clasificacion.md
+    - Reglas del Concurso:
+      - Referencia Rápida SA10M: es/SA10M_REFERENCIA_RAPIDA.md
+      - Proceso de Scoring: es/PROCESO_DE_SCORING.md
+      - Motor de Reglas: es/MOTOR_REGLAS_REFERENCIA.md
+    - Referencia Técnica:
+      - Gestión de Concursos: es/GUIA_GESTION_CONCURSO.md
+      - Importación de Logs: es/GUIA_IMPORTACION_LOGS.md
+      - Esquema Base de Datos: es/ESQUEMA_BASE_DATOS.md
+      - Base de Datos - Referencia: es/BASE_DE_DATOS_REFERENCIA.md
+      - Manejo de Duplicados: es/MANEJO_DUPLICADOS.md
+      - Integración PyHamtools: es/INTEGRACION_PYHAMTOOLS.md
+      - Pipeline: es/PIPELINE_REFERENCIA.md
+      - Reporte UBN: es/FORMATO_REPORTE_UBN.md
+      - Guía Datos DXCC: es/GUIA_DATOS_DXCC.md
