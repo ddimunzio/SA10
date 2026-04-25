@@ -1,5 +1,7 @@
 # Pestaña Concursos
 
+![Pestaña Concursos](../../assets/images/tab-contests.png)
+
 La pestaña **Concursos** es donde se crean y gestionan los registros de concurso. Cada importación y cálculo de puntaje está vinculado a un concurso específico, por lo que este es siempre el primer paso.
 
 ---

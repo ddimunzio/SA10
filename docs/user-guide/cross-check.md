@@ -1,5 +1,7 @@
 # Cross-Check Tab
 
+![Cross-Check tab](../assets/images/tab-crosscheck.png)
+
 The **Cross-Check** tab validates every contact in each submitted log against all other logs in the contest. It identifies three types of problems and writes UBN (Unique / Busted / Not-in-log) reports.
 
 ---

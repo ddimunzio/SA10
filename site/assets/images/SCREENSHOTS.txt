@@ -1,0 +1,13 @@
+Place the following screenshot files in this folder:
+
+| File | Screenshot to take |
+|------|--------------------|
+| `app-overview.png` | Full application window (any tab open) |
+| `tab-contests.png` | Contests tab |
+| `tab-import.png` | Import Logs tab |
+| `tab-crosscheck.png` | Cross-Check tab |
+| `tab-scoring.png` | Scoring tab |
+| `tab-leaderboard.png` | Leaderboard tab with results loaded |
+
+Recommended size: 1200×800 px or similar widescreen capture.
+PNG format preferred.

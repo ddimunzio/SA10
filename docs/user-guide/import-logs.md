@@ -1,5 +1,7 @@
 # Import Logs Tab
 
+![Import Logs tab](../assets/images/tab-import.png)
+
 The **Import Logs** tab loads Cabrillo contest log files (`.cbr`, `.txt`) into the database for the active contest.
 
 ---

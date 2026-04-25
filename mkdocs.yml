@@ -1,6 +1,7 @@
-site_name: Contest Manager
+site_name: SA10M Contest Manager
 site_description: Documentation and user guide for the SA10M Ham Radio Contest scoring system
-site_author: SA10M Team
+site_author: LW5HR - Diego
+copyright: Copyright &copy; 2026 LW5HR - Diego
 site_url: https://ddimunzio.github.io/SA10
 
 repo_name: SA10
@@ -59,14 +60,14 @@ plugins:
 extra:
   alternate:
     - name: English
-      link: /
+      link: /SA10/
       lang: en
     - name: Español
-      link: /es/
+      link: /SA10/es/
       lang: es
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/your-github-username/SA10
+      link: https://github.com/ddimunzio/SA10
 
 nav:
   - Home: index.md

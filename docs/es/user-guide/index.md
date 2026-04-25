@@ -6,6 +6,8 @@ SA10M Contest Manager es una aplicación de escritorio construida con Python/Tki
 
 ## Estructura de la Aplicación
 
+![SA10M Contest Manager — ventana principal](../../assets/images/app-overview.png)
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │  SA10M Contest Manager          DB: sa10_contest.db  [Cambiar]   │

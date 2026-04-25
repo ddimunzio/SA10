@@ -1,5 +1,7 @@
 # Pestaña Importar Logs
 
+![Pestaña Importar Logs](../../assets/images/tab-import.png)
+
 La pestaña **Importar Logs** carga archivos de log Cabrillo (`.cbr`, `.txt`) en la base de datos para el concurso activo.
 
 ---

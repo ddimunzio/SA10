@@ -1,5 +1,7 @@
 # Contests Tab
 
+![Contests tab](../assets/images/tab-contests.png)
+
 The **Contests** tab is where you create and manage contest records. Every import and scoring run is tied to a specific contest, so this is always the first step.
 
 ---

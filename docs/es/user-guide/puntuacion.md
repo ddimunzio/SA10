@@ -1,5 +1,7 @@
 # Pestaña Puntuar
 
+![Pestaña Puntuar](../../assets/images/tab-scoring.png)
+
 La pestaña **Puntuar** calcula los puntos QSO y multiplicadores para cada log del concurso activo y almacena los resultados en la base de datos.
 
 ---
