@@ -1,5 +1,7 @@
 # Pestaña Tabla de Clasificación
 
+![Pestaña Tabla de Clasificación](../../assets/images/tab-leaderboard.png)
+
 La pestaña **Tabla de Clasificación** muestra los resultados finales clasificados del concurso activo, con opciones de filtrado, ordenamiento y exportación.
 
 ---

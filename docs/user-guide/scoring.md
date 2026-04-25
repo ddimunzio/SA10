@@ -1,5 +1,7 @@
 # Scoring Tab
 
+![Scoring tab](../assets/images/tab-scoring.png)
+
 The **Scoring** tab calculates QSO points and multipliers for every log in the active contest and stores the results in the database.
 
 ---

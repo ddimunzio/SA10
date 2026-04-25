@@ -1,5 +1,7 @@
 # Leaderboard Tab
 
+![Leaderboard tab](../assets/images/tab-leaderboard.png)
+
 The **Leaderboard** tab displays the final ranked results for the active contest with filtering, sorting, and export options.
 
 ---

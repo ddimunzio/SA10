@@ -1,5 +1,7 @@
 # Pestaña Validación Cruzada
 
+![Pestaña Validación Cruzada](../../assets/images/tab-crosscheck.png)
+
 La pestaña **Validación Cruzada** valida cada contacto en cada log enviado contra todos los demás logs del concurso. Identifica tres tipos de problemas y escribe reportes UBN (Único / Errado / No-en-log).
 
 ---

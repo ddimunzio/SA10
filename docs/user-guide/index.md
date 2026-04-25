@@ -6,6 +6,8 @@ The SA10M Contest Manager is a desktop application built with Python/Tkinter. It
 
 ## Application Layout
 
+![SA10M Contest Manager — main window](../assets/images/app-overview.png)
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  SA10M Contest Manager          DB: sa10_contest.db [Change] │
