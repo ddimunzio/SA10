@@ -1,4 +1,4 @@
-site_name: "🇦🇷 Ham Radio Contest Manager"
+site_name: Ham Radio Contest Manager
 site_description: A configurable ham radio contest scoring system. Ships with SA10M rules; adaptable to any contest via YAML configuration.
 site_author: LW5HR - Diego
 copyright: >-
@@ -37,8 +37,6 @@ theme:
   icon:
     repo: fontawesome/brands/github
 
-extra_css:
-  - assets/stylesheets/argentina.css
 
 markdown_extensions:
   - admonition
