@@ -1410,17 +1410,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2693,17 +2682,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2981,14 +2959,14 @@
 <td>All contacts imported without filtering</td>
 </tr>
 <tr>
-<td>4.1 Validation</td>
-<td>⏳ Pending</td>
-<td>Duplicate detection to be implemented</td>
+<td>4.1 Scoring</td>
+<td>✅ Complete</td>
+<td>Duplicates detected and excluded by the scoring engine</td>
 </tr>
 <tr>
-<td>4.2 Scoring</td>
-<td>⏳ Pending</td>
-<td>Exclude duplicates from scoring</td>
+<td>4.2 Leaderboard</td>
+<td>✅ Complete</td>
+<td>Duplicate count displayed in the Dupes column</td>
 </tr>
 </tbody>
 </table>
@@ -3002,17 +2980,10 @@
 <p>Confirms no filtering during import</p>
 </li>
 <li>
-<p><strong><code>tests/test_contact_validation.py</code></strong> ⏳ (To be created)</p>
+<p><strong><code>tests/test_scoring_with_duplicates.py</code></strong> ✅</p>
 </li>
-<li>Will test duplicate detection</li>
-<li>
-<p>Will test marking duplicates in database</p>
-</li>
-<li>
-<p><strong><code>tests/test_scoring_with_duplicates.py</code></strong> ⏳ (To be created)</p>
-</li>
-<li>Will verify duplicates score 0 points</li>
-<li>Will test final score calculation</li>
+<li>Verifies duplicates score 0 points</li>
+<li>Tests final score calculation</li>
 </ol>
 <h3 id="manual-testing">Manual Testing<a class="headerlink" href="#manual-testing" title="Permanent link">&para;</a></h3>
 <p>Import a real log with duplicates:
@@ -3035,24 +3006,9 @@
 <a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Marked as duplicate: </span><span class="si">{</span><span class="n">dups</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Should be 0</span>
 </code></pre></div></p>
 <hr />
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
-<p>To implement Phase 4.1 (Contact Validation):</p>
-<ol>
-<li>Create <code>src/core/validation/contact_validator.py</code></li>
-<li>Implement duplicate detection logic</li>
-<li>Add exchange format validation</li>
-<li>Add callsign format validation  </li>
-<li>Add time/band/mode validation</li>
-<li>Create comprehensive tests</li>
-<li>Update documentation</li>
-</ol>
-<p><strong>Recommended</strong>: Implement Phase 4.1 next to complete the validation workflow.</p>
-<hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Implementation Plan</strong>: <code>IMPLEMENTATION_PLAN.md</code></li>
 <li><strong>Database Schema</strong>: <code>docs/DATABASE_SCHEMA.md</code></li>
-<li><strong>Phase 5.1 Completion</strong>: <code>docs/PHASE_5_1_COMPLETION.md</code></li>
 <li><strong>Rules Engine</strong>: <code>docs/RULES_ENGINE_QUICK_REF.md</code></li>
 <li><strong>SA10M Rules</strong>: <code>config/contests/sa10m.yaml</code></li>
 </ul>
