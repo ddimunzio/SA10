@@ -1,0 +1,36 @@
+/* Argentine flag accent strip on the header */
+.md-header {
+  background: linear-gradient(
+    to bottom,
+    #74acdf 0%,
+    #74acdf 20%,
+    #ffffff 20%,
+    #ffffff 80%,
+    #74acdf 80%,
+    #74acdf 100%
+  ) !important;
+  border-bottom: 2px solid #74acdf;
+}
+
+/* Keep header text readable against white band */
+.md-header__title,
+.md-header__topic,
+.md-header__topic .md-ellipsis {
+  color: #003865 !important;
+  font-weight: 700;
+}
+
+.md-header__button {
+  color: #003865 !important;
+}
+
+/* Navigation tabs text in dark blue */
+.md-tabs__link {
+  color: #003865 !important;
+  opacity: 1 !important;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: #74acdf !important;
+}
