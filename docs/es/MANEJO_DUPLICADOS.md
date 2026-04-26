@@ -4,10 +4,10 @@
 
 ## Descripción General
 
-El sistema SA10M maneja los contactos duplicados usando un **enfoque de dos fases**:
+El sistema maneja los contactos duplicados usando un **enfoque de dos fases**:
 
 1. **Fase 5.1 (Importación)**: Importar TODOS los contactos sin filtrar — ✅ Completo
-2. **Fase 4.1 (Validación)**: Marcar duplicados durante la validación — ⏳ Pendiente
+2. **Fase 4.1 (Puntuación)**: Detectar y excluir duplicados durante el scoring — ✅ Completo
 
 Este enfoque garantiza la preservación completa de datos y permite una detección de duplicados flexible basada en reglas específicas del concurso.
 
@@ -71,23 +71,9 @@ def create_batch(self, contacts_data: List[ContactBase], log_id: int) -> List[DB
 
 ---
 
-## Fase 4.1: Fase de Validación (PENDIENTE — PRÓXIMO PASO ⏳)
+## Fase 4.1: Fase de Puntuación (COMPLETA ✅)
 
-### Qué Ocurrirá Durante la Validación
-
-El motor de validación:
-
-1. **Consultará todos los contactos** de cada log, ordenados por timestamp
-2. **Aplicará detección de duplicados** basada en las reglas del concurso:
-   - Para SA10M: Mismo indicativo + misma banda + mismo modo
-   - Conservar el **primer** contacto (cronológicamente)
-   - Marcar los **siguientes** como duplicados
-3. **Actualizará la base de datos** usando `ContactRepository.mark_as_duplicate()`:
-   ```python
-   contact.is_duplicate = True
-   contact.validation_status = 'duplicate'
-   contact.points = 0
-   ```
+La detección de duplicados se ejecuta dentro del **Motor de Puntuación** al procesar cada log. El motor identifica duplicados (mismo indicativo + misma banda + mismo modo), los excluye del cálculo de puntos y almacena el conteo en la tabla `scores` como `duplicate_qsos`. El resultado es visible en la pestaña **Tabla de Clasificación** bajo la columna **Dupes**.
 
 ### Reglas de Duplicados por Concurso
 

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation and user guide for the SA10M Ham Radio Contest scoring system">
+        <meta name="description" content="A configurable ham radio contest scoring system. Ships with SA10M rules; adaptable to any contest via YAML configuration.">
       
       
         <meta name="author" content="LW5HR - Diego">
@@ -33,7 +33,7 @@
     
     
       
-        <title>Inicio - SA10M Contest Manager</title>
+        <title>Inicio - Ham Radio Contest Manager</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sa10m-contest-manager" class="md-skip">
+        <a href="#gestor-de-concursos-de-radioaficionados" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="SA10M Contest Manager" class="md-header__button md-logo" aria-label="SA10M Contest Manager" data-md-component="logo">
+    <a href=".." title="Ham Radio Contest Manager" class="md-header__button md-logo" aria-label="Ham Radio Contest Manager" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            SA10M Contest Manager
+            Ham Radio Contest Manager
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -395,13 +395,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="SA10M Contest Manager" class="md-nav__button md-logo" aria-label="SA10M Contest Manager" data-md-component="logo">
+    <a href=".." title="Ham Radio Contest Manager" class="md-nav__button md-logo" aria-label="Ham Radio Contest Manager" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    SA10M Contest Manager
+    Ham Radio Contest Manager
   </label>
   
     <div class="md-nav__source">
@@ -2187,12 +2187,13 @@
   
 
 
-<h1 id="sa10m-contest-manager">SA10M Contest Manager<a class="headerlink" href="#sa10m-contest-manager" title="Permanent link">&para;</a></h1>
-<p><strong>Sistema completo de puntuación y gestión para el concurso de radioaficionados SA10M.</strong></p>
-<p>SA10M es un concurso de radioaficionados en la banda de 10 metros, con estaciones de América del Sur y todo el mundo. Esta aplicación gestiona el flujo de trabajo completo del concurso: desde la importación de archivos de log Cabrillo hasta la validación cruzada de contactos y la generación del cuadro de clasificación final.</p>
+<h1 id="gestor-de-concursos-de-radioaficionados">Gestor de Concursos de Radioaficionados<a class="headerlink" href="#gestor-de-concursos-de-radioaficionados" title="Permanent link">&para;</a></h1>
+<p><strong>Sistema configurable de puntuación y gestión para concursos de radioaficionados.</strong></p>
+<p>Esta aplicación incluye las reglas del <strong>SA10M</strong> (concurso de banda de 10 metros con estaciones de América del Sur y todo el mundo) y puede adaptarse a cualquier concurso colocando un nuevo archivo de reglas YAML en <code>config/contests/</code>. Gestiona el flujo de trabajo completo del concurso: desde la importación de archivos de log Cabrillo hasta la validación cruzada de contactos y la generación del cuadro de clasificación final.</p>
 <hr />
 <h2 id="caracteristicas-principales">Características Principales<a class="headerlink" href="#caracteristicas-principales" title="Permanent link">&para;</a></h2>
 <ul>
+<li><strong>Motor de reglas configurable</strong> — definiciones de concurso en YAML; SA10M incluido, cualquier concurso compatible</li>
 <li><strong>Importación de logs</strong> — formato Cabrillo (<code>.cbr</code>, <code>.txt</code>) con detección automática de duplicados</li>
 <li><strong>Motor de puntuación configurable</strong> — reglas en YAML para puntos por QSO y multiplicadores (prefijos WPX + zonas CQ)</li>
 <li><strong>Pipeline de validación cruzada</strong> — valida contactos contra todos los demás logs, marcando NIL y señales erradas</li>
@@ -2206,28 +2207,28 @@
 <div class="grid cards">
 <ul>
 <li>
-<p>:material-rocket-launch:{ .lg .middle } <strong>Primeros Pasos</strong></p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg></span> <strong>Primeros Pasos</strong></p>
 <hr />
 <p>Instala las dependencias y realiza tu primera importación en minutos.</p>
-<p><a href="PRIMEROS_PASOS/">:octicons-arrow-right-24: Primeros Pasos</a></p>
+<p><a href="PRIMEROS_PASOS/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Primeros Pasos</a></p>
 </li>
 <li>
-<p>:material-monitor:{ .lg .middle } <strong>Guía de Usuario (Interfaz)</strong></p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16H3V4h18m0-2H3c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h7v2H8v2h8v-2h-2v-2h7a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2"/></svg></span> <strong>Guía de Usuario (Interfaz)</strong></p>
 <hr />
 <p>Guía paso a paso de cada pestaña de la aplicación de escritorio.</p>
-<p><a href="user-guide/">:octicons-arrow-right-24: Guía de Usuario</a></p>
+<p><a href="user-guide/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Guía de Usuario</a></p>
 </li>
 <li>
-<p>:material-trophy:{ .lg .middle } <strong>Reglas del Concurso</strong></p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2c-.9 0-2 1-2 2H8c0-1-1.1-2-2-2H2v9c0 1 1 2 2 2h2.2c.4 2 1.7 3.7 4.8 4v2.08C8 19.54 8 22 8 22h8s0-2.46-3-2.92V17c3.1-.3 4.4-2 4.8-4H20c1 0 2-1 2-2V2zM6 11H4V4h2zm14 0h-2V4h2z"/></svg></span> <strong>Reglas del Concurso</strong></p>
 <hr />
-<p>Reglas de puntuación SA10M, multiplicadores y formato de intercambio.</p>
-<p><a href="SA10M_REFERENCIA_RAPIDA/">:octicons-arrow-right-24: Referencia Rápida SA10M</a></p>
+<p>Reglas de puntuación SA10M, multiplicadores y formato de intercambio. Úsalo como plantilla para tu propio concurso.</p>
+<p><a href="SA10M_REFERENCIA_RAPIDA/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Referencia Rápida SA10M</a></p>
 </li>
 <li>
-<p>:material-book-open-variant:{ .lg .middle } <strong>Referencia Técnica</strong></p>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg></span> <strong>Referencia Técnica</strong></p>
 <hr />
 <p>Esquema de base de datos, pipeline de importación y arquitectura de servicios.</p>
-<p><a href="ESQUEMA_BASE_DATOS/">:octicons-arrow-right-24: Documentación Técnica</a></p>
+<p><a href="ESQUEMA_BASE_DATOS/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Documentación Técnica</a></p>
 </li>
 </ul>
 </div>

@@ -8,24 +8,6 @@ The SA10M Contest Manager is a desktop application built with Python/Tkinter. It
 
 ![SA10M Contest Manager — main window](../assets/images/app-overview.png)
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  SA10M Contest Manager          DB: sa10_contest.db [Change] │
-├─────────────────────────────────────────────────────────────┤
-│  Contests │ Import Logs │ Cross-Check │ Scoring │ Leaderboard│
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│   (active tab content)                                      │
-│                                                             │
-├─────────────────────────────────────────────────────────────┤
-│  Output Log                                   [Clear Log]   │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │ [00:00:00] Ready...                                  │   │
-│  └─────────────────────────────────────────────────────┘   │
-├─────────────────────────────────────────────────────────────┤
-│  Ready                                    [progress bar]    │
-└─────────────────────────────────────────────────────────────┘
-```
 
 ### Header Bar
 - Shows the **active database file** path on the right side

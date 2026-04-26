@@ -1,7 +1,7 @@
-site_name: SA10M Contest Manager
-site_description: Documentation and user guide for the SA10M Ham Radio Contest scoring system
+site_name: Ham Radio Contest Manager
+site_description: A configurable ham radio contest scoring system. Ships with SA10M rules; adaptable to any contest via YAML configuration.
 site_author: LW5HR - Diego
-copyright: Copyright &copy; 2026 LW5HR - Diego
+copyright:2026 LW5HR 
 site_url: https://ddimunzio.github.io/SA10
 
 repo_name: SA10
@@ -48,6 +48,9 @@ markdown_extensions:
   - tables
   - attr_list
   - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - toc:
       permalink: true
 
