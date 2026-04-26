@@ -232,8 +232,8 @@ Al calcular puntajes, el motor:
 | Fase | Estado | Descripción |
 |------|--------|-------------|
 | 5.1 Importación | ✅ Completo | Todos los contactos importados sin filtrar |
-| 4.1 Validación | ⏳ Pendiente | Detección de duplicados a implementar |
-| 4.2 Puntuación | ⏳ Pendiente | Excluir duplicados de la puntuación |
+| 4.1 Puntuación | ✅ Completo | Duplicados detectados y excluidos por el motor de puntuación |
+| 4.2 Tabla de Clasificación | ✅ Completo | Conteo de duplicados visible en la columna Dupes |
 
 ---
 
@@ -246,6 +246,6 @@ Al calcular puntajes, el motor:
 
 ---
 
-**Versión del Documento**: 1.0  
-**Creado**: Noviembre 17, 2025  
-**Estado**: Fase de importación completa, fase de validación pendiente
+**Versión del Documento**: 1.1  
+**Actualizado**: Abril 2026  
+**Estado**: Sistema completo — importación, detección de duplicados y puntuación implementados

@@ -270,8 +270,8 @@ def calculate_score(self, contacts: List[Contact]) -> ScoreBreakdown:
 | Phase | Status | Description |
 |-------|--------|-------------|
 | 5.1 Import | ✅ Complete | All contacts imported without filtering |
-| 4.1 Validation | ⏳ Pending | Duplicate detection to be implemented |
-| 4.2 Scoring | ⏳ Pending | Exclude duplicates from scoring |
+| 4.1 Scoring | ✅ Complete | Duplicates detected and excluded by the scoring engine |
+| 4.2 Leaderboard | ✅ Complete | Duplicate count displayed in the Dupes column |
 
 ---
 
@@ -283,13 +283,9 @@ def calculate_score(self, contacts: List[Contact]) -> ScoreBreakdown:
    - Verifies duplicates ARE imported
    - Confirms no filtering during import
 
-2. **`tests/test_contact_validation.py`** ⏳ (To be created)
-   - Will test duplicate detection
-   - Will test marking duplicates in database
-
-3. **`tests/test_scoring_with_duplicates.py`** ⏳ (To be created)
-   - Will verify duplicates score 0 points
-   - Will test final score calculation
+2. **`tests/test_scoring_with_duplicates.py`** ✅
+   - Verifies duplicates score 0 points
+   - Tests final score calculation
 
 ### Manual Testing
 
@@ -318,27 +314,9 @@ with db.get_session() as session:
 
 ---
 
-## Next Steps
-
-To implement Phase 4.1 (Contact Validation):
-
-1. Create `src/core/validation/contact_validator.py`
-2. Implement duplicate detection logic
-3. Add exchange format validation
-4. Add callsign format validation  
-5. Add time/band/mode validation
-6. Create comprehensive tests
-7. Update documentation
-
-**Recommended**: Implement Phase 4.1 next to complete the validation workflow.
-
----
-
 ## References
 
-- **Implementation Plan**: `IMPLEMENTATION_PLAN.md`
 - **Database Schema**: `docs/DATABASE_SCHEMA.md`
-- **Phase 5.1 Completion**: `docs/PHASE_5_1_COMPLETION.md`
 - **Rules Engine**: `docs/RULES_ENGINE_QUICK_REF.md`
 - **SA10M Rules**: `config/contests/sa10m.yaml`
 
