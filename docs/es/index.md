@@ -1,13 +1,14 @@
-# SA10M Contest Manager
+# Gestor de Concursos de Radioaficionados
 
-**Sistema completo de puntuación y gestión para el concurso de radioaficionados SA10M.**
+**Sistema configurable de puntuación y gestión para concursos de radioaficionados.**
 
-SA10M es un concurso de radioaficionados en la banda de 10 metros, con estaciones de América del Sur y todo el mundo. Esta aplicación gestiona el flujo de trabajo completo del concurso: desde la importación de archivos de log Cabrillo hasta la validación cruzada de contactos y la generación del cuadro de clasificación final.
+Esta aplicación incluye las reglas del **SA10M** (concurso de banda de 10 metros con estaciones de América del Sur y todo el mundo) y puede adaptarse a cualquier concurso colocando un nuevo archivo de reglas YAML en `config/contests/`. Gestiona el flujo de trabajo completo del concurso: desde la importación de archivos de log Cabrillo hasta la validación cruzada de contactos y la generación del cuadro de clasificación final.
 
 ---
 
 ## Características Principales
 
+- **Motor de reglas configurable** — definiciones de concurso en YAML; SA10M incluido, cualquier concurso compatible
 - **Importación de logs** — formato Cabrillo (`.cbr`, `.txt`) con detección automática de duplicados
 - **Motor de puntuación configurable** — reglas en YAML para puntos por QSO y multiplicadores (prefijos WPX + zonas CQ)
 - **Pipeline de validación cruzada** — valida contactos contra todos los demás logs, marcando NIL y señales erradas
@@ -42,7 +43,7 @@ SA10M es un concurso de radioaficionados en la banda de 10 metros, con estacione
 
     ---
 
-    Reglas de puntuación SA10M, multiplicadores y formato de intercambio.
+    Reglas de puntuación SA10M, multiplicadores y formato de intercambio. Úsalo como plantilla para tu propio concurso.
 
     [:octicons-arrow-right-24: Referencia Rápida SA10M](SA10M_REFERENCIA_RAPIDA.md)
 

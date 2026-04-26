@@ -4,12 +4,12 @@
 
 ## Overview
 
-The SA10M contest system handles duplicate contacts using a **two-phase approach**:
+The contest system handles duplicate contacts using a **two-phase approach**:
 
-1. **Phase 5.1 (Import)**: Import ALL contacts without filtering - ✅ Complete
-2. **Phase 4.1 (Validation)**: Mark duplicates during validation - ⏳ Pending
+1. **Phase 5.1 (Import)**: Import ALL contacts without filtering — ✅ Complete
+2. **Phase 4.1 (Scoring)**: Detect and exclude duplicates during scoring — ✅ Complete
 
-This approach ensures complete data preservation and allows for flexible duplicate detection based on contest-specific rules.
+This approach ensures complete data preservation and allows flexible duplicate detection based on contest-specific rules.
 
 ---
 
@@ -84,25 +84,11 @@ Expected output:
 
 ---
 
-## Phase 4.1: Validation Phase (PENDING - NEXT STEP ⏳)
+## Phase 4.1: Scoring Phase (COMPLETE ✅)
 
-### What Will Happen During Validation
+Duplicate detection runs inside the **Scoring Engine** when processing each log. The scorer identifies duplicates (same callsign + same band + same mode), excludes them from point calculation, and stores the count in the `scores` table as `duplicate_qsos`. The result is visible in the **Leaderboard** tab under the **Dupes** column.
 
-The validation engine will:
-
-1. **Query all contacts** for each log, sorted by timestamp
-2. **Apply duplicate detection** based on contest rules:
-   - For SA10M: Same callsign + same band + same mode
-   - Keep the **first** contact (chronologically)
-   - Mark **subsequent** contacts as duplicates
-3. **Update database** using `ContactRepository.mark_as_duplicate()`:
-   ```python
-   contact.is_duplicate = True
-   contact.validation_status = 'duplicate'
-   contact.points = 0
-   ```
-
-### Contest-Specific Duplicate Rules
+### Duplicate Rules
 
 Different contests may have different duplicate windows:
 

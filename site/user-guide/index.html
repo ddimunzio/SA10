@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation and user guide for the SA10M Ham Radio Contest scoring system">
+        <meta name="description" content="A configurable ham radio contest scoring system. Ships with SA10M rules; adaptable to any contest via YAML configuration.">
       
       
         <meta name="author" content="LW5HR - Diego">
@@ -33,7 +33,7 @@
     
     
       
-        <title>Overview - SA10M Contest Manager</title>
+        <title>Overview - Ham Radio Contest Manager</title>
       
     
     
@@ -100,7 +100,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="SA10M Contest Manager" class="md-header__button md-logo" aria-label="SA10M Contest Manager" data-md-component="logo">
+    <a href=".." title="Ham Radio Contest Manager" class="md-header__button md-logo" aria-label="Ham Radio Contest Manager" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            SA10M Contest Manager
+            Ham Radio Contest Manager
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -395,13 +395,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="SA10M Contest Manager" class="md-nav__button md-logo" aria-label="SA10M Contest Manager" data-md-component="logo">
+    <a href=".." title="Ham Radio Contest Manager" class="md-nav__button md-logo" aria-label="Ham Radio Contest Manager" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    SA10M Contest Manager
+    Ham Radio Contest Manager
   </label>
   
     <div class="md-nav__source">
@@ -2237,6 +2237,8 @@
 <h1 id="user-guide-desktop-application">User Guide — Desktop Application<a class="headerlink" href="#user-guide-desktop-application" title="Permanent link">&para;</a></h1>
 <p>The SA10M Contest Manager is a desktop application built with Python/Tkinter. It provides a tabbed interface that takes you through the complete contest scoring workflow.</p>
 <hr />
+<h2 id="application-layout">Application Layout<a class="headerlink" href="#application-layout" title="Permanent link">&para;</a></h2>
+<p><img alt="SA10M Contest Manager — main window" src="../assets/images/app-overview.png" /></p>
 <h3 id="header-bar">Header Bar<a class="headerlink" href="#header-bar" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Shows the <strong>active database file</strong> path on the right side</li>
@@ -2256,7 +2258,7 @@
 <hr />
 <h2 id="recommended-workflow">Recommended Workflow<a class="headerlink" href="#recommended-workflow" title="Permanent link">&para;</a></h2>
 <p>Follow the tabs in order for a clean contest run:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1. Contests  →  2. Import Logs  →  3. Cross-Check  →  4. Scoring  →  5. Leaderboard
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1. Contests  →  2. Import Logs  →  3. Cross-Check  →  4. Scoring  →  5. Leaderboard
 </code></pre></div>
 <table>
 <thead>
@@ -2296,12 +2298,12 @@
 </table>
 <hr />
 <h2 id="launching-the-application">Launching the Application<a class="headerlink" href="#launching-the-application" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Activate the virtual environment first</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">        </span><span class="c1"># Windows</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">     </span><span class="c1"># Linux / Mac</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Launch</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>python<span class="w"> </span>app_ui.py
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Activate the virtual environment first</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">        </span><span class="c1"># Windows</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">     </span><span class="c1"># Linux / Mac</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Launch</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>python<span class="w"> </span>app_ui.py
 </code></pre></div>
 
 

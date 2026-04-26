@@ -1,13 +1,14 @@
-# SA10M Contest Manager
+# Ham Radio Contest Manager
 
-**A complete scoring and management system for the SA10M Ham Radio Contest.**
+**A configurable scoring and management system for amateur radio contests.**
 
-SA10M is a 10-meter single-band amateur radio contest with stations from South America and around the world. This application handles the full contest workflow — from importing Cabrillo log files to cross-checking contacts and generating the final leaderboard.
+This application ships with the **SA10M** rules (a 10-meter single-band contest with stations from South America and around the world) and can be adapted to any contest by dropping a new YAML rules file into `config/contests/`. It handles the full contest workflow — from importing Cabrillo log files to cross-checking contacts and generating the final leaderboard.
 
 ---
 
 ## Key Features
 
+- **Configurable rules engine** — YAML-based contest definitions; SA10M included, any contest supported
 - **Parse contest logs** — Cabrillo format (`.cbr`, `.txt`) with automatic duplicate detection
 - **Configurable scoring engine** — YAML-based rules for QSO points and multipliers (WPX prefixes + CQ zones)
 - **Cross-check pipeline** — validates contacts against all other submitted logs, flagging NIL and busted calls
@@ -42,7 +43,7 @@ SA10M is a 10-meter single-band amateur radio contest with stations from South A
 
     ---
 
-    SA10M scoring rules, multipliers, and exchange format.
+    SA10M scoring rules, multipliers, and exchange format. Use as a template for your own contest.
 
     [:octicons-arrow-right-24: SA10M Quick Reference](SA10M_QUICK_REFERENCE.md)
 
