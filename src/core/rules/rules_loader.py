@@ -131,8 +131,17 @@ class RulesLoader:
                       Defaults to config/contests/
         """
         if rules_dir is None:
-            # Default to config/contests relative to project root
-            project_root = Path(__file__).parent.parent.parent.parent
+            # Resolve the config directory reliably in all execution contexts.
+            import sys as _sys
+            if getattr(_sys, 'frozen', False):
+                # PyInstaller frozen EXE: bundled data files live in sys._MEIPASS.
+                # In one-dir mode (PyInstaller 6+) this is the _internal/ subfolder;
+                # in one-file mode it is a temp extraction dir.  Either way,
+                # sys._MEIPASS is the correct root for bundled assets.
+                project_root = Path(_sys._MEIPASS)
+            else:
+                # Development: navigate up from this file to the project root.
+                project_root = Path(__file__).parent.parent.parent.parent
             rules_dir = project_root / "config" / "contests"
 
         self.rules_dir = Path(rules_dir)
@@ -153,44 +162,46 @@ class RulesLoader:
             FileNotFoundError: If contest file doesn't exist
             ValueError: If file is invalid or doesn't match schema
         """
-        # 1. Try YAML file
-        yaml_file = self.rules_dir / f"{contest_slug}.yaml"
+        # 1. Try YAML file — exact slug first, then strip trailing -YYYY or _YYYY suffix
+        import re as _re
+        slug_candidates = [contest_slug]
+        # e.g. "sa10m-2026" -> "sa10m", "sa10m_2025" -> "sa10m"
+        base_slug = _re.sub(r'[-_]\d{4}$', '', contest_slug)
+        if base_slug != contest_slug:
+            slug_candidates.append(base_slug)
 
-        if yaml_file.exists():
-            try:
-                with open(yaml_file, 'r', encoding='utf-8') as f:
-                    raw_data = yaml.safe_load(f)
-
-                # Validate and parse using Pydantic
-                rules = ContestRules(**raw_data)
-                return rules
-
-            except yaml.YAMLError as e:
-                raise ValueError(f"Invalid YAML in {yaml_file}: {e}")
-            except Exception as e:
-                raise ValueError(f"Error parsing contest rules from {yaml_file}: {e}")
-
-        # 2. Try DXLog TXT file
-        # Check for common DXLog naming conventions
-        txt_candidates = [
-            self.rules_dir / f"{contest_slug}.txt",
-            self.rules_dir / f"{contest_slug.upper()}C.txt",  # e.g. SA10MC.txt
-            self.rules_dir / f"{contest_slug.upper()}.txt"
-        ]
-
-        for txt_file in txt_candidates:
-            if txt_file.exists():
+        for slug in slug_candidates:
+            yaml_file = self.rules_dir / f"{slug}.yaml"
+            if yaml_file.exists():
                 try:
-                    # Import here to avoid circular dependency
-                    from .dxlog_parser import DXLogParser
-                    parser = DXLogParser()
-                    return parser.parse_file(txt_file)
+                    with open(yaml_file, 'r', encoding='utf-8') as f:
+                        raw_data = yaml.safe_load(f)
+                    rules = ContestRules(**raw_data)
+                    return rules
+                except yaml.YAMLError as e:
+                    raise ValueError(f"Invalid YAML in {yaml_file}: {e}")
                 except Exception as e:
-                    raise ValueError(f"Error parsing DXLog rules from {txt_file}: {e}")
+                    raise ValueError(f"Error parsing contest rules from {yaml_file}: {e}")
+
+        # 2. Try DXLog TXT file with same slug candidates
+        for slug in slug_candidates:
+            txt_candidates = [
+                self.rules_dir / f"{slug}.txt",
+                self.rules_dir / f"{slug.upper()}C.txt",
+                self.rules_dir / f"{slug.upper()}.txt"
+            ]
+            for txt_file in txt_candidates:
+                if txt_file.exists():
+                    try:
+                        from .dxlog_parser import DXLogParser
+                        parser = DXLogParser()
+                        return parser.parse_file(txt_file)
+                    except Exception as e:
+                        raise ValueError(f"Error parsing DXLog rules from {txt_file}: {e}")
 
         raise FileNotFoundError(
             f"Contest rules file not found for '{contest_slug}'.\n"
-            f"Checked: {yaml_file} and DXLog variants.\n"
+            f"Checked: {self.rules_dir / contest_slug}.yaml and DXLog variants.\n"
             f"Available contests: {self.list_contests()}"
         )
 

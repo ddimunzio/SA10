@@ -254,11 +254,15 @@ class CrossCheckService:
 
         # Step 1: Find Not-in-Log contacts
         print("\n[STEP 1/3] Detecting Not-in-Log (NIL) contacts...")
+        if progress_callback:
+            progress_callback(0, 3)
         nil_entries = self._find_not_in_log(contest_id)
         print(f"   Found {len(nil_entries)} NIL contacts")
 
         # Step 2: Find Unique calls
         print("\n[STEP 2/3] Detecting UNIQUE calls...")
+        if progress_callback:
+            progress_callback(1, 3)
         unique_entries = self._find_unique_calls(contest_id, submitted_calls)
         print(f"   Found {len(unique_entries)} unique calls")
 
@@ -270,6 +274,8 @@ class CrossCheckService:
 
         # Step 3: Find Busted calls
         print("\n[STEP 3/3] Detecting BUSTED calls...")
+        if progress_callback:
+            progress_callback(2, 3)
         busted_entries = self._find_busted_calls(contest_id, submitted_calls)
         print(f"   Found {len(busted_entries)} busted calls")
 
@@ -299,6 +305,8 @@ class CrossCheckService:
 
         print(f"\n[SUCCESS] Cross-check complete!")
         print(f"   Total logs with issues: {len(ubn_by_log)}")
+        if progress_callback:
+            progress_callback(3, 3)
 
         return ubn_by_log
 
@@ -1035,81 +1043,178 @@ class CrossCheckService:
 
     def update_database_with_results(self, ubn_by_log: Dict[int, List[UBNEntry]]):
         """
-        Update contact records with cross-check results
+        Update contact records with cross-check results.
 
-        Sets validation_status and validation_notes for NIL and BUSTED contacts
+        Collects all per-type params first, then issues a single executemany
+        call per update type instead of one SQL round-trip per contact.
         """
         print("\n[DATABASE] Updating database with cross-check results...")
 
-        update_count = 0
-        for log_id, entries in ubn_by_log.items():
+        nil_params:    list = []
+        busted_params: list = []
+        unique_params: list = []
+        now = get_utc_now()
+
+        for entries in ubn_by_log.values():
             for entry in entries:
                 if entry.ubn_type == UBNType.NOT_IN_LOG:
-                    query = text("""
-                        UPDATE contacts 
-                        SET 
-                            validation_status = 'not_in_log',
-                            validation_notes = :notes,
-                            updated_at = :now
-                        WHERE id = :contact_id
-                    """)
-                    self.session.execute(query, {
+                    nil_params.append({
                         "contact_id": entry.contact_id,
                         "notes": f"Not-in-log: {entry.worked_callsign} has no record of this QSO",
-                        "now": datetime.utcnow()
+                        "now": now,
                     })
-                    update_count += 1
-
                 elif entry.ubn_type == UBNType.BUSTED:
-                    query = text("""
-                        UPDATE contacts 
-                        SET 
-                            validation_status = 'invalid_callsign',
-                            validation_notes = :notes,
-                            is_valid = 0,
-                            updated_at = :now
-                        WHERE id = :contact_id
-                    """)
                     suggested = entry.suggested_call or "?"
                     notes = f"Busted call: {entry.worked_callsign} (should be: {suggested})"
                     if entry.other_station_has_qso:
                         notes += " - Other station has QSO with correct call"
-
-                    self.session.execute(query, {
+                    busted_params.append({
                         "contact_id": entry.contact_id,
                         "notes": notes,
-                        "now": get_utc_now()
+                        "now": now,
                     })
-                    update_count += 1
-
                 elif entry.ubn_type == UBNType.UNIQUE:
-                    query = text("""
-                        UPDATE contacts 
-                        SET 
-                            validation_status = 'unique_call',
-                            validation_notes = :notes,
-                            updated_at = :now
-                        WHERE id = :contact_id
-                        AND (validation_status IS NULL OR validation_status NOT IN ('busted_call', 'invalid_callsign'))
-                    """)
-                    self.session.execute(query, {
+                    unique_params.append({
                         "contact_id": entry.contact_id,
                         "notes": f"Unique call: {entry.worked_callsign} did not submit a log",
-                        "now": get_utc_now()
+                        "now": now,
                     })
-                    update_count += 1
+
+        conn = self.session.connection()
+
+        if nil_params:
+            conn.execute(
+                text("""UPDATE contacts
+                         SET validation_status = 'not_in_log',
+                             validation_notes  = :notes,
+                             updated_at        = :now
+                         WHERE id = :contact_id"""),
+                nil_params,
+            )
+
+        if busted_params:
+            conn.execute(
+                text("""UPDATE contacts
+                         SET validation_status = 'invalid_callsign',
+                             validation_notes  = :notes,
+                             is_valid          = 0,
+                             updated_at        = :now
+                         WHERE id = :contact_id"""),
+                busted_params,
+            )
+
+        if unique_params:
+            conn.execute(
+                text("""UPDATE contacts
+                         SET validation_status = 'unique_call',
+                             validation_notes  = :notes,
+                             updated_at        = :now
+                         WHERE id = :contact_id
+                           AND (validation_status IS NULL
+                                OR validation_status NOT IN ('busted_call', 'invalid_callsign'))"""),
+                unique_params,
+            )
+
+        update_count = len(nil_params) + len(busted_params) + len(unique_params)
 
         # Update log status to 'validated' for all cross-checked logs
-        from src.database.models import ContestStatus
         log_ids = list(ubn_by_log.keys())
         if log_ids:
             placeholders = ','.join([f':lid_{i}' for i in range(len(log_ids))])
             lp = {f'lid_{i}': lid for i, lid in enumerate(log_ids)}
             self.session.execute(
                 text(f"UPDATE logs SET status = 'VALIDATED' WHERE id IN ({placeholders})"),
-                lp
+                lp,
             )
 
         self.session.commit()
-        print(f"   Updated {update_count} contact records")
+        print(f"   Updated {update_count} contact records "
+              f"({len(nil_params)} NIL, {len(busted_params)} busted, {len(unique_params)} unique)")
+
+    def rebuild_ubn_from_db(self, contest_id: int) -> Dict[int, List["UBNEntry"]]:
+        """
+        Reconstruct ``ubn_by_log`` from the contact records already stored in
+        the database (populated by a previous call to
+        ``update_database_with_results``).
+
+        This allows UBN report generation to be run as a standalone step
+        without having to re-execute the full cross-check.
+
+        The ``self.stats`` dict is also populated so that
+        ``CrossCheckStats`` objects are available for report generation.
+
+        Returns:
+            Dict mapping log_id → list of UBNEntry (same structure as
+            ``check_all_logs`` returns).
+        """
+        STATUS_MAP = {
+            "not_in_log":       UBNType.NOT_IN_LOG,
+            "invalid_callsign": UBNType.BUSTED,
+            "unique_call":      UBNType.UNIQUE,
+        }
+
+        rows = self.session.execute(
+            text("""
+                SELECT
+                    c.id,
+                    c.log_id,
+                    l.callsign          AS log_callsign,
+                    c.call_received     AS worked_callsign,
+                    c.qso_datetime      AS timestamp,
+                    c.band,
+                    c.mode,
+                    COALESCE(c.frequency, 0) AS frequency,
+                    c.validation_status,
+                    c.validation_notes,
+                    COALESCE(c.rst_sent, '')      AS rst_sent,
+                    COALESCE(c.exchange_sent, '') AS exchange_sent,
+                    COALESCE(c.rst_received, '')  AS rst_received,
+                    COALESCE(c.exchange_received,'') AS exchange_received
+                FROM contacts c
+                JOIN logs     l ON l.id = c.log_id
+                WHERE l.contest_id = :contest_id
+                  AND c.validation_status IN ('not_in_log','invalid_callsign','unique_call')
+                ORDER BY c.log_id, c.qso_datetime
+            """),
+            {"contest_id": contest_id},
+        ).fetchall()
+
+        ubn_by_log: Dict[int, List[UBNEntry]] = {}
+        for row in rows:
+            ubn_type = STATUS_MAP[row.validation_status]
+
+            # Try to extract suggested call from validation_notes for busted entries
+            suggested_call: Optional[str] = None
+            if ubn_type == UBNType.BUSTED and row.validation_notes:
+                import re as _re
+                m = _re.search(r"should be[:\s]+([A-Z0-9/]+)", row.validation_notes or "")
+                if m:
+                    suggested_call = m.group(1)
+
+            ts = parse_datetime(row.timestamp) if isinstance(row.timestamp, str) else row.timestamp
+
+            entry = UBNEntry(
+                contact_id=row.id,
+                log_id=row.log_id,
+                log_callsign=row.log_callsign,
+                worked_callsign=row.worked_callsign,
+                timestamp=ts,
+                band=row.band,
+                mode=row.mode,
+                frequency=row.frequency,
+                ubn_type=ubn_type,
+                rst_sent=row.rst_sent,
+                exchange_sent=row.exchange_sent,
+                rst_received=row.rst_received,
+                exchange_received=row.exchange_received,
+                suggested_call=suggested_call,
+            )
+            ubn_by_log.setdefault(row.log_id, []).append(entry)
+
+        # Rebuild stats so report generation has totals per log
+        self._calculate_statistics(contest_id, ubn_by_log)
+
+        print(f"[rebuild_ubn_from_db] Loaded {sum(len(v) for v in ubn_by_log.values())} "
+              f"entries across {len(ubn_by_log)} logs from DB")
+        return ubn_by_log
 

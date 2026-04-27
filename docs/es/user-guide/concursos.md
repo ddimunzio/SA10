@@ -4,6 +4,9 @@
 
 La pestaña **Concursos** es donde se crean y gestionan los registros de concurso. Cada importación y cálculo de puntaje está vinculado a un concurso específico, por lo que este es siempre el primer paso.
 
+!!! note "¿Empezando desde cero?"
+    Si vas a comenzar una nueva edición del concurso, primero crea una nueva base de datos mediante **Archivo → Nueva Base de Datos…** antes de crear un registro aquí. Consulta [Crear una Nueva Base de Datos](index.md#crear-una-nueva-base-de-datos) para ver las instrucciones paso a paso.
+
 ---
 
 ## Crear Nuevo Concurso

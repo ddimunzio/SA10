@@ -24,6 +24,19 @@ from pathlib import Path
 DEFAULT_DB = "sa10_contest.db"
 
 
+def _bundled_asset(relative_path: str) -> Path:
+    """Resolve a path that was bundled with the application.
+
+    In a PyInstaller frozen build, bundled assets (config/, src/, etc.) live
+    inside ``sys._MEIPASS`` (the ``_internal/`` subfolder in one-dir mode, or
+    the temp extraction dir in one-file mode).  When running from source the
+    path is resolved relative to this file's parent directory (project root).
+    """
+    if getattr(sys, 'frozen', False):
+        return Path(sys._MEIPASS) / relative_path
+    return Path(__file__).parent / relative_path
+
+
 def _utc_stamp() -> str:
     return datetime.utcnow().strftime("%H:%M:%S")
 
@@ -31,15 +44,21 @@ def _utc_stamp() -> str:
 class TextRedirector(io.TextIOBase):
     """Redirect stdout/stderr to a ScrolledText widget."""
 
-    def __init__(self, widget: scrolledtext.ScrolledText, tag: str = "normal"):
+    def __init__(self, widget: scrolledtext.ScrolledText, tag: str = "normal",
+                 progress_active_fn=None):
         self.widget = widget
         self.tag = tag
+        self._progress_active_fn = progress_active_fn
 
     def write(self, text: str) -> int:
-        self.widget.configure(state="normal")
-        self.widget.insert("end", text, self.tag)
-        self.widget.see("end")
-        self.widget.configure(state="disabled")
+        if not text:
+            return 0
+        def _do():
+            self.widget.configure(state="normal")
+            self.widget.insert("end", text, self.tag)
+            self.widget.see("end")
+            self.widget.configure(state="disabled")
+        self.widget.after(0, _do)
         return len(text)
 
     def flush(self):
@@ -134,8 +153,8 @@ class SA10App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("SA10M Contest Manager")
-        self.geometry("960x720")
-        self.resizable(True, True)
+        self.geometry("1280x900")
+        self.minsize(1100, 750)
         self.configure(bg="#f0f0f0")
         sv_ttk.set_theme("light")
 
@@ -180,7 +199,10 @@ class SA10App(tk.Tk):
     def _build_menu(self):
         menubar = tk.Menu(self)
         file_menu = tk.Menu(menubar, tearoff=0)
-        file_menu.add_command(label="Select Database…", command=self._select_db)
+        file_menu.add_command(label="New Database…", command=self._new_database)
+        file_menu.add_command(label="Open Database…", command=self._select_db)
+        file_menu.add_separator()
+        file_menu.add_command(label="Update DXCC Data…", command=self._update_dxcc_data)
         file_menu.add_separator()
         file_menu.add_command(label="Exit", command=self.destroy)
         menubar.add_cascade(label="File", menu=file_menu)
@@ -248,6 +270,14 @@ class SA10App(tk.Tk):
         self._log_text.tag_config("ok",     foreground="#6bc46b")
         self._log_text.tag_config("error",  foreground="#f07070")
 
+        # Dedicated progress bar label — sits below the text, never inside it
+        self._progress_label = tk.Label(
+            frame, text="", anchor="w",
+            font=("Consolas", 9), bg="#1e1e1e", fg="#4ec9b0",
+            padx=4, pady=1
+        )
+        self._progress_label.pack(fill="x")
+
         btn_row = tk.Frame(frame, bg="#f0f0f0")
         btn_row.pack(fill="x", pady=(2, 0))
         tk.Button(btn_row, text="Clear Log", command=self._clear_log,
@@ -259,10 +289,25 @@ class SA10App(tk.Tk):
         self._log_text.configure(state="disabled")
 
     def _log(self, msg: str, tag: str = "stdout"):
-        self._log_text.configure(state="normal")
-        self._log_text.insert("end", f"[{_utc_stamp()}] {msg}\n", tag)
-        self._log_text.see("end")
-        self._log_text.configure(state="disabled")
+        def _do():
+            self._log_text.configure(state="normal")
+            self._log_text.insert("end", f"[{_utc_stamp()}] {msg}\n", tag)
+            self._log_text.see("end")
+            self._log_text.configure(state="disabled")
+        self.after(0, _do)
+
+    def _log_progress(self, label: str, done: int, total: int, width: int = 34):
+        """Update the progress bar label below the log pane (thread-safe)."""
+        pct = done / total if total else 1.0
+        filled = int(width * pct)
+        fill_str  = "\u2588" * filled
+        empty_str = "\u2591" * (width - filled)
+        bar = f"  {label}  [{fill_str}{empty_str}]  {pct * 100:5.1f}%  ({done}/{total})"
+        self.after(0, lambda: self._progress_label.config(text=bar))
+
+    def _log_progress_done(self):
+        """Clear the progress bar label."""
+        self.after(0, lambda: self._progress_label.config(text=""))
 
     # ── Status bar ────────────────────────────────────────────────────
 
@@ -380,6 +425,28 @@ class SA10App(tk.Tk):
         self._selected_contest_name.set(f"{cname} (ID={cid})")
         self._log(f"Active contest set to: {cname} (ID={cid})", "ok")
         self._set_status(f"Active contest: {cname}")
+
+        # Enable the UBN button if cross-check results already exist in the DB
+        def _check_xcheck_data():
+            try:
+                from src.database.db_manager import DatabaseManager
+                from sqlalchemy import text as _sql_text
+                db = DatabaseManager(self._db_path.get())
+                with db.get_session() as session:
+                    count = session.execute(
+                        _sql_text("""
+                            SELECT COUNT(*) FROM contacts c
+                            JOIN logs l ON l.id = c.log_id
+                            WHERE l.contest_id = :cid
+                              AND c.validation_status IN ('not_in_log','invalid_callsign','unique_call')
+                        """),
+                        {"cid": cid}
+                    ).scalar() or 0
+                state = "normal" if count > 0 else "disabled"
+                self.after(0, lambda: self._btn_generate_ubn.config(state=state))
+            except Exception:
+                pass
+        threading.Thread(target=_check_xcheck_data, daemon=True).start()
 
     def _create_contest(self):
         name  = self._contest_entries["Name:"].get().strip()
@@ -578,7 +645,9 @@ class SA10App(tk.Tk):
                                 list(Path(src_path).glob("*.cbr"))
                     self._log(f"Found {len(log_files)} log file(s) in '{src_path}'")
                     ok = err = replaced = 0
-                    for lf in log_files:
+                    total_files = len(log_files)
+                    self._log_progress("Importing", 0, total_files)
+                    for i, lf in enumerate(log_files, 1):
                         with db.get_session() as session:
                             svc = LogImportService(db)
                             result = svc.import_cabrillo_file(str(lf), contest_id)
@@ -589,6 +658,8 @@ class SA10App(tk.Tk):
                         else:
                             err += 1
                             self._log(f"  SKIP {lf.name}: {result['message']}", "warn")
+                        self._log_progress("Importing", i, total_files)
+                    self._log_progress_done()
                     from sqlalchemy import text as sql_text
                     with db.get_session() as session:
                         station_count = session.execute(
@@ -647,9 +718,6 @@ class SA10App(tk.Tk):
             row=0, column=1, sticky="w")
 
         self._xcheck_save_ubn = tk.BooleanVar(value=True)
-        ttk.Checkbutton(info, text="Save UBN reports to ubn_reports/ folder",
-                       variable=self._xcheck_save_ubn).grid(
-            row=1, column=0, columnspan=2, sticky="w", padx=4, pady=4)
 
         # ── Master Calls (SCP) ────────────────────────────────────────
         scp_frame = tk.LabelFrame(f, text="Master Calls Database (SCP)",
@@ -671,9 +739,19 @@ class SA10App(tk.Tk):
                  font=("Segoe UI", 8), fg="gray").grid(
             row=2, column=0, columnspan=2, sticky="w", padx=4)
 
-        tk.Button(f, text="▶  Run Cross-Check", command=self._run_crosscheck,
+        btn_frame = tk.Frame(f)
+        btn_frame.pack(pady=10)
+
+        tk.Button(btn_frame, text="▶  Run Cross-Check", command=self._run_crosscheck,
                   bg="#2d8a46", fg="white", font=("Segoe UI", 11, "bold"),
-                  relief="flat", padx=20, pady=8).pack(pady=10)
+                  relief="flat", padx=20, pady=8).pack(side="left", padx=(0, 8))
+
+        self._btn_generate_ubn = tk.Button(
+            btn_frame, text="📄  Generate UBN Reports",
+            command=self._generate_ubn_reports,
+            bg="#1a3a5c", fg="white", font=("Segoe UI", 11, "bold"),
+            relief="flat", padx=20, pady=8, state="disabled")
+        self._btn_generate_ubn.pack(side="left")
 
         tk.Label(f, text="Tip: Make sure logs are imported before running cross-check.",
                  font=("Segoe UI", 8), fg="gray").pack()
@@ -760,12 +838,17 @@ class SA10App(tk.Tk):
                         if slug_row:
                             rules = RulesLoader().load_contest(slug_row[0])
                             if rules.validation.master_calls_file:
-                                master_calls_file = rules.validation.master_calls_file
+                                master_calls_file = str(_bundled_asset(rules.validation.master_calls_file))
                     except Exception as re:
                         self._log(f"[WARN] Could not load contest rules: {re} — SCP check skipped", "warn")
 
                     t0 = datetime.now()
-                    ubn_by_log = svc.check_all_logs(cid, master_calls_file=master_calls_file)
+                    ubn_by_log = svc.check_all_logs(
+                        cid,
+                        master_calls_file=master_calls_file,
+                        progress_callback=lambda d, t: self._log_progress("Cross-checking", d, t),
+                    )
+                    self._log_progress_done()
                     elapsed = (datetime.now() - t0).total_seconds()
                     self._log(
                         f"Cross-check complete in {elapsed:.1f}s — "
@@ -774,57 +857,113 @@ class SA10App(tk.Tk):
                     # Write NIL/busted results back to contacts table
                     svc.update_database_with_results(ubn_by_log)
 
-                    if save_ubn:
-                        out_dir = Path("ubn_reports")
-                        out_dir.mkdir(exist_ok=True)
-                        from src.services.ubn_report_generator import UBNReportGenerator
-                        gen = UBNReportGenerator(session)
-                        saved = 0
-                        for log_id, entries in ubn_by_log.items():
-                            try:
-                                stats = svc.stats.get(log_id)
-                                if stats is None:
-                                    from src.services.cross_check_service import CrossCheckStats
-                                    stats = CrossCheckStats(
-                                        total_contacts=0, valid_contacts=0,
-                                        unique_count=sum(1 for e in entries
-                                                        if e.ubn_type.value == "unique"),
-                                        busted_count=sum(1 for e in entries
-                                                        if e.ubn_type.value == "busted"),
-                                        nil_count=sum(1 for e in entries
-                                                     if e.ubn_type.value == "nil"),
-                                        matched_count=0)
-                                callsign = entries[0].log_callsign if entries else f"log_{log_id}"
-                                safe_callsign = callsign.replace("/", "_").replace("\\", "_")
-                                report_txt = gen.generate_text_report(
-                                    log_id, entries, stats, "SA10M 2025")
-                                out_file = out_dir / f"{safe_callsign}_UBN.txt"
-                                out_file.write_text(report_txt, encoding="utf-8")
-                                saved += 1
-                            except Exception as e2:
-                                self._log(f"  Report error for log {log_id}: {e2}", "warn")
-                        self._log(f"Saved {saved} UBN reports to ubn_reports/", "ok")
-
                     # Re-score affected logs so scores.invalid_qsos / not_in_log_qsos
                     # reflect the updated validation_status values from cross-check.
                     self._log("Re-scoring logs to update NIL/invalid counts…", "info")
                     from src.services.scoring_service import ScoringService
                     scoring_svc = ScoringService(session, 'sa10m')
-                    scored, failed = 0, 0
-                    for log_id in ubn_by_log:
-                        try:
-                            scoring_svc.score_log(log_id)
-                            scored += 1
-                        except Exception as se:
-                            self._log(f"  Re-score error for log {log_id}: {se}", "warn")
-                            failed += 1
+                    _rescore_total = len(ubn_by_log)
+                    _rescore_step  = max(1, _rescore_total // 50)
+                    self._log_progress("Re-scoring", 0, _rescore_total)
+                    scored, failed = scoring_svc.score_logs_batch(
+                        list(ubn_by_log.keys()),
+                        progress_callback=lambda d, t: (
+                            self._log_progress("Re-scoring", d, t)
+                            if d % _rescore_step == 0 or d == t else None
+                        ),
+                    )
+                    self._log_progress_done()
                     self._log(
                         f"Re-scored {scored} logs" + (f" ({failed} failed)" if failed else ""),
                         "ok")
 
+                    self._log("Cross-check done. Click 'Generate UBN Reports' to create reports.", "info")
+                    # Enable the UBN reports button now that cross-check data is in DB
+                    self.after(0, lambda: self._btn_generate_ubn.config(state="normal"))
+
             except Exception as e:
                 import traceback
                 self._log(f"Cross-check error: {e}", "error")
+                self._log(traceback.format_exc(), "error")
+            finally:
+                self._running = False
+                self._set_status("Ready")
+
+        threading.Thread(target=_run, daemon=True).start()
+
+    def _generate_ubn_reports(self):
+        """Generate UBN reports from cross-check data already stored in the DB."""
+        if self._running:
+            messagebox.showinfo("Busy", "An operation is already running.")
+            return
+        cid = self._selected_contest_id.get()
+        if not cid:
+            messagebox.showerror("No contest", "Select an active contest first.")
+            return
+        db_path = self._db_path.get()
+
+        def _run():
+            self._running = True
+            self._set_status("Generating UBN reports…", busy=True)
+            try:
+                from src.database.db_manager import DatabaseManager
+                from src.services.cross_check_service import CrossCheckService
+                from src.services.ubn_report_generator import UBNReportGenerator
+
+                db = DatabaseManager(db_path)
+                with db.get_session() as session:
+                    svc = CrossCheckService(session)
+                    t0 = datetime.now()
+                    ubn_by_log = svc.rebuild_ubn_from_db(cid)
+                    if not ubn_by_log:
+                        self._log("No cross-check results found in DB. Run cross-check first.", "warn")
+                        return
+
+                    # Determine contest name for the report header
+                    from sqlalchemy import text as _sql_text
+                    contest_name_row = session.execute(
+                        _sql_text("SELECT name FROM contests WHERE id = :id"), {"id": cid}
+                    ).fetchone()
+                    contest_name = contest_name_row[0] if contest_name_row else "Contest"
+
+                    out_dir = Path("ubn_reports")
+                    out_dir.mkdir(exist_ok=True)
+                    gen = UBNReportGenerator(session)
+                    saved = 0
+                    errors = 0
+                    total_ubn = len(ubn_by_log)
+                    self._log_progress("UBN Reports", 0, total_ubn)
+                    for log_id, entries in ubn_by_log.items():
+                        try:
+                            stats = svc.stats.get(log_id)
+                            if stats is None:
+                                from src.services.cross_check_service import CrossCheckStats
+                                stats = CrossCheckStats(
+                                    total_contacts=0, valid_contacts=0,
+                                    unique_count=sum(1 for e in entries if e.ubn_type.value == "unique"),
+                                    busted_count=sum(1 for e in entries if e.ubn_type.value == "busted"),
+                                    nil_count=sum(1 for e in entries if e.ubn_type.value == "nil"),
+                                    matched_count=0)
+                            callsign = entries[0].log_callsign if entries else f"log_{log_id}"
+                            safe_callsign = callsign.replace("/", "_").replace("\\", "_")
+                            report_txt = gen.generate_text_report(log_id, entries, stats, contest_name)
+                            out_file = out_dir / f"{safe_callsign}_UBN.txt"
+                            out_file.write_text(report_txt, encoding="utf-8")
+                            saved += 1
+                        except Exception as e2:
+                            self._log(f"  Report error for log {log_id}: {e2}", "warn")
+                            errors += 1
+                        self._log_progress("UBN Reports", saved + errors, total_ubn)
+                    self._log_progress_done()
+
+                    elapsed = (datetime.now() - t0).total_seconds()
+                    self._log(
+                        f"Generated {saved} UBN reports to ubn_reports/ in {elapsed:.1f}s"
+                        + (f" ({errors} errors)" if errors else ""),
+                        "ok")
+            except Exception as e:
+                import traceback
+                self._log(f"UBN report error: {e}", "error")
                 self._log(traceback.format_exc(), "error")
             finally:
                 self._running = False
@@ -890,18 +1029,17 @@ class SA10App(tk.Tk):
                     ).scalars().all()
                     total = len(logs)
                     self._log(f"Scoring {total} logs…")
+                    _step = max(1, total // 50)
+                    self._log_progress("Scoring", 0, total)
                     svc = ScoringService(session, slug)
-                    for i, log in enumerate(logs, 1):
-                        try:
-                            result = svc.score_log(log.id)
-                            ok += 1
-                            if i % 50 == 0 or i == total:
-                                self._log(
-                                    f"  Progress: {i}/{total}  "
-                                    f"({ok} OK, {err} errors)")
-                        except Exception as e2:
-                            err += 1
-                            self._log(f"  Error on {log.callsign}: {e2}", "warn")
+                    ok, err = svc.score_logs_batch(
+                        [log.id for log in logs],
+                        progress_callback=lambda d, t: (
+                            self._log_progress("Scoring", d, t)
+                            if d % _step == 0 or d == t else None
+                        ),
+                    )
+                    self._log_progress_done()
                     self._log(
                         f"Scoring complete — {ok} OK, {err} errors.", "ok")
                 self._load_leaderboard(cid, db_path)
@@ -1640,6 +1778,69 @@ class SA10App(tk.Tk):
 
         threading.Thread(target=_run, daemon=True).start()
 
+    def _update_dxcc_data(self, db_path: str = None, silent: bool = False):
+        """Import/refresh CTY country data into the active database."""
+        if self._running and not silent:
+            messagebox.showinfo("Busy", "An operation is already running.")
+            return
+        db_path = db_path or self._db_path.get()
+        cty_path = str(_bundled_asset("cty_wt.dat"))
+        if not Path(cty_path).exists():
+            if not silent:
+                messagebox.showerror(
+                    "CTY file not found",
+                    f"Could not find cty_wt.dat at:\n{cty_path}\n\n"
+                    "Download it from https://www.country-files.com/cty/cty.dat "
+                    "and place it next to the application."
+                )
+            return
+
+        def _run():
+            self._running = True
+            self._set_status("Updating DXCC data…", busy=True)
+            try:
+                from src.services.dxcc_data_loader import DXCCDataLoader
+                from src.database.db_manager import DatabaseManager
+                db = DatabaseManager(db_path)
+                loader = DXCCDataLoader(cty_file_path=cty_path, db_manager=db)
+                stats = loader.populate_database()
+                self._log(
+                    f"DXCC data updated — {stats['added']} added, "
+                    f"{stats['updated']} updated, {stats['errors']} errors.", "ok")
+            except Exception as e:
+                import traceback
+                self._log(f"DXCC update error: {e}", "error")
+                self._log(traceback.format_exc(), "error")
+            finally:
+                self._running = False
+                self._set_status("Ready")
+
+        threading.Thread(target=_run, daemon=True).start()
+
+    def _new_database(self):
+        path = filedialog.asksaveasfilename(
+            title="Create New Database",
+            defaultextension=".db",
+            filetypes=[("SQLite", "*.db"), ("All", "*.*")],
+            initialfile="sa10_contest.db",
+            initialdir="."
+        )
+        if not path:
+            return
+        if Path(path).exists():
+            if not messagebox.askyesno(
+                "File exists",
+                f"'{Path(path).name}' already exists.\nOverwrite and create a fresh database?"
+            ):
+                return
+            Path(path).unlink()
+        self._db_path.set(path)
+        self._log(f"New database: {path}", "ok")
+        self._init_database()
+        self._refresh_contests()
+        # Populate CTY/DXCC data automatically so scoring works immediately
+        self._update_dxcc_data(db_path=path, silent=True)
+
     def _select_db(self):
         path = filedialog.askopenfilename(
             title="Select database file",
@@ -1656,8 +1857,14 @@ class SA10App(tk.Tk):
 # ─────────────────────────────────────────────────────────────────────
 
 def main():
-    # Change working directory to script location so relative paths work
-    os.chdir(Path(__file__).parent)
+    # Determine the application root reliably in both script and frozen-EXE modes.
+    # In a PyInstaller bundle __file__ on the entry script is not guaranteed to be
+    # the script path; sys.executable always points to the EXE / interpreter.
+    if getattr(sys, 'frozen', False):
+        _base_dir = Path(sys.executable).parent
+    else:
+        _base_dir = Path(__file__).parent
+    os.chdir(_base_dir)
     app = SA10App()
     app.mainloop()
 

@@ -60,3 +60,7 @@ You can re-run scoring at any time. Each run overwrites the previous scores. Thi
 
 !!! note "Cross-check first"
     For accurate results, always run the cross-check before scoring. Scoring without a cross-check will count all contacts as valid, including NILs.
+
+!!! warning "DXCC data required"
+    Scoring relies on country/continent lookup to assign correct point values (e.g. SA→non-SA = 4 pts). If the `CTYData` table is empty, all continent lookups return blank and contacts score 0 points.  
+    Use **File → Update DXCC Data…** before scoring. New databases populate this automatically; older databases must be updated manually.
