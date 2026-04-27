@@ -4,6 +4,9 @@
 
 The **Contests** tab is where you create and manage contest records. Every import and scoring run is tied to a specific contest, so this is always the first step.
 
+!!! note "Starting fresh?"
+    If you are beginning a new contest edition, create a new database first via **File → New Database…** before creating a contest record here. See [Creating a New Database](index.md#creating-a-new-database) for step-by-step instructions.
+
 ---
 
 ## Create New Contest

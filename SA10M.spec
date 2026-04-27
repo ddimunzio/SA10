@@ -5,8 +5,16 @@ a = Analysis(
     ['app_ui.py'],
     pathex=[],
     binaries=[],
-    datas=[('src', 'src'), ('config', 'config')],
+    datas=[
+        ('src', 'src'),
+        ('config', 'config'),
+        # sv_ttk ships theme Tcl/PNG files that PyInstaller won't discover automatically
+        ('.venv/Lib/site-packages/sv_ttk', 'sv_ttk'),
+        # CTY country-data file needed for continent/DXCC lookups
+        ('cty_wt.dat', '.'),
+    ],
     hiddenimports=[
+        'sv_ttk',
         'src.database.db_manager',
         'src.database.models',
         'src.services.log_import_service',
@@ -39,20 +47,28 @@ pyz = PYZ(a.pure)
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.datas,
     [],
+    exclude_binaries=True,
     name='SA10M',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
     upx_exclude=[],
-    runtime_tmpdir=None,
     console=False,
     disable_windowed_traceback=False,
     argv_emulation=False,
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+)
+
+coll = COLLECT(
+    exe,
+    a.binaries,
+    a.datas,
+    strip=False,
+    upx=True,
+    upx_exclude=[],
+    name='SA10M',
 )

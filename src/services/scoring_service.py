@@ -91,12 +91,12 @@ class ScoringService:
         if not contacts:
             raise ValueError(f"No contacts found for log {log_id}")
 
-        # Extract operator info from log
-        operator_info = self._extract_operator_info(log)
-        operator_info['callsign'] = log.callsign
-
-        # Initialize callsign lookup service
+        # Initialize callsign lookup service (one instance reused throughout)
         callsign_lookup = CallsignLookupService(self.session)
+
+        # Extract operator info from log
+        operator_info = self._extract_operator_info(log, callsign_lookup)
+        operator_info['callsign'] = log.callsign
 
         # Initialize rules engine
         engine = RulesEngine(
@@ -127,18 +127,266 @@ class ScoringService:
 
         return score_breakdown
 
-    def _extract_operator_info(self, log: Log) -> Dict[str, str]:
+    # ------------------------------------------------------------------ #
+    #  Batch scoring  — replaces N individual score_log() calls with a   #
+    #  single transaction: 1 query per table, 1 executemany, 1 commit.   #
+    # ------------------------------------------------------------------ #
+
+    def score_logs_batch(self, log_ids: List[int], progress_callback=None) -> Tuple[int, int]:
         """
-        Extract operator information from log using CTY data lookup
-        
+        Score multiple logs in a single DB transaction.
+
+        Replaces calling score_log() in a loop.  For N logs the savings are:
+          - N queries for logs      → 1
+          - N queries for contacts  → 1
+          - N queries for scores    → 1
+          - N queries for qso_counts→ 1
+          - N executemany for contact updates → 1
+          - N session.commit()      → 1
+
+        Returns:
+            (scored_count, failed_count)
+        """
+        if not log_ids:
+            return 0, 0
+
+        from collections import defaultdict as _dd
+        from ..database.models import ContestStatus
+        from ..core.rules.rules_engine import RulesEngine as _RE
+        from sqlalchemy import text as _text
+
+        log_ids = list(log_ids)
+        CHUNK = 500  # stay within SQLite's 999 bind-variable limit
+
+        def _ph(ids):
+            """Comma-separated integer literals — safe because IDs are always ints."""
+            return ','.join(str(int(i)) for i in ids)
+
+        # ── 1. Load all logs ──────────────────────────────────────────
+        logs_by_id: Dict[int, Log] = {}
+        for i in range(0, len(log_ids), CHUNK):
+            chunk = log_ids[i:i + CHUNK]
+            for lg in self.session.execute(select(Log).where(Log.id.in_(chunk))).scalars():
+                logs_by_id[lg.id] = lg
+
+        # ── 2. Load all contacts ──────────────────────────────────────
+        contacts_by_log: Dict[int, list] = _dd(list)
+        for i in range(0, len(log_ids), CHUNK):
+            chunk = log_ids[i:i + CHUNK]
+            for row in self.session.execute(_text(
+                f"SELECT * FROM contacts WHERE log_id IN ({_ph(chunk)}) "
+                f"ORDER BY log_id, qso_datetime"
+            )).fetchall():
+                c = Contact()
+                vs = None
+                for key, value in row._mapping.items():
+                    if key == 'validation_status':
+                        vs = value
+                        continue
+                    setattr(c, key, value)
+                c.validation_status_str = vs
+                contacts_by_log[c.log_id].append(c)
+
+        # ── 3. Load all existing score records ────────────────────────
+        scores_by_log: Dict[int, Score] = {}
+        for i in range(0, len(log_ids), CHUNK):
+            chunk = log_ids[i:i + CHUNK]
+            for s in self.session.execute(select(Score).where(Score.log_id.in_(chunk))).scalars():
+                scores_by_log[s.log_id] = s
+
+        # ── 4. Pre-compute NIL / invalid counts per log ───────────────
+        qso_counts_by_log: Dict[int, Tuple[int, int]] = {}
+        for i in range(0, len(log_ids), CHUNK):
+            chunk = log_ids[i:i + CHUNK]
+            for r in self.session.execute(_text(f"""
+                SELECT log_id,
+                       SUM(CASE WHEN UPPER(validation_status)
+                                     NOT IN ('VALID','DUPLICATE','UNIQUE_CALL')
+                                AND validation_status IS NOT NULL
+                                THEN 1 ELSE 0 END) AS inv,
+                       SUM(CASE WHEN UPPER(validation_status) = 'NOT_IN_LOG'
+                                THEN 1 ELSE 0 END)            AS nil
+                FROM contacts WHERE log_id IN ({_ph(chunk)})
+                GROUP BY log_id
+            """)).fetchall():
+                qso_counts_by_log[r.log_id] = (r.inv or 0, r.nil or 0)
+
+        # ── 5. Shared callsign lookup (loads CTY data once) ───────────
+        callsign_lookup = CallsignLookupService(self.session)
+
+        now = datetime.utcnow()
+        all_contact_params: list = []
+        scored = failed = 0
+
+        # ── 6. Per-log scoring (CPU-bound, no DB I/O) ─────────────────
+        for log_id in log_ids:
+            log = logs_by_id.get(log_id)
+            if log is None:
+                failed += 1
+                continue
+
+            try:
+                # CHECKLOG — zero score, skip rules engine
+                if (log.category_operator or "").upper() == "CHECKLOG":
+                    score = scores_by_log.get(log_id)
+                    if not score:
+                        score = Score(log_id=log_id)
+                        self.session.add(score)
+                        scores_by_log[log_id] = score
+                    score.total_qsos = 0;        score.valid_qsos = 0
+                    score.duplicate_qsos = 0;   score.total_points = 0
+                    score.multipliers = 0;       score.final_score = 0
+                    score.invalid_qsos = 0;      score.not_in_log_qsos = 0
+                    score.points_by_band = {};   score.qsos_by_band = {}
+                    score.multipliers_by_band = {}; score.multipliers_list = []
+                    score.calculated_at = now;   score.calculation_version = "1.0"
+                    score.notes = "Check log — not scored"
+                    log.status = ContestStatus.SCORED; log.processed_at = now
+                    scored += 1
+                    continue
+
+                contacts = contacts_by_log.get(log_id)
+                if not contacts:
+                    failed += 1
+                    continue
+
+                operator_info = self._extract_operator_info(log, callsign_lookup)
+                operator_info['callsign'] = log.callsign
+
+                engine = RulesEngine(
+                    rules=self.rules,
+                    operator_info=operator_info,
+                    callsign_lookup=callsign_lookup,
+                )
+
+                processed_contacts = []
+                rules_contacts = []
+                for db_contact in contacts:
+                    rc = self._db_contact_to_rules_contact(db_contact)
+                    processed_result = engine.process_contact(rc)
+                    processed_contacts.append((db_contact, processed_result))
+                    rules_contacts.append(processed_result)
+
+                score_breakdown = engine.calculate_final_score(rules_contacts)
+
+                # Collect contact update params for bulk executemany later
+                for db_contact, rc in processed_contacts:
+                    vs = getattr(db_contact, 'validation_status_str', 'VALID')
+                    is_invalid = vs and vs.lower() in [
+                        'not_in_log', 'busted_call', 'invalid_callsign',
+                        'invalid_exchange', 'invalid',
+                        'time_mismatch', 'exchange_mismatch',
+                    ]
+                    is_dup   = rc.is_duplicate
+                    is_valid = False if is_invalid else (not is_dup)
+                    is_mult  = rc.is_multiplier
+                    mult_type = mult_val = None
+                    if is_mult:
+                        mult_type = ','.join(rc.multiplier_types)
+                        vals = []
+                        if 'wpx_prefix' in rc.multiplier_types:
+                            pfx = _RE._extract_wpx_prefix(None, rc.callsign)
+                            if pfx:
+                                vals.append(pfx)
+                        if 'cq_zone' in rc.multiplier_types:
+                            z = rc.exchange_received.get('cq_zone', '')
+                            if z:
+                                vals.append(z)
+                        mult_val = ','.join(vals) if vals else None
+                    all_contact_params.append({
+                        'points':          getattr(rc, 'raw_points', rc.points),
+                        'is_duplicate':    is_dup,
+                        'is_valid':        is_valid,
+                        'is_multiplier':   is_mult,
+                        'multiplier_type': mult_type,
+                        'multiplier_value':mult_val,
+                        'contact_id':      db_contact.id,
+                    })
+
+                # Update score record (no commit yet)
+                score = scores_by_log.get(log_id)
+                if not score:
+                    score = Score(log_id=log_id)
+                    self.session.add(score)
+                    scores_by_log[log_id] = score
+
+                inv_count, nil_count = qso_counts_by_log.get(log_id, (0, 0))
+                score.total_qsos      = score_breakdown['total_qsos']
+                score.valid_qsos      = score_breakdown['valid_qsos']
+                score.duplicate_qsos  = score_breakdown['duplicate_qsos']
+                score.invalid_qsos    = inv_count
+                score.not_in_log_qsos = nil_count
+                score.total_points    = score_breakdown['total_points']
+                score.multipliers     = (score_breakdown['wpx_multipliers'] +
+                                         score_breakdown['zone_multipliers'])
+                score.final_score     = score_breakdown['final_score']
+
+                pb, qb, zb = {}, {}, {}
+                for band, bd in score_breakdown['band_scores'].items():
+                    pb[band] = bd['points']
+                    qb[band] = bd['qsos']
+                    zb[band] = bd['zones_on_band']
+                score.points_by_band      = pb
+                score.qsos_by_band        = qb
+                score.multipliers_by_band = zb
+
+                ml = list(engine.worked_prefixes)
+                az: set = set()
+                for zs in engine.worked_zones_per_band.values():
+                    az.update(zs)
+                ml.extend([f"Zone_{z}" for z in sorted(az)])
+                score.multipliers_list    = ml
+                score.calculated_at       = now
+                score.calculation_version = "1.0"
+                score.notes               = f"Scored using {self.contest_slug} rules"
+
+                log.status       = ContestStatus.SCORED
+                log.processed_at = now
+                scored += 1
+                if progress_callback:
+                    progress_callback(scored + failed, len(log_ids))
+
+            except Exception as exc:
+                failed += 1
+                if progress_callback:
+                    progress_callback(scored + failed, len(log_ids))
+                print(f"   [WARN] score_logs_batch: log {log_id} failed: {exc}")
+
+        # ── 7. Bulk-update all contacts — one executemany ─────────────
+        if all_contact_params:
+            self.session.connection().execute(
+                _text("""
+                    UPDATE contacts
+                    SET points           = :points,
+                        is_duplicate     = :is_duplicate,
+                        is_valid         = :is_valid,
+                        is_multiplier    = :is_multiplier,
+                        multiplier_type  = :multiplier_type,
+                        multiplier_value = :multiplier_value
+                    WHERE id = :contact_id
+                """),
+                all_contact_params,
+            )
+
+        # ── 8. Single commit for everything ──────────────────────────
+        self.session.commit()
+        return scored, failed
+
+    def _extract_operator_info(self, log: Log,
+                                callsign_lookup: Optional['CallsignLookupService'] = None
+                                ) -> Dict[str, str]:
+        """
+        Extract operator information from log using CTY data lookup.
+
         Args:
             log: Log database model
-            
+            callsign_lookup: Optional pre-built lookup service to avoid a
+                             second CTY data load when called from score_log.
         Returns:
             Dictionary with operator DXCC, continent, and zone
         """
-        # Use callsign lookup to get operator info from CTY data
-        callsign_lookup = CallsignLookupService(self.session)
+        if callsign_lookup is None:
+            callsign_lookup = CallsignLookupService(self.session)
         operator_info = callsign_lookup.lookup_callsign(log.callsign)
         
         if operator_info:
@@ -224,6 +472,7 @@ class ScoringService:
         """
         from sqlalchemy import text
         
+        params_list: list = []
         for db_contact, rules_contact in processed_contacts:
             # Check validation status from cross-check
             validation_status = getattr(db_contact, 'validation_status_str', 'VALID')
@@ -265,31 +514,32 @@ class ScoringService:
                         values.append(zone)
                 multiplier_value = ','.join(values) if values else None
             
-            # Use explicit SQL UPDATE to ensure persistence
-            self.session.execute(
-                text("""
-                    UPDATE contacts 
-                    SET points = :points,
-                        is_duplicate = :is_duplicate,
-                        is_valid = :is_valid,
-                        is_multiplier = :is_multiplier,
-                        multiplier_type = :multiplier_type,
-                        multiplier_value = :multiplier_value
-                    WHERE id = :contact_id
-                """),
-                {
+            params_list.append({
                     'points': getattr(rules_contact, 'raw_points', rules_contact.points),
                     'is_duplicate': is_duplicate,
                     'is_valid': is_valid,
                     'is_multiplier': is_multiplier,
                     'multiplier_type': multiplier_type,
                     'multiplier_value': multiplier_value,
-                    'contact_id': db_contact.id
-                }
-            )
+                    'contact_id': db_contact.id,
+            })
 
-        # Commit all updates
-        self.session.commit()
+        # Single executemany call — one DB round-trip for all contacts in this log
+        if params_list:
+            self.session.connection().execute(
+                text("""
+                    UPDATE contacts
+                    SET points           = :points,
+                        is_duplicate     = :is_duplicate,
+                        is_valid         = :is_valid,
+                        is_multiplier    = :is_multiplier,
+                        multiplier_type  = :multiplier_type,
+                        multiplier_value = :multiplier_value
+                    WHERE id = :contact_id
+                """),
+                params_list,
+            )
+        # No commit here — caller (_update_score_table) does the single commit
 
     def _store_checklog_zero_score(self, log_id: int, log: Log) -> None:
         """Store a zeroed score record for a check log and mark it scored."""

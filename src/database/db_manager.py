@@ -46,11 +46,23 @@ class DatabaseManager:
                 connect_args={"check_same_thread": False},
                 poolclass=StaticPool
             )
-            # Enable foreign keys for SQLite
+            # Performance + correctness pragmas applied on every new connection
             @event.listens_for(self.engine, "connect")
             def set_sqlite_pragma(dbapi_conn, connection_record):
                 cursor = dbapi_conn.cursor()
+                # Referential integrity
                 cursor.execute("PRAGMA foreign_keys=ON")
+                # WAL mode: writers don't block readers, much faster for bulk writes
+                cursor.execute("PRAGMA journal_mode=WAL")
+                # NORMAL: flush only at critical checkpoints — safe with WAL,
+                # dramatically faster than the default FULL (one fsync per commit)
+                cursor.execute("PRAGMA synchronous=NORMAL")
+                # 64 MB in-memory page cache (default is ~2 MB)
+                cursor.execute("PRAGMA cache_size=-65536")
+                # Store temp tables / indices in memory
+                cursor.execute("PRAGMA temp_store=MEMORY")
+                # 5-second busy timeout so concurrent threads wait instead of fail
+                cursor.execute("PRAGMA busy_timeout=5000")
                 cursor.close()
         else:
             self.engine = create_engine(database_url, echo=echo)

@@ -625,117 +625,104 @@ class UBNReportGenerator:
 
     def _find_reverse_busted_calls(self, log_id: int, my_callsign: str) -> List[Dict]:
         """
-        Find contacts in other logs where they incorrectly logged this station's callsign
+        Find contacts in other logs where they incorrectly logged this station's callsign.
+        Uses two bulk queries instead of one query per worked station.
         """
         import Levenshtein
-        
-        # First, get all my QSOs with their times, bands, and modes
+        from datetime import timedelta
+        from collections import defaultdict
+
+        # ── 1. Get all my valid QSOs ───────────────────────────────────────────
         my_qsos_query = text("""
-            SELECT 
-                c.call_received,
-                c.qso_datetime,
-                c.band,
-                c.mode,
-                c.exchange_sent,
-                c.frequency
-            FROM contacts c
-            WHERE c.log_id = :log_id
-            ORDER BY c.qso_datetime
+            SELECT call_received, qso_datetime, band, mode, exchange_sent, frequency
+            FROM contacts
+            WHERE log_id = :log_id
+            ORDER BY qso_datetime
         """)
-        
         my_qsos = self.session.execute(my_qsos_query, {"log_id": log_id}).fetchall()
-        
-        # Build a lookup for other stations that I worked
-        worked_stations = {row.call_received: (row.qso_datetime, row.band, row.mode, row.exchange_sent, row.frequency) 
-                          for row in my_qsos}
-        
-        if not worked_stations:
+        if not my_qsos:
             return []
-        
-        reverse_errors = []
-        
-        for their_call, (my_time, my_band, my_mode, my_exch, my_freq) in worked_stations.items():
-            # Query their log to see what they logged for contacts around that time
-            query = text("""
-                SELECT 
-                    c.call_received as logged_as,
-                    c.qso_datetime,
-                    c.band,
-                    c.mode,
-                    c.exchange_received
+
+        worked_stations = {
+            row.call_received: (row.qso_datetime, row.band, row.mode,
+                                row.exchange_sent, row.frequency)
+            for row in my_qsos
+        }
+        station_list = list(worked_stations.keys())
+        CHUNK = 500
+
+        # ── 2. Bulk-fetch all contacts from worked stations in the same contest ─
+        # Key: their_callsign → list of (call_received, qso_datetime, band, mode, exchange_received)
+        their_contacts: dict = defaultdict(list)
+        for i in range(0, len(station_list), CHUNK):
+            chunk = station_list[i:i + CHUNK]
+            placeholders = ','.join([f':sc_{j}' for j in range(len(chunk))])
+            params = {f'sc_{j}': c for j, c in enumerate(chunk)}
+            params['log_id'] = log_id
+            rows = self.session.execute(text(f"""
+                SELECT l.callsign AS their_call,
+                       c.call_received, c.qso_datetime, c.band,
+                       c.mode, c.exchange_received
                 FROM contacts c
-                INNER JOIN logs l ON c.log_id = l.id
-                WHERE 
-                    l.callsign = :their_call
-                    AND c.call_received != :my_callsign
-                    AND LENGTH(c.call_received) BETWEEN :min_len AND :max_len
-                    AND c.band = :band
-                    AND c.mode = :mode
-                    AND ABS(JULIANDAY(c.qso_datetime) - JULIANDAY(:my_time)) <= 0.000694
-                LIMIT 1
-            """)
-            
-            min_len = len(my_callsign) - 2
-            max_len = len(my_callsign) + 2
-            
-            result = self.session.execute(query, {
-                "their_call": their_call,
-                "my_callsign": my_callsign,
-                "min_len": min_len,
-                "max_len": max_len,
-                "band": my_band,
-                "mode": my_mode,
-                "my_time": my_time
-            }).fetchone()
-            
-            if result:
-                # Calculate similarity
-                distance = Levenshtein.distance(my_callsign, result.logged_as)
-                
-                # Only include if it's similar (1-2 character difference)
-                if 0 < distance <= 2:
-                    # Before flagging as busted, verify that the other station does NOT
-                    # also have a correct QSO with us within ±5 minutes.
-                    # If they correctly logged us nearby, the similar-looking call is a
-                    # genuine separate QSO with a different station (not a busted copy).
-                    correct_qso_check = text("""
-                        SELECT COUNT(*) as cnt
-                        FROM contacts c
-                        INNER JOIN logs l ON c.log_id = l.id
-                        WHERE 
-                            l.callsign = :their_call
-                            AND c.call_received = :my_callsign
-                            AND c.band = :band
-                            AND c.mode = :mode
-                            AND ABS(JULIANDAY(c.qso_datetime) - JULIANDAY(:my_time)) <= 0.003472
-                    """)
-                    correct_count = self.session.execute(correct_qso_check, {
-                        "their_call": their_call,
-                        "my_callsign": my_callsign,
-                        "band": my_band,
-                        "mode": my_mode,
-                        "my_time": my_time
-                    }).scalar()
+                JOIN logs l ON c.log_id = l.id
+                WHERE l.contest_id = (SELECT contest_id FROM logs WHERE id = :log_id)
+                  AND l.callsign IN ({placeholders})
+            """), params).fetchall()
+            for r in rows:
+                their_contacts[r.their_call].append(r)
 
-                    if correct_count and correct_count > 0:
-                        # They correctly logged us near this time — the similar call
-                        # is a real QSO with a different station, not a busted copy.
-                        continue
+        # ── 3. In-memory matching ─────────────────────────────────────────────
+        my_cs_len = len(my_callsign)
+        reverse_errors = []
 
-                    timestamp = parse_datetime(result.qso_datetime)
-                    
-                    reverse_errors.append({
-                        'their_call': their_call,
-                        'logged_as': result.logged_as,
-                        'timestamp': timestamp,
-                        'band': result.band,
-                        'mode': result.mode,
-                        'distance': distance,
-                        'their_exchange': result.exchange_received,
-                        'my_exchange': my_exch,
-                        'frequency': my_freq
-                    })
-        
+        for their_call, (my_time_raw, my_band, my_mode, my_exch, my_freq) in worked_stations.items():
+            my_time = parse_datetime(my_time_raw)
+            contacts = their_contacts.get(their_call, [])
+
+            # Find a contact where they logged someone similar to us (not us)
+            # within ±1 minute, same band/mode
+            busted_row = None
+            for r in contacts:
+                if r.call_received == my_callsign:
+                    continue
+                if r.band != my_band or r.mode != my_mode:
+                    continue
+                if len(r.call_received) < my_cs_len - 2 or len(r.call_received) > my_cs_len + 2:
+                    continue
+                dt = parse_datetime(r.qso_datetime)
+                if abs((my_time - dt).total_seconds()) > 60:
+                    continue
+                dist = Levenshtein.distance(my_callsign, r.call_received)
+                if 0 < dist <= 2:
+                    busted_row = r
+                    break
+
+            if not busted_row:
+                continue
+
+            # Check they don't also have a correct QSO with us within ±5 min
+            has_correct = any(
+                r.call_received == my_callsign
+                and r.band == my_band
+                and r.mode == my_mode
+                and abs((my_time - parse_datetime(r.qso_datetime)).total_seconds()) <= 300
+                for r in contacts
+            )
+            if has_correct:
+                continue
+
+            reverse_errors.append({
+                'their_call':    their_call,
+                'logged_as':     busted_row.call_received,
+                'timestamp':     parse_datetime(busted_row.qso_datetime),
+                'band':          busted_row.band,
+                'mode':          busted_row.mode,
+                'distance':      Levenshtein.distance(my_callsign, busted_row.call_received),
+                'their_exchange': busted_row.exchange_received,
+                'my_exchange':   my_exch,
+                'frequency':     my_freq,
+            })
+
         return reverse_errors
 
     def _get_reverse_nil_errors(self, log_id: int, my_callsign: str, ubn_entries: List[UBNEntry]) -> List[Dict]:

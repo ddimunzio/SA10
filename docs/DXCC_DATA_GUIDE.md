@@ -11,7 +11,31 @@ The DXCC (DX Century Club) data loader provides country and prefix information f
 
 ## Quick Start
 
-### 1. Download CTY.DAT File
+### Using the Desktop Application (recommended)
+
+The desktop application includes a built-in DXCC data import that reads `cty_wt.dat` from the application folder — no separate download needed.
+
+**First-time setup (new database)**
+
+1. Create a new database via **File → New Database…**
+2. DXCC data is loaded automatically into the new database.
+
+**Refreshing an existing database**
+
+1. Open the target database via **File → Open Database…**
+2. Go to **File → Update DXCC Data…**
+3. The import runs in the background; watch the output log for confirmation:
+   ```
+   DXCC data updated — 340 added, 0 updated, 0 errors.
+   ```
+
+> **Important:** DXCC data must be loaded before running scoring. Without it the continent/zone lookup returns empty values and all contacts score 0 points.
+
+---
+
+### Using the Command Line
+
+#### 1. Download CTY.DAT File
 
 ```bash
 # Download from country-files.com (recommended)
@@ -23,10 +47,10 @@ curl -O https://www.country-files.com/cty/cty.dat
 
 Place the `cty.dat` file in the project root directory.
 
-### 2. Update Database with CTY.DAT
+#### 2. Update Database with CTY.DAT
 
 ```bash
-# Update using default paths (cty.dat and sa10_contest.db)
+# Update using default paths (cty_wt.dat and sa10_contest.db)
 python update_dxcc_data.py
 
 # Or specify custom paths
@@ -36,7 +60,7 @@ python update_dxcc_data.py --cty-file cty.dat --db-path sa10_contest.db
 python update_dxcc_data.py --verbose
 ```
 
-### 3. Expected Output
+#### 3. Expected Output
 
 ```
 ======================================================================
@@ -167,6 +191,13 @@ CTY.DAT files are updated regularly as new DXCC entities are added or prefixes c
 - **Quarterly**: For historical analysis
 
 ### Update Process
+
+Using the desktop application:
+
+1. Open the database to update via **File → Open Database…**
+2. Click **File → Update DXCC Data…** — the bundled `cty_wt.dat` is imported automatically.
+
+Using the command line:
 
 ```bash
 # 1. Download latest CTY.DAT
