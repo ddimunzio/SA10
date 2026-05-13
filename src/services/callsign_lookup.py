@@ -108,10 +108,10 @@ class CallsignLookupService:
         # Remove common suffixes
         call = callsign.upper()
         
-        # Remove /P, /M, /QRP, /MM, etc.
+        # Handle portable/slash callsigns (e.g. IT9/DK6XZ, EA6/CO8NM, DK6XZ/P)
+        # In ham radio, the part BEFORE the first '/' is always the operating entity prefix.
+        # e.g. IT9/DK6XZ -> IT9 (Sicily), EA6/CO8NM -> EA6 (Balearics), DK6XZ/P -> DK6XZ
         if '/' in call:
-            parts = call.split('/')
-            # Use the longest part (usually the callsign)
-            call = max(parts, key=len)
+            call = call.split('/')[0]
         
         return call

@@ -316,7 +316,9 @@ class CrossCheckService:
         master_calls: frozenset,
     ) -> int:
         """
-        Reclassify unique calls that are likely fabricated as BUSTED.
+        Reclassify suspicious unique calls as BUSTED, and remove trusted unique
+        calls (corroborated or in MASTER.SCP) from the list entirely so they
+        are treated as valid QSOs.
 
         A unique call is considered suspicious — and reclassified to
         UBNType.BUSTED with no suggested replacement — when it fails BOTH:
@@ -324,7 +326,9 @@ class CrossCheckService:
           2. It is NOT corroborated: no log OTHER than the one being evaluated
              also worked the same callsign.
 
-        A call that satisfies either condition is left as UNIQUE (trusted).
+        A call that satisfies either condition (in SCP or worked by 2+ logs) is
+        a real station that simply did not submit a log.  Those entries are
+        removed from unique_entries so they remain 'valid' in the database.
 
         Args:
             unique_entries: List of UNIQUE UBNEntry objects (modified in place).
@@ -342,15 +346,28 @@ class CrossCheckService:
             call_to_logs[entry.worked_callsign.upper()].add(entry.log_id)
 
         reclassified = 0
-        for entry in unique_entries:
+        trusted_indices = []  # positions to remove (corroborated or in SCP → valid)
+        for i, entry in enumerate(unique_entries):
             call_upper = entry.worked_callsign.upper()
             in_scp = bool(master_calls) and call_upper in master_calls
             corroborated = len(call_to_logs[call_upper] - {entry.log_id}) >= 1
 
             if not in_scp and not corroborated:
+                # Suspicious: reclassify as BUSTED (no known correct call)
                 entry.ubn_type = UBNType.BUSTED
-                entry.suggested_call = None  # No known correct call
+                entry.suggested_call = None
                 reclassified += 1
+            else:
+                # Trusted (real station, didn't submit): remove so it stays 'valid'
+                trusted_indices.append(i)
+
+        # Remove in reverse order to preserve indices
+        for i in reversed(trusted_indices):
+            del unique_entries[i]
+
+        if trusted_indices:
+            print(f"   Removed {len(trusted_indices)} trusted unique call(s) "
+                  f"(corroborated or in SCP) — kept as valid QSOs")
 
         return reclassified
 
