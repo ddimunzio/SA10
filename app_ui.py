@@ -239,18 +239,21 @@ class SA10App(tk.Tk):
         self._tab_xcheck   = ttk.Frame(self._nb)
         self._tab_scoring  = ttk.Frame(self._nb)
         self._tab_results  = ttk.Frame(self._nb)
+        self._tab_stats    = ttk.Frame(self._nb)
 
         self._nb.add(self._tab_contests, text="  Contests  ")
         self._nb.add(self._tab_import,   text="  Import Logs  ")
         self._nb.add(self._tab_xcheck,   text="  Cross-Check  ")
         self._nb.add(self._tab_scoring,  text="  Scoring  ")
         self._nb.add(self._tab_results,  text="  Leaderboard  ")
+        self._nb.add(self._tab_stats,    text="  Statistics  ")
 
         self._build_tab_contests()
         self._build_tab_import()
         self._build_tab_xcheck()
         self._build_tab_scoring()
         self._build_tab_results()
+        self._build_tab_stats()
 
     # ── Log pane ──────────────────────────────────────────────────────
 
@@ -1242,6 +1245,382 @@ class SA10App(tk.Tk):
             # text columns sort ascending by default; numeric columns descending
             self._ldr_sort_rev = col not in ("Callsign", "Category")
         self._apply_leaderboard_filter()
+
+    # ─────────────────────────────────────────────────────────────────
+    #  TAB: Statistics
+    # ─────────────────────────────────────────────────────────────────
+
+    def _build_tab_stats(self):
+        f = self._tab_stats
+
+        btn_row = tk.Frame(f)
+        btn_row.pack(fill="x", padx=10, pady=(8, 4))
+        tk.Button(btn_row, text="↻ Refresh Statistics", command=self._refresh_stats,
+                  bg="#2d6a9f", fg="white", font=("Segoe UI", 9, "bold"),
+                  relief="flat", padx=10).pack(side="left")
+        tk.Button(btn_row, text="⬇ Export UBN List (Excel)", command=self._export_ubn_excel,
+                  bg="#217346", fg="white", font=("Segoe UI", 9, "bold"),
+                  relief="flat", padx=10).pack(side="left", padx=(6, 0))
+        tk.Label(btn_row, text="Contest:",
+                 font=("Segoe UI", 9)).pack(side="right", padx=(0, 4))
+        tk.Label(btn_row, textvariable=self._selected_contest_name,
+                 font=("Segoe UI", 9, "bold"), fg="#1a3a5c").pack(side="right")
+
+        # StringVars for each stat
+        self._stat_vars = {k: tk.StringVar(value="—") for k in [
+            'countries_total', 'ubns_total',
+            'cw_zones', 'cw_prefixes', 'cw_countries', 'cw_ubns',
+            'ssb_zones', 'ssb_prefixes', 'ssb_countries', 'ssb_ubns',
+        ]}
+
+        def _stat_card(parent, label_text, key, col, row):
+            card = tk.Frame(parent, relief="groove", bd=1, padx=14, pady=10)
+            card.grid(row=row, column=col, padx=8, pady=6, sticky="nsew")
+            tk.Label(card, text=label_text, font=("Segoe UI", 8),
+                     fg="#666666", anchor="center").pack()
+            tk.Label(card, textvariable=self._stat_vars[key],
+                     font=("Segoe UI", 20, "bold"), fg="#1a3a5c",
+                     anchor="center").pack()
+
+        # ── General ──────────────────────────────────────────────────
+        gen = tk.LabelFrame(f, text="  General  ", font=("Segoe UI", 9, "bold"),
+                            padx=8, pady=6)
+        gen.pack(fill="x", padx=12, pady=(4, 2))
+        gen.columnconfigure(0, weight=1)
+        gen.columnconfigure(1, weight=1)
+        _stat_card(gen, "Total Participating Countries", 'countries_total', col=0, row=0)
+        _stat_card(gen, "Total UBNs",                   'ubns_total',       col=1, row=0)
+
+        # ── CW ───────────────────────────────────────────────────────
+        cw = tk.LabelFrame(f, text="  CW  ", font=("Segoe UI", 9, "bold"),
+                           padx=8, pady=6)
+        cw.pack(fill="x", padx=12, pady=2)
+        for i in range(4):
+            cw.columnconfigure(i, weight=1)
+        _stat_card(cw, "CQ Zones",  'cw_zones',     col=0, row=0)
+        _stat_card(cw, "Prefixes",  'cw_prefixes',  col=1, row=0)
+        _stat_card(cw, "Countries", 'cw_countries', col=2, row=0)
+        _stat_card(cw, "UBNs",      'cw_ubns',      col=3, row=0)
+
+        # ── SSB ──────────────────────────────────────────────────────
+        ssb = tk.LabelFrame(f, text="  SSB  ", font=("Segoe UI", 9, "bold"),
+                            padx=8, pady=6)
+        ssb.pack(fill="x", padx=12, pady=2)
+        for i in range(4):
+            ssb.columnconfigure(i, weight=1)
+        _stat_card(ssb, "CQ Zones",  'ssb_zones',     col=0, row=0)
+        _stat_card(ssb, "Prefixes",  'ssb_prefixes',  col=1, row=0)
+        _stat_card(ssb, "Countries", 'ssb_countries', col=2, row=0)
+        _stat_card(ssb, "UBNs",      'ssb_ubns',      col=3, row=0)
+
+        # ── Participants by Continent ─────────────────────────────────
+        cont_frame = tk.LabelFrame(f, text="  Participants by Continent  ",
+                                   font=("Segoe UI", 9, "bold"), padx=8, pady=6)
+        cont_frame.pack(fill="x", padx=12, pady=(2, 8))
+        cont_cols = ("Continent", "Participants")
+        self._stats_cont_tree = ttk.Treeview(cont_frame, columns=cont_cols,
+                                             show="headings", height=8)
+        self._stats_cont_tree.heading("Continent",    text="Continent")
+        self._stats_cont_tree.heading("Participants", text="Participants")
+        self._stats_cont_tree.column("Continent",    width=200, anchor="w")
+        self._stats_cont_tree.column("Participants", width=120, anchor="center")
+        self._stats_cont_tree.pack(fill="x", padx=4, pady=4)
+
+    def _refresh_stats(self):
+        cid = self._selected_contest_id.get()
+        if not cid:
+            messagebox.showinfo("No contest", "Select an active contest first.")
+            return
+        threading.Thread(target=self._load_stats, args=(cid,), daemon=True).start()
+
+    def _export_ubn_excel(self):
+        cid = self._selected_contest_id.get()
+        if not cid:
+            messagebox.showinfo("No contest", "Select an active contest first.")
+            return
+
+        out_path = filedialog.asksaveasfilename(
+            title="Export UBN List to Excel",
+            defaultextension=".xlsx",
+            filetypes=[("Excel files", "*.xlsx")],
+            initialfile="ubn_list.xlsx",
+            initialdir="."
+        )
+        if not out_path:
+            return
+
+        db_path = self._db_path.get()
+
+        def _run():
+            self._set_status("Exporting UBN list…", busy=True)
+            try:
+                import openpyxl
+                from openpyxl.styles import Font, PatternFill, Alignment
+                from src.database.db_manager import DatabaseManager
+                from sqlalchemy import text as sql_text
+
+                UBN_REASON = {
+                    'not_in_log':       'NIL – Not in log',
+                    'invalid_callsign': 'Busted callsign',
+                    'unique_call':      'Unique call (no confirming log)',
+                }
+                STATUS_FILL = {
+                    'not_in_log':       PatternFill("solid", fgColor="FFC7CE"),
+                    'invalid_callsign': PatternFill("solid", fgColor="FFEB9C"),
+                    'unique_call':      PatternFill("solid", fgColor="DDEBF7"),
+                }
+
+                db = DatabaseManager(db_path)
+                with db.get_session() as session:
+                    rows = session.execute(sql_text("""
+                        SELECT
+                            l.callsign        AS log_callsign,
+                            c.qso_date,
+                            c.qso_time,
+                            c.band,
+                            c.mode,
+                            c.call_sent,
+                            c.rst_sent,
+                            c.exchange_sent,
+                            c.call_received,
+                            c.rst_received,
+                            c.exchange_received,
+                            c.validation_status,
+                            c.validation_notes,
+                            c.contact_country,
+                            c.wpx_prefix
+                        FROM contacts c
+                        JOIN logs l ON c.log_id = l.id
+                        WHERE l.contest_id = :cid
+                          AND c.validation_status IN
+                              ('not_in_log','invalid_callsign','unique_call')
+                        ORDER BY l.callsign, c.qso_date, c.qso_time
+                    """), {"cid": cid}).fetchall()
+
+                wb = openpyxl.Workbook()
+                ws = wb.active
+                ws.title = "UBN List"
+
+                hdr_font  = Font(bold=True, color="FFFFFF")
+                hdr_fill  = PatternFill("solid", fgColor="1A3A5C")
+                ctr_align = Alignment(horizontal="center", vertical="center")
+
+                headers = [
+                    "Log (Operator)", "Date", "Time", "Band", "Mode",
+                    "Call Sent", "RST Sent", "Exch Sent",
+                    "Call Rcvd", "RST Rcvd", "Exch Rcvd",
+                    "UBN Type", "Reason",
+                    "Country", "WPX Prefix",
+                ]
+                for col_num, h in enumerate(headers, 1):
+                    cell = ws.cell(1, col_num, h)
+                    cell.font = hdr_font
+                    cell.fill = hdr_fill
+                    cell.alignment = ctr_align
+
+                ws.freeze_panes = "A2"
+
+                for row_num, r in enumerate(rows, 2):
+                    status = (r.validation_status.value
+                              if hasattr(r.validation_status, 'value')
+                              else str(r.validation_status))
+                    ubn_type = status.replace('_', ' ').title()
+                    reason   = UBN_REASON.get(status, status)
+                    # Append notes if present
+                    notes = (r.validation_notes or "").strip()
+                    if notes:
+                        reason = f"{reason} – {notes}"
+
+                    ws.append([
+                        r.log_callsign,
+                        r.qso_date,
+                        r.qso_time,
+                        r.band,
+                        r.mode,
+                        r.call_sent,
+                        r.rst_sent,
+                        r.exchange_sent,
+                        r.call_received,
+                        r.rst_received,
+                        r.exchange_received,
+                        ubn_type,
+                        reason,
+                        r.contact_country or "",
+                        r.wpx_prefix or "",
+                    ])
+
+                    row_fill = STATUS_FILL.get(status)
+                    if row_fill:
+                        for col_num in range(1, len(headers) + 1):
+                            ws.cell(row_num, col_num).fill = row_fill
+
+                # Column widths
+                col_widths = [14, 12, 6, 6, 5, 14, 8, 10, 14, 8, 10, 22, 50, 20, 10]
+                from openpyxl.utils import get_column_letter
+                for i, w in enumerate(col_widths, 1):
+                    ws.column_dimensions[get_column_letter(i)].width = w
+
+                wb.save(out_path)
+                self._log(f"UBN list exported: {len(rows)} rows → {out_path}", "ok")
+                messagebox.showinfo(
+                    "Export complete",
+                    f"{len(rows)} UBN entries exported to:\n{out_path}")
+
+            except ImportError:
+                self._log("openpyxl is not installed. Run: pip install openpyxl", "error")
+                messagebox.showerror("Missing dependency",
+                    "openpyxl is required.\n\nRun: pip install openpyxl")
+            except Exception as e:
+                import traceback
+                self._log(f"UBN export error: {e}", "error")
+                self._log(traceback.format_exc(), "error")
+                messagebox.showerror("Export error", str(e))
+            finally:
+                self._set_status("Ready")
+
+        threading.Thread(target=_run, daemon=True).start()
+
+    def _load_stats(self, cid: int):
+        self._set_status("Loading statistics…", busy=True)
+        try:
+            from src.database.db_manager import DatabaseManager
+            from src.services.callsign_lookup import CallsignLookupService
+            from src.utils.ham_radio_utils import HamRadioUtils
+            from sqlalchemy import text as sql_text
+
+            db = DatabaseManager(self._db_path.get())
+            with db.get_session() as session:
+                lookup = CallsignLookupService(session)
+
+                # All participant callsigns
+                log_rows = session.execute(sql_text(
+                    "SELECT callsign FROM logs WHERE contest_id = :cid"
+                ), {"cid": cid}).fetchall()
+                log_callsigns = [r[0] for r in log_rows if r[0]]
+
+                # Countries and continents of participants
+                countries_set: set = set()
+                continent_map: dict = {}
+                for cs in log_callsigns:
+                    info = lookup.lookup_callsign(cs)
+                    cont    = (info.get('continent')    or 'Unknown') if info else 'Unknown'
+                    country = (info.get('country_name') or '')        if info else ''
+                    if country:
+                        countries_set.add(country)
+                    continent_map[cs] = cont
+
+                # Total UBNs (all modes)
+                ubn_total = session.execute(sql_text("""
+                    SELECT COUNT(*) FROM contacts c
+                    JOIN logs l ON c.log_id = l.id
+                    WHERE l.contest_id = :cid
+                      AND c.validation_status IN ('not_in_log','invalid_callsign','unique_call')
+                """), {"cid": cid}).scalar() or 0
+
+                # CQ Zones per mode — all contacts (no validation filter; exchange = zone)
+                cw_zones = session.execute(sql_text("""
+                    SELECT COUNT(DISTINCT c.exchange_received)
+                    FROM contacts c JOIN logs l ON c.log_id = l.id
+                    WHERE l.contest_id = :cid AND c.mode = 'CW'
+                      AND c.exchange_received IS NOT NULL
+                """), {"cid": cid}).scalar() or 0
+
+                ssb_zones = session.execute(sql_text("""
+                    SELECT COUNT(DISTINCT c.exchange_received)
+                    FROM contacts c JOIN logs l ON c.log_id = l.id
+                    WHERE l.contest_id = :cid
+                      AND c.mode IN ('PH','SSB','USB','LSB','FM')
+                      AND c.exchange_received IS NOT NULL
+                """), {"cid": cid}).scalar() or 0
+
+                # UBNs per mode
+                cw_ubns = session.execute(sql_text("""
+                    SELECT COUNT(*) FROM contacts c
+                    JOIN logs l ON c.log_id = l.id
+                    WHERE l.contest_id = :cid AND c.mode = 'CW'
+                      AND c.validation_status IN ('not_in_log','invalid_callsign','unique_call')
+                """), {"cid": cid}).scalar() or 0
+
+                ssb_ubns = session.execute(sql_text("""
+                    SELECT COUNT(*) FROM contacts c
+                    JOIN logs l ON c.log_id = l.id
+                    WHERE l.contest_id = :cid
+                      AND c.mode IN ('PH','SSB','USB','LSB','FM')
+                      AND c.validation_status IN ('not_in_log','invalid_callsign','unique_call')
+                """), {"cid": cid}).scalar() or 0
+
+                # Distinct callsigns received per mode (all contacts, no validation filter)
+                cw_calls = [r[0] for r in session.execute(sql_text("""
+                    SELECT DISTINCT c.call_received
+                    FROM contacts c JOIN logs l ON c.log_id = l.id
+                    WHERE l.contest_id = :cid AND c.mode = 'CW'
+                      AND c.call_received IS NOT NULL
+                """), {"cid": cid}).fetchall()]
+
+                ssb_calls = [r[0] for r in session.execute(sql_text("""
+                    SELECT DISTINCT c.call_received
+                    FROM contacts c JOIN logs l ON c.log_id = l.id
+                    WHERE l.contest_id = :cid
+                      AND c.mode IN ('PH','SSB','USB','LSB','FM')
+                      AND c.call_received IS NOT NULL
+                """), {"cid": cid}).fetchall()]
+
+                # Countries worked per mode (reuse same session / lookup cache)
+                cw_country_set: set = set()
+                for cs in cw_calls:
+                    info = lookup.lookup_callsign(cs)
+                    if info and info.get('country_name'):
+                        cw_country_set.add(info['country_name'])
+
+                ssb_country_set: set = set()
+                for cs in ssb_calls:
+                    info = lookup.lookup_callsign(cs)
+                    if info and info.get('country_name'):
+                        ssb_country_set.add(info['country_name'])
+
+            # WPX prefixes (CPU-only, no DB needed)
+            ham = HamRadioUtils()
+            cw_prefix_set  = {ham.extract_wpx_prefix(cs) for cs in cw_calls  if cs}
+            ssb_prefix_set = {ham.extract_wpx_prefix(cs) for cs in ssb_calls if cs}
+
+            # Continent counts
+            cont_counts: dict = {}
+            for cont in continent_map.values():
+                cont_counts[cont] = cont_counts.get(cont, 0) + 1
+
+            CONT_LABELS = {
+                'EU': 'Europe',        'NA': 'North America', 'SA': 'South America',
+                'AS': 'Asia',          'AF': 'Africa',        'OC': 'Oceania',
+                'AN': 'Antarctica',    'Unknown': 'Unknown',
+            }
+
+            def _update():
+                self._stat_vars['countries_total'].set(str(len(countries_set)))
+                self._stat_vars['ubns_total'].set(f"{ubn_total:,}")
+                self._stat_vars['cw_zones'].set(str(cw_zones))
+                self._stat_vars['cw_prefixes'].set(str(len(cw_prefix_set)))
+                self._stat_vars['cw_countries'].set(str(len(cw_country_set)))
+                self._stat_vars['cw_ubns'].set(f"{cw_ubns:,}")
+                self._stat_vars['ssb_zones'].set(str(ssb_zones))
+                self._stat_vars['ssb_prefixes'].set(str(len(ssb_prefix_set)))
+                self._stat_vars['ssb_countries'].set(str(len(ssb_country_set)))
+                self._stat_vars['ssb_ubns'].set(f"{ssb_ubns:,}")
+
+                for item in self._stats_cont_tree.get_children():
+                    self._stats_cont_tree.delete(item)
+                for cont, count in sorted(cont_counts.items(), key=lambda x: -x[1]):
+                    label = CONT_LABELS.get(cont, cont)
+                    self._stats_cont_tree.insert("", "end", values=(label, count))
+
+            self.after(0, _update)
+            self._log("Statistics updated.", "ok")
+
+        except Exception as e:
+            import traceback
+            self._log(f"Error loading statistics: {e}", "error")
+            self._log(traceback.format_exc(), "error")
+        finally:
+            self._set_status("Ready")
 
     # ─────────────────────────────────────────────────────────────────
     #  Utilities
