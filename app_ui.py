@@ -232,7 +232,7 @@ class SA10App(tk.Tk):
 
     def _build_notebook(self):
         self._nb = ttk.Notebook(self)
-        self._nb.pack(fill="both", expand=False, padx=8, pady=(6, 0))
+        self._nb.pack(fill="x", expand=False, padx=8, pady=(6, 0))
 
         self._tab_contests = ttk.Frame(self._nb)
         self._tab_import   = ttk.Frame(self._nb)
@@ -263,7 +263,7 @@ class SA10App(tk.Tk):
         frame.pack(fill="both", expand=True, padx=8, pady=(4, 2))
 
         self._log_text = scrolledtext.ScrolledText(
-            frame, height=12, state="disabled", wrap="word",
+            frame, height=8, state="disabled", wrap="word",
             font=("Consolas", 9), bg="#1e1e1e", fg="#d4d4d4",
             insertbackground="white"
         )
@@ -1319,7 +1319,7 @@ class SA10App(tk.Tk):
         cont_frame.pack(fill="x", padx=12, pady=(2, 8))
         cont_cols = ("Continent", "Participants")
         self._stats_cont_tree = ttk.Treeview(cont_frame, columns=cont_cols,
-                                             show="headings", height=8)
+                                             show="headings", height=4)
         self._stats_cont_tree.heading("Continent",    text="Continent")
         self._stats_cont_tree.heading("Participants", text="Participants")
         self._stats_cont_tree.column("Continent",    width=200, anchor="w")
