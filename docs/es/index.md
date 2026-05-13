@@ -14,6 +14,7 @@ Esta aplicación incluye las reglas del **SA10M** (concurso de banda de 10 metro
 - **Pipeline de validación cruzada** — valida contactos contra todos los demás logs, marcando NIL y señales erradas
 - **Reportes UBN** — genera reportes por estación de tipo Único/Errado/No-en-log
 - **Cuadro de clasificación con filtros** — ordenar y filtrar por categoría, área del operador, indicativo
+- **Panel de estadísticas** — resúmenes por país, continente, zona CQ, prefijo WPX y UBN por modo
 - **Exportación Excel / CSV** — reporte completo de QSOs y planilla de puntajes
 - **Interfaz de escritorio** — interfaz Tkinter simple, sin servidor requerido
 
@@ -67,14 +68,17 @@ graph LR
     B --> C[Validación Cruzada]
     C --> D[Puntuar Logs]
     D --> E[Ver Clasificación]
-    E --> F[Exportar Resultados]
+    E --> F[Revisar Estadísticas]
+    F --> G[Exportar Resultados]
 ```
 
 1. **Crear un concurso** — define nombre, slug y rango de fechas en la pestaña Concursos
 2. **Importar logs** — apunta a una carpeta con archivos Cabrillo; los duplicados se manejan automáticamente
 3. **Validación cruzada** — compara cada contacto contra todos los demás logs para encontrar entradas NIL/erróneas
 4. **Puntuar** — calcula puntos QSO, prefijos WPX y multiplicadores de zona CQ
-5. **Clasificación** — navega resultados filtrados por categoría o área, exporta a Excel
+5. **Clasificación** — navega resultados filtrados por categoría o área
+6. **Estadísticas** — revisa países, continentes, zonas CQ, prefijos y totales UBN
+7. **Exportación** — genera salidas de clasificación, QSO o UBN en Excel o CSV
 
 ---
 

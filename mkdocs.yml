@@ -86,6 +86,7 @@ nav:
     - Cross-Check Tab: user-guide/cross-check.md
     - Scoring Tab: user-guide/scoring.md
     - Leaderboard Tab: user-guide/leaderboard.md
+    - Statistics Tab: user-guide/statistics.md
   - Contest Rules:
     - SA10M Quick Reference: SA10M_QUICK_REFERENCE.md
     - Scoring Process: PROCESO_DE_SCORING.md
@@ -111,6 +112,7 @@ nav:
       - Pestaña Validación Cruzada: es/user-guide/validacion-cruzada.md
       - Pestaña Puntuar: es/user-guide/puntuacion.md
       - Pestaña Tabla de Clasificación: es/user-guide/tabla-clasificacion.md
+      - Pestaña Estadísticas: es/user-guide/estadisticas.md
     - Reglas del Concurso:
       - Referencia Rápida SA10M: es/SA10M_REFERENCIA_RAPIDA.md
       - Proceso de Scoring: es/PROCESO_DE_SCORING.md

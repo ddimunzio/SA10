@@ -31,7 +31,7 @@
     
     
       
-        <title>🇦🇷 Ham Radio Contest Manager</title>
+        <title>Ham Radio Contest Manager</title>
       
     
     
@@ -56,8 +56,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="assets/stylesheets/argentina.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -100,7 +98,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="🇦🇷 Ham Radio Contest Manager" class="md-header__button md-logo" aria-label="🇦🇷 Ham Radio Contest Manager" data-md-component="logo">
+    <a href="." title="Ham Radio Contest Manager" class="md-header__button md-logo" aria-label="Ham Radio Contest Manager" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +112,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            🇦🇷 Ham Radio Contest Manager
+            Ham Radio Contest Manager
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -395,13 +393,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="🇦🇷 Ham Radio Contest Manager" class="md-nav__button md-logo" aria-label="🇦🇷 Ham Radio Contest Manager" data-md-component="logo">
+    <a href="." title="Ham Radio Contest Manager" class="md-nav__button md-logo" aria-label="Ham Radio Contest Manager" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    🇦🇷 Ham Radio Contest Manager
+    Ham Radio Contest Manager
   </label>
   
     <div class="md-nav__source">
@@ -772,6 +770,34 @@
     
   
     Leaderboard Tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user-guide/statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistics Tab
   
 
     
@@ -1610,6 +1636,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="es/user-guide/estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pestaña Estadísticas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2187,6 +2241,7 @@
 <li><strong>Cross-check pipeline</strong> — validates contacts against all other submitted logs, flagging NIL and busted calls</li>
 <li><strong>UBN reports</strong> — generates per-station Unique/Busted/Not-in-log reports</li>
 <li><strong>Leaderboard with filters</strong> — sort and filter by category, operator area, callsign</li>
+<li><strong>Statistics dashboard</strong> — country, continent, CQ zone, WPX prefix, and UBN summaries by mode</li>
 <li><strong>Excel / CSV exports</strong> — full QSO report and scores spreadsheet</li>
 <li><strong>Desktop GUI</strong> — simple Tkinter interface, no server required</li>
 </ul>
@@ -2227,14 +2282,17 @@
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    B --&gt; C[Run Cross-Check]
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    C --&gt; D[Score All Logs]
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    D --&gt; E[View Leaderboard]
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    E --&gt; F[Export Results]
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    E --&gt; F[Review Statistics]
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    F --&gt; G[Export Results]
 </code></pre></div>
 <ol>
 <li><strong>Create a contest</strong> — define name, slug, and date range in the Contests tab</li>
 <li><strong>Import logs</strong> — point to a folder of Cabrillo files; duplicates are handled automatically</li>
 <li><strong>Cross-check</strong> — compare every contact against all other logs to find NIL/busted entries</li>
 <li><strong>Score</strong> — calculate QSO points, WPX prefixes, and CQ zone multipliers</li>
-<li><strong>Leaderboard</strong> — browse results filtered by category or area, export to Excel</li>
+<li><strong>Leaderboard</strong> — browse results filtered by category or area</li>
+<li><strong>Statistics</strong> — review countries, continents, CQ zones, prefixes, and UBN totals</li>
+<li><strong>Export</strong> — write leaderboard, QSO, or UBN output to Excel or CSV</li>
 </ol>
 <hr />
 <h2 id="project-status">Project Status<a class="headerlink" href="#project-status" title="Permanent link">&para;</a></h2>

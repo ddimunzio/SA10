@@ -34,7 +34,7 @@ The SA10M Contest Manager is a desktop application built with Python/Tkinter. It
 Follow the tabs in order for a clean contest run:
 
 ```
-1. Contests  →  2. Import Logs  →  3. Cross-Check  →  4. Scoring  →  5. Leaderboard
+1. Contests  →  2. Import Logs  →  3. Cross-Check  →  4. Scoring  →  5. Leaderboard  →  6. Statistics
 ```
 
 | Step | Tab / Action | What happens |
@@ -45,6 +45,7 @@ Follow the tabs in order for a clean contest run:
 | 3 | [Cross-Check](cross-check.md) | Validate contacts across all logs (NIL / busted) |
 | 4 | [Scoring](scoring.md) | Calculate points and multipliers |
 | 5 | [Leaderboard](leaderboard.md) | Browse results, export to Excel or CSV |
+| 6 | [Statistics](statistics.md) | Review participation, multiplier, and UBN summaries |
 
 ---
 

@@ -1,181 +1,103 @@
-# Ham Radio Contest Results Calculator
+# Ham Radio Contest Manager
 
-A Python application for calculating ham radio contest results with configurable rules and database persistence.
+Configurable desktop scoring and contest-management software for amateur radio events.
+
+The repository currently ships with the SA10M ruleset and supports the full workflow used for the 2026 season: contest creation, Cabrillo log import, cross-check validation, scoring, leaderboard review, statistics, and Excel/CSV exports.
+
+## Current Status
+
+The application is operational for the SA10M 2026 dataset.
+
+- 666 source files processed
+- 3 parse failures
+- 62 replacement submissions resolved
+- 601 final station logs scored and shown in the leaderboard
 
 ## Features
 
-- 📝 Parse contest logs (Cabrillo, ADIF, CSV formats)
-- 🏆 Calculate scores based on configurable contest rules
-- 💾 Store contest history in database
-- 📊 Generate detailed reports
-- 🔧 Extensible rules engine for multiple contests
-- ✅ Comprehensive log validation
+- Tkinter desktop UI for contest operations with no server required
+- YAML-driven contest rules in `config/contests/`
+- Cabrillo import from single files or whole folders
+- Duplicate handling and replacement submission tracking
+- Cross-check pipeline with NIL, busted-call, and unique-call detection
+- SA10M scoring with WPX prefix and CQ zone multipliers
+- Leaderboard filters by callsign, category, and operator area
+- Statistics view with country, prefix, zone, UBN, and continent summaries
+- Excel and CSV exports, including QSO and UBN reports
 
 ## Quick Start
 
-### Installation
-
-```bash
-# Create virtual environment
+```powershell
+# Create and activate a virtual environment
 python -m venv .venv
+.venv\Scripts\Activate.ps1
 
-# Activate virtual environment
-# Windows:
-.venv\Scripts\activate
-# Linux/Mac:
-source .venv/bin/activate
-
-# Install dependencies
+# Install application dependencies
 pip install -r requirements.txt
+
+# Launch the desktop application
+python app_ui.py
 ```
 
-### Initial Setup
+For a first run, create a new database from `File -> New Database...`, then create or select a contest and proceed through import, cross-check, scoring, leaderboard, and statistics.
 
-```bash
-# 1. Update DXCC data from CTY.DAT file (included: cty_wt.dat)
-python update_dxcc_data.py
+## Command-Line Utilities
 
-# 2. Create a contest (if needed)
-python manage_contest.py create --name "SA10M 2025" --slug sa10m_2025 \
-    --start "2025-03-08 00:00" --end "2025-03-09 23:59" \
-    --rules config/contests/sa10m.yaml
+The desktop app is the primary entry point, but the repository also includes focused CLI scripts:
 
-# 3. Import contest logs
-python import_logs.py --contest-id 1 --directory logs_sa10m_2025/
+```powershell
+# List contests in the default database
+python manage_contest.py list
+
+# Create a contest
+python manage_contest.py create "SA10M 2026" sa10m-2026 "2026-03-14 00:00" "2026-03-15 23:59"
+
+# Import a folder of Cabrillo logs
+python import_logs.py --contest-id 1 logs_sa10m__2026
+
+# Run cross-check validation
+python run_cross_check.py --contest-id 1
 ```
 
-### Usage
+## Testing
 
-```bash
-# Process a contest log
-python main.py process --contest sa10m --log path/to/log.cbr
+```powershell
+# Run the full test suite
+pytest
 
-# View results
-python main.py results --contest sa10m --callsign LU1ABC
-
-# List contests
-python main.py contests list
+# Run a focused slice
+pytest tests/test_rules_engine.py tests/test_sa10m_scoring.py -v
 ```
-
-## Project Status
-
-🚧 **Under Development** - Phase 2 Complete
-
-### Completed Phases
-
-- ✅ **Phase 1: Foundation & Core Models** (Complete)
-  - Database schema with SQLAlchemy
-  - Pydantic data models
-  - Reference data (CQ zones, DXCC entities)
-  
-- ✅ **Phase 2: Rules Engine** (Complete - Nov 17, 2025)
-  - YAML-based contest configuration
-  - Rules loader with Pydantic v2
-  - Contest rules validator
-  - Contact processing engine
-  - WPX prefix extraction
-  - Duplicate detection
-  - Multiplier tracking
-  - Score calculation
-  - **17/17 tests passing ✓**
-
-### Current Capabilities
-
-```python
-from src.core.rules import load_sa10m_rules, RulesEngine, Contact
-from datetime import datetime
-
-# Load SA10M contest rules
-rules = load_sa10m_rules()
-
-# Create rules engine
-operator_info = {
-    'callsign': 'LU1ABC',
-    'continent': 'SA',
-    'dxcc': 100,
-    'cq_zone': 13
-}
-engine = RulesEngine(rules, operator_info)
-
-# Process a contact
-contact = Contact(
-    timestamp=datetime.now(),
-    callsign='W1AW',
-    band='10m',
-    mode='SSB',
-    frequency=28500,
-    rst_sent='59',
-    rst_received='59',
-    exchange_sent={'cq_zone': '13'},
-    exchange_received={'cq_zone': '5'}
-)
-
-result = engine.process_contact(contact)
-score = engine.calculate_final_score([result])
-print(f"Final Score: {score['final_score']}")
-```
-
-### Next Phase
-
-- 🔄 **Phase 3: Log Parsing** (In Progress)
-  - Cabrillo parser
-  - ADIF parser
-  - CSV parser
-
-See [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md) for complete roadmap.
-
-## Supported Contests
-
-- ✅ **SA10M Contest** (10 meter SA contest)
-  - Exchange: RS/RST + CQ Zone (1-40)
-  - Multipliers: WPX prefix (contest-wide), CQ zones (per-band)
-  - Scoring: SA vs non-SA point values
-  - Full rules: https://sa10m.com.ar/wp/rules/
-- 🔜 More contests coming soon...
 
 ## Documentation
 
-### Implementation & Progress
-- [Implementation Plan](IMPLEMENTATION_PLAN.md) - Complete development roadmap
-- [Phase 1 Completion](docs/PHASE_1_1_COMPLETION.md) - Database schema & models
-- [Phase 2 Completion](docs/PHASE_2_COMPLETION.md) - Rules engine implementation
+- [Getting Started](docs/GETTING_STARTED.md)
+- [Documentation Home](docs/index.md)
+- [English User Guide](docs/user-guide/index.md)
+- [Guia en Espanol](docs/es/index.md)
+- [SA10M Quick Reference](docs/SA10M_QUICK_REFERENCE.md)
+- [Database Schema](docs/DATABASE_SCHEMA.md)
+- [Import Logs Guide](docs/IMPORT_LOGS_GUIDE.md)
+- [DXCC Data Guide](docs/DXCC_DATA_GUIDE.md)
 
-### Technical Documentation
-- [Database Schema](docs/DATABASE_SCHEMA.md) - Complete database design
-- [Database Quick Reference](docs/DATABASE_QUICK_REF.md) - Quick database guide
-- [Rules Engine Quick Reference](docs/RULES_ENGINE_QUICK_REF.md) - Rules engine usage guide
+## Project Layout
 
-### Contest Configuration
-- [SA10M Contest Rules](config/contests/sa10m.yaml) - SA10M contest configuration
-- [SA10M Documentation](docs/SA10M_UPDATE.md) - SA10M implementation details
+```text
+SA10/
+|-- app_ui.py
+|-- manage_contest.py
+|-- import_logs.py
+|-- run_cross_check.py
+|-- config/
+|   `-- contests/
+|-- docs/
+|-- src/
+`-- tests/
+```
 
-### Getting Started
-- [Getting Started Guide](docs/GETTING_STARTED.md) - Quick start tutorial
-- Contest rules configuration guide (coming soon)
-- User guide (coming soon)
+## Notes
 
-## Technology Stack
-
-- Python 3.10+
-- SQLAlchemy (Database ORM)
-- Pydantic (Data validation)
-- PyYAML (Configuration)
-- Click/Typer (CLI)
-- pytest (Testing)
-
-## License
-
-MIT License
-
-## Contributing
-
-Contributions welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## Contact
-
-For questions or suggestions, please open an issue on GitHub.
-
----
-
-73! 📻
+- `main.py` remains a lightweight placeholder entry point; use `app_ui.py` for normal operation.
+- DXCC data can be refreshed from the GUI with `File -> Update DXCC Data...`.
+- Additional contests can be added by providing a new YAML rules file and contest record.
 

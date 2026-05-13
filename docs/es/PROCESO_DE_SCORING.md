@@ -2,14 +2,14 @@
 
 ## Tabla de Contenidos
 
-1. [Visión General](#1-visión-general)
+1. [Visión General](#1-vision-general)
 2. [Diagrama del Pipeline](#2-diagrama-del-pipeline)
-3. [Fase 1 — Configuración del Concurso](#3-fase-1--configuración-del-concurso)
-4. [Fase 2 — Importación de Logs](#4-fase-2--importación-de-logs)
-5. [Fase 3 — Validación Intra-Log](#5-fase-3--validación-intra-log)
-6. [Fase 4 — Cross-Check Inter-Log](#6-fase-4--cross-check-inter-log)
-7. [Fase 5 — Scoring (Puntuación)](#7-fase-5--scoring-puntuación)
-8. [Fase 6 — Reportes UBN](#8-fase-6--reportes-ubn)
+3. [Fase 1 — Configuración del Concurso](#3-fase-1-configuracion-del-concurso)
+4. [Fase 2 — Importación de Logs](#4-fase-2-importacion-de-logs)
+5. [Fase 3 — Validación Intra-Log](#5-fase-3-validacion-intra-log)
+6. [Fase 4 — Cross-Check Inter-Log](#6-fase-4-cross-check-inter-log)
+7. [Fase 5 — Scoring (Puntuación)](#7-fase-5-scoring-puntuacion)
+8. [Fase 6 — Reportes UBN](#8-fase-6-reportes-ubn)
 9. [Reglas del SA10M en Detalle](#9-reglas-del-sa10m-en-detalle)
 10. [Esquema de Base de Datos](#10-esquema-de-base-de-datos)
 11. [Referencia de Estados](#11-referencia-de-estados)

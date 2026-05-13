@@ -9,8 +9,9 @@ SA10M Contest Manager es una aplicación de escritorio construida con Python/Tki
 ![SA10M Contest Manager — ventana principal](../../assets/images/app-overview.png)
 
 ### Menú Archivo
-- **Nueva Base de Datos…** — crea un archivo de base de datos vacío e inicializa todas las tablas (ver [Crear una Nueva Base de Datos](#crear-una-nueva-base-de-datos))
+- **Nueva Base de Datos…** — crea un archivo de base de datos vacío, inicializa todas las tablas e importa automáticamente los datos DXCC incluidos (ver [Crear una Nueva Base de Datos](#crear-una-nueva-base-de-datos))
 - **Abrir Base de Datos…** — abre un archivo de base de datos existente
+- **Actualizar Datos DXCC…** — importa o refresca la tabla de países y prefijos CTY en la base activa; es obligatorio para puntuar y se ejecuta automáticamente al crear una base nueva
 
 ### Barra de Encabezado
 - Muestra la ruta del **archivo de base de datos activo** a la derecha
@@ -32,16 +33,18 @@ SA10M Contest Manager es una aplicación de escritorio construida con Python/Tki
 Sigue las pestañas en orden para una ejecución limpia del concurso:
 
 ```
-1. Concursos  →  2. Importar Logs  →  3. Validación Cruzada  →  4. Puntuar  →  5. Tabla
+1. Concursos  →  2. Importar Logs  →  3. Validación Cruzada  →  4. Puntuar  →  5. Tabla  →  6. Estadísticas
 ```
 
 | Paso | Pestaña | Qué ocurre |
 |------|---------|-----------|
+| 0 | **Archivo → Actualizar Datos DXCC…** | Carga los países y prefijos necesarios para la puntuación; automático en bases nuevas |
 | 1 | [Concursos](concursos.md) | Crear el registro del concurso y establecerlo como activo |
 | 2 | [Importar Logs](importar-logs.md) | Cargar archivos de log Cabrillo desde una carpeta |
 | 3 | [Validación Cruzada](validacion-cruzada.md) | Validar contactos entre todos los logs (NIL / erróneos) |
 | 4 | [Puntuar](puntuacion.md) | Calcular puntos y multiplicadores |
 | 5 | [Tabla de Clasificación](tabla-clasificacion.md) | Navegar resultados, exportar a Excel o CSV |
+| 6 | [Estadísticas](estadisticas.md) | Revisar resúmenes de participantes, multiplicadores y UBN |
 
 ---
 
@@ -54,7 +57,7 @@ Cada temporada de concurso (o cuando desees empezar desde cero) puedes crear una
 1. Abre el menú **Archivo** → **Nueva Base de Datos…**
 2. Elige una ubicación y nombre de archivo (p. ej. `sa10m_2026.db`) y haz clic en **Guardar**.
 3. Si el archivo ya existe, se te pedirá confirmar la sobreescritura.
-4. La base de datos se crea y todas las tablas se inicializan automáticamente.
+4. La base de datos se crea, todas las tablas se inicializan automáticamente y se importan los datos DXCC desde `cty_wt.dat`.
 5. La barra de encabezado se actualiza con la ruta de la nueva base de datos y la pestaña Concursos se recarga (vacía).
 
 Ahora puedes crear un registro de concurso y comenzar a importar logs.
@@ -74,3 +77,6 @@ source .venv/bin/activate     # Linux / Mac
 # Iniciar
 python app_ui.py
 ```
+
+!!! warning "Bases antiguas"
+    Las bases creadas antes de 2026-04 pueden no tener la tabla DXCC cargada. Si todos los puntajes aparecen en cero, usa **Archivo -> Actualizar Datos DXCC...** y vuelve a ejecutar la puntuación.

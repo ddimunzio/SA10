@@ -1,246 +1,109 @@
-# Getting Started - Ham Radio Contest Calculator
+# Getting Started
 
-## Development Setup
+This guide is for the current SA10M Contest Manager application as it exists in this repository today. The normal entry point is the desktop UI in `app_ui.py`; the helper scripts are still available for batch or maintenance work.
 
-### 1. Prerequisites
-- Python 3.10 or higher
-- pip (Python package manager)
-- Git (optional, for version control)
+## Prerequisites
 
-### 2. Initial Setup
+- Python 3.10 or newer
+- pip
+- PowerShell on Windows, or a shell that can activate the virtual environment
 
-```bash
-# Navigate to project directory
-cd C:\Users\lw5hr\proyects\SA10\pythonProject
+## Install and Launch
 
-# Activate virtual environment (should already be created)
-.venv\Scripts\activate
+```powershell
+# From the repository root
+cd C:\Users\lw5hr\proyects\SA10
+
+# Create the virtual environment if needed
+python -m venv .venv
+
+# Activate it
+.venv\Scripts\Activate.ps1
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Verify installation
-python main.py
+# Launch the desktop application
+python app_ui.py
 ```
 
-### 3. Run Tests
+If you only want to sanity-check the environment without opening the GUI, run:
 
-```bash
-# Run all tests
+```powershell
+python manage_contest.py list
+```
+
+## First Run Workflow
+
+1. Open `File -> New Database...` and create a database for the contest season.
+2. Let the application initialise tables and import bundled DXCC data.
+3. Go to the `Contests` tab and create or select the active contest.
+4. Import Cabrillo logs from the `Import Logs` tab.
+5. Run `Cross-Check` to populate NIL, busted-call, and unique-call results.
+6. Run `Scoring` to compute final scores and multiplier totals.
+7. Review `Leaderboard` and `Statistics`, then export Excel or CSV reports if needed.
+
+## Recommended Test Commands
+
+```powershell
+# Full suite
 pytest
 
-# Run with coverage
-pytest --cov=src tests/
+# Core scoring and rules
+pytest tests/test_rules_engine.py tests/test_sa10m_scoring.py -v
 
-# Run specific test file
-pytest tests/test_models.py -v
+# Import and cross-check slice
+pytest tests/test_log_import.py tests/test_cross_check_rules.py -v
 ```
 
-### 4. Project Structure
+## Main Repository Layout
 
-```
-pythonProject/
-├── src/                          # Source code
-│   ├── core/                     # Core business logic
-│   │   ├── models/              # Domain models (Pydantic)
-│   │   │   └── contest.py       # ✅ Contest data models
-│   │   ├── rules/               # ⏳ Rules engine
-│   │   ├── scoring/             # ⏳ Scoring logic
-│   │   └── validation/          # ⏳ Validation logic
-│   ├── database/                # ⏳ Database layer (SQLAlchemy)
-│   │   └── repositories/        # Data access
-│   ├── parsers/                 # ⏳ Log file parsers
-│   └── utils/                   # Utility functions
-├── config/                      # Configuration files
-│   └── contests/
-│       └── sa10m.yaml          # ✅ SA10M contest rules
-├── tests/                       # Test files
-│   └── test_models.py          # ✅ Model tests
-├── docs/                        # Documentation
-├── main.py                      # ✅ Main entry point
-├── requirements.txt             # ✅ Python dependencies
-├── IMPLEMENTATION_PLAN.md       # ✅ Development roadmap
-└── README.md                    # ✅ Project overview
+```text
+SA10/
+|-- app_ui.py
+|-- manage_contest.py
+|-- import_logs.py
+|-- run_cross_check.py
+|-- update_dxcc_data.py
+|-- config/
+|   `-- contests/
+|-- docs/
+|   |-- user-guide/
+|   `-- es/
+|-- src/
+|   |-- core/
+|   |-- database/
+|   |-- parsers/
+|   `-- services/
+`-- tests/
 ```
 
-## Current Status
+## Useful Commands
 
-### ✅ Completed
-- [x] Project structure created
-- [x] Dependencies defined
-- [x] Core data models (Pydantic)
-- [x] SA10M contest rules configuration
-- [x] Basic unit tests
-- [x] Development documentation
+```powershell
+# List contests
+python manage_contest.py list
 
-### ⏳ In Progress / Next Steps
-Following the Implementation Plan phases:
+# Create a contest
+python manage_contest.py create "SA10M 2026" sa10m-2026 "2026-03-14 00:00" "2026-03-15 23:59"
 
-**Phase 1: Foundation & Core Models** (Current)
-- [x] Project setup
-- [x] Core data models
-- [ ] Database schema (SQLAlchemy models)
-- [ ] Database migrations setup
+# Import a folder of logs
+python import_logs.py --contest-id 1 logs_sa10m__2026
 
-**Phase 2: Rules Engine** (Next)
-- [ ] YAML rules loader
-- [ ] Rules validator
-- [ ] Rules engine core
-
-**Phase 3: Log Parsing**
-- [ ] Cabrillo parser
-- [ ] ADIF parser (optional)
-- [ ] CSV parser
-
-**Phase 4: Validation & Scoring**
-- [ ] Contact validation
-- [ ] Duplicate detection
-- [ ] Points calculation
-- [ ] Multiplier identification
-
-## Development Workflow
-
-### Adding a New Feature
-
-1. **Review the Implementation Plan**
-   - Check which phase the feature belongs to
-   - Understand dependencies
-
-2. **Create a Branch** (if using Git)
-   ```bash
-   git checkout -b feature/feature-name
-   ```
-
-3. **Write Tests First** (TDD approach)
-   - Create test file in `tests/`
-   - Write failing tests for the feature
-
-4. **Implement the Feature**
-   - Add code to appropriate module
-   - Run tests frequently
-
-5. **Validate**
-   ```bash
-   pytest
-   python main.py  # Manual testing
-   ```
-
-6. **Document**
-   - Add docstrings
-   - Update README if needed
-
-### Next Immediate Tasks
-
-1. **Complete Phase 1: Database Models**
-   ```python
-   # Create: src/database/models.py
-   # - SQLAlchemy models for contests, logs, contacts, scores
-   # - Alembic migration configuration
-   ```
-
-2. **Create Initial Migration**
-   ```bash
-   alembic init alembic
-   alembic revision --autogenerate -m "Initial schema"
-   alembic upgrade head
-   ```
-
-3. **Build Repository Layer**
-   ```python
-   # Create: src/database/repositories/contest_repository.py
-   # - CRUD operations for contests
-   # - Query methods
-   ```
-
-## Common Commands
-
-### Testing
-```bash
-# Run all tests
-pytest
-
-# Run with verbose output
-pytest -v
-
-# Run specific test
-pytest tests/test_models.py::test_contact_creation -v
-
-# Run with coverage report
-pytest --cov=src --cov-report=html tests/
+# Run cross-check from the CLI
+python run_cross_check.py --contest-id 1
 ```
 
-### Database (when implemented)
-```bash
-# Create migration
-alembic revision --autogenerate -m "description"
+## Notes
 
-# Apply migrations
-alembic upgrade head
+- `main.py` is still present but it is not the primary application entry point.
+- New databases automatically load DXCC data from the bundled `cty_wt.dat` file.
+- The documentation site under `docs/` includes both English and Spanish content.
 
-# Rollback
-alembic downgrade -1
-```
+## Next Reading
 
-### Running the Application
-```bash
-# Current (placeholder)
-python main.py
-
-# Future CLI commands (to be implemented)
-python main.py process --log path/to/log.cbr --contest sa10m
-python main.py score --log-id 123
-python main.py export --contest sa10m --format html
-```
-
-## Key Concepts
-
-### Contest Models (Pydantic)
-- **Contact**: Single QSO with validation
-- **Station**: Operator information
-- **ContestLog**: Complete log submission
-- **ScoreBreakdown**: Calculated results
-
-### Rules Configuration (YAML)
-- Defines contest-specific rules
-- Scoring logic
-- Validation rules
-- Exchange format
-
-### Database Models (SQLAlchemy) - To be implemented
-- Persistent storage
-- Historical tracking
-- Query optimization
-
-## Tips for Development
-
-1. **Follow the Implementation Plan**: It's structured to build features in logical order
-2. **Write Tests First**: Helps clarify requirements
-3. **Use Type Hints**: Already established in models, continue the practice
-4. **Document As You Go**: Clear docstrings help future development
-5. **Keep Models Separate**: Pydantic for business logic, SQLAlchemy for persistence
-
-## Resources
-
-### Ham Radio Contest Standards
-- Cabrillo format: http://www.kkn.net/~trey/cabrillo/
-- ADIF specification: https://adif.org/
-- SA10M rules: https://sa10m.com.ar/wp/rules/
-
-### Python Libraries Documentation
-- SQLAlchemy: https://docs.sqlalchemy.org/
-- Pydantic: https://docs.pydantic.dev/
-- Alembic: https://alembic.sqlalchemy.org/
-- Click: https://click.palletsprojects.com/
-- pytest: https://docs.pytest.org/
-
-## Questions?
-
-Refer to:
-- `IMPLEMENTATION_PLAN.md` for architecture and roadmap
-- `README.md` for project overview
-- Code docstrings for API details
-
----
-
-Happy coding! 73! 📻
+- `docs/user-guide/index.md` for the GUI workflow
+- `docs/IMPORT_LOGS_GUIDE.md` for batch import details
+- `docs/DXCC_DATA_GUIDE.md` for country/prefix data maintenance
+- `docs/es/PRIMEROS_PASOS.md` for the Spanish version of this guide
 

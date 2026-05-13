@@ -14,6 +14,7 @@ This application ships with the **SA10M** rules (a 10-meter single-band contest 
 - **Cross-check pipeline** — validates contacts against all other submitted logs, flagging NIL and busted calls
 - **UBN reports** — generates per-station Unique/Busted/Not-in-log reports
 - **Leaderboard with filters** — sort and filter by category, operator area, callsign
+- **Statistics dashboard** — country, continent, CQ zone, WPX prefix, and UBN summaries by mode
 - **Excel / CSV exports** — full QSO report and scores spreadsheet
 - **Desktop GUI** — simple Tkinter interface, no server required
 
@@ -67,14 +68,17 @@ graph LR
     B --> C[Run Cross-Check]
     C --> D[Score All Logs]
     D --> E[View Leaderboard]
-    E --> F[Export Results]
+    E --> F[Review Statistics]
+    F --> G[Export Results]
 ```
 
 1. **Create a contest** — define name, slug, and date range in the Contests tab
 2. **Import logs** — point to a folder of Cabrillo files; duplicates are handled automatically
 3. **Cross-check** — compare every contact against all other logs to find NIL/busted entries
 4. **Score** — calculate QSO points, WPX prefixes, and CQ zone multipliers
-5. **Leaderboard** — browse results filtered by category or area, export to Excel
+5. **Leaderboard** — browse results filtered by category or area
+6. **Statistics** — review countries, continents, CQ zones, prefixes, and UBN totals
+7. **Export** — write leaderboard, QSO, or UBN output to Excel or CSV
 
 ---
 

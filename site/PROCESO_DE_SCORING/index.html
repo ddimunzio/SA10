@@ -33,7 +33,7 @@
     
     
       
-        <title>Scoring Process - 🇦🇷 Ham Radio Contest Manager</title>
+        <title>Scoring Process - Ham Radio Contest Manager</title>
       
     
     
@@ -58,8 +58,6 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
-    
-      <link rel="stylesheet" href="../assets/stylesheets/argentina.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -102,7 +100,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="🇦🇷 Ham Radio Contest Manager" class="md-header__button md-logo" aria-label="🇦🇷 Ham Radio Contest Manager" data-md-component="logo">
+    <a href=".." title="Ham Radio Contest Manager" class="md-header__button md-logo" aria-label="Ham Radio Contest Manager" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +114,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            🇦🇷 Ham Radio Contest Manager
+            Ham Radio Contest Manager
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -397,13 +395,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="🇦🇷 Ham Radio Contest Manager" class="md-nav__button md-logo" aria-label="🇦🇷 Ham Radio Contest Manager" data-md-component="logo">
+    <a href=".." title="Ham Radio Contest Manager" class="md-nav__button md-logo" aria-label="Ham Radio Contest Manager" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    🇦🇷 Ham Radio Contest Manager
+    Ham Radio Contest Manager
   </label>
   
     <div class="md-nav__source">
@@ -683,6 +681,34 @@
     
   
     Leaderboard Tab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-guide/statistics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statistics Tab
   
 
     
@@ -2121,6 +2147,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../es/user-guide/estadisticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pestaña Estadísticas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3195,14 +3249,14 @@
 <h1 id="proceso-completo-de-scoring-sa10m-contest-manager">Proceso Completo de Scoring — SA10M Contest Manager<a class="headerlink" href="#proceso-completo-de-scoring-sa10m-contest-manager" title="Permanent link">&para;</a></h1>
 <h2 id="tabla-de-contenidos">Tabla de Contenidos<a class="headerlink" href="#tabla-de-contenidos" title="Permanent link">&para;</a></h2>
 <ol>
-<li><a href="#1-visión-general">Visión General</a></li>
+<li><a href="#1-vision-general">Visión General</a></li>
 <li><a href="#2-diagrama-del-pipeline">Diagrama del Pipeline</a></li>
-<li><a href="#3-fase-1--configuración-del-concurso">Fase 1 — Configuración del Concurso</a></li>
-<li><a href="#4-fase-2--importación-de-logs">Fase 2 — Importación de Logs</a></li>
-<li><a href="#5-fase-3--validación-intra-log">Fase 3 — Validación Intra-Log</a></li>
-<li><a href="#6-fase-4--cross-check-inter-log">Fase 4 — Cross-Check Inter-Log</a></li>
-<li><a href="#7-fase-5--scoring-puntuación">Fase 5 — Scoring (Puntuación)</a></li>
-<li><a href="#8-fase-6--reportes-ubn">Fase 6 — Reportes UBN</a></li>
+<li><a href="#3-fase-1-configuracion-del-concurso">Fase 1 — Configuración del Concurso</a></li>
+<li><a href="#4-fase-2-importacion-de-logs">Fase 2 — Importación de Logs</a></li>
+<li><a href="#5-fase-3-validacion-intra-log">Fase 3 — Validación Intra-Log</a></li>
+<li><a href="#6-fase-4-cross-check-inter-log">Fase 4 — Cross-Check Inter-Log</a></li>
+<li><a href="#7-fase-5-scoring-puntuacion">Fase 5 — Scoring (Puntuación)</a></li>
+<li><a href="#8-fase-6-reportes-ubn">Fase 6 — Reportes UBN</a></li>
 <li><a href="#9-reglas-del-sa10m-en-detalle">Reglas del SA10M en Detalle</a></li>
 <li><a href="#10-esquema-de-base-de-datos">Esquema de Base de Datos</a></li>
 <li><a href="#11-referencia-de-estados">Referencia de Estados</a></li>
